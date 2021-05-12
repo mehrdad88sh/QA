@@ -10,7 +10,7 @@ ${priceRent}              2000000
 ${price}                  850000000
 ${numFloor}               3
 ${numOfUnitsPerFloor}     5
-${landArea}               200
+${landArea}               300
 ${fileCode}               673467
 ${image_path}             ${CURDIR}${/}..\/..\/resources\/images\/450E47.jpg
 
@@ -187,7 +187,7 @@ Set Apartment For RealEstate Type
 
 Year Of Construction
   ${Status}                           Run Keyword And Return Status
-  ...                                 Wait Until Page Contains Element    
+  ...                                 Wait Until Page Contains Element
   ...                                 select-a92367             timeout=1s
   Run Keyword If
   ...                                 ${Status}
