@@ -4,15 +4,15 @@ Resource                              ../../resources/resource.robot
 Test Teardown                         Close Browser
 
 *** Variables ***
-${area}                   85
-${priceDeposit}           300000000
-${priceRent}              2000000
-${price}                  850000000
-${numFloor}               3
-${numOfUnitsPerFloor}     5
-${landArea}               300
-${fileCode}               673467
-${image_path}             ${CURDIR}${/}..\/..\/resources\/images\/450E47.jpg
+${area}                               85
+${priceDeposit}                       300000000
+${priceRent}                          2000000
+${price}                              850000000
+${numFloor}                           3
+${numOfUnitsPerFloor}                 5
+${landArea}                           300
+${fileCode}                           673467
+${image_path}                         ${CURDIR}${/}..\/..\/resources\/images\/450E47.jpg
 
 *** Test Cases ***
 Create Files In Realestate Categories
@@ -267,6 +267,7 @@ Set Personal Notebook
   Execute JavaScript                  window.scrollTo(0,0)
 
 Upload Image
-  ${image_path}                       Normalize Path          ${image_path}
-  Set Selenium Timeout    3s
+  Execute JavaScript                  window.scrollTo(0,0)
+  ${image_path}                       Normalize Path                ${image_path}
   Choose File                         name:select-images-action     ${image_path}
+  Wait Until Page Contains Element    name:form-delete-action       timeout=2s
