@@ -87,10 +87,10 @@ Set Location
 Submit File
   Execute JavaScript                  window.scrollTo(0,0)
   Click Element                       name:form-submit-action
-  Wait Until Keyword Succeeds         3x    2s                         Page Should Contain       فایل شما با موفقیت ثبت شد
+  Wait Until Keyword Succeeds         3x  2s  Page Should Contain     فایل شما با موفقیت ثبت شد
   Click Element                       name:file-management-action
-  Wait Until Page Contains Element    css:[name="search-input-html"]
-  Page Should Contain                 فایل موجود می‌باشد
+  Wait Until Page Contains Element    css:[name="search-input-html"]  timeout=2s
+  Page Should Contain Element         name:file-item-0
 
 Go To Submit File Page
   Click Element                       name:list-item-new-file
