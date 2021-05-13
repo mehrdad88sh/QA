@@ -34,6 +34,7 @@ Create File In Motorcycle Category
 
 Create Listing
   Click Element                       name=file-item-0
+  Reload Page
   Wait Until Keyword Succeeds         3x     2s                        Page Should Contain  آگهی نشده
   Click Button                        name=advertise-action
   Wait Until Page Contains            توضیحات                          timeout=2s
@@ -43,7 +44,7 @@ Create Listing
   Click Button                        name=apply-action
   Wait Until Page Contains            آگهی شما با موفقیت ثبت شد        timeout=2s
   Click Element                       name=listing-management-action
-  Wait Until Page Contains            آگهی فعال موجود می‌باشد           timeout=2s
+  Wait Until Page Contains Element    name:listing-item-0              timeout=2s
 
 Go To Submit File Page
   Click Element                       name:list-item-new-file
@@ -76,7 +77,7 @@ Set Motorcycle Category
   Wait Until Page Contains Element    name=45202                       timeout=2s
   Click Element                       name=45202
   Textfield Value Should Be           name=category                    هوندا
-  Sleep    1s
+  Wait Until Page Contains            حجم موتور
 
 Set Car Attributes
   Select Saba Model
@@ -92,9 +93,11 @@ Set Car Attributes
 Set Motorcycle Attributes
   Production Year
   Engine Capacity
+  Motorcycle Kilometer
   Motorcycle Gearbox Type
   Motorcycle Tip
   Motorcycle Payment Type
+  Motorcycle Color
   Price
 
 Select Saba Model
@@ -148,6 +151,9 @@ Engine Capacity
   Click Element                       name=440582
   Element Should Contain              select-a68105               (150cc - 174cc)
 
+Motorcycle Kilometer
+  Input Text                          name:a68141                 40000
+
 Motorcycle Gearbox Type
   Click Element                       select-a92350
   Page Should Contain Element         css:[role="listbox"]
@@ -165,6 +171,12 @@ Motorcycle Payment Type
   Page Should Contain Element         css:[role="listbox"]
   Click Element                       name=455034
   Element Should Contain              select-a92360                نقدی
+
+Motorcycle Color
+  Click Element                       select-a93000
+  Page Should Contain Element         css:[role="listbox"]
+  Click Element                       name=455272
+  Element Should Contain              select-a93000                آلبالویی
 
 Price
   Input Text                          name=price                   50000000
@@ -243,7 +255,7 @@ Motorcycle License Plate Type
   Element Should Contain              select-a69607               ملی
 
 Upload Image
+  Execute JavaScript                  window.scrollTo(0,0)
   ${image_path}                       Normalize Path             ${image_path}
   Choose File                         name=select-images-action  ${image_path}
-  Wait Until Page Contains Element    css:[alt="file img"]       timeout=2s
-  Sleep    3s
+  Wait Until Page Contains Element    name:form-delete-action    timeout=5s
