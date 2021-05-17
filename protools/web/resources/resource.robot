@@ -7,6 +7,13 @@ Library                               splitwords
 Library                               OperatingSystem
 Variables                             ../variables/Variables.py
 
+*** Variables ***
+&{RealEstateType}                     RD=select-a68096                BS=select-a68094
+&{ApartmentID}                        RD=name:440477                  BS=name:440470
+&{VilaID}                             RD=name:440479                  BS=name:440472
+${Apartment}                          آپارتمان
+${Vila}                               ویلا
+
 *** Keywords ***
 Open Browser On Staging
     Open Browser                      ${staging}                      browser=chrome
@@ -82,7 +89,7 @@ Set Location
   ${search-input}                     Get WebElements                  name=search-input-html
   Input Text                          ${search-input}[2]               نارمک
   Click Element                       name:n4774                       #قنات کوثر
-  Textfield Should Contain            name:location                   تهران > قنات کوثر
+  Element Should Contain              name:location                    تهران > قنات کوثر
 
 Submit File
   Execute JavaScript                  window.scrollTo(0,0)
