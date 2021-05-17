@@ -47,7 +47,7 @@ Select Rent And Deposit Category
   Wait Until Page Contains Element    select-a68096             timeout=2s
 
 Set Rent And Deposit Attributes
-  RealEstate Type
+  Select RealEstate Type             &{RealEstateType}[RD]   &{ApartmentID}[RD]   ${Apartment}
   Year Of Construction
   Select Parking For Rent And Deposit Category
   Select Warehouse For Rent And Deposit Category
@@ -83,7 +83,7 @@ Select Buying And Selling Category
   Wait Until Page Contains Element    select-a68094             timeout=2s
 
 Set Buying And Selling Attributes
-  RealEstate Type
+  Select RealEstate Type              &{RealEstateType}[BS]   &{VilaID}[BS]   ${Vila}
   Year Of Construction
   Select Parking For Buying And Selling Category
   Select Warehouse For Buying And Selling Category
@@ -163,27 +163,12 @@ Select Eastern Position
   Click Button                        name:select-add-action
   Textfield Value Should Be           name:a69257               شرقی
 
-RealEstate Type
-  ${Status}                           Run Keyword And Return Status
-  ...                                 Wait Until Page Contains Element
-  ...                                 select-a68096            timeout=1s
-  Run Keyword If
-  ...                                 ${Status}
-  ...                                 Set Vila For RealEstate Type
-  ...                                 ELSE
-  ...                                 Set Apartment For RealEstate Type
-
-Set Vila For RealEstate Type
-  Click Element                       select-a68096
-  Wait Until Page Contains Element    css:[role="listbox"]      timeout=2s
-  Click Element                       name:440479
-  Element Should Contain              select-a68096             ویلا
-
-Set Apartment For RealEstate Type
-  Click Element                       select-a68094
-  Wait Until Page Contains Element    css:[role="listbox"]     timeout=2s
-  Click Element                       name:440470
-  Element Should Contain              select-a68094             آپارتمان
+Select RealEstate Type
+  [Arguments]                         ${RealEstateType}        ${ApartmentID}    ${Apartment}
+  Click Element                       ${RealEstateType}
+  Wait Until Page Contains Element    css:[role="document"]    timeout=2s
+  Click Element                       ${ApartmentID}
+  Element Should Contain              ${RealEstateType}        ${Apartment}
 
 Year Of Construction
   ${Status}                           Run Keyword And Return Status
