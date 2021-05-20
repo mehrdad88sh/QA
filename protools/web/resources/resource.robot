@@ -14,6 +14,7 @@ Variables                             ../variables/Variables.py
 ${Apartment}                          آپارتمان
 ${Vila}                               ویلا
 ${image_profile}                      ${CURDIR}/images/imageprofile.jpg
+${images_Realestate}                  ${CURDIR}/images
 ${profile_name_ID}                    name:profile-name
 ${edit_profile_ID}                    name:edit_profile
 ${aboutMe_ID}                         name:aboutMe
@@ -110,9 +111,10 @@ Set Location
 Submit File
   Execute JavaScript                  window.scrollTo(0,0)
   Click Element                       ${Submit_Button}
-  Wait Until Keyword Succeeds         3x  2s  Page Should Contain     فایل شما با موفقیت ثبت شد
+  Wait Until Keyword Succeeds         3x  2s  Page Should Contain      فایل شما با موفقیت ثبت شد
   Click Element                       name:file-management-action
-  Wait Until Page Contains Element    css:[name="search-input-html"]  timeout=2s
+  Reload Page
+  Wait Until Page Contains Element    css:[name="search-input-html"]   timeout=2s
   Page Should Contain Element         name:file-item-0
 
 Go To Submit File Page
@@ -128,7 +130,7 @@ Apply More Detail
   Click Button                        name:apply-action
 
 Select Form Clear Button
-  Wait Until Keyword Succeeds         3x   2s                           Click Element            name:form-clear-action
+  Wait Until Keyword Succeeds         3x   2s                          Click Element            name:form-clear-action
   Wait Until Page Contains Element    css:[role="document"]
   Wait Until Page Contains            از انصراف اطمینان دارید؟
   Click Element                       name:confirm-accept-action
@@ -138,12 +140,18 @@ Generate Random username
   ${prefix_name}                      Prefix
   ${first_name}                       First Name
   ${last_name}                        Last Name
-  Set Suite Variable                  ${Random_User_Name}              ${prefix_name} ${first_name} ${last_name}
+  Set Suite Variable                  ${Random_User_Name}             ${prefix_name} ${first_name} ${last_name}
 
 Generate Random AboutMe Sentence
-  ${aboutme}                          Sentence                         nb_words=30
-  Set Suite Variable                  ${Random_AboutMe_Sentence}       ${aboutme}
+  ${aboutme}                          Sentence                        nb_words=30
+  Set Suite Variable                  ${Random_AboutMe_Sentence}      ${aboutme}
 
 Go To My Packages Page
   Click Element                       name:list-item-packageManagement
   Wait Until Page Contains            موجودی من                       timeout=2s
+
+Upload RealEstate Images
+  FOR              ${INDEX}           IN RANGE        4
+   Choose File                        name:select-images-action       ${images_Realestate}/0${INDEX}.jpg
+  END
+  Wait Until Page Does Not Contain Element                            name:image-upload-loading           timeout=20s
