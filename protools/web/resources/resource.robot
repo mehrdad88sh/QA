@@ -14,8 +14,9 @@ Variables                             ../variables/Variables.py
 ${Apartment}                          آپارتمان
 ${Vila}                               ویلا
 ${image_profile}                      ${CURDIR}/images/imageprofile.jpg
-${profile_name}                       name:profile-name
-${edit_profile}                       name:edit_profile
+${profile_name_ID}                    name:profile-name
+${edit_profile_ID}                    name:edit_profile
+${aboutMe_ID}                         name:aboutMe
 
 *** Keywords ***
 Open Browser On Staging
@@ -126,3 +127,7 @@ Generate Random username
   ${first_name}                       First Name
   ${last_name}                        Last Name
   Set Suite Variable                  ${Random_User_Name}              ${prefix_name} ${first_name} ${last_name}
+
+Generate Random AboutMe Sentence
+  ${aboutme}                          Sentence                         nb_words=30
+  Set Suite Variable                  ${Random_AboutMe_Sentence}       ${aboutme}
