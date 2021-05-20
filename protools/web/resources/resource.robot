@@ -28,6 +28,7 @@ ${Add_New_Image}                      name:pick-image
 ${Sumbit_Image}                       name:accept-crop
 ${Your_Scores}                        name:score
 ${Rating}                             name:level
+${Premium_Button}                     //*[@id="react-view"]/div/nav/div[2]/div/li/div/span
 
 *** Keywords ***
 Open Browser On Staging
