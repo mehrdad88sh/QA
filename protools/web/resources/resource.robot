@@ -13,6 +13,7 @@ Variables                             ../variables/Variables.py
 &{VilaID}                             RD=name:440479                  BS=name:440472
 ${Apartment}                          آپارتمان
 ${Vila}                               ویلا
+${image_profile}                      ${CURDIR}/images/imageprofile.jpg
 
 *** Keywords ***
 Open Browser On Staging
