@@ -14,6 +14,8 @@ Variables                             ../variables/Variables.py
 ${Apartment}                          آپارتمان
 ${Vila}                               ویلا
 ${image_profile}                      ${CURDIR}/images/imageprofile.jpg
+${profile_name}                       name:profile-name
+${edit_profile}                       name:edit_profile
 
 *** Keywords ***
 Open Browser On Staging
@@ -118,3 +120,9 @@ Select Form Clear Button
   Wait Until Page Contains            از انصراف اطمینان دارید؟
   Click Element                       name:confirm-accept-action
   Page Should Contain Element         css:[tabindex="-1"]
+
+Generate Random username
+  ${prefix_name}                      Prefix
+  ${first_name}                       First Name
+  ${last_name}                        Last Name
+  Set Suite Variable                  ${Random_User_Name}              ${prefix_name} ${first_name} ${last_name}
