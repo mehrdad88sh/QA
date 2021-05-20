@@ -17,6 +17,11 @@ ${image_profile}                      ${CURDIR}/images/imageprofile.jpg
 ${profile_name_ID}                    name:profile-name
 ${edit_profile_ID}                    name:edit_profile
 ${aboutMe_ID}                         name:aboutMe
+${Location_Job_ID}                    name:locations-trigger
+${Search_Input_Location}              name:search-input-html
+${Alborz_ID}                          css:[name="5"]
+${Karaj_ID}                           css:[name="229"]
+${Golshahr_ID}                        css:[name="n4005"]
 
 *** Keywords ***
 Open Browser On Staging
@@ -86,14 +91,14 @@ Input Verification Code
 Set Location
   Click Element                       name:location-trigger
   Wait Until Page Contains Element    name:location-0                  #نمایش لیست استان ها
-  Click Element                       name:8
+  Click Element                       ${Alborz_ID}
   Wait Until Page Contains Element    name:location-1                  #نمایش لیست شهرها
-  Click Element                       name:301
+  Click Element                       ${Karaj_ID}
   Wait Until Page Contains Element    name:location-2                  #نمایش لیست محله ها
-  ${search-input}                     Get WebElements                  name=search-input-html
-  Input Text                          ${search-input}[2]               نارمک
-  Click Element                       name:n4774                       #قنات کوثر
-  Element Should Contain              name:location                    تهران > قنات کوثر
+  ${search-input}                     Get WebElements                  ${Search_Input_Location}
+  Input Text                          ${search-input}[2]               گلشهر
+  Click Element                       ${Golshahr_ID}
+  Element Should Contain              name:location                    کرج > گلشهر
 
 Submit File
   Execute JavaScript                  window.scrollTo(0,0)
