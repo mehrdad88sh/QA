@@ -18,16 +18,16 @@ ${image_path}                         ${CURDIR}${/}..\/..\/resources\/images\/45
 Create Files In Realestate Categories
   Login Alunak
   Create File In Rent And Deposit Category
-  Create File In Buying And Selling Category
+  # Create File In Buying And Selling Category
 
 *** Keywords ***
 Create File In Rent And Deposit Category
   Go To Submit File Page
+  Upload RealEstate Images
   Select Rent And Deposit Category
   Set Location
   Set Rent And Deposit Attributes
   Set Personal Notebook
-  Upload Image
   Submit File
 
 Create File In Buying And Selling Category
@@ -36,7 +36,7 @@ Create File In Buying And Selling Category
   Set Location
   Set Buying And Selling Attributes
   Set Personal Notebook
-  Upload Image
+  Upload RealEstate Images
   Submit File
 
 Select Rent And Deposit Category
@@ -250,9 +250,3 @@ Set Personal Notebook
   Input Text                          name:a69535             ${address}
   Click Button                        name:apply-action
   Execute JavaScript                  window.scrollTo(0,0)
-
-Upload Image
-  Execute JavaScript                  window.scrollTo(0,0)
-  ${image_path}                       Normalize Path                ${image_path}
-  Choose File                         name:select-images-action     ${image_path}
-  Wait Until Page Contains Element    name:form-delete-action       timeout=2s
