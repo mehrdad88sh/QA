@@ -40,26 +40,45 @@ Fill About Me
   Input Text                   name:aboutMe                     ${aboutme}
 
 Fill Location Job
-  Click Element                name:locations-trigger
-  Element Should Contain       name:choose-selectedItems        انتخاب
-  Input Text                   name:search-input-html           تهران
-  Click Element                css:[name="8"]
-  Wait Until Page Contains Element    css:[name="301"]
-  Click Element                css:[name="290"]
-  Click Element                css:[name="291"]
-  Click Element                css:[name="292"]
-  Click Element                css:[name="293"]
-  Click Element                name:choose-selectedItems
-  Element Should Contain       name:locations                   ارجمند، اسلامشهر، اندیشه، آبسرد
+  Go To Location Job
+  Select Alborz Province
+  Select Karaj City
+  Select Multi Neighborhood Of Karaj
+  Submit Selected Locations
 
 Edit Image Profile
   ${choose_image_action}       Get WebElements                  name:choose-image-action
   Click Element                ${choose_image_action}[1]
-  Wait Until Page Contains     افزودن تصویر جدید                timeout=2s
+  Wait Until Page Contains     انتخاب تصویر                     timeout=2s
   Choose File                  name:pick-image                  ${image_profile}
   Wait Until Page Contains     ثبت عکس                          timeout=2s
   Click Element                name:accept-crop
   Wait Until Page Contains     عکس شما با موفقیت ثبت شد         timeout=15s
+
+Go To Location Job
+  Click Element                name:locations-trigger
+  Wait Until Page Contains Element                              css:[role="document"]
+  Page Should Contain          انتخاب
+
+Select Alborz Province
+  Input Text                   name:search-input-html           البرز
+  Click Element                css:[name="5"]
+  Wait Until Page Contains Element                              css:[name="229"]
+
+Select Karaj City
+  Click Element                css:[name="229"]
+  Wait Until Page Contains Element                              css:[name="n6975"]
+
+Select Multi Neighborhood Of Karaj
+  Click Element                css:[name="n3981"]
+  Click Element                css:[name="n3983"]
+  Click Element                css:[name="n4000"]
+  Click Element                css:[name="n4005"]
+  Click Element                css:[name="n4011"]
+
+Submit Selected Locations
+  Click Element                name:choose-selectedItems
+  Element Should Contain       name:locations                   باغستان، جهانشهر، عظیمیه، گلشهر، مهرویلا
 
 Submit Profile Information
   Click Element                name:form-submit-action
