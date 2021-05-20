@@ -142,3 +142,7 @@ Generate Random username
 Generate Random AboutMe Sentence
   ${aboutme}                          Sentence                         nb_words=30
   Set Suite Variable                  ${Random_AboutMe_Sentence}       ${aboutme}
+
+Go To My Packages Page
+  Click Element                       name:list-item-packageManagement
+  Wait Until Page Contains            موجودی من                       timeout=2s
