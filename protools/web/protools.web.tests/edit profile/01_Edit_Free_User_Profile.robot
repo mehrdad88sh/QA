@@ -14,30 +14,27 @@ Edit Free User Profile
 
 *** Keywords ***
 Go To User Profile Page
-  Click Element                name:profile-name
-  ${Status}                    Run Keyword And Return Status   Wait Until Page Contains Element    name:close-action   timeout=2s
-  Run Keyword If               ${Status}                       Click Button                        name:close-action
-  Wait Until Page Contains     عضو شیپور                       timeout=2s
+  Click Element                ${profile_name_ID}
+  Close Level Up Popup Message
+  Wait Until Page Contains     عضو شیپور                        timeout=2s
 
 Go To Edit Profile Page
-  Click Element                name:edit_profile
-  Wait Until Page Contains     اطلاعات شخصی                     timeout=2s
+  Click Element                ${edit_profile_ID}
+  Wait Until Page Contains     اطلاعات شخصی                      timeout=2s
 
 Complete User Information
   Fill Profile Name
-  Fill About Me
+  Fill AboutMe
   Fill Location Job
   Edit Image Profile
 
 Fill Profile Name
-  ${prefix_male}               Prefix
-  ${first_name}                First Name
-  ${last_name}                 Last Name
-  Input Text                   name:name                        ${prefix_male} ${first_name} ${last_name}
+  Generate Random User Name
+  Input Text                   name:name                        ${Random_User_Name}
 
-Fill About Me
-  ${aboutme}                   Sentence
-  Input Text                   name:aboutMe                     ${aboutme}
+Fill AboutMe
+  Generate Random AboutMe Sentence
+  Input Text                   ${aboutMe_ID}                     ${Random_AboutMe_Sentence}
 
 Fill Location Job
   Go To Location Job
@@ -50,43 +47,47 @@ Edit Image Profile
   ${choose_image_action}       Get WebElements                  name:choose-image-action
   Click Element                ${choose_image_action}[1]
   Wait Until Page Contains     انتخاب تصویر                     timeout=2s
-  Choose File                  name:pick-image                  ${image_profile}
+  Choose File                  ${Add_New_Image}                 ${image_profile}
   Wait Until Page Contains     ثبت عکس                          timeout=2s
-  Click Element                name:accept-crop
+  Click Element                ${Sumbit_Image}
   Wait Until Page Contains     عکس شما با موفقیت ثبت شد         timeout=15s
 
 Go To Location Job
-  Click Element                name:locations-trigger
+  Click Element                ${Location_Job_ID}
   Wait Until Page Contains Element                              css:[role="document"]
   Page Should Contain          انتخاب
 
 Select Alborz Province
-  Input Text                   name:search-input-html           البرز
-  Click Element                css:[name="5"]
-  Wait Until Page Contains Element                              css:[name="229"]
+  Input Text                   ${Search_Input_Location}         البرز
+  Click Element                ${Alborz_ID}
+  Wait Until Page Contains Element                              ${Karaj_ID}
 
 Select Karaj City
-  Click Element                css:[name="229"]
-  Wait Until Page Contains Element                              css:[name="n6975"]
+  Click Element                ${Karaj_ID}
+  Wait Until Page Contains Element                              ${Golshahr_ID}
 
 Select Multi Neighborhood Of Karaj
-  Click Element                css:[name="n3981"]
-  Click Element                css:[name="n3983"]
-  Click Element                css:[name="n4000"]
-  Click Element                css:[name="n4005"]
-  Click Element                css:[name="n4011"]
+  Click Element                css:[name="n3981"]               #باغستان
+  Click Element                css:[name="n3983"]               #جهانشهر
+  Click Element                css:[name="n4000"]               #عظیمیه
+  Click Element                css:[name="n4005"]               #گلشهر
+  Click Element                css:[name="n4011"]               #مهرویلا
 
 Submit Selected Locations
   Click Element                name:choose-selectedItems
   Element Should Contain       name:locations                   باغستان، جهانشهر، عظیمیه، گلشهر، مهرویلا
 
 Submit Profile Information
-  Click Element                name:form-submit-action
+  Click Element                ${Submit_Button}
   Wait Until Page Contains     عضو شیپور                        timeout=2s
-  Page Should Contain          محدوده کاری                      timeout=2s
-  Page Should Contain          درباره من                        timeout=2s
+  Page Should Contain          محدوده کاری                      timeout=3s
+  Page Should Contain          درباره من                        timeout=3s
 
 Validate Gamification Scores
-  Click Element               name:score
-  Page Should Contain         امتیاز برای تعریف نام پروفایل
-  Page Should Contain         امتیاز برای بارگذاری عکس پروفایل
+  Click Element                ${Your_Scores}
+  Page Should Contain          امتیاز برای تعریف نام پروفایل
+  Page Should Contain          امتیاز برای بارگذاری عکس پروفایل
+
+Close Level Up Popup Message
+  ${Status}                    Run Keyword And Return Status   Wait Until Page Contains Element    ${Close_Button}   timeout=2s
+  Run Keyword If               ${Status}                       Click Button                        ${Close_Button}
