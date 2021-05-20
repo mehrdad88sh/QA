@@ -22,6 +22,12 @@ ${Search_Input_Location}              name:search-input-html
 ${Alborz_ID}                          css:[name="5"]
 ${Karaj_ID}                           css:[name="229"]
 ${Golshahr_ID}                        css:[name="n4005"]
+${Submit_Button}                      name:form-submit-action
+${Close_Button}                       name:close-action
+${Add_New_Image}                      name:pick-image
+${Sumbit_Image}                       name:accept-crop
+${Your_Scores}                        name:score
+${Rating}                             name:level
 
 *** Keywords ***
 Open Browser On Staging
@@ -32,35 +38,35 @@ Open Browser On Staging
 Login Alunak
   Set Log Level                       trace
   Open Browser On Staging
-  Click Element                       name=alounak
+  Click Element                       name:alounak
   Wait Until Page Contains            با آلونک کسب و کار خود را متحول کنید
-  Click Element                       name=intro-action
+  Click Element                       name:intro-action
   Wait Until Page Contains            ورود / ثبت‌نام
   Input Random Mobile
-  Click Element                       name=submit
+  Click Element                       name:submit
   Wait Until Page Contains            تائید شماره موبایل
   Get Code From Mock Server
   Input Verification Code
   Wait Until Page Contains Element    css:[role="document"]            timeout=2s
-  ${Status}                           Run Keyword And Return Status    Wait Until Page Contains Element   name=close-action
-  Run Keyword If                      ${Status}==${TRUE}               Click Button                       name=close-action
+  ${Status}                           Run Keyword And Return Status    Wait Until Page Contains Element   ${Close_Button}
+  Run Keyword If                      ${Status}                        Click Button                       ${Close_Button}
   Wait Until Page Contains            در اینجا فایل خود را ثبت و مدیریت کنید.
 
 Login Sheypoor Car
   Set Log Level                       trace
   Open Browser On Staging
-  Click Element                       name=sheypoor-cars
+  Click Element                       name:sheypoor-cars
   Wait Until Page Contains            با شیپور کسب و کار خود را متحول کنید
-  Click Element                       name=intro-action
+  Click Element                       name:intro-action
   Wait Until Page Contains            ورود / ثبت‌نام
   Input Random Mobile
-  Click Element                       name=submit
+  Click Element                       name:submit
   Wait Until Page Contains            تائید شماره موبایل
   Get Code From Mock server
   Input Verification Code
   Wait Until Page Contains Element    css:[role="document"]
-  ${Status}                           Run Keyword And Return Status    Wait Until Page Contains Element  name=close-action
-  Run Keyword If                      ${Status}==${TRUE}               Click Button                      name=close-action
+  ${Status}                           Run Keyword And Return Status    Wait Until Page Contains Element  ${Close_Button}
+  Run Keyword If                      ${Status}                        Click Button                      ${Close_Button}
   Wait Until Page Contains            در اینجا فایل خود را ثبت و مدیریت کنید.
 
 Input Random Mobile
@@ -102,7 +108,7 @@ Set Location
 
 Submit File
   Execute JavaScript                  window.scrollTo(0,0)
-  Click Element                       name:form-submit-action
+  Click Element                       ${Submit_Button}
   Wait Until Keyword Succeeds         3x  2s  Page Should Contain     فایل شما با موفقیت ثبت شد
   Click Element                       name:file-management-action
   Wait Until Page Contains Element    css:[name="search-input-html"]  timeout=2s
