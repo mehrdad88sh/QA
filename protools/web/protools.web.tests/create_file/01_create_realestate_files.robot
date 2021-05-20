@@ -18,7 +18,7 @@ ${image_path}                         ${CURDIR}${/}..\/..\/resources\/images\/45
 Create Files In Realestate Categories
   Login Alunak
   Create File In Rent And Deposit Category
-  # Create File In Buying And Selling Category
+  Create File In Buying And Selling Category
 
 *** Keywords ***
 Create File In Rent And Deposit Category
@@ -32,11 +32,11 @@ Create File In Rent And Deposit Category
 
 Create File In Buying And Selling Category
   Go To Submit File Page
+  Upload RealEstate Images
   Select Buying And Selling Category
   Set Location
   Set Buying And Selling Attributes
   Set Personal Notebook
-  Upload RealEstate Images
   Submit File
 
 Select Rent And Deposit Category
