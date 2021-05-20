@@ -151,7 +151,7 @@ Go To My Packages Page
   Wait Until Page Contains            موجودی من                       timeout=2s
 
 Upload RealEstate Images
-  FOR              ${INDEX}           IN RANGE        4
+  FOR                                 ${INDEX}   IN RANGE    4
    Choose File                        name:select-images-action       ${images_Realestate}/0${INDEX}.jpg
   END
   Wait Until Page Does Not Contain Element                            name:image-upload-loading           timeout=20s
