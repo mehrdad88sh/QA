@@ -24,9 +24,9 @@ Select Instant Tag Package
 
 Compare Selected Package With its Price
   ${price_value}                      Get WebElements                 name=simple-package-instant_tag-price
-  ${priceA}=                          Get Text                        ${price_value}[1]
-  ${priceB}=                          Get Text                        ${Submit_Button}
-  Should Be Equal                      پرداخت ${priceA} تومان         ${priceB}
+  ${priceA}                           Get Text                        ${price_value}[1]
+  ${priceB}                           Get Text                        ${Submit_Button}
+  Should Be Equal                     پرداخت ${priceA} تومان          ${priceB}
   Click Element                       ${Submit_Button}
 
 Successful Payment In Sheypoor
