@@ -14,7 +14,7 @@ Edit Premium User Profile
 
 *** Keywords ***
 Upgrade To Premium Profile
-  Click Element                       //*[@id="react-view"]/div/nav/div[2]/div/li/div/span
+  Click Element                       ${Premium_Button} 
   Page Should Contain                 ارتقاء پروفایل
   Wait Until Page Contains            ۱۵۰,۰۰۰ تومان
   Click Button                        پرداخت
