@@ -18,15 +18,11 @@ Buy Spacial Package
   Validation Packages In Protools
 
 *** Keywords ***
-Go To My Packages Page
-  Click Element                       name:list-item-packageManagement
-  Wait Until Page Contains            موجودی من                       timeout=2s
-
 Select Spacial Package
   Click Button                        name:packageManage-action
-  Wait Until Page Contains Element    name:special-package            timeout=2s      #نمایش مودال خرید بسته
+  Wait Until Page Contains Element    name:special-package            timeout=2s     
   Click Element                       name:special-package
-  Page Should Contain Radio Button    //input[@type='radio' and @value='501500']
+  Wait Until Page Contains            پرداخت ۵۰۱,۵۰۰ تومان
 
 Compare Selected Package With its Price
   ${price_value}                      Get WebElements                 name=simple-package-special-price
