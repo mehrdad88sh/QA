@@ -29,15 +29,17 @@ Create File In Rent And Deposit Category
   Set Rent And Deposit Attributes
   Set Personal Notebook
   Submit File
+  Open File And Check Images
 
 Create File In Buying And Selling Category
   Go To Submit File Page
-  Upload RealEstate Images
   Select Buying And Selling Category
   Set Location
+  Upload RealEstate Images
   Set Buying And Selling Attributes
   Set Personal Notebook
   Submit File
+  Open File And Check Images
 
 Select Rent And Deposit Category
   Click Element                       name:category-trigger
@@ -250,3 +252,12 @@ Set Personal Notebook
   Input Text                          name:a69535             ${address}
   Click Button                        name:apply-action
   Execute JavaScript                  window.scrollTo(0,0)
+
+Open File And Check Images
+  Click Element                       name:file-item-0
+  Wait Until Page Contains            آگهی نشده
+  Reload Page
+  FOR                                 ${INDEX}   IN RANGE    3
+    Click Element                     name:next-slide
+  END
+  Element Should Contain              class:slider-control-bottomcenter     ۴ از ۴
