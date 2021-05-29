@@ -33,7 +33,7 @@ ${Premium_Button}                     //*[@id="react-view"]/div/nav/div[2]/div/l
 
 *** Keywords ***
 Open Browser On Staging
-    Open Browser                      ${pr}                      browser=chrome
+    Open Browser                      ${staging}                      browser=chrome
     Maximize Browser Window
     Wait Until Page Contains          با ثبت نام در شیپور از مزایای کسب و کار اینترنتی بهره‌مند شوید       timeout=2s
 
@@ -77,7 +77,7 @@ Input Random Mobile
     Input Text                        name:cellphone                   ${Random_User_Mobile}
 
 Get Code From Mock Server
-   Execute Javascript                 window.open('${prMock}=${Random_User_Mobile}');
+   Execute Javascript                 window.open('${stagingMock}=${Random_User_Mobile}');
    Switch Window                      NEW
    ${mycode}                          Get Text                         css:pre
    ${mycode}                          Get Regexp Matches               ${mycode}     \\d{4}
@@ -150,7 +150,14 @@ Go To My Packages Page
   Wait Until Page Contains            موجودی من                       timeout=2s
 
 Upload RealEstate Images
-  FOR                                 ${INDEX}   IN RANGE    3
+  FOR                                 ${INDEX}   IN RANGE    4
+   Execute JavaScript                 window.document.getElementsByName('select-images-action')[0].value='${EMPTY}'
    Choose File                        name:select-images-action       ${images_Realestate}/0${INDEX}.jpg
+   Wait Until Page Does Not Contain Element                           name:image-upload-loading              timeout=20s
+   Wait Until Keyword Succeeds        3x   2s        Check Trash Icon For Each Image                         ${INDEX+1}
   END
-  Wait Until Page Does Not Contain Element                            name:image-upload-loading           timeout=20s
+
+Check Trash Icon For Each Image
+  [Arguments]                         ${count}
+      ${TrashIcon}                    Get Element Count               name:form-delete-action
+      ${Status}                       Should Be Equal                 ${count}       ${TrashIcon}
