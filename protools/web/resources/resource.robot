@@ -1,5 +1,5 @@
 *** Settings ***
-Library                               SeleniumLibrary
+Library                               SeleniumLibrary                 timeout=30s
 Library                               Collections
 Library                               String
 Library                               FakerLibrary                    locale=fa_IR
@@ -114,7 +114,7 @@ Submit File
   Wait Until Keyword Succeeds         3x  2s  Page Should Contain      فایل شما با موفقیت ثبت شد
   Click Element                       name:file-management-action
   Reload Page
-  Wait Until Page Contains Element    css:[name="search-input-html"]   timeout=2s
+  Wait Until Page Contains Element    css:[name="search-input-html"]   timeout=3s
   Page Should Contain Element         name:file-item-0
 
 Go To Submit File Page
