@@ -23,7 +23,7 @@ Go To Edit Profile Page
   Wait Until Page Contains     اطلاعات شخصی                      timeout=2s
 
 Complete User Information
-  Edit Image Profile
+  Add Image Profile
   Fill Profile Name
   Fill Location Job
 
@@ -38,7 +38,7 @@ Fill Location Job
   Select Multi Neighborhood Of Karaj
   Submit Selected Locations
 
-Edit Image Profile
+Add Image Profile
   ${choose_image_action}       Get WebElements                  name:choose-image-action
   Click Element                ${choose_image_action}[1]
   Wait Until Page Contains     انتخاب تصویر                     timeout=2s
