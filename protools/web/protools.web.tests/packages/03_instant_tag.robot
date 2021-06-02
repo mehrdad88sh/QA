@@ -12,7 +12,7 @@ Buy Instant Tag Package
   Go To My Packages Page
   Select Instant Tag Package
   Compare Selected Package With its Price
-  Successful Payment In Sheypoor
+  Successful Payment In Sheypoor      بسته‌ی هیبریدی: نشان فوری
   Validation Packages In Protools
 
 *** Keywords ***
@@ -28,13 +28,6 @@ Compare Selected Package With its Price
   ${priceB}                           Get Text                        ${Submit_Button}
   Should Be Equal                     پرداخت ${priceA} تومان          ${priceB}
   Click Element                       ${Submit_Button}
-
-Successful Payment In Sheypoor
-  Wait Until Page Contains            درحال انتقال به درگاه پرداخت    timeout=2s
-  Click Element                       class:button-bar
-  Wait Until Page Contains            پرداخت شما با موفقیت انجام شد.  timeout=2s
-  Element Text Should Be              class:text-right                بسته‌ی هیبریدی: نشان فوری
-  Click Link                          بازگشت به برنامه
 
 Validation Packages In Protools
   Wait Until Page Contains            نشان فوری                       timeout=2s
