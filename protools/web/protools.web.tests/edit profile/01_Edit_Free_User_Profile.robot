@@ -23,18 +23,13 @@ Go To Edit Profile Page
   Wait Until Page Contains     اطلاعات شخصی                      timeout=2s
 
 Complete User Information
-  Fill Profile Name
-  Fill AboutMe
-  Fill Location Job
   Edit Image Profile
+  Fill Profile Name
+  Fill Location Job
 
 Fill Profile Name
-  Generate Random User Name
+  Generate Random username
   Input Text                   name:name                        ${Random_User_Name}
-
-Fill AboutMe
-  Generate Random AboutMe Sentence
-  Input Text                   ${aboutMe_ID}                     ${Random_AboutMe_Sentence}
 
 Fill Location Job
   Go To Location Job
@@ -80,8 +75,6 @@ Submit Selected Locations
 Submit Profile Information
   Click Element                ${Submit_Button}
   Wait Until Page Contains     عضو شیپور                        timeout=2s
-  Page Should Contain          محدوده کاری                      timeout=3s
-  Page Should Contain          درباره من                        timeout=3s
 
 Validate Gamification Scores
   Click Element                ${Your_Scores}
