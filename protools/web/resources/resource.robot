@@ -14,7 +14,7 @@ Variables                             ../variables/Variables.py
 ${Apartment}                          آپارتمان
 ${Vila}                               ویلا
 ${image_profile_path}                 ${CURDIR}/images/imageprofile.jpg
-${images_Realestate_path_path}             ${CURDIR}/images
+${images_Realestate_path_path}        ${CURDIR}/images
 ${profile_name_ID}                    name:profile-name
 ${edit_profile_ID}                    name:edit_profile
 ${aboutMe_ID}                         name:aboutMe
@@ -161,3 +161,11 @@ Check Trash Icon For Each Image
   [Arguments]                         ${count}
       ${TrashIcon}                    Get Element Count               name:form-delete-action
       ${Status}                       Should Be Equal                 ${count}       ${TrashIcon}
+
+Successful Payment In Sheypoor
+  [Arguments]                         ${Package_Type}
+  Wait Until Page Contains            درحال انتقال به درگاه پرداخت    timeout=2s
+  Click Element                       class:button-bar
+  Wait Until Page Contains            پرداخت شما با موفقیت انجام شد.  timeout=2s
+  Element Text Should Be              class:text-right                ${Package_Type}
+  Click Link                          بازگشت به برنامه
