@@ -13,15 +13,6 @@ Edit Free User Profile
   Validate Gamification Scores
 
 *** Keywords ***
-Go To User Profile Page
-  Click Element                ${profile_name_ID}
-  Close Level Up Popup Message
-  Wait Until Page Contains     عضو شیپور                        timeout=2s
-
-Go To Edit Profile Page
-  Click Element                ${edit_profile_ID}
-  Wait Until Page Contains     اطلاعات شخصی                      timeout=2s
-
 Complete User Information
   Add Image Profile
   Fill Profile Name
@@ -80,7 +71,3 @@ Validate Gamification Scores
   Click Element                ${Your_Scores}
   Page Should Contain          امتیاز برای تعریف نام پروفایل
   Page Should Contain          امتیاز برای بارگذاری عکس پروفایل
-
-Close Level Up Popup Message
-  ${Status}                    Run Keyword And Return Status   Wait Until Page Contains Element    ${Close_Button}   timeout=2s
-  Run Keyword If               ${Status}                       Click Button                        ${Close_Button}
