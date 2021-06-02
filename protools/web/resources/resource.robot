@@ -13,8 +13,8 @@ Variables                             ../variables/Variables.py
 &{VilaID}                             RD=name:440479                  BS=name:440472
 ${Apartment}                          آپارتمان
 ${Vila}                               ویلا
-${image_profile}                      ${CURDIR}/images/imageprofile.jpg
-${images_Realestate}                  ${CURDIR}/images
+${image_profile_path}                 ${CURDIR}/images/imageprofile.jpg
+${images_Realestate_path_path}             ${CURDIR}/images
 ${profile_name_ID}                    name:profile-name
 ${edit_profile_ID}                    name:edit_profile
 ${aboutMe_ID}                         name:aboutMe
@@ -152,7 +152,7 @@ Go To My Packages Page
 Upload RealEstate Images
   FOR                                 ${INDEX}   IN RANGE    4
    Execute JavaScript                 window.document.getElementsByName('select-images-action')[0].value='${EMPTY}'
-   Choose File                        name:select-images-action       ${images_Realestate}/0${INDEX}.jpg
+   Choose File                        name:select-images-action       ${images_Realestate_path}/0${INDEX}.jpg
    Wait Until Page Does Not Contain Element                           name:image-upload-loading              timeout=20s
    Wait Until Keyword Succeeds        3x   2s        Check Trash Icon For Each Image                         ${INDEX+1}
   END

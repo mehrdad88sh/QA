@@ -42,7 +42,7 @@ Add Image Profile
   ${choose_image_action}       Get WebElements                  name:choose-image-action
   Click Element                ${choose_image_action}[1]
   Wait Until Page Contains     انتخاب تصویر                     timeout=2s
-  Choose File                  ${Add_New_Image}                 ${image_profile}
+  Choose File                  ${Add_New_Image}                 ${image_profile_path}
   Wait Until Page Contains     ثبت عکس                          timeout=2s
   Click Element                ${Sumbit_Image}
   Wait Until Page Contains     عکس شما با موفقیت ثبت شد         timeout=15s
