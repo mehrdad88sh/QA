@@ -9,8 +9,8 @@ Edit Premium User Profile
   Upgrade User To Premium Profile
   Go To Edit Profile Page
   Complete User Information
-  # Submit Profile Information
-  # Validate Gamification Scores
+  Submit Profile Information
+  Validate Gamification Scores
 
 *** Keywords ***
 Complete User Information
@@ -19,10 +19,14 @@ Complete User Information
   Fill Location Job
   Fill Telegram ID
   Fill Instagram ID
-  Generate Random AboutMe Sentence
+  Fill AboutMe
 
 Fill Telegram ID
-  Input Text    name:telegram    Sheypoor
+  Input Text                         name:telegram         Sheypoor
 
 Fill Instagram ID
-  Input Text    name:instagram    Sheypoor   
+  Input Text                         name:instagram        Sheypoor
+
+Fill AboutMe
+  Generate Random AboutMe Sentence
+  Input Text                         ${aboutMe_ID}         ${Random_AboutMe_Sentence}
