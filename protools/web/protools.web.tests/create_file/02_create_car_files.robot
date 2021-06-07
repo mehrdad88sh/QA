@@ -20,6 +20,7 @@ Create File In Car Category
   Select Pride Category
   Set Location
   Set Car Attributes
+  Fill File Description
   Set More Detail Car
   Upload Image
   Submit File
@@ -29,6 +30,7 @@ Create File In Motorcycle Category
   Set Motorcycle Category
   Set Location
   Set Motorcycle Attributes
+  Fill File Description
   Set Motorcycle More Detail
   Submit File
 
@@ -38,9 +40,7 @@ Create Listing
   Wait Until Keyword Succeeds         3x     2s                        Page Should Contain  آگهی نشده
   Click Button                        name=advertise-action
   Wait Until Page Contains            توضیحات                          timeout=2s
-  ${description}                      Sentence                         nb_words=20
-  Sleep    2s
-  Input Text                          id=description                   ${description}
+  Fill File Description
   Click Button                        name=apply-action
   Wait Until Page Contains            آگهی شما با موفقیت ثبت شد        timeout=2s
   Click Element                       name=listing-management-action
