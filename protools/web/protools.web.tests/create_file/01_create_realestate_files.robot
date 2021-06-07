@@ -27,6 +27,7 @@ Create File In Rent And Deposit Category
   Select Rent And Deposit Category
   Set Location
   Set Rent And Deposit Attributes
+  Fill File Description
   Set Personal Notebook
   Submit File
   Open File And Check Images
@@ -49,7 +50,7 @@ Select Rent And Deposit Category
   Wait Until Page Contains Element    select-a68096             timeout=2s
 
 Set Rent And Deposit Attributes
-  Select RealEstate Type             &{RealEstateType}[RD]   &{ApartmentID}[RD]   ${Apartment}
+  Select RealEstate Type              ${RealEstateType}[RD]     ${ApartmentID}[RD]    ${Apartment}
   Year Of Construction
   Select Parking For Rent And Deposit Category
   Select Warehouse For Rent And Deposit Category
@@ -85,7 +86,7 @@ Select Buying And Selling Category
   Wait Until Page Contains Element    select-a68094             timeout=2s
 
 Set Buying And Selling Attributes
-  Select RealEstate Type              &{RealEstateType}[BS]   &{VilaID}[BS]   ${Vila}
+  Select RealEstate Type              ${RealEstateType}[BS]   ${VilaID}[BS]   ${Vila}
   Year Of Construction
   Select Parking For Buying And Selling Category
   Select Warehouse For Buying And Selling Category
