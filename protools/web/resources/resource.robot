@@ -250,4 +250,3 @@ Upgrade User To Premium Profile
 Fill File Description
   ${File_Description}                 Sentence                         nb_words=30
   Input Text                          css:[name=description]           ${File_Description}
-  Sleep    2s
