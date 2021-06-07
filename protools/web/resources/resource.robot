@@ -1,16 +1,16 @@
 *** Settings ***
-Library                               SeleniumLibrary                 timeout=30s
+Library                               SeleniumLibrary                  timeout=30s
 Library                               Collections
 Library                               String
-Library                               FakerLibrary                    locale=fa_IR
+Library                               FakerLibrary                     locale=fa_IR
 Library                               splitwords
 Library                               OperatingSystem
 Variables                             ../variables/Variables.py
 
 *** Variables ***
-&{RealEstateType}                     RD=select-a68096                BS=select-a68094
-&{ApartmentID}                        RD=name:440477                  BS=name:440470
-&{VilaID}                             RD=name:440479                  BS=name:440472
+&{RealEstateType}                     RD=select-a68096                 BS=select-a68094
+&{ApartmentID}                        RD=name:440477                   BS=name:440470
+&{VilaID}                             RD=name:440479                   BS=name:440472
 ${Apartment}                          آپارتمان
 ${Vila}                               ویلا
 ${image_profile_path}                 ${CURDIR}/images/imageprofile.jpg
@@ -33,7 +33,7 @@ ${Premium_Button}                     //*[@id="react-view"]/div/nav/div[2]/div/l
 
 *** Keywords ***
 Open Browser On Staging
-  Open Browser                        ${staging}                      browser=chrome
+  Open Browser                        ${staging}                       browser=chrome
   Maximize Browser Window
   Wait Until Page Contains            با ثبت نام در شیپور از مزایای کسب و کار اینترنتی بهره‌مند شوید       timeout=2s
 
@@ -130,8 +130,8 @@ Apply More Detail
   Click Button                        name:apply-action
 
 Select Form Clear Button
-  Wait Until Keyword Succeeds         3x   2s                          Click Element                       name:form-clear-action
-  Wait Until Keyword Succeeds         3x   2s                          Wait Until Page Contains Element    css:[role="document"]      timeout=2s
+  Wait Until Keyword Succeeds         3x   2s                          Click Element                      name:form-clear-action
+  Wait Until Keyword Succeeds         3x   2s                          Wait Until Page Contains Element   css:[role="document"]      timeout=2s
   Wait Until Page Contains            از انصراف اطمینان دارید؟         timeout=2s
   Click Element                       name:confirm-accept-action
 
@@ -139,59 +139,59 @@ Generate Random username
   ${prefix_name}                      Prefix
   ${first_name}                       First Name
   ${last_name}                        Last Name
-  Set Suite Variable                  ${Random_User_Name}             ${prefix_name} ${first_name} ${last_name}
+  Set Suite Variable                  ${Random_User_Name}              ${prefix_name} ${first_name} ${last_name}
 
 Generate Random AboutMe Sentence
-  ${aboutme}                          Sentence                        nb_words=30
-  Set Suite Variable                  ${Random_AboutMe_Sentence}      ${aboutme}
+  ${aboutme}                          Sentence                         nb_words=30
+  Set Suite Variable                  ${Random_AboutMe_Sentence}       ${aboutme}
 
 Go To My Packages Page
   Click Element                       name:list-item-packageManagement
-  Wait Until Page Contains            موجودی من                       timeout=2s
+  Wait Until Page Contains            موجودی من                        timeout=2s
 
 Upload RealEstate Images
   FOR                                 ${INDEX}   IN RANGE    4
    Execute JavaScript                 window.document.getElementsByName('select-images-action')[0].value='${EMPTY}'
-   Choose File                        name:select-images-action       ${images_Realestate_path}/0${INDEX}.jpg
-   Wait Until Page Does Not Contain Element                           name:image-upload-loading              timeout=20s
-   Wait Until Keyword Succeeds        3x   2s        Check Trash Icon For Each Image                         ${INDEX+1}
+   Choose File                        name:select-images-action        ${images_Realestate_path}/0${INDEX}.jpg
+   Wait Until Page Does Not Contain Element                            name:image-upload-loading          timeout=20s
+   Wait Until Keyword Succeeds        3x   2s  Check Trash Icon For Each Image                            ${INDEX+1}
   END
 
 Check Trash Icon For Each Image
   [Arguments]                         ${count}
-      ${TrashIcon}                    Get Element Count               name:form-delete-action
-      ${Status}                       Should Be Equal                 ${count}       ${TrashIcon}
+      ${TrashIcon}                    Get Element Count                name:form-delete-action
+      ${Status}                       Should Be Equal                  ${count}       ${TrashIcon}
 
 Successful Payment In Sheypoor
   [Arguments]                         ${Package_Type}
-  Wait Until Page Contains            درحال انتقال به درگاه پرداخت    timeout=2s
+  Wait Until Page Contains            درحال انتقال به درگاه پرداخت     timeout=2s
   Click Element                       class:button-bar
-  Wait Until Page Contains            پرداخت شما با موفقیت انجام شد.  timeout=2s
-  Element Text Should Be              class:text-right                ${Package_Type}
+  Wait Until Page Contains            پرداخت شما با موفقیت انجام شد.   timeout=2s
+  Element Text Should Be              class:text-right                 ${Package_Type}
   Click Link                          بازگشت به برنامه
 
 Go To User Profile Page
   Click Element                       ${profile_name_ID}
   Close Level Up Popup Message
-  Wait Until Page Contains            عضو شیپور                       timeout=2s
+  Wait Until Page Contains            عضو شیپور                        timeout=2s
 
 Go To Edit Profile Page
   Click Element                       ${edit_profile_ID}
   Close Level Up Popup Message
-  Wait Until Page Contains            اطلاعات شخصی                     timeout=2s
+  Wait Until Page Contains            اطلاعات شخصی                      timeout=2s
 
 Add Image Profile
-  ${choose_image_action}       Get WebElements                  name:choose-image-action
-  Click Element                ${choose_image_action}[1]
-  Wait Until Page Contains     انتخاب تصویر                     timeout=2s
-  Choose File                  ${Add_New_Image}                 ${image_profile_path}
-  Wait Until Page Contains     ثبت عکس                          timeout=2s
-  Click Element                ${Sumbit_Image}
-  Wait Until Page Contains     عکس شما با موفقیت ثبت شد         timeout=15s
+  ${choose_image_action}              Get WebElements                  name:choose-image-action
+  Click Element                       ${choose_image_action}[1]
+  Wait Until Page Contains            انتخاب تصویر                     timeout=2s
+  Choose File                         ${Add_New_Image}                 ${image_profile_path}
+  Wait Until Page Contains            ثبت عکس                          timeout=2s
+  Click Element                       ${Sumbit_Image}
+  Wait Until Page Contains            عکس شما با موفقیت ثبت شد         timeout=15s
 
 Fill Profile Name
   Generate Random username
-  Input Text                   name:name                        ${Random_User_Name}
+  Input Text                          name:name                        ${Random_User_Name}
 
 Fill Location Job
   Go To Location Job
@@ -201,48 +201,48 @@ Fill Location Job
   Submit Selected Locations
 
 Go To Location Job
-  Click Element                ${Location_Job_ID}
-  Wait Until Page Contains Element                              css:[role="document"]
-  Page Should Contain          انتخاب
+  Click Element                       ${Location_Job_ID}
+  Wait Until Page Contains Element                                     css:[role="document"]
+  Page Should Contain                 انتخاب
 
 Select Alborz Province
-  Input Text                   ${Search_Input_Location}         البرز
-  Click Element                ${Alborz_ID}
-  Wait Until Page Contains Element                              ${Karaj_ID}
+  Input Text                          ${Search_Input_Location}          البرز
+  Click Element                       ${Alborz_ID}
+  Wait Until Page Contains Element                                     ${Karaj_ID}
 
 Select Karaj City
-  Click Element                ${Karaj_ID}
-  Wait Until Page Contains Element                              ${Golshahr_ID}
+  Click Element                       ${Karaj_ID}
+  Wait Until Page Contains Element                                     ${Golshahr_ID}
 
 Select Multi Neighborhood Of Karaj
-  Click Element                css:[name="n3981"]               #باغستان
-  Click Element                css:[name="n3983"]               #جهانشهر
-  Click Element                css:[name="n4000"]               #عظیمیه
-  Click Element                css:[name="n4005"]               #گلشهر
-  Click Element                css:[name="n4011"]               #مهرویلا
+  Click Element                       css:[name="n3981"]               #باغستان
+  Click Element                       css:[name="n3983"]               #جهانشهر
+  Click Element                       css:[name="n4000"]               #عظیمیه
+  Click Element                       css:[name="n4005"]               #گلشهر
+  Click Element                       css:[name="n4011"]               #مهرویلا
 
 Submit Selected Locations
-  Click Element                name:choose-selectedItems
-  Element Should Contain       name:locations                   باغستان، جهانشهر، عظیمیه، گلشهر، مهرویلا
+  Click Element                       name:choose-selectedItems
+  Element Should Contain              name:locations                   باغستان، جهانشهر، عظیمیه، گلشهر، مهرویلا
 
 Submit Profile Information
-  Click Element                ${Submit_Button}
-  Wait Until Page Contains     عضو شیپور                        timeout=2s
+  Click Element                       ${Submit_Button}
+  Wait Until Page Contains            عضو شیپور                        timeout=2s
 
 Validate Gamification Scores
-  Click Element                ${Your_Scores}
-  Page Should Contain          امتیاز برای تعریف نام پروفایل
-  Page Should Contain          امتیاز برای بارگذاری عکس پروفایل
+  Click Element                       ${Your_Scores}
+  Page Should Contain                 امتیاز برای تعریف نام پروفایل
+  Page Should Contain                 امتیاز برای بارگذاری عکس پروفایل
 
 Close Level Up Popup Message
-  ${Status}                           Run Keyword And Return Status   Wait Until Page Contains Element    ${Close_Button}   timeout=2s
-  Run Keyword If                      ${Status}                       Click Button                        ${Close_Button}
+  ${Status}                           Run Keyword And Return Status    Wait Until Page Contains Element   ${Close_Button}   timeout=2s
+  Run Keyword If                      ${Status}                        Click Button                       ${Close_Button}
 
 Upgrade User To Premium Profile
   Click Element                       ${Premium_Button}
   Page Should Contain                 ارتقاء پروفایل
-  Wait Until Page Contains            ۱۵۰,۰۰۰ تومان                   timeout=2s
+  Wait Until Page Contains            ۱۵۰,۰۰۰ تومان                    timeout=2s
   Click Button                        پرداخت
   Successful Payment In Sheypoor      پروفایل حرفه‌ای
-  Wait Until Page Contains            اعتبار پروفایل حرفه‌ای           timeout=2s
+  Wait Until Page Contains            اعتبار پروفایل حرفه‌ای            timeout=2s
   Close Level Up Popup Message
