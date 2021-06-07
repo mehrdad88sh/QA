@@ -14,7 +14,7 @@ Variables                             ../variables/Variables.py
 ${Apartment}                          آپارتمان
 ${Vila}                               ویلا
 ${image_profile_path}                 ${CURDIR}/images/imageprofile.jpg
-${images_Realestate_path_path}        ${CURDIR}/images
+${images_Realestate_path}             ${CURDIR}/images
 ${profile_name_ID}                    name:profile-name
 ${edit_profile_ID}                    name:edit_profile
 ${aboutMe_ID}                         name:aboutMe
@@ -246,3 +246,8 @@ Upgrade User To Premium Profile
   Successful Payment In Sheypoor      پروفایل حرفه‌ای
   Wait Until Page Contains            اعتبار پروفایل حرفه‌ای            timeout=2s
   Close Level Up Popup Message
+
+Fill File Description
+  ${File_Description}                 Sentence                         nb_words=30
+  Input Text                          css:[name=description]           ${File_Description}
+  Sleep    2s
