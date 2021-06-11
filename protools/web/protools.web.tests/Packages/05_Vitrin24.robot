@@ -30,5 +30,5 @@ Compare Selected Package With its Price
   Click Element                       ${Submit_Button}
 
 Validation Packages In Protools
-  Wait Until Page Contains            بروزرسانی                                timeout=5s
+  Wait Until Page Contains            ویترین ۲۴ ساعته                          timeout=5s
   Element Text Should Be              ${Vitrin24_Package_Number}               ${vitrine_24}
