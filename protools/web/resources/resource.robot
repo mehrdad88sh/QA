@@ -30,6 +30,10 @@ ${Sumbit_Image}                       name:accept-crop
 ${Your_Scores}                        name:score
 ${Rating}                             name:level
 ${Premium_Button}                     //*[@id="react-view"]/div/nav/div[2]/div/li/div/span
+${PackageـPurchase_Button}            name:packageManage-action
+${Refresh_Package_Name}               name:simple-package-refresh
+${Refresh_Package_Price}              name=simple-package-refresh-price
+${Refresh_Package_Number}             name:refresh
 
 *** Keywords ***
 Open Browser On Staging
