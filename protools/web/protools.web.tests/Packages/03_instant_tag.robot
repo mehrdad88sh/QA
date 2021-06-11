@@ -18,17 +18,17 @@ Buy Instant Tag Package
 *** Keywords ***
 Select Instant Tag Package
   Click Button                        ${PackageـPurchase_Button}
-  Wait Until Page Contains Element    name:simple-package-instant_tag  timeout=5s
-  Click Element                       name:simple-package-instant_tag
+  Wait Until Page Contains Element    ${InstantTag_Package_Name}               timeout=5s
+  Click Element                       ${InstantTag_Package_Name}
   Wait Until Page Contains            پرداخت ۱۳۵,۰۰۰ تومان
 
 Compare Selected Package With its Price
-  ${price_value}                      Get WebElements                 name=simple-package-instant_tag-price
-  ${priceA}                           Get Text                        ${price_value}[1]
-  ${priceB}                           Get Text                        ${Submit_Button}
-  Should Be Equal                     پرداخت ${priceA} تومان          ${priceB}
+  ${InstantTag_Price}                 Get WebElements                          ${InstantTag_Package_Price}
+  ${Price_After_Discount}             Get Text                                 ${InstantTag_Price}[1]
+  ${Price_In_Button}                  Get Text                                 ${Submit_Button}
+  Should Be Equal                     پرداخت ${Price_After_Discount} تومان     ${Price_In_Button}
   Click Element                       ${Submit_Button}
 
 Validation Packages In Protools
-  Wait Until Page Contains            نشان فوری                       timeout=5s
-  Element Text Should Be              name:instant_tag                ${instant_tag}
+  Wait Until Page Contains            نشان فوری                                timeout=5s
+  Element Text Should Be              ${InstantTag_Package_Number}             ${instant_tag}
