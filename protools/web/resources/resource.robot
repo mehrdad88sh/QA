@@ -38,6 +38,12 @@ ${Special_Package_Name}               name:special-package
 ${Special_Package_Price}              name=simple-package-special-price
 ${Vitrin24_Package_Number}            name:vitrine_24
 ${Vitrin48_Package_Number}            name:vitrine_48
+${Limitation_Package_Name}            name:simple-package-limitation
+${Limitation_Package_Price}           name=simple-package-limitation-price
+${Limitation_Package_Number}          name:limitation
+${InstantTag_Package_Name}            name:simple-package-instant_tag
+${InstantTag_Package_Price}           name=simple-package-instant_tag-price
+${InstantTag_Package_Number}          name:instant_tag
 
 *** Keywords ***
 Open Browser On Staging
