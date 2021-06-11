@@ -20,7 +20,7 @@ Buy Spacial Package
 *** Keywords ***
 Select Spacial Package
   Click Button                        name:packageManage-action
-  Wait Until Page Contains Element    name:special-package            timeout=2s
+  Wait Until Page Contains Element    name:special-package            timeout=5s
   Click Element                       name:special-package
   Wait Until Page Contains            پرداخت ۵۰۱,۵۰۰ تومان
 
@@ -32,7 +32,7 @@ Compare Selected Package With its Price
   Click Element                       ${Submit_Button}
 
 Validation Packages In Protools
-  Wait Until Page Contains            بروزرسانی                       timeout=2s
+  Wait Until Page Contains            بروزرسانی                       timeout=5s
   Element Text Should Be              name:refresh                    ${refresh_item}
   Element Text Should Be              name:vitrine_24                 ${vitrin24}
   Element Text Should Be              name:vitrine_48                 ${vitrin48}

@@ -39,42 +39,42 @@ Create Listing
   Reload Page
   Wait Until Keyword Succeeds         3x     2s                        Page Should Contain  آگهی نشده
   Click Button                        name=advertise-action
-  Wait Until Page Contains            توضیحات                          timeout=2s
+  Wait Until Page Contains            توضیحات                          timeout=5s
   Fill File Description
   Click Button                        name=apply-action
-  Wait Until Page Contains            آگهی شما با موفقیت ثبت شد        timeout=2s
+  Wait Until Page Contains            آگهی شما با موفقیت ثبت شد        timeout=5s
   Click Element                       name=listing-management-action
-  Wait Until Page Contains Element    name:listing-item-0              timeout=2s
+  Wait Until Page Contains Element    name:listing-item-0              timeout=5s
 
 Go To Submit File Page
   Click Element                       name:list-item-new-file
-  Wait Until Page Contains            ثبت فایل و آگهی                  timeout=2s
+  Wait Until Page Contains            ثبت فایل و آگهی                  timeout=5s
 
 Select Pride Category
   Select Vehicle Category
   Select Pride Brand
 
 Select Vehicle Category
-  Wait Until Page Contains Element    name=category-trigger            timeout=2s
+  Wait Until Page Contains Element    name=category-trigger            timeout=5s
   Click Element                       name=category-trigger
   Page Should Contain Element         css:[role="document"]
   Click Element                       name=43627
-  Wait Until Page Contains Element    name=43976                      timeout=2s
+  Wait Until Page Contains Element    name=43976                      timeout=5s
 
 Select Pride Brand
   Click Element                       name=43976
   Textfield Value Should Be           name=category                    پراید
-  Wait Until Page Contains Element    select-a68143                   timeout=2s
+  Wait Until Page Contains Element    select-a68143                   timeout=5s
 
 Set Motorcycle Category
   Wait Until Keyword Succeeds         3x   3s                         Click Element      name:form-clear-action
-  Wait Until Page Contains            از انصراف اطمینان دارید؟        timeout=2s
+  Wait Until Page Contains            از انصراف اطمینان دارید؟        timeout=5s
   Click Element                       name:confirm-accept-action
   Page Should Contain Element         css:[tabindex="-1"]                                #دکمه ثبت فایل غیرفعال باشه
   Wait Until Keyword Succeeds         3x    2s                         Click Element     name:category-trigger
-  Wait Until Page Contains Element    css:[tabindex="-1"]              timeout=2s        #نمایش دسته بندی
+  Wait Until Page Contains Element    css:[tabindex="-1"]              timeout=5s        #نمایش دسته بندی
   Click Element                       name=43628
-  Wait Until Page Contains Element    name=45202                       timeout=2s
+  Wait Until Page Contains Element    name=45202                       timeout=5s
   Click Element                       name=45202
   Textfield Value Should Be           name=category                    هوندا
   Wait Until Page Contains            حجم موتور

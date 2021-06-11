@@ -44,10 +44,10 @@ Create File In Buying And Selling Category
 
 Select Rent And Deposit Category
   Click Element                       name:category-trigger
-  Wait Until Page Contains Element    css:[role="document"]     timeout=2s
+  Wait Until Page Contains Element    css:[role="document"]     timeout=5s
   Click Element                       name:43606
   Textfield Value Should Be           name:category             رهن و اجاره خانه و آپارتمان
-  Wait Until Page Contains Element    select-a68096             timeout=2s
+  Wait Until Page Contains Element    select-a68096             timeout=5s
 
 Set Rent And Deposit Attributes
   Select RealEstate Type              ${RealEstateType}[RD]     ${ApartmentID}[RD]    ${Apartment}
@@ -80,10 +80,10 @@ Set More Detail
 Select Buying And Selling Category
   Select Form Clear Button
   Click Element                       name:category-trigger
-  Wait Until Page Contains Element    css:[tabindex="-1"]       timeout=2s
+  Wait Until Page Contains Element    css:[tabindex="-1"]       timeout=5s
   Click Element                       name:43604
   Textfield Value Should Be           name:category             خرید و فروش خانه و آپارتمان
-  Wait Until Page Contains Element    select-a68094             timeout=2s
+  Wait Until Page Contains Element    select-a68094             timeout=5s
 
 Set Buying And Selling Attributes
   Select RealEstate Type              ${RealEstateType}[BS]   ${VilaID}[BS]   ${Vila}
@@ -97,17 +97,17 @@ Set Buying And Selling Attributes
 
 Select Geo Location Building
   Click Element                       name:a69252-trigger
-  Wait Until Page Contains            شمالی                     timeout=2s
+  Wait Until Page Contains            شمالی                     timeout=5s
   Select North Position
 
 Select Geo Location Unit
   Click Element                       name:a69257-trigger
-  Wait Until Page Contains            شرقی                     timeout=2s
+  Wait Until Page Contains            شرقی                     timeout=5s
   Select Eastern Position
 
 Number Of Parking
   Click Element                       select-a69262
-  Wait Until Page Contains Element    css:[role="listbox"]     timeout=2s
+  Wait Until Page Contains Element    css:[role="listbox"]     timeout=5s
   Click Element                       name:450100
   Element Text Should Be              select-a69262             بدون پارکینگ
 
@@ -119,13 +119,13 @@ Number Of Units Per Floor
 
 Resident Status
   Click Element                       select-a69277
-  Wait Until Page Contains Element    css:[role="listbox"]     timeout=2s
+  Wait Until Page Contains Element    css:[role="listbox"]     timeout=5s
   Click Element                       name:450111
   Element Text Should Be              select-a69277             مستأجر
 
 Deed Type
   Click Element                       select-a69282
-  Wait Until Page Contains Element    css:[role="listbox"]     timeout=2s
+  Wait Until Page Contains Element    css:[role="listbox"]     timeout=5s
   Click Element                       name:450122
   Element Text Should Be              select-a69282             بنیادی
 
@@ -134,7 +134,7 @@ Land Area
 
 Villa Type
   Click Element                       select-a69292
-  Wait Until Page Contains Element    css:[role="listbox"]     timeout=2s
+  Wait Until Page Contains Element    css:[role="listbox"]     timeout=5s
   Click Element                       name:450132
   Element Text Should Be              select-a69292             دوبلکس
 
@@ -169,7 +169,7 @@ Select Eastern Position
 Select RealEstate Type
   [Arguments]                         ${RealEstateType}        ${ApartmentID}    ${Apartment}
   Click Element                       ${RealEstateType}
-  Wait Until Page Contains Element    css:[role="document"]    timeout=2s
+  Wait Until Page Contains Element    css:[role="document"]    timeout=5s
   Click Element                       ${ApartmentID}
   Element Should Contain              ${RealEstateType}        ${Apartment}
 
@@ -185,13 +185,13 @@ Year Of Construction
 
 Set Year Of Construction For Rent And Deposit Category
   Click Element                       select-a92367
-  Wait Until Page Contains Element    css:[role="listbox"]      timeout=2s
+  Wait Until Page Contains Element    css:[role="listbox"]      timeout=5s
   Click Element                       name:455210
   Element Should Contain              select-a92367             1390
 
 Set Year Of Construction For Buying And Selling Category
   Click Element                       select-a92368
-  Wait Until Page Contains Element    css:[role="listbox"]      timeout=2s
+  Wait Until Page Contains Element    css:[role="listbox"]      timeout=5s
   Click Element                       name:455206
   Element Should Contain              select-a92368             1394
 
@@ -227,7 +227,7 @@ Set Price For Buying And Selling Category
 
 Number Of Rooms
   Click Element                       select-a68133
-  Wait Until Page Contains Element    css:[role="listbox"]      timeout=2s
+  Wait Until Page Contains Element    css:[role="listbox"]      timeout=5s
   Click Element                       name:439837
   Element Should Contain              select-a68133             بدون اتاق
 
@@ -243,7 +243,7 @@ Ability To Convert Rent And Deposit
 
 Set Personal Notebook
   Click Element                       css:[name="دفترچه شخصی"]
-  Wait Until Page Contains            اطلاعات این بخش فقط برای شما نمایش داده می‌شود و پر کردن آن اختیاری است     timeout=2s
+  Wait Until Page Contains            اطلاعات این بخش فقط برای شما نمایش داده می‌شود و پر کردن آن اختیاری است     timeout=5s
   ${first_name}                       First Name
   ${last_name}                        Last Name
   Input Text                          name:a69533             ${first_name} ${last_name}

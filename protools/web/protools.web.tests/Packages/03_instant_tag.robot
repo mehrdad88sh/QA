@@ -18,7 +18,7 @@ Buy Instant Tag Package
 *** Keywords ***
 Select Instant Tag Package
   Click Button                        name:packageManage-action
-  Wait Until Page Contains Element    name:simple-package-instant_tag  timeout=2s
+  Wait Until Page Contains Element    name:simple-package-instant_tag  timeout=5s
   Click Element                       name:simple-package-instant_tag
   Wait Until Page Contains            پرداخت ۱۳۵,۰۰۰ تومان
 
@@ -30,5 +30,5 @@ Compare Selected Package With its Price
   Click Element                       ${Submit_Button}
 
 Validation Packages In Protools
-  Wait Until Page Contains            نشان فوری                       timeout=2s
+  Wait Until Page Contains            نشان فوری                       timeout=5s
   Element Text Should Be              name:instant_tag                ${instant_tag}

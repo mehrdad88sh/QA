@@ -18,7 +18,7 @@ Buy Limitation Package
 *** Keywords ***
 Select Limitation Package
   Click Button                        name:packageManage-action
-  Wait Until Page Contains Element    name:simple-package-limitation  timeout=2s
+  Wait Until Page Contains Element    name:simple-package-limitation  timeout=5s
   Click Element                       name:simple-package-limitation
   Wait Until Page Contains            پرداخت ۴۵,۰۰۰ تومان
 
@@ -30,5 +30,5 @@ Compare Selected Package With its Price
   Click Element                       ${Submit_Button}
 
 Validation Packages In Protools
-  Wait Until Page Contains            افزایش ظرفیت تعداد آگهی کاربر   timeout=2s
+  Wait Until Page Contains            افزایش ظرفیت تعداد آگهی کاربر   timeout=5s
   Element Text Should Be              name:limitation                 ${limitation}
