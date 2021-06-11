@@ -34,6 +34,10 @@ ${PackageـPurchase_Button}            name:packageManage-action
 ${Refresh_Package_Name}               name:simple-package-refresh
 ${Refresh_Package_Price}              name=simple-package-refresh-price
 ${Refresh_Package_Number}             name:refresh
+${Special_Package_Name}               name:special-package
+${Special_Package_Price}              name=simple-package-special-price
+${Vitrin24_Package_Number}            name:vitrine_24
+${Vitrin48_Package_Number}            name:vitrine_48
 
 *** Keywords ***
 Open Browser On Staging
