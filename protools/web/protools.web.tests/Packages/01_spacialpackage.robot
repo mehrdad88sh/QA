@@ -19,7 +19,7 @@ Buy Spacial Package
 
 *** Keywords ***
 Select Spacial Package
-  Click Button                        name:packageManage-action
+  Click Button                        ${PackageـPurchase_Button}
   Wait Until Page Contains Element    name:special-package            timeout=5s
   Click Element                       name:special-package
   Wait Until Page Contains            پرداخت ۵۰۱,۵۰۰ تومان

@@ -17,7 +17,7 @@ Buy Instant Tag Package
 
 *** Keywords ***
 Select Instant Tag Package
-  Click Button                        name:packageManage-action
+  Click Button                        ${PackageـPurchase_Button}
   Wait Until Page Contains Element    name:simple-package-instant_tag  timeout=5s
   Click Element                       name:simple-package-instant_tag
   Wait Until Page Contains            پرداخت ۱۳۵,۰۰۰ تومان

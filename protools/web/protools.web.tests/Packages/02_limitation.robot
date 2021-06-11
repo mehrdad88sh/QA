@@ -17,7 +17,7 @@ Buy Limitation Package
 
 *** Keywords ***
 Select Limitation Package
-  Click Button                        name:packageManage-action
+  Click Button                        ${PackageـPurchase_Button}
   Wait Until Page Contains Element    name:simple-package-limitation  timeout=5s
   Click Element                       name:simple-package-limitation
   Wait Until Page Contains            پرداخت ۴۵,۰۰۰ تومان
