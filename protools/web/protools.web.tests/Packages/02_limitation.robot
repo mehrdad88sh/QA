@@ -18,17 +18,17 @@ Buy Limitation Package
 *** Keywords ***
 Select Limitation Package
   Click Button                        ${PackageـPurchase_Button}
-  Wait Until Page Contains Element    name:simple-package-limitation  timeout=5s
-  Click Element                       name:simple-package-limitation
+  Wait Until Page Contains Element    ${Limitation_Package_Name}               timeout=5s
+  Click Element                       ${Limitation_Package_Name}
   Wait Until Page Contains            پرداخت ۴۵,۰۰۰ تومان
 
 Compare Selected Package With its Price
-  ${price_value}                      Get WebElements                 name=simple-package-limitation-price
-  ${priceA}                           Get Text                        ${price_value}[1]
-  ${priceB}                           Get Text                        ${Submit_Button}
-  Should Be Equal                     پرداخت ${priceA} تومان          ${priceB}
+  ${Limitation_Price}                 Get WebElements                          ${Limitation_Package_Price}
+  ${Price_After_Discount}             Get Text                                 ${Limitation_Price}[1]
+  ${Price_In_Button}                  Get Text                                 ${Submit_Button}
+  Should Be Equal                     پرداخت ${Price_After_Discount} تومان     ${Price_In_Button}
   Click Element                       ${Submit_Button}
 
 Validation Packages In Protools
-  Wait Until Page Contains            افزایش ظرفیت تعداد آگهی کاربر   timeout=5s
-  Element Text Should Be              name:limitation                 ${limitation}
+  Wait Until Page Contains            افزایش ظرفیت تعداد آگهی کاربر            timeout=5s
+  Element Text Should Be              ${Limitation_Package_Number}             ${limitation}
