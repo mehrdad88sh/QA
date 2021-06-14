@@ -11,43 +11,8 @@ Variables                             ../variables/Variables.py
 &{RealEstateType}                     RD=select-a68096                 BS=select-a68094
 &{ApartmentID}                        RD=name:440477                   BS=name:440470
 &{VilaID}                             RD=name:440479                   BS=name:440472
-${Apartment}                          آپارتمان
-${Vila}                               ویلا
 ${image_profile_path}                 ${CURDIR}/images/imageprofile.jpg
 ${images_Realestate_path}             ${CURDIR}/images
-${profile_name_ID}                    name:profile-name
-${edit_profile_ID}                    name:edit_profile
-${aboutMe_ID}                         name:aboutMe
-${Location_Job_ID}                    name:locations-trigger
-${Search_Input_Location}              name:search-input-html
-${Alborz_ID}                          css:[name="5"]
-${Karaj_ID}                           css:[name="229"]
-${Golshahr_ID}                        css:[name="n4005"]
-${Submit_Button}                      name:form-submit-action
-${Close_Button}                       name:close-action
-${Add_New_Image}                      name:pick-image
-${Sumbit_Image}                       name:accept-crop
-${Your_Scores}                        name:score
-${Rating}                             name:level
-${Premium_Button}                     //*[@id="react-view"]/div/nav/div[2]/div/li/div/span
-${PackageـPurchase_Button}            name:packageManage-action
-${Refresh_Package_Name}               name:simple-package-refresh
-${Refresh_Package_Price}              name=simple-package-refresh-price
-${Refresh_Package_Number}             name:refresh
-${Special_Package_Name}               name:special-package
-${Special_Package_Price}              name=simple-package-special-price
-${Limitation_Package_Name}            name:simple-package-limitation
-${Limitation_Package_Price}           name=simple-package-limitation-price
-${Limitation_Package_Number}          name:limitation
-${InstantTag_Package_Name}            name:simple-package-instant_tag
-${InstantTag_Package_Price}           name=simple-package-instant_tag-price
-${InstantTag_Package_Number}          name:instant_tag
-${Vitrin24_Package_Name}              name:simple-package-vitrine_24
-${Vitrin24_Package_Price}             name:simple-package-vitrine_24-price
-${Vitrin24_Package_Number}            name:vitrine_24
-${Vitrin48_Package_Name}              name:simple-package-vitrine_48
-${Vitrin48_Package_Price}             name:simple-package-vitrine_48-price
-${Vitrin48_Package_Number}            name:vitrine_48
 
 *** Keywords ***
 Open Browser On Staging
@@ -267,3 +232,7 @@ Upgrade User To Premium Profile
 Fill File Description
   ${File_Description}                 Sentence                         nb_words=30
   Input Text                          css:[name=description]           ${File_Description}
+
+Go To File Bank Page
+  Click Element                       ${File_Bank_Button}
+  Wait Until Page Contains            خرید همراه فایل                  timeout=5s
