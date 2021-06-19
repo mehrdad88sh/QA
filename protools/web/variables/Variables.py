@@ -21,6 +21,7 @@ class Variables(object):
         'Golshahr_ID': 'css:[name="n4005"]',
         'Submit_Button': 'name:form-submit-action',
         'Close_Button':  'name:close-action',
+        'Complete_Profile_Button': 'name:edit-profile-action',
         'Add_New_Image': 'name:pick-image',
         'Sumbit_Image':  'name:accept-crop',
         'Your_Scores': 'name:score',
