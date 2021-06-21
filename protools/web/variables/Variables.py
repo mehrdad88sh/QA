@@ -6,9 +6,9 @@ class Variables(object):
     def get_variables(self):
         return {
         'staging': 'https://trumpet:newsite@staging.mielse.com/pro',
-        'pr': 'https://trumpet:newsite@pr9988.mielse.com/pro',
-        'prMock': 'https://pr9988.mielse.com/mock/getCode?mobile',
         'stagingMock': 'https://staging.mielse.com/mock/getCode?mobile',
+        'pr': 'https://trumpet:newsite@pr10026.mielse.com/pro',
+        'prMock': 'https://pr10026.mielse.com/mock/getCode?mobile',
         'Apartment': 'آپارتمان',
         'Vila': 'ویلا',
         'profile_name_ID': 'name:profile-name',
