@@ -5,22 +5,25 @@ Requirements:
 1-Install python 3.8
 
 2-Create virtual environment
-    command:
-          python3 -m venv "path or folder name"
-        OR
-          python3 -m virtualenv venv
+   
+    python3 -m virtualenv venv
 
 3-Activate virtual environment
-    command:
-          source venv/bin/activate
-          (for deactivate environment : type "deactivate")
 
-4-Import Driver Browser
-          "chromedriver" (Chrome)
-    OR
-          "geckodriver"  (Firefox)
-    In the "venv/bin" folder
+    source venv/bin/activate
+       
+   (for deactivate environment : type "deactivate")
 
+4-Import Browser Driver in "venv/bin"
+
+  Chrome:
+    
+    venv/bin/chromedriver
+   
+  Firefox:
+  
+    venv/bin/geckodriver    
+   
 5-Install requirements file
-    command
-        pip install -r requirements.txt
+ 
+          pip install -r requirements.txt
