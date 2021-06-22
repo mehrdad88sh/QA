@@ -22,7 +22,7 @@ Requirements:
 
   Firefox:
 
-    venv/bin/geckodriver    
+    venv/bin/geckodriver
 
 5-Install requirements file
 
