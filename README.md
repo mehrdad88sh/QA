@@ -1,29 +1,29 @@
 # Automation On ProTools & Sheypoor
 
-Requirements:
+### Requirements:
 
-1-Install python 3.8
+- Install python 3.8
 
-2-Create virtual environment
+- Create virtual environment
 
-    python3 -m virtualenv venv
+      python3 -m virtualenv venv
 
-3-Activate virtual environment
+- Activate virtual environment
 
-    source venv/bin/activate
+      source venv/bin/activate
 
    (for deactivate environment : type "deactivate")
 
-4-Import Browser Driver in "venv/bin"
+- Import Browser Driver in "venv/bin"
 
-  Chrome:
+    Chrome:
 
-    venv/bin/chromedriver
+      venv/bin/chromedriver
 
-  Firefox:
+    Firefox:
 
-    venv/bin/geckodriver
+      venv/bin/geckodriver
 
-5-Install requirements file
+- Install requirements file
 
-    pip install -r requirements.txt
+      pip install -r requirements.txt
