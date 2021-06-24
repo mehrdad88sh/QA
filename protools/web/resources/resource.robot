@@ -16,8 +16,9 @@ ${images_Realestate_path}             ${CURDIR}/images
 
 *** Keywords ***
 Open Browser On Staging
-  Open Browser                        ${staging}                       browser=chrome
+  Open Browser                        chrome://version                 browser=chrome
   Maximize Browser Window
+  Go To                               ${staging}/pro
   Wait Until Page Contains            با ثبت نام در شیپور از مزایای کسب و کار اینترنتی بهره‌مند شوید       timeout=5s
 
 Login Alunak
@@ -236,3 +237,14 @@ Fill File Description
 Go To File Bank Page
   Click Element                       ${File_Bank_Button}
   Wait Until Page Contains            خرید همراه فایل                  timeout=5s
+
+Login Trumpet Admin Page
+  Go To                              ${Admin_Page}
+  ${User_Is_Loggedin}                Run Keyword And Return Status    Wait Until Page Contains Element    id:email     timeout=5s
+  Run Keyword If	                   ${User_Is_Loggedin}              Input Login Form
+
+Input Login Form
+  Input Text                         name:email                       ${Admin_User}
+  Input Text                         name:password                    trumpet
+  Click Element                      css:button.btn.btn-primary
+  Wait Until Page Contains           داشبورد
