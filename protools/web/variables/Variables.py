@@ -45,8 +45,20 @@ class Variables(object):
         'Vitrin48_Package_Name': 'name:simple-package-vitrine_48',
         'Vitrin48_Package_Price': 'name:simple-package-vitrine_48-price',
         'Vitrin48_Package_Number': 'name:vitrine_48',
+        'Video_Package_Number': 'name:listing_video',
         'File_Bank_Button': 'name:list-item-file-bank',
         'File_Bank_Purchase_Button': 'name:add-new-request-bank-item-empty-list-action',
         'Admin_User': 'admin1060@mielse.com',
-        'Admin_Page': 'https://staging.mielse.com/trumpet/login'
+        'Admin_Page': 'https://staging.mielse.com/trumpet/login',
+        'Consultants_List_Page': 'https://staging.mielse.com/trumpet/consultant/list',
+        'Search_Button': 'css:input.btn.btn-block.btn-primary',
+        'Consultant_Number': '//*[@id="consultant-results-generic"]/tbody/tr/td[3]',
+        'Consultant_Status': 'css:strong.text-success.listing-status',
+        'CheckBox_Video': 'css:[name="8"]',
+        'Consultant_Package_Price': 'css:[id=price]',
+        'Consultant_Package_Duration': 'css:[id=duration]',
+        'Add_Button': 'css:button.btn.btn-success',
+        'Activation_Button': 'css:button.btn.btn-success.btn-block.package-activate',
+        'Consultant_Package_Status': 'css:div.alert.alert-info',
+        'Consultant_Package_Details': 'css:span.icon-info'
 }
