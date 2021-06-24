@@ -238,7 +238,7 @@ Go To File Bank Page
   Click Element                       ${File_Bank_Button}
   Wait Until Page Contains            خرید همراه فایل                  timeout=5s
 
-Login Trumpet Admin Page
+Login Admin Page
   Go To                              ${Admin_Page}
   ${User_Is_Loggedin}                Run Keyword And Return Status    Wait Until Page Contains Element    id:email     timeout=5s
   Run Keyword If	                   ${User_Is_Loggedin}              Input Login Form
@@ -248,3 +248,7 @@ Input Login Form
   Input Text                         name:password                    trumpet
   Click Element                      css:button.btn.btn-primary
   Wait Until Page Contains           داشبورد
+
+Click By Text
+  [Arguments]                        ${Text}
+  Click Element                      //*[contains(text(),'${Text}')]
