@@ -5,9 +5,9 @@ class Variables(object):
 
     def get_variables(self):
         return {
-        'staging': 'https://trumpet:newsite@staging.mielse.com/pro',
+        'staging': 'https://trumpet:newsite@staging.mielse.com',
         'stagingMock': 'https://staging.mielse.com/mock/getCode?mobile',
-        'pr': 'https://trumpet:newsite@pr10026.mielse.com/pro',
+        'pr': 'https://trumpet:newsite@pr10026.mielse.com',
         'prMock': 'https://pr10026.mielse.com/mock/getCode?mobile',
         'Apartment': 'آپارتمان',
         'Vila': 'ویلا',
@@ -46,5 +46,7 @@ class Variables(object):
         'Vitrin48_Package_Price': 'name:simple-package-vitrine_48-price',
         'Vitrin48_Package_Number': 'name:vitrine_48',
         'File_Bank_Button': 'name:list-item-file-bank',
-        'File_Bank_Purchase_Button': 'name:add-new-request-bank-item-empty-list-action'
+        'File_Bank_Purchase_Button': 'name:add-new-request-bank-item-empty-list-action',
+        'Admin_User': 'admin1060@mielse.com',
+        'Admin_Page': 'https://staging.mielse.com/trumpet/login'
 }
