@@ -253,12 +253,3 @@ Set Personal Notebook
   Input Text                          name:a69535             ${address}
   Click Button                        name:apply-action
   Execute JavaScript                  window.scrollTo(0,0)
-
-Open File And Check Images
-  Click Element                       name:file-item-0
-  Wait Until Page Contains            آگهی نشده
-  FOR                                 ${INDEX}   IN RANGE    3
-    Click Element                     name:next-slide
-    Sleep    1s
-  END
-  Element Should Contain              class:slider-control-bottomcenter     ۴ از ۴
