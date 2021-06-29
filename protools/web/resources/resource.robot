@@ -252,3 +252,12 @@ Input Login Form
 Click By Text
   [Arguments]                        ${Text}
   Click Element                      //*[contains(text(),'${Text}')]
+
+Open File And Check Images
+  Click Element                       name:file-item-0
+  Wait Until Page Contains            آگهی نشده
+  FOR                                 ${INDEX}   IN RANGE    3
+    Click Element                     name:next-slide
+    Sleep    1s
+  END
+  Element Should Contain              class:slider-control-bottomcenter     ۴ از ۴
