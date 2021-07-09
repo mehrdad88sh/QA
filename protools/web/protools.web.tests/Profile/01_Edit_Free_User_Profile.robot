@@ -6,6 +6,8 @@ Test Teardown                  Close Browser
 *** Test Cases ***
 Edit Free User Profile
   Login Alunak
+  Create Shop In Sheypoor
+  Go To Alunak Page    
   Go To User Profile Page
   Go To Edit Profile Page
   Complete User Information
