@@ -1,6 +1,6 @@
 *** Settings ***
 Documentation                         ثبت فایل در گروه بندی رهن-اجاره و خرید-فروش آپارتمان
-Resource                              ../../resources/resource.robot
+Resource                              ../../../../Resources/all.resource
 Test Teardown                         Close Browser
 
 *** Variables ***
@@ -17,6 +17,8 @@ ${image_path}                         ${CURDIR}${/}..\/..\/resources\/images\/45
 *** Test Cases ***
 Create Files In Realestate Categories
   Login Alunak
+  Create Shop In Sheypoor
+  Go To Alunak Page
   Create File In Rent And Deposit Category
   Create File In Buying And Selling Category
 
