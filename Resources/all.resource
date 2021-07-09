@@ -6,6 +6,31 @@ Resource                             ../protools/web/resources/resource.robot
 
 
 *** Keywords ***
+Login Admin Page
+  Go To                              ${Admin_Page}
+  ${User_Is_Loggedin}                Run Keyword And Return Status    Wait Until Page Contains Element    id:email     timeout=5s
+  Run Keyword If	                   ${User_Is_Loggedin}              Input Login Form
+
+Input Login Form
+  Input Text                         name:email                       ${Admin_User}
+  Input Text                         name:password                    trumpet
+  Click Element                      css:button.btn.btn-primary
+  Wait Until Page Contains           داشبورد
+
+Click By Text
+  [Arguments]                        ${Text}
+  Click Element                      //*[contains(text(),'${Text}')]
+
+Generate Random username
+  ${prefix_name}                      Prefix
+  ${first_name}                       First Name
+  ${last_name}                        Last Name
+  Set Suite Variable                  ${Random_User_Name}              ${prefix_name} ${first_name} ${last_name}
+
+Generate Random AboutMe Sentence
+  ${aboutme}                          Sentence                         nb_words=30
+  Set Suite Variable                  ${Random_AboutMe_Sentence}       ${aboutme}
+
 Create Shop In Sheypoor
   Login Admin Page
   Go To                              ${staging}/trumpet/shop/profile/new
