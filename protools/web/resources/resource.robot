@@ -6,6 +6,7 @@ Library                               FakerLibrary                     locale=fa
 Library                               splitwords
 Library                               OperatingSystem
 Variables                             ../variables/Variables.py
+Resource                              ../../../Resources/all.resource
 
 *** Variables ***
 &{RealEstateType}                     RD=select-a68096                 BS=select-a68094
