@@ -118,16 +118,6 @@ Select Form Clear Button
   Wait Until Page Contains            از انصراف اطمینان دارید؟         timeout=5s
   Click Element                       name:confirm-accept-action
 
-Generate Random username
-  ${prefix_name}                      Prefix
-  ${first_name}                       First Name
-  ${last_name}                        Last Name
-  Set Suite Variable                  ${Random_User_Name}              ${prefix_name} ${first_name} ${last_name}
-
-Generate Random AboutMe Sentence
-  ${aboutme}                          Sentence                         nb_words=30
-  Set Suite Variable                  ${Random_AboutMe_Sentence}       ${aboutme}
-
 Go To My Packages Page
   Click Element                       name:list-item-packageManagement
   Wait Until Page Contains            موجودی من                        timeout=5s
@@ -152,6 +142,7 @@ Successful Payment In Sheypoor
   Wait Until Page Contains            پرداخت شما با موفقیت انجام شد.   timeout=5s
   Element Text Should Be              class:text-right                 ${Package_Type}
   Click Link                          بازگشت به برنامه
+  Wait Until Page Contains Element    ${profile_name_ID}
 
 Go To User Profile Page
   Click Element                       ${profile_name_ID}
@@ -238,21 +229,6 @@ Fill File Description
 Go To File Bank Page
   Click Element                       ${File_Bank_Button}
   Wait Until Page Contains            خرید همراه فایل                  timeout=5s
-
-Login Admin Page
-  Go To                              ${Admin_Page}
-  ${User_Is_Loggedin}                Run Keyword And Return Status    Wait Until Page Contains Element    id:email     timeout=5s
-  Run Keyword If	                   ${User_Is_Loggedin}              Input Login Form
-
-Input Login Form
-  Input Text                         name:email                       ${Admin_User}
-  Input Text                         name:password                    trumpet
-  Click Element                      css:button.btn.btn-primary
-  Wait Until Page Contains           داشبورد
-
-Click By Text
-  [Arguments]                        ${Text}
-  Click Element                      //*[contains(text(),'${Text}')]
 
 Open File And Check Images
   Click Element                       name:file-item-0
