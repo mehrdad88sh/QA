@@ -4,16 +4,15 @@ Library                              SeleniumLibrary
 Variables                            ../protools/web/variables/Variables.py
 Resource                             ../protools/web/resources/resource.robot
 
-
 *** Keywords ***
 Login Admin Page
   Go To                              ${Admin_Page}
-  ${User_Is_Loggedin}                Run Keyword And Return Status    Wait Until Page Contains Element    id:email     timeout=5s
-  Run Keyword If	                   ${User_Is_Loggedin}              Input Login Form
+  ${User_Is_Loggedin}                Run Keyword And Return Status   Wait Until Page Contains Element    id:email     timeout=5s
+  Run Keyword If	                   ${User_Is_Loggedin}             Input Login Form
 
 Input Login Form
-  Input Text                         name:email                       ${Admin_User}
-  Input Text                         name:password                    trumpet
+  Input Text                         name:email                      ${Admin_User}
+  Input Text                         name:password                   trumpet
   Click Element                      css:button.btn.btn-primary
   Wait Until Page Contains           داشبورد
 
@@ -22,14 +21,14 @@ Click By Text
   Click Element                      //*[contains(text(),'${Text}')]
 
 Generate Random username
-  ${prefix_name}                      Prefix
-  ${first_name}                       First Name
-  ${last_name}                        Last Name
-  Set Suite Variable                  ${Random_User_Name}              ${prefix_name} ${first_name} ${last_name}
+  ${prefix_name}                     Prefix
+  ${first_name}                      First Name
+  ${last_name}                       Last Name
+  Set Suite Variable                 ${Random_User_Name}             ${prefix_name} ${first_name} ${last_name}
 
 Generate Random AboutMe Sentence
-  ${aboutme}                          Sentence                         nb_words=30
-  Set Suite Variable                  ${Random_AboutMe_Sentence}       ${aboutme}
+  ${aboutme}                         Sentence                        nb_words=30
+  Set Suite Variable                 ${Random_AboutMe_Sentence}      ${aboutme}
 
 Create Shop In Sheypoor
   Login Admin Page
@@ -73,8 +72,14 @@ Registration Consultant
     Click By Text                    ثبت مشاور
     Generate Random Consultant Phone
     ${ConsultantPhones}              Get WebElements                 name:ConsultantPhones[]
-    Input Text                       ${ConsultantPhones[${INDEX}]}   ${Random_consultant_Mobile}
-    Sleep    1s
+    ${ConsultantRoles}               Get WebElements                 name:ConsultantRoles[]
+    IF                               "${INDEX}" == "${1}"
+    Select From List By Value        ${ConsultantRoles}[${1}]        1
+    END
+    Input Text                       ${ConsultantPhones}[${INDEX}]   ${Random_consultant_Mobile}
+    ${ConsultantNameElements}        Get WebElements                 name:ConsultantNames[]
+    ${ConsultantNames}               Last Name
+    Input Text                       ${ConsultantNameElements}[${INDEX}]       ${ConsultantNames}
   END
 
 Generate Random Address
@@ -102,7 +107,7 @@ Generate Random Other Phone
   END
 
 Select Shop Category
-  Click Element                      //*[@id="CategoryId"]/option[2]
+  Select From List By Value          id:CategoryId                   43603
   Element Should Contain             CategoryId                      املاک
 
 Fill Description
@@ -135,11 +140,11 @@ Apply Shop
 
 Replace Arabic Fonts
     [Arguments]                      ${Company}
-    ${Company}                       Replace String                 ${Company}  ي  ی
-    ${Company}                       Replace String                 ${Company}  ى  ی
-    ${Company}                       Replace String                 ${Company}  ك  ک
+    ${Company}                       Replace String                  ${Company}  ي  ی
+    ${Company}                       Replace String                  ${Company}  ى  ی
+    ${Company}                       Replace String                  ${Company}  ك  ک
     Set Test Variable                ${Company}
 
 Go To Alunak Page
   Go To                              ${staging}/pro/real-estate
-  Wait Until Page Contains Element   ${profile_name_ID}             timeout=5s
+  Wait Until Page Contains Element   ${profile_name_ID}              timeout=5s
