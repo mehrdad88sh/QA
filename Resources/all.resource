@@ -31,6 +31,7 @@ Generate Random AboutMe Sentence
   Set Suite Variable                 ${Random_AboutMe_Sentence}      ${aboutme}
 
 Create Shop In Sheypoor
+  [Arguments]                        ${Category}
   Login Admin Page
   Go To                              ${staging}/trumpet/shop/profile/new
   Wait Until Page Contains           فروشگاه جدید
@@ -43,7 +44,7 @@ Create Shop In Sheypoor
   Generate Random Website
   Input Primary Phone
   Generate Random Other Phone
-  Select Shop Category
+  Select Shop Category               ${Category}
   Fill Description
   Fill Business Slogan
   Add Latitude
@@ -107,8 +108,14 @@ Generate Random Other Phone
   END
 
 Select Shop Category
+  [Arguments]                        ${Category}
+  IF                                 ${Category} == "خودرو"
+  Select From List By Value          id:SubCategoryId                43627
+  Element Should Contain             SubCategoryId                   خودرو
+  ELSE IF                            ${Category} == "املاک"
   Select From List By Value          id:CategoryId                   43603
   Element Should Contain             CategoryId                      املاک
+  END
 
 Fill Description
   ${Description}                     sentence                        nb_words=6
@@ -147,4 +154,8 @@ Replace Arabic Fonts
 
 Go To Alunak Page
   Go To                              ${staging}/pro/real-estate
+  Wait Until Page Contains Element   ${profile_name_ID}              timeout=5s
+
+Go To Sheypoor Car Page
+  Go To                              ${staging}/pro/cars
   Wait Until Page Contains Element   ${profile_name_ID}              timeout=5s
