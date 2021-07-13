@@ -9,6 +9,8 @@ ${image_path}                         ${CURDIR}${/}..\/..\/resources\/images\/Si
 *** Test Cases ***
 Post Listing ‌In Vehicle Category
   Login Sheypoor Car
+  Create Shop In Sheypoor             "خودرو"
+  Go To Sheypoor Car Page
   Create File In Car Category
   Create Listing
   Create File In Motorcycle Category
