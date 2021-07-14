@@ -30,14 +30,15 @@ Select All City Package
   Wait Until Page Contains           خرید اشتراک
 
 Select Subscription Period
-  Click Element                      //*[@id="react-view"]/div/main/div[3]/div[4]/div[1]/div[1]/div[1]
-  Wait Until Page Contains           پرداخت ۵۹,۰۰۰ تومان
-  Click Element                      //*[@id="react-view"]/div/main/div[4]/span/span[1]
+  Click By Text                      اشتراک سه ماهه
+  Page Should Contain                پرداخت ۱۵۹,۳۰۰ تومان             timeout=10s
+  Click By Text                      پرداخت ۱۵۹,۳۰۰ تومان
+  Wait Until Page Contains           درحال انتقال به درگاه پرداخت     timeout=10s
 
 Validation Purchased File Bank Package In Alunak
-  Wait Until Page Contains          فیلتر بسته‌ها
-  Click Element                     //*[@id="react-view"]/div/main/div[3]/div[1]/div[2]/span/span[1]/span
+  Wait Until Page Contains         فیلتر بسته‌ها
+  Click By Text                    فیلتر بسته‌ها
   Wait Until Page Contains          بسته فایلینگ کل یک شهر
-  Wait Until Page Contains          ۳۰ روز
+  Wait Until Page Contains          ۹۰ روز
   Click Element                     ${Close_Button}
   Wait Until Page Contains          خرید بسته جدید
