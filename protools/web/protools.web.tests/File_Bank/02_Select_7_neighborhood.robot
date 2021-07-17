@@ -13,7 +13,7 @@ Buy 7 Neighborhood Package
 *** Keywords ***
 Purchase File Bank Package
   Select 7 Neighborhood Package
-  Select Six Month Subscription
+  Select Six Months Subscription
   Successful Payment In Sheypoor     انتخاب هفت محله از یک شهر
 
 Select 7 Neighborhood Package
