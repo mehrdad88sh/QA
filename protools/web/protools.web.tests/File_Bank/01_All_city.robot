@@ -13,7 +13,7 @@ Buy All City File Bank Package
 *** Keywords ***
 Purchase File Bank Package
   Select All City Package
-  Select Subscription Period
+  Select Three Months Subscription
   Successful Payment In Sheypoor     انتخاب کل یک شهر
 
 Select All City Package
@@ -28,7 +28,7 @@ Select All City Package
   Wait Until Page Contains           انتخاب محدوده
   Select City Range
 
-Select Subscription Period
+Select Three Months Subscription
   Click By Text                      اشتراک سه ماهه
   Page Should Contain                پرداخت ۱۵۹,۳۰۰ تومان             timeout=10s
   Click By Text                      پرداخت ۱۵۹,۳۰۰ تومان
