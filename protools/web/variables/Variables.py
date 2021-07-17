@@ -46,6 +46,7 @@ class Variables(object):
         'Vitrin48_Package_Price': 'name:simple-package-vitrine_48-price',
         'Vitrin48_Package_Number': 'name:vitrine_48',
         'Video_Package_Number': 'name:listing_video',
+        'My_Packages_Page': 'https://staging.mielse.com/pro/real-estate/packages',
         'File_Bank_Button': 'name:list-item-file-bank',
         'File_Bank_Purchase_Button': 'name:add-new-request-bank-item-empty-list-action',
         'New_Package_Purchase_Button': 'name:add-new-file',
