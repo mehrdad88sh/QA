@@ -28,7 +28,7 @@ Select 7 Neighborhood Package
   Wait Until Page Contains           انتخاب محدوده
   Select Neighborhoods
 
-Select Six Month Subscription
+Select Six Months Subscription
   Click By Text                      اشتراک شش ماهه
   Page Should Contain                پرداخت ۱۶۳,۸۰۰ تومان             timeout=10s
   Click By Text                      پرداخت ۱۶۳,۸۰۰ تومان
