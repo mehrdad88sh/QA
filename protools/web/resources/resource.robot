@@ -137,13 +137,12 @@ Check Trash Icon For Each Image
 
 Successful Payment In Sheypoor
   [Arguments]                         ${Package_Type}
-  Reload Page
   Wait Until Page Contains            درحال انتقال به درگاه پرداخت     timeout=10s
   Click Element                       css:button.button.green
   Wait Until Page Contains            پرداخت شما با موفقیت انجام شد.   timeout=10s
   Element Should Contain              class:text-right                 ${Package_Type}
-  Click Link                          بازگشت به برنامه
-  Wait Until Page Contains Element    ${profile_name_ID}
+  GO TO                               ${File_Bank_Page}
+  Wait Until Page Contains            فایل یافت شد
 
 Go To User Profile Page
   Click Element                       ${profile_name_ID}
