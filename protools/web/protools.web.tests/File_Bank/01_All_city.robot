@@ -12,12 +12,13 @@ Buy All City File Bank Package
   Go To File Bank Page
   Select All City Package
   Select Subscription Period
-  Successful Payment In Sheypoor      انتخاب کل یک شهر
+  Successful Payment In Sheypoor     انتخاب کل یک شهر
   Validation Purchased File Bank Package In Alunak
 
 *** Keywords ***
 Select All City Package
-  Click Element                      ${File_Bank_Purchase_Button}
+  Reload Page
+  Click By Text                      خرید همراه فایل
   Wait Until Page Contains           برای مشاهده‌ی فایل‌ها، ابتدا یکی از بسته‌های زیر را انتخاب کنید.
   Click Element                      name:انتخاب کل یک شهر
   Click Button                       name:choose-action
@@ -36,9 +37,9 @@ Select Subscription Period
   Wait Until Page Contains           درحال انتقال به درگاه پرداخت     timeout=10s
 
 Validation Purchased File Bank Package In Alunak
-  Wait Until Page Contains         فیلتر بسته‌ها
-  Click By Text                    فیلتر بسته‌ها
-  Wait Until Page Contains          بسته فایلینگ کل یک شهر
-  Wait Until Page Contains          ۹۰ روز
-  Click Element                     ${Close_Button}
-  Wait Until Page Contains          خرید بسته جدید
+  Wait Until Page Contains           فیلتر بسته‌ها
+  Click By Text                      فیلتر بسته‌ها
+  Wait Until Page Contains           بسته فایلینگ کل یک شهر
+  Wait Until Page Contains           ۹۰ روز
+  Click Element                      ${Close_Button}
+  Wait Until Page Contains           خرید بسته جدید
