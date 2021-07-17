@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation                  ویرایش پروفایل رایگان
+Documentation                  ویرایش پروفایل رایگان آلونک
 Resource                       ../../resources/resource.robot
 Test Teardown                  Close Browser
 
@@ -7,7 +7,7 @@ Test Teardown                  Close Browser
 Edit Free User Profile
   Login Alunak
   Create Shop In Sheypoor           "املاک"
-  Go To Alunak Page 
+  Go To Alunak Page
   Go To User Profile Page
   Go To Edit Profile Page
   Complete User Information
