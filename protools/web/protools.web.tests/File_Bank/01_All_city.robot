@@ -3,22 +3,25 @@ Documentation                         خرید بسته همراه فایل کل
 Resource                              ../../resources/resource.robot
 Test Teardown                         Close Browser
 
-*** Variables ***
-
-
 *** Test Cases ***
 Buy All City File Bank Package
   Login Alunak
   Go To File Bank Page
-  Select All City Package
-  Select Subscription Period
-  Successful Payment In Sheypoor     انتخاب کل یک شهر
+  Purchase File Bank Package
   Validation Purchased File Bank Package In Alunak
 
 *** Keywords ***
+Purchase File Bank Package
+  Select All City Package
+  Select Subscription Period
+  Successful Payment In Sheypoor     انتخاب کل یک شهر
+
 Select All City Package
   Reload Page
-  Click By Text                      خرید همراه فایل
+  ${Status}                          Run Keyword And Return Status
+  ...                                Click By Text           خرید بسته جدید
+  Run Keyword Unless                 ${status}
+  ...                                Click By Text           خرید همراه فایل
   Wait Until Page Contains           برای مشاهده‌ی فایل‌ها، ابتدا یکی از بسته‌های زیر را انتخاب کنید.
   Click Element                      name:انتخاب کل یک شهر
   Click Button                       name:choose-action
