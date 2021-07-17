@@ -49,6 +49,7 @@ class Variables(object):
         'File_Bank_Button': 'name:list-item-file-bank',
         'File_Bank_Purchase_Button': 'name:add-new-request-bank-item-empty-list-action',
         'New_Package_Purchase_Button': 'name:add-new-file',
+        'File_Bank_Page': 'https://staging.mielse.com/pro/real-estate/file-bank',
         'Admin_User': 'admin1060@mielse.com',
         'Admin_Page': 'https://staging.mielse.com/trumpet/login',
         'Consultants_List_Page': 'https://staging.mielse.com/trumpet/consultant/list',
