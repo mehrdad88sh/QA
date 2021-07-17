@@ -13,7 +13,7 @@ Buy 3 Neighborhood Package
 *** Keywords ***
 Purchase File Bank Package
   Select 3 Neighborhood Package
-  Select 1 Month Subscription
+  Select One Month Subscription
   Successful Payment In Sheypoor     انتخاب سه محله از یک شهر
 
 Select 3 Neighborhood Package
