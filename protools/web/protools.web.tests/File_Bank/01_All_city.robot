@@ -15,6 +15,7 @@ Purchase File Bank Package
   Select All City Package
   Select Three Months Subscription
   Successful Payment In Sheypoor     انتخاب کل یک شهر
+  Go To                              ${File_Bank_Page}
 
 Select All City Package
   Reload Page

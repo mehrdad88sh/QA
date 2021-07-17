@@ -15,6 +15,7 @@ Purchase File Bank Package
   Select 3 Neighborhood Package
   Select One Month Subscription
   Successful Payment In Sheypoor     انتخاب سه محله از یک شهر
+  Go To                              ${File_Bank_Page}
 
 Select 3 Neighborhood Package
   Reload Page
