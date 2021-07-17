@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation                        ویرایش پروفایل حرفه ای
+Documentation                        ویرایش پروفایل حرفه ای آلونک
 Resource                             ../../resources/resource.robot
 Test Teardown                        Close Browser
 
