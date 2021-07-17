@@ -13,6 +13,7 @@ Buy Limitation Package
   Select Limitation Package
   Compare Selected Package With its Price
   Successful Payment In Sheypoor      بسته‌ی هیبریدی: ظرفیت ثبت آگهی
+  Go To                               ${My_Packages_Page}
   Validation Packages In Protools
 
 *** Keywords ***

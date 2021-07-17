@@ -15,6 +15,7 @@ Buy Spacial Package
   Select Spacial Package
   Compare Selected Package With its Price
   Successful Payment In Sheypoor      بسته‌ی هیبریدی: بسته ویژه
+  Go To                               ${My_Packages_Page}
   Validation Packages In Protools
 
 *** Keywords ***
