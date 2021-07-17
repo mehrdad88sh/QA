@@ -141,9 +141,7 @@ Successful Payment In Sheypoor
   Click Element                       css:button.button.green
   Wait Until Page Contains            پرداخت شما با موفقیت انجام شد.   timeout=10s
   Element Should Contain              class:text-right                 ${Package_Type}
-  GO TO                               ${File_Bank_Page}
-  Wait Until Page Contains            فایل یافت شد
-
+  
 Go To User Profile Page
   Click Element                       ${profile_name_ID}
   Close Level Up Popup Message
