@@ -1,7 +1,7 @@
 *** Settings ***
-Documentation                         خرید بسته همراه فایل کل یک شهر
-Resource                              ../../resources/resource.robot
-Test Teardown                         Close Browser
+Documentation                        خرید بسته همراه فایل کل یک شهر
+Resource                             ../../resources/resource.robot
+Test Teardown                        Close Browser
 
 *** Test Cases ***
 Buy All City File Bank Package
@@ -23,15 +23,10 @@ Select All City Package
   Run Keyword Unless                 ${status}
   ...                                Click By Text           خرید همراه فایل
   Wait Until Page Contains           برای مشاهده‌ی فایل‌ها، ابتدا یکی از بسته‌های زیر را انتخاب کنید.
-  Click Element                      name:انتخاب کل یک شهر
-  Click Button                       name:choose-action
+  Click Element                      ${Select_All_City}
+  Click Button                       ${Selection_Button}
   Wait Until Page Contains           انتخاب محدوده
-  Click Element                      css:[nameid="8"]
-  Wait Until Page Contains Element   css:[nameid="301"]
-  Click Element                      css:[nameid="301"]
-  Page Should Contain Radio Button   name:area_301
-  Click Button                       name:choose-action
-  Wait Until Page Contains           خرید اشتراک
+  Select City Range
 
 Select Subscription Period
   Click By Text                      اشتراک سه ماهه
@@ -46,3 +41,11 @@ Validation Purchased File Bank Package In Alunak
   Wait Until Page Contains           ۹۰ روز
   Click Element                      ${Close_Button}
   Wait Until Page Contains           خرید بسته جدید
+
+Select City Range
+  Click Element                      ${Tehran_Province}
+  Wait Until Page Contains Element   ${Tehran_City}
+  Click Element                      ${Tehran_City}
+  Page Should Contain Radio Button   name:area_301
+  Click Button                       ${Selection_Button}
+  Wait Until Page Contains           خرید اشتراک
