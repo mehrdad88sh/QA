@@ -48,7 +48,7 @@ Select Neighborhoods
   Wait Until Page Contains Element   ${Tehran_City}
   Click Element                      ${Tehran_City}
   Wait Until Page Contains Element   name:area_n5262
-  FOR                                ${INDEX}   IN RANGE    5
+  FOR                                ${INDEX}    IN RANGE    0   10   2
         Click Element                css:[nameid="n93${INDEX}"]
         Checkbox Should Be Selected  name:area_n93${INDEX}
   END
