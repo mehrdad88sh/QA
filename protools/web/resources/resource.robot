@@ -34,8 +34,8 @@ Login Alunak
   Wait Until Page Contains            تائید شماره موبایل                                                  timeout=5s
   Get Code From Mock Server
   Input Verification Code
-  ${Status}                           Run Keyword And Return Status    Wait Until Page Contains Element   ${Close_Button}     timeout=5s
-  Run Keyword If                      ${Status}                        Click Button                       ${Close_Button}
+  Close Level Up Popup Message
+  Reload Page
   Wait Until Page Contains            در اینجا فایل خود را ثبت و مدیریت کنید.                             timeout=5s
 
 Login Sheypoor Car
@@ -50,8 +50,8 @@ Login Sheypoor Car
   Wait Until Page Contains            تائید شماره موبایل                                                  timeout=5s
   Get Code From Mock server
   Input Verification Code
-  ${Status}                           Run Keyword And Return Status    Wait Until Page Contains Element   ${Close_Button}   timeout=5s
-  Run Keyword If                      ${Status}                        Click Button                       ${Close_Button}
+  Close Level Up Popup Message
+  Reload Page
   Wait Until Page Contains            در اینجا فایل خود را ثبت و مدیریت کنید.                             timeout=5s
 
 Input Random Mobile
