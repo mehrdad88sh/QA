@@ -22,33 +22,23 @@ Open Browser On Staging
   Go To                               ${staging}/pro
   Wait Until Page Contains            با ثبت نام در شیپور از مزایای کسب و کار اینترنتی بهره‌مند شوید       timeout=5s
 
-Login Alunak
+Login Protools
+  [Arguments]                         ${Category_Type}
   Set Log Level                       trace
   Open Browser On Staging
-  Click Element                       name:alounak
-  Wait Until Page Contains            با آلونک کسب و کار خود را متحول کنید                                timeout=5s
+    IF                                "${Category_Type}" == "آلونک"
+    Click Element                     ${Alunak}
+    Wait Until Page Contains          با آلونک کسب و کار خود را متحول کنید                                timeout=5s
+    ELSE IF                           "${Category_Type}" == "شیپورپلاس"
+    Click Element                     ${SheypoorCar}
+    Wait Until Page Contains          با شیپور کسب و کار خود را متحول کنید                              timeout=5s
+    END
   Click Element                       name:intro-action
   Wait Until Page Contains            ورود / ثبت‌نام                                                       timeout=5s
   Input Random Mobile
   Click Element                       name:submit
   Wait Until Page Contains            تائید شماره موبایل                                                  timeout=5s
   Get Code From Mock Server
-  Input Verification Code
-  Close Level Up Popup Message
-  Reload Page
-  Wait Until Page Contains            در اینجا فایل خود را ثبت و مدیریت کنید.                             timeout=5s
-
-Login Sheypoor Car
-  Set Log Level                       trace
-  Open Browser On Staging
-  Click Element                       name:sheypoor-cars
-  Wait Until Page Contains            با شیپور کسب و کار خود را متحول کنید                                timeout=5s
-  Click Element                       name:intro-action
-  Wait Until Page Contains            ورود / ثبت‌نام                                                       timeout=5s
-  Input Random Mobile
-  Click Element                       name:submit
-  Wait Until Page Contains            تائید شماره موبایل                                                  timeout=5s
-  Get Code From Mock server
   Input Verification Code
   Close Level Up Popup Message
   Reload Page
