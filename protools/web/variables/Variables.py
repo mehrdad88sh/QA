@@ -69,5 +69,9 @@ class Variables(object):
         'Add_Button': 'css:button.btn.btn-success',
         'Activation_Button': 'css:button.btn.btn-success.btn-block.package-activate',
         'Consultant_Package_Status': 'css:div.alert.alert-info',
-        'Consultant_Package_Details': 'css:span.icon-info'
+        'Consultant_Package_Details': 'css:span.icon-info',
+        'Team_Management_Menu': 'name:list-item-team-management',
+        'Add_New_Colleague': 'name:new-member-action',
+        'Consultant': 'name:expert',
+        'Secretary': 'name:secretary'
 }
