@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation                         حذف منشی و مشاور در فروشگاه از پنل آلونک
+Documentation                         حذف منشی و مشاور از فروشگاه پنل آلونک
 Resource                              ../../resources/resource.robot
 Test Teardown                         Close Browser
 
