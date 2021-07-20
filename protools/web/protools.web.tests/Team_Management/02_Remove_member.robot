@@ -47,12 +47,12 @@ Select Colleague Role
   [Arguments]                         ${Colleague_Type}
   Click Element                       select-role
   Wait Until Page Contains Element    ${Secretary}
-    IF                                  "${Colleague_Type}" == "مشاور"
-    Click Element       ${Consultant}
-    Element Should Contain             select-role         ${Colleague_Type}
-    ELSE IF                             "${Colleague_Type}" == "منشی"
-    Click Element       ${Secretary}
-    Element Should Contain             select-role         ${Colleague_Type}
+    IF                                "${Colleague_Type}" == "مشاور"
+    Click Element                     ${Consultant}
+    Element Should Contain            select-role         ${Colleague_Type}
+    ELSE IF                           "${Colleague_Type}" == "منشی"
+    Click Element                     ${Secretary}
+    Element Should Contain            select-role         ${Colleague_Type}
     END
 
 Submit Colleague
