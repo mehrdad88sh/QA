@@ -2,7 +2,6 @@
 Documentation                         حذف منشی و مشاور در فروشگاه از پنل آلونک
 Resource                              ../../resources/resource.robot
 Test Teardown                         Close Browser
-Library    SeleniumLibrary
 
 *** Test Cases ***
 Remove Secretary And Consultant From Shop
