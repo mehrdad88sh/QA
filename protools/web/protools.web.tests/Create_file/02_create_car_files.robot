@@ -71,7 +71,7 @@ Select Pride Brand
 Set Motorcycle Category
   Wait Until Keyword Succeeds         3x   3s                         Click Element      name:form-clear-action
   Wait Until Page Contains            از انصراف اطمینان دارید؟        timeout=5s
-  Click Element                       name:confirm-accept-action
+  Click Element                       ${Confirm_Button}
   Page Should Contain Element         css:[tabindex="-1"]                                #دکمه ثبت فایل غیرفعال باشه
   Wait Until Keyword Succeeds         3x    2s                         Click Element     name:category-trigger
   Wait Until Page Contains Element    css:[tabindex="-1"]              timeout=5s        #نمایش دسته بندی

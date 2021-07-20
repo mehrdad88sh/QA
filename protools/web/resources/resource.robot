@@ -116,7 +116,7 @@ Select Form Clear Button
   Wait Until Keyword Succeeds         3x   2s                          Click Element                      name:form-clear-action
   Wait Until Keyword Succeeds         3x   2s                          Wait Until Page Contains Element   css:[role="document"]      timeout=5s
   Wait Until Page Contains            از انصراف اطمینان دارید؟         timeout=5s
-  Click Element                       name:confirm-accept-action
+  Click Element                       ${Confirm_Button}
 
 Go To My Packages Page
   Click Element                       name:list-item-packageManagement
