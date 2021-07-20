@@ -109,10 +109,10 @@ Generate Random Other Phone
 
 Select Shop Category
   [Arguments]                        ${Category}
-  IF                                 ${Category} == "خودرو"
+  IF                                 "${Category}" == "خودرو"
   Select From List By Value          id:SubCategoryId                43627
   Element Should Contain             SubCategoryId                   خودرو
-  ELSE IF                            ${Category} == "املاک"
+  ELSE IF                           "${Category}" == "املاک"
   Select From List By Value          id:CategoryId                   43603
   Element Should Contain             CategoryId                      املاک
   END
