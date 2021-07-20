@@ -73,5 +73,8 @@ class Variables(object):
         'Team_Management_Menu': 'name:list-item-team-management',
         'Add_New_Colleague': 'name:new-member-action',
         'Consultant': 'name:expert',
-        'Secretary': 'name:secretary'
+        'Secretary': 'name:secretary',
+        'Colleague_Menu': 'css:[role="menu"]',
+        'Colleague_Delete_Button': 'menu-حذف',
+        'Confirm_Button': 'name:confirm-accept-action'
 }
