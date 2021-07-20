@@ -5,6 +5,8 @@ class Variables(object):
 
     def get_variables(self):
         return {
+        'Alunak': 'name:alounak',
+        'SheypoorCar': 'name:sheypoor-cars',
         'staging': 'https://trumpet:newsite@staging.mielse.com',
         'stagingMock': 'https://staging.mielse.com/mock/getCode?mobile',
         'pr': 'https://trumpet:newsite@pr10026.mielse.com',
