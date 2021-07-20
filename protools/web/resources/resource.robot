@@ -141,7 +141,7 @@ Successful Payment In Sheypoor
   Click Element                       css:button.button.green
   Wait Until Page Contains            پرداخت شما با موفقیت انجام شد.   timeout=10s
   Element Should Contain              class:text-right                 ${Package_Type}
-  
+
 Go To User Profile Page
   Click Element                       ${profile_name_ID}
   Close Level Up Popup Message
@@ -224,10 +224,6 @@ Fill File Description
   ${File_Description}                 Sentence                         nb_words=30
   Input Text                          css:[name=description]           ${File_Description}
 
-Go To File Bank Page
-  Click Element                       ${File_Bank_Button}
-  Wait Until Page Contains            خرید همراه فایل                  timeout=5s
-
 Open File And Check Images
   Click Element                       name:file-item-0
   Wait Until Page Contains            آگهی نشده
@@ -236,3 +232,11 @@ Open File And Check Images
     Sleep    1s
   END
   Element Should Contain              class:slider-control-bottomcenter     ۴ از ۴
+
+Go To File Bank Page
+  Click Element                       ${File_Bank_Button}
+  Wait Until Page Contains            خرید همراه فایل                  timeout=5s
+
+Go To Team Management Page
+  Click Element                       ${Team_Management_Menu}
+  Wait Until Page Contains            افزودن همکار جدید
