@@ -5,8 +5,8 @@ Test Teardown                        Close Browser
 
 *** Test Cases ***
 Edit Premium User Profile
-  Login Alunak
-  Create Shop In Sheypoor           "املاک"
+  Login Protools                     آلونک
+  Create Shop In Sheypoor            املاک
   Go To Alunak Page
   Upgrade User To Premium Profile
   Go To Edit Profile Page

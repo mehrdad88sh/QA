@@ -5,8 +5,8 @@ Test Teardown                       Close Browser
 
 *** Test Cases ***
 Edit Free User Profile
-  Login Sheypoor Car
-  Create Shop In Sheypoor           "خودرو"
+  Login Protools                    شیپورپلاس
+  Create Shop In Sheypoor           خودرو
   Go To Sheypoor Car Page
   Go To User Profile Page
   Go To Edit Profile Page

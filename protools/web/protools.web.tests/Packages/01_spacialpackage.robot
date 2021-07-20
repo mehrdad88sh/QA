@@ -10,7 +10,7 @@ ${vitrin48}                           ۵ بسته
 
 *** Test Cases ***
 Buy Spacial Package
-  Login Alunak
+  Login Protools                      آلونک
   Go To My Packages Page
   Select Spacial Package
   Compare Selected Package With its Price

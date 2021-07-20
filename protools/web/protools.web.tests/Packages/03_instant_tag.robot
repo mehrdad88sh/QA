@@ -8,7 +8,7 @@ ${instant_tag}                        ۳۰ بسته
 
 *** Test Cases ***
 Buy Instant Tag Package
-  Login Alunak
+  Login Protools                      آلونک
   Go To My Packages Page
   Select Instant Tag Package
   Compare Selected Package With its Price

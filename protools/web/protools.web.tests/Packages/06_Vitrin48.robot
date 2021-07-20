@@ -8,7 +8,7 @@ ${vitrine_48}                         ۵ بسته
 
 *** Test Cases ***
 Buy Vitrin48 Package
-  Login Alunak
+  Login Protools                      آلونک
   Go To My Packages Page
   Select Vitrin48 Package
   Compare Selected Package With its Price

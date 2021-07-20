@@ -8,7 +8,7 @@ ${vitrine_24}                         ۱۰ بسته
 
 *** Test Cases ***
 Buy Vitrin24 Package
-  Login Alunak
+  Login Protools                      آلونک
   Go To My Packages Page
   Select Vitrin24 Package
   Compare Selected Package With its Price

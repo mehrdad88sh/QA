@@ -8,7 +8,7 @@ ${limitation}                         ۱۰ بسته
 
 *** Test Cases ***
 Buy Limitation Package
-  Login Alunak
+  Login Protools                      آلونک
   Go To My Packages Page
   Select Limitation Package
   Compare Selected Package With its Price

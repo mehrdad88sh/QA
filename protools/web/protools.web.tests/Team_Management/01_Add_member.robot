@@ -5,8 +5,8 @@ Test Teardown                         Close Browser
 
 *** Test Cases ***
 Add Secretary And Consultant In Shop
-  Login Alunak
-  Create Shop In Sheypoor             "املاک"
+  Login Protools                      آلونک
+  Create Shop In Sheypoor             املاک
   Go To Alunak Page
   Go To Team Management Page
   Add New Colleague                   منشی

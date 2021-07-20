@@ -5,7 +5,7 @@ Test Teardown                        Close Browser
 
 *** Test Cases ***
 Buy All City File Bank Package
-  Login Alunak
+  Login Protools                      آلونک
   Go To File Bank Page
   Purchase File Bank Package
   Validation Purchased File Bank Package In Alunak

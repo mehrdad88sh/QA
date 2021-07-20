@@ -8,7 +8,7 @@ ${Refresh}                            ۲۵ بسته
 
 *** Test Cases ***
 Buy Refresh Package
-  Login Alunak
+  Login Protools                      آلونک
   Go To My Packages Page
   Select Refresh Package
   Compare Selected Package With its Price

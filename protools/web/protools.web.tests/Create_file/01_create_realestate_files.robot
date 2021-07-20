@@ -16,8 +16,8 @@ ${image_path}                         ${CURDIR}${/}..\/..\/resources\/images\/45
 
 *** Test Cases ***
 Create Files In Realestate Categories
-  Login Alunak
-  Create Shop In Sheypoor            "املاک"       
+  Login Protools                      آلونک
+  Create Shop In Sheypoor             املاک      
   Go To Alunak Page
   Create File In Rent And Deposit Category
   Create File In Buying And Selling Category

@@ -8,7 +8,7 @@ ${video}                              ۱۰۰ بسته
 
 *** Test Cases ***
 Buy Consultant Video Package
-  Login Alunak
+  Login Protools                      آلونک
   Login Admin Page
   Go To Consultants List Page
   Validate Consultant Phone Number
