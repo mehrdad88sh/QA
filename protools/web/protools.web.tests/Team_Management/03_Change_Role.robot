@@ -5,8 +5,8 @@ Test Teardown                         Close Browser
 
 *** Test Cases ***
 Change Secretary And Consultant Roles In Shop
-  Login Alunak
-  Create Shop In Sheypoor             "املاک"
+  Login Protools                      آلونک
+  Create Shop In Sheypoor             املاک
   Go To Alunak Page
   Go To Team Management Page
   Add New Colleague                   منشی
@@ -45,11 +45,11 @@ Select Colleague Role
   Click Element                       select-role
   Wait Until Page Contains Element    ${Secretary}
     IF                                  "${Colleague_Type}" == "مشاور"
-    Click Element       ${Consultant}
-    Element Should Contain             select-role         ${Colleague_Type}
-    ELSE IF                             "${Colleague_Type}" == "منشی"
-    Click Element       ${Secretary}
-    Element Should Contain             select-role         ${Colleague_Type}
+    Click Element                     ${Consultant}
+    Element Should Contain            select-role         ${Colleague_Type}
+    ELSE IF                           "${Colleague_Type}" == "منشی"
+    Click Element                     ${Secretary}
+    Element Should Contain            select-role         ${Colleague_Type}
     END
 
 Submit Colleague
