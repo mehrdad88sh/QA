@@ -156,6 +156,6 @@ Back To Protools Page
   Go To                              ${staging}/pro/real-estate
   Wait Until Page Contains Element   ${profile_name_ID}              timeout=5s
 
-Go To Sheypoor Car Page
+Back To Sheypoor Car Page
   Go To                              ${staging}/pro/cars
   Wait Until Page Contains Element   ${profile_name_ID}              timeout=5s

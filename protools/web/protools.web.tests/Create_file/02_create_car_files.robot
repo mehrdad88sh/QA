@@ -10,7 +10,7 @@ ${image_path}                         ${CURDIR}${/}..\/..\/resources\/images\/Si
 Post Listing ‌In Vehicle Category
   Login Protools                      شیپورپلاس
   Create Shop In Sheypoor             خودرو
-  Go To Sheypoor Car Page
+  Back To Sheypoor Car Page
   Create File In Car Category
   Create Listing
   Create File In Motorcycle Category
