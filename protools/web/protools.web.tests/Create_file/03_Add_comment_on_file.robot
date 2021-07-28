@@ -6,6 +6,8 @@ Test Teardown                         Close Browser
 *** Test Cases ***
 Add Comment On File
   Login Protools                      آلونک
+  Create Shop In Sheypoor             املاک
+  Back To Protools Page
   Create File In Land And Garden Category
   Add Comment On File
 
@@ -19,28 +21,36 @@ Create File In Land And Garden Category
   Submit File
 
 Add Comment On File
-  Go To                               ${staging}/pro/real-estate/files/act
   Wait Until Page Contains Element    name:file-item-0          timeout=10s
   Click Element                       name:note-action
   Wait Until Page Contains            شما هنوز هیچ یادداشتی درباره‌ی این فایل ننوشته‌اید
+  Add New Comment
+
+Add New Comment
   FOR   ${INDEX}   IN RANGE   3
-    Add Comment
+    ${Comments}                       Sentence                    nb_words=30
+    Set Suite Variable                ${Comments}
+    Input Text                        name:description            ${Comments}
+    Element Should Contain            name:description            ${Comments}
     Click Element                     name:save-form-action
-    Sleep    150ms
+    Sleep    200ms
+    ${Status}                         Run Keyword And Return Status
+    ...                               Wait Until Page Contains    لطفا حداکثر 250 حرف وارد کنید       timeout=3s
+    IF                                "${Status}" == "True"
+                                      Press Keys                  name:description                    CTRL+a+DELETE
+                                      ${NewComment}               Sentence                            nb_words=20
+                                      Input Text                  name:description                    ${NewComment}
+                                      Click Element               name:save-form-action
+                                      Sleep    200ms
+    END
   END
-  Click Element                       name:close-form-action
-
-
-Add Comment
-  ${Comments}                         Sentence                  nb_words=30
-  Input Text                          css:[name=description]    ${Comments}
 
 Select Land And Garden Category
   Click Element                       name:category-trigger
-  Wait Until Page Contains Element    css:[role="document"]     timeout=10s
+  Wait Until Page Contains Element    css:[role="document"]       timeout=10s
   Click Element                       name:44099
-  Textfield Value Should Be           name:category             زمین و باغ
-  Wait Until Page Contains Element    select-a69120             timeout=10s
+  Textfield Value Should Be           name:category               زمین و باغ
+  Wait Until Page Contains Element    select-a69120               timeout=10s
 
 Set Land And Garden Attributes
   Applied Type
@@ -49,12 +59,12 @@ Set Land And Garden Attributes
 
 Applied Type
   Click Element                       select-a69120
-  Wait Until Page Contains Element    css:[role="listbox"]     timeout=10s
+  Wait Until Page Contains Element    css:[role="listbox"]       timeout=10s
   Click Element                       name:445096
-  Element Text Should Be              select-a69120             کشاورزی
+  Element Text Should Be              select-a69120               کشاورزی
 
 Set Price
-  Input Text                          name:price                7000000
+  Input Text                          name:price                  7000000
 
 Set Area
-  Input Text                          name:a68085               85
+  Input Text                          name:a68085                 85
