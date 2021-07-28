@@ -131,6 +131,7 @@ Successful Payment In Sheypoor
   Click Element                       css:button.button.green
   Wait Until Page Contains            پرداخت شما با موفقیت انجام شد.   timeout=10s
   Element Should Contain              class:text-right                 ${Package_Type}
+  Click Link                          بازگشت به برنامه 
 
 Go To User Profile Page
   Click Element                       ${profile_name_ID}
