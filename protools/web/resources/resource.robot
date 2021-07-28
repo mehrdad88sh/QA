@@ -213,7 +213,9 @@ Upgrade User To Premium Profile
 
 Fill File Description
   ${File_Description}                 Sentence                         nb_words=30
+  Set Suite Variable                  ${File_Description} 
   Input Text                          css:[name=description]           ${File_Description}
+  Element Should Contain              css:[name=description]           ${File_Description}
 
 Open File And Check Images
   Click Element                       name:file-item-0
