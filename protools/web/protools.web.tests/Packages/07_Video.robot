@@ -28,7 +28,7 @@ Validate Consultant Phone Number
 
 Go To Consultant Package Page
   Wait Until Keyword Succeeds         2x    2s     Click By Text              بسته مشاور
-  Wait Until Page Contains            ویدئو                                   timeout=3s
+  Wait Until Page Contains            ویدئو                                   timeout=10s
 
 Activate Video Package
   Click By Text                       ویدئو
@@ -37,15 +37,15 @@ Activate Video Package
   Input Text                          ${Consultant_Package_Price}             50000
   Input Text                          ${Consultant_Package_Duration}          30
   Click Element                       ${Add_Button}
-  Wait Until Page Contains            ۵۰۰۰۰                                   timeout=3s
+  Wait Until Page Contains            ۵۰۰۰۰                                   timeout=10s
   Click Element                       ${Activation_Button}
-  Wait Until Page Contains            فعال‌‌سازی این بسته غیرقابل بازگشت خواهد بود. آیا از فعال‌سازی اطمینان دارید؟            timeout=3s
+  Wait Until Page Contains            فعال‌‌سازی این بسته غیرقابل بازگشت خواهد بود. آیا از فعال‌سازی اطمینان دارید؟            timeout=10s
   Wait Until Keyword Succeeds         2x    2s     Click By Text    بله
   Wait Until Keyword Succeeds         2x    2s     Element Should Contain     ${Consultant_Package_Status}                  فعال شده
   Click Element                       ${Consultant_Package_Details}
-  Wait Until Page Contains            ویدئو 100 عدد                           timeout=3s
+  Wait Until Page Contains            ویدئو 100 عدد                           timeout=10s
 
 Validate Video Package In My Packages
   Go To                               ${staging}/pro/real-estate/packages
-  Wait Until Page Contains            موجودی من                               timeout=3s
+  Wait Until Page Contains            موجودی من                               timeout=10s
   Element Text Should Be              ${Video_Package_Number}                 ${video}

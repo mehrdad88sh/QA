@@ -7,7 +7,7 @@ Resource                             ../protools/web/resources/resource.robot
 *** Keywords ***
 Login Admin Page
   Go To                              ${Admin_Page}
-  ${User_Is_Loggedin}                Run Keyword And Return Status   Wait Until Page Contains Element    id:email     timeout=5s
+  ${User_Is_Loggedin}                Run Keyword And Return Status   Wait Until Page Contains Element    id:email     timeout=10s
   Run Keyword If	                   ${User_Is_Loggedin}             Input Login Form
 
 Input Login Form
@@ -154,8 +154,8 @@ Replace Arabic Fonts
 
 Back To Protools Page
   Go To                              ${staging}/pro/real-estate
-  Wait Until Page Contains Element   ${profile_name_ID}              timeout=5s
+  Wait Until Page Contains Element   ${profile_name_ID}              timeout=10s
 
 Back To Sheypoor Car Page
   Go To                              ${staging}/pro/cars
-  Wait Until Page Contains Element   ${profile_name_ID}              timeout=5s
+  Wait Until Page Contains Element   ${profile_name_ID}              timeout=10s

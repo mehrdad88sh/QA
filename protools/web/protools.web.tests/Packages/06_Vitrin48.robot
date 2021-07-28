@@ -18,7 +18,7 @@ Buy Vitrin48 Package
 *** Keywords ***
 Select Vitrin48 Package
   Click Button                        ${PackageـPurchase_Button}
-  Wait Until Page Contains Element    ${Vitrin48_Package_Name}                 timeout=5s
+  Wait Until Page Contains Element    ${Vitrin48_Package_Name}                 timeout=10s
   Click Element                       ${Vitrin48_Package_Name}
   Wait Until Page Contains            پرداخت ۱۷۱,۰۰۰ تومان
 
@@ -30,5 +30,5 @@ Compare Selected Package With its Price
   Click Element                       ${Submit_Button}
 
 Validation Packages In Protools
-  Wait Until Page Contains            ویترین ۴۸ ساعته                          timeout=5s
+  Wait Until Page Contains            ویترین ۴۸ ساعته                          timeout=10s
   Element Text Should Be              ${Vitrin48_Package_Number}               ${vitrine_48}

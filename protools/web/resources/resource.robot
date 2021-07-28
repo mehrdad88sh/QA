@@ -20,7 +20,7 @@ Open Browser On Staging
   Open Browser                        chrome://version                 browser=chrome
   Maximize Browser Window
   Go To                               ${staging}/pro
-  Wait Until Page Contains            با ثبت نام در شیپور از مزایای کسب و کار اینترنتی بهره‌مند شوید       timeout=5s
+  Wait Until Page Contains            با ثبت نام در شیپور از مزایای کسب و کار اینترنتی بهره‌مند شوید       timeout=10s
 
 Login Protools
   [Arguments]                         ${Category_Type}
@@ -28,21 +28,21 @@ Login Protools
   Open Browser On Staging
     IF                                "${Category_Type}" == "آلونک"
     Click Element                     ${Alunak}
-    Wait Until Page Contains          با آلونک کسب و کار خود را متحول کنید                                timeout=5s
+    Wait Until Page Contains          با آلونک کسب و کار خود را متحول کنید                                timeout=10s
     ELSE IF                           "${Category_Type}" == "شیپورپلاس"
     Click Element                     ${SheypoorCar}
-    Wait Until Page Contains          با شیپور کسب و کار خود را متحول کنید                              timeout=5s
+    Wait Until Page Contains          با شیپور کسب و کار خود را متحول کنید                              timeout=10s
     END
   Click Element                       name:intro-action
-  Wait Until Page Contains            ورود / ثبت‌نام                                                       timeout=5s
+  Wait Until Page Contains            ورود / ثبت‌نام                                                       timeout=10s
   Input Random Mobile
   Click Element                       name:submit
-  Wait Until Page Contains            تائید شماره موبایل                                                  timeout=5s
+  Wait Until Page Contains            تائید شماره موبایل                                                  timeout=10s
   Get Code From Mock Server
   Input Verification Code
   Close Level Up Popup Message
   Reload Page
-  Wait Until Page Contains            در اینجا فایل خود را ثبت و مدیریت کنید.                             timeout=5s
+  Wait Until Page Contains            در اینجا فایل خود را ثبت و مدیریت کنید.                             timeout=10s
 
 Input Random Mobile
   ${Random_Number}                    Generate Random String           7   [NUMBERS]
@@ -61,21 +61,21 @@ Get Code From Mock Server
   Switch Window                       MAIN
 
 Input Verification Code
-  Wait Until Page Contains Element    css:[tabindex="-1"]              timeout=5s
+  Wait Until Page Contains Element    css:[tabindex="-1"]              timeout=10s
   FOR   ${INDEX}   IN RANGE   4
         @{Pincode}                    get WebElements                  class=pincode-input-text
         Input Text                    ${Pincode[${INDEX}]}             ${mycode[${INDEX}]}
   END
-  Wait Until Page Contains Element    css:[tabindex="0"]               timeout=5s
+  Wait Until Page Contains Element    css:[tabindex="0"]               timeout=10s
   Click Element                       //*[@name='submit']/span[text()='تایید']
 
 Set Location
   Click Element                       name:location-trigger
-  Wait Until Page Contains Element    name:location-0                  timeout=5s
+  Wait Until Page Contains Element    name:location-0                  timeout=10s
   Click Element                       ${Alborz_ID}
-  Wait Until Page Contains Element    name:location-1                  timeout=5s
+  Wait Until Page Contains Element    name:location-1                  timeout=10s
   Click Element                       ${Karaj_ID}
-  Wait Until Page Contains Element    name:location-2                  timeout=5s
+  Wait Until Page Contains Element    name:location-2                  timeout=10s
   ${search-input}                     Get WebElements                  ${Search_Input_Location}
   Input Text                          ${search-input}[2]               گلشهر
   Click Element                       ${Golshahr_ID}
@@ -87,30 +87,30 @@ Submit File
   Wait Until Keyword Succeeds         3x  2s  Page Should Contain      فایل شما با موفقیت ثبت شد
   Click Element                       name:file-management-action
   Reload Page
-  Wait Until Page Contains Element    css:[name="search-input-html"]   timeout=3s
+  Wait Until Page Contains Element    css:[name="search-input-html"]   timeout=10s
   Page Should Contain Element         name:file-item-0
 
 Go To Submit File Page
   Click Element                       name:list-item-new-file
-  Wait Until Page Contains            انتخاب عکس‌های آگهی               timeout=5s
-  Wait Until Page Contains Element    css:[tabindex="-1"]              timeout=5s
+  Wait Until Page Contains            انتخاب عکس‌های آگهی               timeout=10s
+  Wait Until Page Contains Element    css:[tabindex="-1"]              timeout=10s
 
 Select More Detail Button
   Click Element                       name:افزودن جزئیات بیشتر
-  Wait Until Page Contains Element    css:[role="document"]            timeout=5s
+  Wait Until Page Contains Element    css:[role="document"]            timeout=10s
 
 Apply More Detail
   Click Button                        name:apply-action
 
 Select Form Clear Button
   Wait Until Keyword Succeeds         3x   2s                          Click Element                      name:form-clear-action
-  Wait Until Keyword Succeeds         3x   2s                          Wait Until Page Contains Element   css:[role="document"]      timeout=5s
-  Wait Until Page Contains            از انصراف اطمینان دارید؟         timeout=5s
+  Wait Until Keyword Succeeds         3x   2s                          Wait Until Page Contains Element   css:[role="document"]      timeout=10s
+  Wait Until Page Contains            از انصراف اطمینان دارید؟         timeout=10s
   Click Element                       ${Confirm_Button}
 
 Go To My Packages Page
   Click Element                       name:list-item-packageManagement
-  Wait Until Page Contains            موجودی من                        timeout=5s
+  Wait Until Page Contains            موجودی من                        timeout=10s
 
 Upload RealEstate Images
   FOR                                 ${INDEX}   IN RANGE    4
@@ -131,24 +131,24 @@ Successful Payment In Sheypoor
   Click Element                       css:button.button.green
   Wait Until Page Contains            پرداخت شما با موفقیت انجام شد.   timeout=10s
   Element Should Contain              class:text-right                 ${Package_Type}
-  Click Link                          بازگشت به برنامه 
+  Click Link                          بازگشت به برنامه
 
 Go To User Profile Page
   Click Element                       ${profile_name_ID}
   Close Level Up Popup Message
-  Wait Until Page Contains            عضو شیپور                        timeout=5s
+  Wait Until Page Contains            عضو شیپور                        timeout=10s
 
 Go To Edit Profile Page
   Click Element                       ${edit_profile_ID}
   Close Level Up Popup Message
-  Wait Until Page Contains            اطلاعات شخصی                      timeout=5s
+  Wait Until Page Contains            اطلاعات شخصی                      timeout=10s
 
 Add Image Profile
   ${choose_image_action}              Get WebElements                  name:choose-image-action
   Click Element                       ${choose_image_action}[1]
-  Wait Until Page Contains            انتخاب تصویر                     timeout=5s
+  Wait Until Page Contains            انتخاب تصویر                     timeout=10s
   Choose File                         ${Add_New_Image}                 ${image_profile_path}
-  Wait Until Page Contains            ثبت عکس                          timeout=5s
+  Wait Until Page Contains            ثبت عکس                          timeout=10s
   Click Element                       ${Sumbit_Image}
   Wait Until Page Contains            عکس شما با موفقیت ثبت شد         timeout=15s
 
@@ -191,7 +191,7 @@ Submit Selected Locations
 Submit Profile Information
   Execute JavaScript                  window.scrollTo(0,0)
   Click Element                       ${Submit_Button}
-  Wait Until Page Contains            عضو شیپور                        timeout=5s
+  Wait Until Page Contains            عضو شیپور                        timeout=10s
 
 Validate Gamification Scores
   Click Element                       ${Your_Scores}
@@ -199,16 +199,16 @@ Validate Gamification Scores
   Page Should Contain                 امتیاز برای بارگذاری عکس پروفایل
 
 Close Level Up Popup Message
-  ${Status}                           Run Keyword And Return Status    Wait Until Page Contains Element   ${Close_Button}   timeout=5s
+  ${Status}                           Run Keyword And Return Status    Wait Until Page Contains Element   ${Close_Button}   timeout=10s
   Run Keyword If                      ${Status}                        Click Button                       ${Close_Button}
 
 Upgrade User To Premium Profile
   Click Element                       ${Premium_Button}
   Page Should Contain                 ارتقاء پروفایل
-  Wait Until Page Contains            ۱۵۰,۰۰۰ تومان                    timeout=5s
+  Wait Until Page Contains            ۱۵۰,۰۰۰ تومان                    timeout=10s
   Click Button                        پرداخت
   Successful Payment In Sheypoor      پروفایل حرفه‌ای
-  Wait Until Page Contains            اعتبار پروفایل حرفه‌ای            timeout=5s
+  Wait Until Page Contains            اعتبار پروفایل حرفه‌ای            timeout=10s
   Close Level Up Popup Message
 
 Fill File Description
@@ -226,7 +226,7 @@ Open File And Check Images
 
 Go To File Bank Page
   Click Element                       ${File_Bank_Button}
-  Wait Until Page Contains            خرید همراه فایل                  timeout=5s
+  Wait Until Page Contains            خرید همراه فایل                  timeout=10s
 
 Go To Team Management Page
   Click Element                       ${Team_Management_Menu}

@@ -41,42 +41,43 @@ Create Listing
   Reload Page
   Wait Until Keyword Succeeds         3x     2s                        Page Should Contain  آگهی نشده
   Click Button                        name=advertise-action
-  Wait Until Page Contains            توضیحات                          timeout=5s
+  Wait Until Page Contains            توضیحات                          timeout=10s
   Fill File Description
+  Input Text                          name:telephone        ${Random_User_Mobile}
   Click Button                        name=apply-action
-  Wait Until Page Contains            آگهی شما با موفقیت ثبت شد        timeout=5s
+  Wait Until Page Contains            آگهی شما با موفقیت ثبت شد        timeout=10s
   Click Element                       name=listing-management-action
-  Wait Until Page Contains Element    name:listing-item-0              timeout=5s
+  Wait Until Page Contains Element    name:listing-item-0              timeout=10s
 
 Go To Submit File Page
   Click Element                       name:list-item-new-file
-  Wait Until Page Contains            ثبت فایل و آگهی                  timeout=5s
+  Wait Until Page Contains            ثبت فایل و آگهی                  timeout=10s
 
 Select Pride Category
   Select Vehicle Category
   Select Pride Brand
 
 Select Vehicle Category
-  Wait Until Page Contains Element    name=category-trigger            timeout=5s
+  Wait Until Page Contains Element    name=category-trigger            timeout=10s
   Click Element                       name=category-trigger
   Page Should Contain Element         css:[role="document"]
   Click Element                       name=43627
-  Wait Until Page Contains Element    name=43976                      timeout=5s
+  Wait Until Page Contains Element    name=43976                      timeout=10s
 
 Select Pride Brand
   Click Element                       name=43976
   Textfield Value Should Be           name=category                    پراید
-  Wait Until Page Contains Element    select-a68143                   timeout=5s
+  Wait Until Page Contains Element    select-a68143                   timeout=10s
 
 Set Motorcycle Category
   Wait Until Keyword Succeeds         3x   3s                         Click Element      name:form-clear-action
-  Wait Until Page Contains            از انصراف اطمینان دارید؟        timeout=5s
+  Wait Until Page Contains            از انصراف اطمینان دارید؟        timeout=10s
   Click Element                       ${Confirm_Button}
   Page Should Contain Element         css:[tabindex="-1"]                                #دکمه ثبت فایل غیرفعال باشه
   Wait Until Keyword Succeeds         3x    2s                         Click Element     name:category-trigger
-  Wait Until Page Contains Element    css:[tabindex="-1"]              timeout=5s        #نمایش دسته بندی
+  Wait Until Page Contains Element    css:[tabindex="-1"]              timeout=10s        #نمایش دسته بندی
   Click Element                       name=43628
-  Wait Until Page Contains Element    name=45202                       timeout=5s
+  Wait Until Page Contains Element    name=45202                       timeout=10s
   Click Element                       name=45202
   Textfield Value Should Be           name=category                    هوندا
   Wait Until Page Contains            حجم موتور
@@ -116,7 +117,7 @@ Car Payment Type
 
 Production Year
   ${Production Year}                  Evaluate  random.randint(1365, 1400)  random
-  ${Status}                           Run Keyword And Return Status  Wait Until Page Contains Element    name=a68101    timeout=1s
+  ${Status}                           Run Keyword And Return Status  Wait Until Page Contains Element    name=a68101    timeout=10s
   Run Keyword If                      ${Status}                      Input Text                          name=a68101    ${Production Year}
   ...  ELSE                           Input Text                     name=a68140                                        ${Production Year}
 
@@ -260,4 +261,4 @@ Upload Image
   Execute JavaScript                  window.scrollTo(0,0)
   ${image_path}                       Normalize Path             ${image_path}
   Choose File                         name=select-images-action  ${image_path}
-  Wait Until Page Contains Element    name:form-delete-action    timeout=5s
+  Wait Until Page Contains Element    name:form-delete-action    timeout=10s

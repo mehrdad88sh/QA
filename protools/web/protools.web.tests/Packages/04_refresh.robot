@@ -18,7 +18,7 @@ Buy Refresh Package
 *** Keywords ***
 Select Refresh Package
   Click Button                        ${PackageـPurchase_Button}
-  Wait Until Page Contains Element    ${Refresh_Package_Name}                  timeout=5s
+  Wait Until Page Contains Element    ${Refresh_Package_Name}                  timeout=10s
   Click Element                       ${Refresh_Package_Name}
   Wait Until Page Contains            پرداخت ۱۸۰,۰۰۰ تومان
 
@@ -30,5 +30,5 @@ Compare Selected Package With its Price
   Click Element                       ${Submit_Button}
 
 Validation Packages In Protools
-  Wait Until Page Contains            بروزرسانی                                timeout=5s
+  Wait Until Page Contains            بروزرسانی                                timeout=10s
   Element Text Should Be              ${Refresh_Package_Number}                ${Refresh}

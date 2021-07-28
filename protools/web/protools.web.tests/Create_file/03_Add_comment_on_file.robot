@@ -20,7 +20,7 @@ Create File In Land And Garden Category
 
 Add Comment On File
   Go To                               ${staging}/pro/real-estate/files/act
-  Wait Until Page Contains Element    name:file-item-0          timeout=5s
+  Wait Until Page Contains Element    name:file-item-0          timeout=10s
   Click Element                       name:note-action
   Wait Until Page Contains            شما هنوز هیچ یادداشتی درباره‌ی این فایل ننوشته‌اید
   FOR   ${INDEX}   IN RANGE   3
@@ -37,10 +37,10 @@ Add Comment
 
 Select Land And Garden Category
   Click Element                       name:category-trigger
-  Wait Until Page Contains Element    css:[role="document"]     timeout=5s
+  Wait Until Page Contains Element    css:[role="document"]     timeout=10s
   Click Element                       name:44099
   Textfield Value Should Be           name:category             زمین و باغ
-  Wait Until Page Contains Element    select-a69120             timeout=5s
+  Wait Until Page Contains Element    select-a69120             timeout=10s
 
 Set Land And Garden Attributes
   Applied Type
@@ -49,7 +49,7 @@ Set Land And Garden Attributes
 
 Applied Type
   Click Element                       select-a69120
-  Wait Until Page Contains Element    css:[role="listbox"]     timeout=5s
+  Wait Until Page Contains Element    css:[role="listbox"]     timeout=10s
   Click Element                       name:445096
   Element Text Should Be              select-a69120             کشاورزی
 
