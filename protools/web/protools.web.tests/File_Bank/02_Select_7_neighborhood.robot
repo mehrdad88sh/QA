@@ -15,7 +15,6 @@ Purchase File Bank Package
   Select 7 Neighborhood Package
   Select Six Months Subscription
   Successful Payment In Sheypoor     انتخاب هفت محله از یک شهر
-  Go To                              ${File_Bank_Page}
 
 Select 7 Neighborhood Package
   Reload Page
@@ -23,7 +22,7 @@ Select 7 Neighborhood Package
   ...                                Click By Text           خرید بسته جدید
   Run Keyword Unless                 ${status}
   ...                                Click By Text           خرید همراه فایل
-  Wait Until Page Contains           برای مشاهده‌ی فایل‌ها، ابتدا یکی از بسته‌های زیر را انتخاب کنید.
+  Wait Until Page Contains           انتخاب هفت محله از یک شهر
   Click Element                      ${Select_7_Neighborhood}
   Click Button                       ${Selection_Button}
   Wait Until Page Contains           انتخاب محدوده

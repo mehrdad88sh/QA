@@ -15,7 +15,6 @@ Purchase File Bank Package
   Select All City Package
   Select Three Months Subscription
   Successful Payment In Sheypoor     انتخاب کل یک شهر
-  Go To                              ${File_Bank_Page}
 
 Select All City Package
   Reload Page
@@ -23,7 +22,7 @@ Select All City Package
   ...                                Click By Text           خرید بسته جدید
   Run Keyword Unless                 ${status}
   ...                                Click By Text           خرید همراه فایل
-  Wait Until Page Contains           برای مشاهده‌ی فایل‌ها، ابتدا یکی از بسته‌های زیر را انتخاب کنید.
+  Wait Until Page Contains           انتخاب کل یک شهر
   Click Element                      ${Select_All_City}
   Click Button                       ${Selection_Button}
   Wait Until Page Contains           انتخاب محدوده
