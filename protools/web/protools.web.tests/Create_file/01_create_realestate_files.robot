@@ -249,8 +249,7 @@ Set Personal Notebook
   ${first_name}                       First Name
   ${last_name}                        Last Name
   Input Text                          name:a69533             ${first_name} ${last_name}
-  ${owner_phone}                      Phone Number
-  Input Text                          name:a69534             ${owner_phone}
+  Input Text                          name:a69534             ${Random_User_Mobile}
   ${address}                          Address
   Input Text                          name:a69535             ${address}
   Click Button                        name:apply-action
