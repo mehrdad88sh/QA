@@ -152,7 +152,7 @@ Replace Arabic Fonts
     ${Company}                       Replace String                  ${Company}  ك  ک
     Set Test Variable                ${Company}
 
-Go To Alunak Page
+Back To Protools Page
   Go To                              ${staging}/pro/real-estate
   Wait Until Page Contains Element   ${profile_name_ID}              timeout=5s
 

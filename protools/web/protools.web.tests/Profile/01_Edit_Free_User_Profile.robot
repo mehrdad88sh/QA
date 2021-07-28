@@ -7,7 +7,7 @@ Test Teardown                       Close Browser
 Edit Free User Profile
   Login Protools                    آلونک
   Create Shop In Sheypoor           املاک
-  Go To Alunak Page
+  Back To Protools Page
   Go To User Profile Page
   Go To Edit Profile Page
   Complete User Information

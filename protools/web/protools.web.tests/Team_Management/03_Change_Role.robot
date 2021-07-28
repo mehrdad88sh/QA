@@ -7,7 +7,7 @@ Test Teardown                         Close Browser
 Change Secretary And Consultant Roles In Shop
   Login Protools                      آلونک
   Create Shop In Sheypoor             املاک
-  Go To Alunak Page
+  Back To Protools Page
   Go To Team Management Page
   Add New Colleague                   منشی
   Change Secretary To Consultant Role
