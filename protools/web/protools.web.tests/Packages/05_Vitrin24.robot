@@ -13,7 +13,6 @@ Buy Vitrin24 Package
   Select Vitrin24 Package
   Compare Selected Package With its Price
   Successful Payment In Sheypoor      بسته‌ی هیبریدی: ویترین ۲۴ ساعته
-  Go To                               ${My_Packages_Page}
   Validation Packages In Protools
 
 *** Keywords ***

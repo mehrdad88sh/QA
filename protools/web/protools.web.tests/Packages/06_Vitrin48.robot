@@ -13,7 +13,6 @@ Buy Vitrin48 Package
   Select Vitrin48 Package
   Compare Selected Package With its Price
   Successful Payment In Sheypoor      بسته‌ی هیبریدی: ویترین ۴۸ ساعته
-  Go To                               ${My_Packages_Page}
   Validation Packages In Protools
 
 *** Keywords ***

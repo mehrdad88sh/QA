@@ -13,7 +13,6 @@ Buy Instant Tag Package
   Select Instant Tag Package
   Compare Selected Package With its Price
   Successful Payment In Sheypoor      بسته‌ی هیبریدی: نشان فوری
-  Go To                               ${My_Packages_Page}
   Validation Packages In Protools
 
 *** Keywords ***

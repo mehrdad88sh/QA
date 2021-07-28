@@ -13,7 +13,6 @@ Buy Refresh Package
   Select Refresh Package
   Compare Selected Package With its Price
   Successful Payment In Sheypoor      بسته‌ی هیبریدی: بروزرسانی
-  Go To                               ${My_Packages_Page}
   Validation Packages In Protools
 
 *** Keywords ***
