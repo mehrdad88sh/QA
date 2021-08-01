@@ -212,8 +212,9 @@ Upgrade User To Premium Profile
   Close Level Up Popup Message
 
 Fill File Description
+  Press Keys                          name:description                 CTRL+a+DELETE
   ${File_Description}                 Sentence                         nb_words=30
-  Set Suite Variable                  ${File_Description} 
+  Set Suite Variable                  ${File_Description}
   Input Text                          css:[name=description]           ${File_Description}
   Element Should Contain              css:[name=description]           ${File_Description}
 
