@@ -6,13 +6,12 @@ Library    SeleniumLibrary
 
 *** Test Cases ***
 Invite Alunak Colleagues
-  Login Protools                        آلونک
-  Create Shop In Sheypoor               املاک
+  Login Protools                      آلونک
+  Create Shop In Sheypoor             املاک
   Back To Protools Page
   Go To Invite Colleagues Page
   Invite A Colleagues
   Validate Invitation
-
 
 *** Keywords ***
 Go To Invite Colleagues Page

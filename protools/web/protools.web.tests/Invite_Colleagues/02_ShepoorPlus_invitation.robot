@@ -6,8 +6,8 @@ Library    SeleniumLibrary
 
 *** Test Cases ***
 Invite Alunak Colleagues
-  Login Protools                        شیپورپلاس
-  Create Shop In Sheypoor               خودرو
+  Login Protools                       شیپورپلاس
+  Create Shop In Sheypoor              خودرو
   Back To Sheypoor Car Page
   Go To Invite Colleagues Page
   Invite A Colleagues
@@ -15,16 +15,16 @@ Invite Alunak Colleagues
 
 *** Keywords ***
 Go To Invite Colleagues Page
-  Click By Text                      دعوت از همکاران
-  Wait Until Page Contains           شماره تلفن همکار خود را در بالا وارد و ارسال کنید.
+  Click By Text                        دعوت از همکاران
+  Wait Until Page Contains             شماره تلفن همکار خود را در بالا وارد و ارسال کنید.
 
 Invite A Colleagues
   Generate Random Consultant Phone
-  Input Text                         name:cellphone    ${Random_consultant_Mobile}
-  Click Element                      name:submit
-  Wait Until Page Contains           لیست دعوت‌شدگان
+  Input Text                           name:cellphone     ${Random_consultant_Mobile}
+  Click Element                        name:submit
+  Wait Until Page Contains             لیست دعوت‌شدگان
 
 Validate Invitation
-  Click By Text                      لیست دعوت‌شدگان
-  Wait Until Page Contains           در انتظار
-  Click Button                       ${Close_Button}
+  Click By Text                        لیست دعوت‌شدگان
+  Wait Until Page Contains             در انتظار
+  Click Button                         ${Close_Button}
