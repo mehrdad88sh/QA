@@ -2,7 +2,6 @@
 Documentation                         دعوت از همکاران شیپورپلاس
 Resource                              ../../../../Resources/all.resource
 Test Teardown                         Close Browser
-Library    SeleniumLibrary
 
 *** Test Cases ***
 Invite Alunak Colleagues
