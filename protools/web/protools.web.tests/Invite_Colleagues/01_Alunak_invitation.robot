@@ -15,7 +15,8 @@ Invite Alunak Colleagues
 *** Keywords ***
 Go To Invite Colleagues Page
   Click By Text                      دعوت از همکاران
-  Wait Until Page Contains            با دعوت و اضافه شدن همکاران خود به جمع کاربران آلونک و کسب اولین امتیاز توسط آن‌ها، ۱۰۰ امتیاز از ما هدیه بگیرید.
+  Wait Until Page Contains           با دعوت و اضافه شدن همکاران خود به جمع کاربران آلونک و کسب اولین امتیاز توسط آن‌ها، ۱۰۰ امتیاز از ما هدیه بگیرید.
+  Set Selenium Speed                 0.5 seconds
 
 Invite A Colleagues
   FOR   ${INDEX}   IN RANGE   3
@@ -24,7 +25,6 @@ Invite A Colleagues
     Textfield Value Should Be        name:cellphone     ${Random_consultant_Mobile}
     Click Element                    name:submit
     Wait Until Page Contains         شماره تلفن همکار خود را در بالا وارد و ارسال کنید.
-    Sleep    1.5s
   END
 
 Validate Invitation
