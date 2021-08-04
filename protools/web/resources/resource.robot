@@ -35,6 +35,7 @@ Login Protools
     END
   Click Element                       name:intro-action
   Wait Until Page Contains            ورود / ثبت‌نام                                                       timeout=10s
+  Check Error Message For Wrong Phone Number
   Input Random Mobile
   Click Element                       name:submit
   Wait Until Page Contains            تائید شماره موبایل                                                  timeout=10s
@@ -43,6 +44,13 @@ Login Protools
   Close Level Up Popup Message
   Reload Page
   Wait Until Page Contains            در اینجا فایل خود را ثبت و مدیریت کنید.                             timeout=10s
+
+Check Error Message For Wrong Phone Number
+  ${Wrong_Number}                     Generate Random String           10   [NUMBERS]
+  Input Text                          name:cellphone                   ${Wrong_Number}
+  Click Element                       name:submit
+  Wait Until Page Contains            لطفا یک شماره تلفن صحیح وارد کنید
+  Press Keys                          name:cellphone                   CTRL+a+DELETE
 
 Input Random Mobile
   ${Random_Number}                    Generate Random String           7   [NUMBERS]
