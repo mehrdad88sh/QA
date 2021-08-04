@@ -46,7 +46,7 @@ Login Protools
   Wait Until Page Contains            در اینجا فایل خود را ثبت و مدیریت کنید.                             timeout=10s
 
 Check Error Message For Wrong Phone Number
-  ${Wrong_Number}                     Generate Random String           10   [NUMBERS]
+  ${Wrong_Number}                     Generate Random String           12   [NUMBERS]
   Input Text                          name:cellphone                   ${Wrong_Number}
   Click Element                       name:submit
   Wait Until Page Contains            لطفا یک شماره تلفن صحیح وارد کنید
