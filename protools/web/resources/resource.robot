@@ -142,6 +142,7 @@ Successful Payment In Sheypoor
   Click Link                          بازگشت به برنامه
 
 Go To User Profile Page
+  Wait Until Page Contains Element    ${profile_name_ID}
   Click Element                       ${profile_name_ID}
   Close Level Up Popup Message
   Wait Until Page Contains            عضو شیپور                        timeout=10s
