@@ -153,6 +153,7 @@ Go To Edit Profile Page
   Wait Until Page Contains            اطلاعات شخصی                      timeout=10s
 
 Add Image Profile
+  Execute JavaScript                  window.scrollTo(0,0)
   ${choose_image_action}              Get WebElements                  name:choose-image-action
   Click Element                       ${choose_image_action}[1]
   Wait Until Page Contains            انتخاب تصویر                     timeout=10s
@@ -203,6 +204,7 @@ Submit Profile Information
   Wait Until Page Contains            عضو شیپور                        timeout=10s
 
 Validate Gamification Scores
+  Execute JavaScript                  window.scrollTo(0,500)
   Click Element                       ${Your_Scores}
   Page Should Contain                 امتیاز برای تعریف نام پروفایل
   Page Should Contain                 امتیاز برای بارگذاری عکس پروفایل
