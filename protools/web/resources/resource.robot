@@ -145,7 +145,7 @@ Go To User Profile Page
   Wait Until Page Contains Element    ${profile_name_ID}
   Click Element                       ${profile_name_ID}
   Close Level Up Popup Message
-  Wait Until Page Contains            عضو شیپور                        timeout=10s
+  Page Should Contain                 فعال در ${Company}              timeout=10s
 
 Go To Edit Profile Page
   Click Element                       ${edit_profile_ID}
