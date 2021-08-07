@@ -16,12 +16,23 @@ Edit Premium User Profile
 
 *** Keywords ***
 Complete User Information
-  Add Image Profile
   Fill Profile Name
-  Fill Location Job
   Fill Telegram ID
   Fill Instagram ID
   Fill AboutMe
+  Fill Consultant Specialty
+  Add Image Profile
+  Fill Location Job
+
+Fill Consultant Specialty
+  Click Element                       css:[aria-pressed="false"]
+  Wait Until Page Contains Element    css:[aria-pressed="true"]
+  Select Checkbox                     css:[value="0"]
+  Select Checkbox                     css:[value="1"]
+  Select Checkbox                     css:[value="2"]
+  Select Checkbox                     css:[value="3"]
+  Select Checkbox                     css:[value="4"]
+  Double Click Element                name:name
 
 Fill Telegram ID
   Input Text                         name:telegram         Sheypoor
