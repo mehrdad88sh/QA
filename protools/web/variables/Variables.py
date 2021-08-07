@@ -78,5 +78,7 @@ class Variables(object):
         'Secretary': 'name:secretary',
         'Colleague_Menu': 'css:[role="menu"]',
         'Colleague_Delete_Button': 'menu-حذف',
-        'Confirm_Button': 'name:confirm-accept-action'
+        'Confirm_Button': 'name:confirm-accept-action',
+        'Consultant_Specialty': 'css:[aria-pressed="false"]',
+        'Consultant_Specialty_Dropdown': 'css:[aria-pressed="true"]'
 }
