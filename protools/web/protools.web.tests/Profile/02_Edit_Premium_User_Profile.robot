@@ -25,14 +25,14 @@ Complete User Information
   Fill Location Job
 
 Fill Consultant Specialty
-  Click Element                       css:[aria-pressed="false"]
-  Wait Until Page Contains Element    css:[aria-pressed="true"]
-  Select Checkbox                     css:[value="0"]
-  Select Checkbox                     css:[value="1"]
-  Select Checkbox                     css:[value="2"]
-  Select Checkbox                     css:[value="3"]
-  Select Checkbox                     css:[value="4"]
-  Double Click Element                name:name
+  Click Element                      ${Consultant_Specialty}
+  Wait Until Page Contains Element   ${Consultant_Specialty_Dropdown}
+  FOR    ${INDEX}   IN RANGE  5
+      Select Checkbox                css:[value="${INDEX}"]
+      Checkbox Should Be Selected    css:[value="${INDEX}"]
+  END
+
+  Double Click Element               name:name
 
 Fill Telegram ID
   Input Text                         name:telegram         Sheypoor
