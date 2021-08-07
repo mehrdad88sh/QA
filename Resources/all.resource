@@ -21,9 +21,9 @@ Click By Text
   Click Element                      //*[contains(text(),'${Text}')]
 
 Generate Random username
-  ${prefix_name}                     Prefix
-  ${first_name}                      First Name
-  ${last_name}                       Last Name
+  ${prefix_name}                     Prefix Male
+  ${first_name}                      First Name Male
+  ${last_name}                       Last Name Male
   Set Suite Variable                 ${Random_User_Name}             ${prefix_name} ${first_name} ${last_name}
 
 Generate Random AboutMe Sentence
