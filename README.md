@@ -27,3 +27,5 @@
 - Install requirements file
 
       pip install -r requirements.txt
+
+- Don't forget that close the terminal :)
