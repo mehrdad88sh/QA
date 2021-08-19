@@ -9,10 +9,10 @@ Resource                   ../../../Resources/resource.robot
 Register And Login Alunak
     [Tags]                  api        login
     Set Log Level           TRACE
-    Register Request Valid                 v1
-    Register Request Invalid Phone Number  v1
-    Authenticate By Password               v1
-    Authenticate By Invalid Password       v1
+    Register Request Valid                 v2
+    Register Request Invalid Phone Number  v2
+    Authenticate By Password               v2
+    Authenticate By Invalid Password       v2
 
 *** Keywords ***
 Register Request Valid
