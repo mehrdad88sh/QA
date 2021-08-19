@@ -5,9 +5,9 @@ Resource                   ../../../Resources/resource.robot
 
 *** Test Cases ***
 Get Alunak Profile
-    Set Log Level             TRACE
+    Set Log Level          TRACE
     Register To Alunak        v2
-    Authorization In Alunak   v2
+    Authentication In Alunak  v2
     Get Profile               v2
 
 *** Keywords ***
