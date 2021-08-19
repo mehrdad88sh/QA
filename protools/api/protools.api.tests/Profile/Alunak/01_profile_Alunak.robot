@@ -8,10 +8,10 @@ Resource                   ../../../Resources/resource.robot
 
 *** Test Cases ***
 Get Alunak Profile
-  Set Log Level            TRACE
-  Register To Alunak       v2
-  Authorization In Alunak  v2
-  Get Profile              v2
+    Set Log Level             TRACE
+    Register To Alunak        v2
+    Authorization In Alunak   v2
+    Get Profile               v2
 
 *** Keywords ***
 Register To Alunak
@@ -20,7 +20,8 @@ Register To Alunak
     Set Headers             {"Authorization": "Basic dHJ1bXBldDpuZXdzaXRl"}
     Expect Response         ${CURDIR}/../../Authentication/Versions/${protools_version}/schema/register.json
     Generate Random Phone Number
-    Post                    /${protools_version}/auth/register           {"cellphone": "${Random_Number}", "user_type": "real-estate"}
+    Post                    /${protools_version}/auth/register
+    ...                     {"cellphone": "${Random_Number}", "user_type": "real-estate"}
     Integer                 response status        200
     ${response}             output                 response body
     ${token}                Get Value From Json    ${response}           $.token
@@ -33,7 +34,8 @@ Authorization In Alunak
     Set Headers             {"Authorization": "Basic dHJ1bXBldDpuZXdzaXRl"}
     Get Code From Mock Server
     Expect Response         ${CURDIR}/../../Authentication/Versions/${protools_version}/schema/authenticate-by-password.json
-    Post                    /${protools_version}/auth/authorize          {"grant_type": "password", "username": "${token}", "password": "${Code}", "scope": "full"}
+    Post                    /${protools_version}/auth/authorize
+    ...                     {"grant_type": "password", "username": "${token}", "password": "${Code}", "scope": "full"}
     Integer                 response status        200
     ${response}             output                 response body
     ${access_token}         Get Value From Json    ${response}           $.access_token
