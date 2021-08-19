@@ -25,7 +25,7 @@ Register To Alunak
     ${token}                Convert To String      ${token[0]}
     Set Test Variable       ${token}               ${token}
 
-Authorization In Alunak
+Authentication In Alunak
     [Arguments]             ${protools_version}
     Expect Request	        {"body": {"required": ["username", "password"]}}
     Set Headers             {"Authorization": "Basic dHJ1bXBldDpuZXdzaXRl"}
