@@ -1,0 +1,16 @@
+{
+    "type": "object",
+    "properties": {
+        "body": {
+            "type": "object",
+            "properties": {
+                "code": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "code"
+            ]
+        }
+    }
+}

@@ -10,7 +10,7 @@ Generate Random Phone Number
   Set Suite Variable                 ${Random_Number}          0900${Random_Number}
 
 Get Code From Mock Server
-  Expect Response                    ${CURDIR}/../protools.api.tests/Authentication/Versions/V2/schema/getcode.json
+  Expect Response                    ${CURDIR}/../protools.api.tests/Authentication/Versions/v2/schema/getcode.json
   Get                                ${stagingMock}=${Random_Number}
   ...                                headers={"Authorization": "Basic dHJ1bXBldDpuZXdzaXRl"}
   Integer                            response status           200
