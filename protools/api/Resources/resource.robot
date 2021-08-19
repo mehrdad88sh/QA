@@ -11,8 +11,8 @@ Generate Random Phone Number
 
 Get Code From Mock Server
   Expect Response                    ${CURDIR}/../protools.api.tests/Authentication/Versions/V2/schema/getcode.json
-  Set Headers                        {"Authorization": "Basic dHJ1bXBldDpuZXdzaXRl"}
-  Get                                ${staging}/mock/getCode?mobile=${Random_Number}
+  Get                                ${stagingMock}=${Random_Number}
+  ...                                headers={"Authorization": "Basic dHJ1bXBldDpuZXdzaXRl"}
   Integer                            response status           200
   ${response}                        output                    response body
   ${Code}                            Get Value From Json       ${response}     $.code
