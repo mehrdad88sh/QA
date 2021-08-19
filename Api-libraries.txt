@@ -1,0 +1,11 @@
+Libraries in api test :
+  robotframework-RESTinstance
+  robotframework-requests
+  robotframework-jsonlibrary
+  String
+  Collection
+  robotframework-faker
+  robotframework-pabot
+  curlify
+  OperatingSystem
+  OS
