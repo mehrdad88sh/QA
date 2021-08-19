@@ -50,7 +50,10 @@ Get Profile
     ${response}             output                 response body
     ${cellphone}            Get Value From Json    ${response}           $.cellphone
     ${cellphone}            Convert To String      ${cellphone[0]}
+    Should Be Equal         ${cellphone}           ${Random_Number}
     ${isProfileCompleted}   Get Value From Json    ${response}           $.isProfileCompleted
     ${isProfileCompleted}   Convert To String      ${isProfileCompleted[0]}
-    Should Be Equal         ${cellphone}           ${Random_Number}
     Should Be Equal         ${isProfileCompleted}  False
+    ${isUpgrade}            Get Value From Json    ${response}           $.upgradeButton.isUpgrade
+    ${isUpgrade}            Convert To String      ${isUpgrade[0]}
+    Should Be Equal         ${isUpgrade}           True
