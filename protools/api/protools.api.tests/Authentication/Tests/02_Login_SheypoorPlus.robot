@@ -10,8 +10,8 @@ Register And Login SheypoorPlus
     [Tags]                  api        login
     Set Log Level           TRACE
     Register Request Valid                  v1
-    Register Request Invalid Phone Number   v1
     Authenticate By Password                v1
+    Register Request Invalid Phone Number   v1
     Authenticate By Invalid Password        v1
 
 *** Keywords ***
