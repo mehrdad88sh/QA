@@ -3,22 +3,12 @@ Documentation              Get Alunak Profile
 Variables                  ../../../Variables/Variables.py
 Resource                   ../../../Resources/resource.robot
 
-*** Variables ***
-
-
 *** Test Cases ***
 Get Alunak Profile
-<<<<<<< HEAD
     Set Log Level             TRACE
     Register To Alunak        v2
     Authorization In Alunak   v2
     Get Profile               v2
-=======
-  Set Log Level             TRACE
-  Register To Alunak        v2
-  Authorization In Alunak   v2
-  Get Profile               v2
->>>>>>> 8a915486f9273463ef89db7a33ceab2ee6b25afb
 
 *** Keywords ***
 Register To Alunak
