@@ -4,14 +4,14 @@ Variables                  ../../../Variables/Variables.py
 Resource                   ../../../Resources/resource.robot
 
 *** Test Cases ***
-Get Alunak Profile
+SheypoorPlus User Profile
     Set Log Level          TRACE
-    Register To Alunak        v1
-    Authentication In Alunak  v1
-    Get Profile               v1
+    Register To SheypoorPlus        v1
+    Authentication In SheypoorPlus  v1
+    Get SheypoorPlus Profile               v1
 
 *** Keywords ***
-Register To Alunak
+Register To SheypoorPlus
     [Arguments]             ${protools_version}
     Expect Request	        {"body": {"required": ["cellphone", "user_type"]}}
     Set Headers             {"Authorization": "Basic dHJ1bXBldDpuZXdzaXRl"}
@@ -25,7 +25,7 @@ Register To Alunak
     ${token}                Convert To String      ${token[0]}
     Set Test Variable       ${token}               ${token}
 
-Authentication In Alunak
+Authentication In SheypoorPlus
     [Arguments]             ${protools_version}
     Expect Request	        {"body": {"required": ["username", "password"]}}
     Set Headers             {"Authorization": "Basic dHJ1bXBldDpuZXdzaXRl"}
@@ -39,7 +39,7 @@ Authentication In Alunak
     ${access_token}         Convert To String      ${access_token[0]}
     Set Test Variable       ${access_token}        ${access_token}
 
-Get Profile
+Get SheypoorPlus Profile
     [Arguments]             ${protools_version}
     Clear Expectations
     Set Headers             {"X-Ticket": "${access_token}"}
