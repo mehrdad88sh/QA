@@ -6,7 +6,7 @@ Resource                    ../../../Resources/resource.robot
 *** Test Cases ***
 Get Alunak Profile
     Set Log Level           TRACE
-    Login Alunak            v1
+    Login Protools          v1       real-estate
     Get Profile             v1
 
 *** Keywords ***
