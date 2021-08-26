@@ -4,7 +4,7 @@ Variables                  ../../../Variables/Variables.py
 Resource                   ../../../Resources/resource.robot
 
 *** Test Cases ***
-Edit User Profile Alunak
+User Scores Alunak
     Set Log Level          TRACE
     Register To Alunak        v1
     Authentication In Alunak  v1
