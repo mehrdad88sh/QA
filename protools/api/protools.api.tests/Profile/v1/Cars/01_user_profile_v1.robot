@@ -4,13 +4,13 @@ Variables                   ../../../Variables/Variables.py
 Resource                    ../../../Resources/resource.robot
 
 *** Test Cases ***
-SheypoorPlus User Profile
+Get SheypoorPlus Profile
     Set Log Level           TRACE
-    Login Protools          v2    car-sale
-    Get SheypoorPlus Profile  v1
+    Login Protools          v1       car-sale
+    Get Profile             v1
 
 *** Keywords ***
-Get SheypoorPlus Profile
+Get Profile
     [Arguments]             ${protools_version}
     Clear Expectations
     Set Headers             {"X-Ticket": "${access_token}"}
