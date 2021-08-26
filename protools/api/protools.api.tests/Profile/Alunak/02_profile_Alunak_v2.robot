@@ -54,6 +54,9 @@ Get Profile
     ${isProfileCompleted}   Get Value From Json       ${response}                $.isProfileCompleted
     ${isProfileCompleted}   Convert To String         ${isProfileCompleted[0]}
     Should Be Equal         ${isProfileCompleted}     False
+    ${videoCreditCount}     Get Value From Json       ${response}                $.videoCreditCount
+    ${videoCreditCount}     Convert To String         ${videoCreditCount[0]}
+    Should Be Equal         ${videoCreditCount}       0
     ${upgradeButton_show}   Get Value From Json       ${response}                $.upgradeButton.show
     ${upgradeButton_show}   Convert To String         ${upgradeButton_show[0]}
     Should Be Equal         ${upgradeButton_show}     True
