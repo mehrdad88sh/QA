@@ -1,7 +1,7 @@
 *** Settings ***
 Documentation               Get User Badge Profile Alunak v2
-Variables                   ../../../Variables/Variables.py
-Resource                    ../../../Resources/resource.robot
+Variables                   ../../../../Variables/Variables.py
+Resource                    ../../../../Resources/resource.robot
 
 *** Test Cases ***
 User Badge Profile Alunak

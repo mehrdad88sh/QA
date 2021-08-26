@@ -1,7 +1,7 @@
 *** Settings ***
 Documentation               Get User Scores Alunak v1
-Variables                   ../../../Variables/Variables.py
-Resource                    ../../../Resources/resource.robot
+Variables                   ../../../../Variables/Variables.py
+Resource                    ../../../../Resources/resource.robot
 
 *** Test Cases ***
 User Scores Alunak

@@ -1,7 +1,7 @@
 *** Settings ***
 Documentation               Get SheypoorPlus Profile v2
-Variables                   ../../../Variables/Variables.py
-Resource                    ../../../Resources/resource.robot
+Variables                   ../../../../Variables/Variables.py
+Resource                    ../../../../Resources/resource.robot
 
 *** Test Cases ***
 Get SheypoorPlus Profile

@@ -1,7 +1,7 @@
 *** Settings ***
 Documentation               edit user profile alunak v1
-Variables                   ../../../Variables/Variables.py
-Resource                    ../../../Resources/resource.robot
+Variables                   ../../../../Variables/Variables.py
+Resource                    ../../../../Resources/resource.robot
 
 *** Test Cases ***
 Edit User Profile Alunak

@@ -1,7 +1,7 @@
 *** Settings ***
-Documentation               Get Alunak Profile v1 
-Variables                   ../../../Variables/Variables.py
-Resource                    ../../../Resources/resource.robot
+Documentation               Get Alunak Profile v1
+Variables                   ../../../../Variables/Variables.py
+Resource                    ../../../../Resources/resource.robot
 
 *** Test Cases ***
 Get Alunak Profile
