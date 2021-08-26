@@ -62,7 +62,7 @@ Get Profile
     Should Be Equal         ${isUpgrade}              False
     ${auctionStatus}        Get Value From Json       ${response}                $.auctionStatus
     ${auctionStatus}        Convert To String         ${auctionStatus[0]}
-    Should Be Equal         ${nps}                    False
+    Should Be Equal         ${auctionStatus}          False
     ${nps}                  Get Value From Json       ${response}                $.nps
     ${nps}                  Convert To String         ${nps[0]}
     Should Be Equal         ${nps}                    False
