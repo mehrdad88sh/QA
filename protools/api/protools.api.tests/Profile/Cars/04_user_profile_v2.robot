@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation              Get Alunak Profile
+Documentation              Get SheypoorPlus Profile v2
 Variables                  ../../../Variables/Variables.py
 Resource                   ../../../Resources/resource.robot
 
