@@ -6,7 +6,7 @@ Resource                    ../../../Resources/resource.robot
 *** Test Cases ***
 User Badge Profile Alunak
     Set Log Level           TRACE
-    Login Alunak            v1
+    Login Protools          v2       real-estate
     Get User Badge          v1
 
 *** Keywords ***

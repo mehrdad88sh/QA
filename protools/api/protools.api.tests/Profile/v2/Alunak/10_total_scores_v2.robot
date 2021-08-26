@@ -1,14 +1,14 @@
 *** Settings ***
-Documentation               Get User Scores Alunak v1
+Documentation               Get Total Scores Alunak v2
 Variables                   ../../../Variables/Variables.py
 Resource                    ../../../Resources/resource.robot
 
 *** Test Cases ***
-User Scores Alunak
+Total Scores Alunak
     Set Log Level           TRACE
-    Login Alunak            v1
-    Edit User Profile       v1
-    Get User Scores         v1
+    Login Protools          v2       real-estate
+    Edit User Profile       v2
+    Get Total Scores        v2
 
 *** Keywords ***
 Edit User Profile
@@ -24,22 +24,25 @@ Edit User Profile
     Get                     /${protools_version}/profile
     Integer                 response status        200
     ${response}             output                 response body
-    ${full_name}            Get Value From Json    ${response}                $.full_name
+    ${full_name}            Get Value From Json    ${response}                 $.full_name
     ${full_name}            Convert To String      ${full_name[0]}
     Should Be Equal         ${full_name}           ${Random_User_Name}
 
-Get User Scores
+Get Total Scores
   [Arguments]             ${protools_version}
   Clear Expectations
   Set Headers             {"X-Ticket": "${access_token}"}
   Set Headers             {"source": "protools"}
   Set Headers             {"Authorization": "Basic dHJ1bXBldDpuZXdzaXRl"}
-  Get                     /${protools_version}/profile/user-scores
+  Get                     /${protools_version}/profile/total-scores
   Integer                 response status        200
   ${response}             output                 response body
-  ${actionDescription}    Get Value From Json    ${response}                   $.items[0].actionDescription
-  ${actionDescription}    Convert To String      ${actionDescription[0]}
-  Should Be Equal         ${actionDescription}   امتیاز برای تعریف نام پروفایل
   ${score}                Get Value From Json    ${response}                   $.items[0].score
   ${score}                Convert To String      ${score[0]}
   Should Be Equal         ${score}               10
+  ${name}                 Get Value From Json    ${response}                   $.items[0].name
+  ${name}                 Convert To String      ${name[0]}
+  Should Be Equal         ${name}                ${Random_User_Name}
+  ${loggedInUser}         Get Value From Json    ${response}                   $.items[0].loggedInUser
+  ${loggedInUser}         Convert To String      ${loggedInUser[0]}
+  Should Be Equal         ${loggedInUser}        True

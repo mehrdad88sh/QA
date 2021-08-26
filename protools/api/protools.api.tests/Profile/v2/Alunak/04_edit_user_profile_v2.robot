@@ -1,13 +1,13 @@
 *** Settings ***
-Documentation               edit user profile alunak v1
+Documentation               edit user profile alunak v2
 Variables                   ../../../Variables/Variables.py
 Resource                    ../../../Resources/resource.robot
 
 *** Test Cases ***
 Edit User Profile Alunak
     Set Log Level           TRACE
-    Login Alunak            v1
-    Edit User Profile       v1
+    Login Protools          v2       real-estate
+    Edit User Profile       v2
 
 *** Keywords ***
 Edit User Profile

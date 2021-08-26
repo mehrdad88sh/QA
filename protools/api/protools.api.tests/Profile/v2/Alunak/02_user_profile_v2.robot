@@ -1,12 +1,12 @@
 *** Settings ***
-Documentation               Get Alunak Profile v2 api
+Documentation               Get Alunak Profile v2 
 Variables                   ../../../Variables/Variables.py
 Resource                    ../../../Resources/resource.robot
 
 *** Test Cases ***
 Get Alunak Profile
     Set Log Level           TRACE
-    Login Alunak            v2
+    Login Protools          v2       real-estate
     Get Profile             v2
 
 *** Keywords ***
