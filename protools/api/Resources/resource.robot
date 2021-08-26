@@ -34,7 +34,7 @@ Register To SheypoorPlus
     [Arguments]               ${protools_version}
     Expect Request	          {"body": {"required": ["cellphone", "user_type"]}}
     Set Headers               {"Authorization": "Basic dHJ1bXBldDpuZXdzaXRl"}
-    Expect Response           ${CURDIR}/../../Authentication/Versions/${protools_version}/schema/register.json
+    Expect Response           ${CURDIR}/../protools.api.tests/Authentication/Versions/${protools_version}/schema/register.json
     Generate Random Phone Number
     Post                      /${protools_version}/auth/register
     ...                       {"cellphone": "${Random_Number}", "user_type": "car-sale"}
