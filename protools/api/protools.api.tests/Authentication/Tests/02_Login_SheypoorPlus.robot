@@ -21,7 +21,7 @@ Register Request Valid
     Set Headers             {"Authorization": "Basic dHJ1bXBldDpuZXdzaXRl"}
     Expect Response         ${CURDIR}/../Versions/${protools_version}/schema/register.json
     Generate Random Phone Number
-    Post                    /${protools_version}/auth/register      {"cellphone": "${Random_Number}", "user_type": "car-sale"}
+    Post                    /${protools_version}/auth/register      {"cellphone": "${Random_User_Mobile}", "user_type": "car-sale"}
     Integer                 response status        200
     ${response}             output                 response body
     ${token}                Get Value From Json    ${response}           $.token

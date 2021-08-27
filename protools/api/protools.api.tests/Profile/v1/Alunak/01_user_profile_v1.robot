@@ -21,7 +21,7 @@ Get Profile
     ${response}             output                    response body
     ${cellphone}            Get Value From Json       ${response}                $.cellphone
     ${cellphone}            Convert To String         ${cellphone[0]}
-    Should Be Equal         ${cellphone}              ${Random_Number}
+    Should Be Equal         ${cellphone}              ${Random_User_Mobile}
     ${files}                Get Value From Json       ${response}                $.files
     ${files}                Convert To String         ${files[0]}
     Should Be Equal         ${files}                  0
