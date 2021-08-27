@@ -7,7 +7,7 @@ Library                       FakerLibrary                    locale=fa_IR
 
 *** Keywords ***
 Login Protools
-  [Arguments]                 ${protools_version}             ${User_Type}
+    [Arguments]               ${protools_version}             ${User_Type}
     IF                        "${User_Type}" == "real-estate"
                               Register To Alunak              ${protools_version}
                               Authentication In Protools      ${protools_version}
@@ -23,7 +23,7 @@ Register To Alunak
     Expect Response           ${CURDIR}/../protools.api.tests/Authentication/Versions/${protools_version}/schema/register.json
     Generate Random Phone Number
     Post                      /${protools_version}/auth/register
-    ...                       {"cellphone": "${Random_Number}", "user_type": "real-estate"}
+    ...                       {"cellphone": "${Random_User_Mobile}", "user_type": "real-estate"}
     Integer                   response status                 200
     ${response}               output                          response body
     ${token}                  Get Value From Json             ${response}              $.token
@@ -37,7 +37,7 @@ Register To SheypoorPlus
     Expect Response           ${CURDIR}/../protools.api.tests/Authentication/Versions/${protools_version}/schema/register.json
     Generate Random Phone Number
     Post                      /${protools_version}/auth/register
-    ...                       {"cellphone": "${Random_Number}", "user_type": "car-sale"}
+    ...                       {"cellphone": "${Random_User_Mobile}", "user_type": "car-sale"}
     Integer                   response status                 200
     ${response}               output                          response body
     ${token}                  Get Value From Json             ${response}                  $.token
@@ -59,12 +59,12 @@ Authentication In Protools
     Set Test Variable         ${access_token}                 ${access_token}
 
 Generate Random Phone Number
-    ${Random_Number}          Generate Random String          7   [NUMBERS]
-    Set Suite Variable        ${Random_Number}                0900${Random_Number}
+    ${Random_User_Mobile}     Generate Random String          7   [NUMBERS]
+    Set Suite Variable        ${Random_User_Mobile}           0900${Random_User_Mobile}
 
 Get Code From Mock Server
     Clear Expectations
-    Get                       ${stagingMock}=${Random_Number}
+    Get                       ${stagingMock}=${Random_User_Mobile}
     ...                       headers={"Authorization": "Basic dHJ1bXBldDpuZXdzaXRl"}
     Integer                   response status                 200
     ${response}               output                          response body
@@ -85,3 +85,12 @@ Generate Username
         ${last_name}          Last Name Female
         Set Suite Variable    ${Random_User_Name}             ${prefix_name} ${first_name} ${last_name}
     END
+
+Check Payment In Sheypoor
+    [Arguments]                   ${Package_Type}
+    Open Browser                  ${Payment_URL}                      browser=chrome
+    Wait Until Page Contains      درحال انتقال به درگاه پرداخت        timeout=10s
+    Click Element                 css:button.button.green
+    Wait Until Page Contains      پرداخت شما با موفقیت انجام شد.      timeout=10s
+    Element Should Contain        class:text-right                    ${Package_Type}
+    Close Browser
