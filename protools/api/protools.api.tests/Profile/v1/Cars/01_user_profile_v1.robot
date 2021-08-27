@@ -6,7 +6,7 @@ Resource                    ../../../../Resources/resource.robot
 *** Test Cases ***
 Get SheypoorPlus Profile
     Set Log Level           TRACE
-    Login Protools          v1       car-sale
+    Login Protools Api      v1       car-sale
     Get Profile             v1
 
 *** Keywords ***

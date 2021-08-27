@@ -6,7 +6,7 @@ Resource                    ../../../../Resources/resource.robot
 *** Test Cases ***
 User Badge Profile Alunak
     Set Log Level           TRACE
-    Login Protools          v1       car-sale
+    Login Protools Api      v1       car-sale
     Get User Badge          v1
 
 *** Keywords ***

@@ -7,7 +7,7 @@ Library                           SeleniumLibrary
 *** Test Cases ***
 Upgrade User To Premium Profile
     Set Log Level                 TRACE
-    Login Protools                v2                                  real-estate
+    Login Protools Api            v2                                  real-estate
     Upgrade To Premium Profile    v2
     Validate Premium User Profile  v2
 

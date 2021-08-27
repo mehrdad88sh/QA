@@ -6,7 +6,7 @@ Resource                    ../../../../Resources/resource.robot
 *** Test Cases ***
 Edit User Profile Alunak
     Set Log Level           TRACE
-    Login Protools          v2       car-sale
+    Login Protools Api      v2       car-sale
     Edit User Profile       v2
 
 *** Keywords ***

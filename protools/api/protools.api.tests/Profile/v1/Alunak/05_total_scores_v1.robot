@@ -6,7 +6,7 @@ Resource                    ../../../../Resources/resource.robot
 *** Test Cases ***
 Total Scores Alunak
     Set Log Level           TRACE
-    Login Protools          v1       real-estate
+    Login Protools Api      v1       real-estate
     Edit User Profile       v1
     Get Total Scores        v1
 

@@ -6,7 +6,7 @@ Resource                    ../../../../Resources/resource.robot
 *** Test Cases ***
 Total Scores Alunak
     Set Log Level           TRACE
-    Login Protools          v2       car-sale
+    Login Protools Api      v2       car-sale
     Edit User Profile       v2
     Get Total Scores        v2
 

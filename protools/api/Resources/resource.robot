@@ -6,7 +6,7 @@ Library                       String
 Library                       FakerLibrary                    locale=fa_IR
 
 *** Keywords ***
-Login Protools
+Login Protools Api
     [Arguments]               ${protools_version}             ${User_Type}
     IF                        "${User_Type}" == "real-estate"
                               Register To Alunak              ${protools_version}
@@ -48,7 +48,7 @@ Authentication In Protools
     [Arguments]               ${protools_version}
     Expect Request	          {"body": {"required": ["username", "password"]}}
     Set Headers               {"Authorization": "Basic dHJ1bXBldDpuZXdzaXRl"}
-    Get Code From Mock Server
+    Get Code From Mock Server Api
     Expect Response           ${CURDIR}/../protools.api.tests/Authentication/Versions/${protools_version}/schema/authenticate-by-password.json
     Post                      /${protools_version}/auth/authorize
     ...                       {"grant_type": "password", "username": "${token}", "password": "${Code}", "scope": "full"}
@@ -62,7 +62,7 @@ Generate Random Phone Number
     ${Random_User_Mobile}     Generate Random String          7   [NUMBERS]
     Set Suite Variable        ${Random_User_Mobile}           0900${Random_User_Mobile}
 
-Get Code From Mock Server
+Get Code From Mock Server Api
     Clear Expectations
     Get                       ${stagingMock}=${Random_User_Mobile}
     ...                       headers={"Authorization": "Basic dHJ1bXBldDpuZXdzaXRl"}
