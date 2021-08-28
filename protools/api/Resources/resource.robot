@@ -3,6 +3,7 @@ Documentation                 Api resources
 Library                       REST                            ${staging}/api/protools
 Library                       JSONLibrary
 Library                       String
+Library                       Collections
 Library                       FakerLibrary                    locale=fa_IR
 
 *** Keywords ***
