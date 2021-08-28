@@ -31,6 +31,12 @@ Upgrade To Premium
 
 Validate User Is Premium
     [Arguments]                   ${protools_version}
+    Get                           /${protools_version}/profile
+    Integer                       response status                     200
+    ${response}                   output                              response body
+    ${isUpgrade}                  Get Value From Json                 ${response}         $.upgradeButton.isUpgrade
+    ${isUpgrade}                  Convert To String                   ${isUpgrade[0]}
+    Should Be Equal               ${isUpgrade}                        False    
     Get                           /${protools_version}/profile/details
     Integer                       response status                     200
     ${response}                   output                              response body
