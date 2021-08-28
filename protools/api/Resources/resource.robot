@@ -40,7 +40,7 @@ Register To SheypoorPlus
     ...                       {"cellphone": "${Random_User_Mobile}", "user_type": "car-sale"}
     Integer                   response status                 200
     ${response}               output                          response body
-    ${token}                  Get Value From Json             ${response}                  $.token
+    ${token}                  Get Value From Json             ${response}              $.token
     ${token}                  Convert To String               ${token[0]}
     Set Suite Variable        ${token}                        ${token}
 
@@ -58,10 +58,6 @@ Authentication In Protools
     ${access_token}           Convert To String               ${access_token[0]}
     Set Test Variable         ${access_token}                 ${access_token}
 
-Generate Random Phone Number
-    ${Random_User_Mobile}     Generate Random String          7   [NUMBERS]
-    Set Suite Variable        ${Random_User_Mobile}           0900${Random_User_Mobile}
-
 Get Code From Mock Server Api
     Clear Expectations
     Get                       ${stagingMock}=${Random_User_Mobile}
@@ -71,6 +67,14 @@ Get Code From Mock Server Api
     ${Code}                   Get Value From Json             ${response}              $.code
     ${Code}                   Convert To String               ${Code[0]}
     Set Suite Variable        ${Code}                         ${Code}
+
+Generate Random Phone Number
+    ${Random_User_Mobile}     Generate Random String          7   [NUMBERS]
+    Set Suite Variable        ${Random_User_Mobile}           0900${Random_User_Mobile}
+
+Generate Random AboutMe Sentence
+    ${aboutme}                Sentence                        nb_words=30
+    Set Suite Variable        ${Random_AboutMe_Sentence}      ${aboutme}
 
 Generate Username
     [Arguments]               ${protools_version}
@@ -87,10 +91,10 @@ Generate Username
     END
 
 Check Payment In Sheypoor
-    [Arguments]                   ${Package_Type}
-    Open Browser                  ${Payment_URL}                      browser=chrome
-    Wait Until Page Contains      درحال انتقال به درگاه پرداخت        timeout=10s
-    Click Element                 css:button.button.green
-    Wait Until Page Contains      پرداخت شما با موفقیت انجام شد.      timeout=10s
-    Element Should Contain        class:text-right                    ${Package_Type}
+    [Arguments]               ${Package_Type}
+    Open Browser              ${Payment_URL}                  browser=chrome
+    Wait Until Page Contains  درحال انتقال به درگاه پرداخت    timeout=10s
+    Click Element             css:button.button.green
+    Wait Until Page Contains  پرداخت شما با موفقیت انجام شد.  timeout=10s
+    Element Should Contain    class:text-right                ${Package_Type}
     Close Browser
