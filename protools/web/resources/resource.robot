@@ -231,7 +231,7 @@ Fill File Description
 
 Open File And Check Images
   Click Element                       name:file-item-0
-  Wait Until Page Contains            آگهی نشده
+  Wait Until Page Contains            آگهی نشده                        timeout=10s
   FOR                                 ${INDEX}   IN RANGE    3
     Click Element                     name:next-slide
     Sleep    1s
