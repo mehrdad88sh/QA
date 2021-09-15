@@ -43,7 +43,6 @@ Create Listing
   Click Button                        name=advertise-action
   Wait Until Page Contains            توضیحات                          timeout=10s
   Fill File Description
-  Input Text                          name:telephone        ${Random_User_Mobile}
   Click Button                        name=apply-action
   Wait Until Page Contains            آگهی شما با موفقیت ثبت شد        timeout=10s
   Click Element                       name=listing-management-action
