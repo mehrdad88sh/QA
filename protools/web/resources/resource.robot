@@ -118,7 +118,7 @@ Select Form Clear Button
 
 Go To My Packages Page
   Click Element                       name:list-item-packageManagement
-  Wait Until Page Contains            موجودی من                        timeout=10s
+  Wait Until Page Contains            خرید بسته                     timeout=10s
 
 Upload RealEstate Images
   FOR                                 ${INDEX}   IN RANGE    4
