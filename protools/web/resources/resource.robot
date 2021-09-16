@@ -117,7 +117,7 @@ Select Form Clear Button
   Click Element                       ${Confirm_Button}
 
 Go To My Packages Page
-  Click Element                       name:list-item-packageManagement
+  Click Element                       ${My_Packages_Button}
   Wait Until Page Contains            خرید بسته                     timeout=10s
 
 Upload RealEstate Images

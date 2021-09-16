@@ -29,6 +29,7 @@ class Variables(object):
         'Your_Scores': 'name:score',
         'Rating': 'name:level',
         'Premium_Button': 'name:upgradeButton',
+        'My_Packages_Button': 'name:list-item-packageManagement',
         'PackageـPurchase_Button': 'name:packageManage-action',
         'Refresh_Package_Name': 'name:simple-package-refresh',
         'Refresh_Package_Price': 'name=simple-package-refresh-price',
