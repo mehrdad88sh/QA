@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation                         خرید بسته ظرفیت ثبت اگهی
+Documentation                         خرید بسته ظرفیت تعداد آگهی
 Resource                              ../../resources/resource.robot
 Test Teardown                         Close Browser
 
@@ -9,6 +9,8 @@ ${limitation}                         ۱۰ بسته
 *** Test Cases ***
 Buy Limitation Package
   Login Protools                      آلونک
+  Create Shop In Sheypoor             املاک
+  Back To Protools Page
   Go To My Packages Page
   Select Limitation Package
   Compare Selected Package With its Price
@@ -30,5 +32,5 @@ Compare Selected Package With its Price
   Click Element                       ${Submit_Button}
 
 Validation Packages In Protools
-  Wait Until Page Contains            افزایش ظرفیت تعداد آگهی کاربر            timeout=10s
+  Wait Until Page Contains            این بسته به شما امکان ثبت آگهی بیشتر از سقف تعداد آگهی را میدهد            timeout=10s
   Element Text Should Be              ${Limitation_Package_Number}             ${limitation}

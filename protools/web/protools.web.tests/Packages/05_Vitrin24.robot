@@ -9,6 +9,8 @@ ${vitrine_24}                         ۱۰ بسته
 *** Test Cases ***
 Buy Vitrin24 Package
   Login Protools                      آلونک
+  Create Shop In Sheypoor             املاک
+  Back To Protools Page
   Go To My Packages Page
   Select Vitrin24 Package
   Compare Selected Package With its Price
@@ -30,5 +32,5 @@ Compare Selected Package With its Price
   Click Element                       ${Submit_Button}
 
 Validation Packages In Protools
-  Wait Until Page Contains            ویترین ۲۴ ساعته                          timeout=10s
+  Wait Until Page Contains            با ۲۴ ساعت ویترین، آگهی شما یک بار بروزرسانی شده و به مدت ۲۴ ساعت نیز ویترین میشود                          timeout=10s
   Element Text Should Be              ${Vitrin24_Package_Number}               ${vitrine_24}

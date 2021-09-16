@@ -9,6 +9,8 @@ ${instant_tag}                        ۳۰ بسته
 *** Test Cases ***
 Buy Instant Tag Package
   Login Protools                      آلونک
+  Create Shop In Sheypoor             املاک
+  Back To Protools Page
   Go To My Packages Page
   Select Instant Tag Package
   Compare Selected Package With its Price
@@ -30,5 +32,5 @@ Compare Selected Package With its Price
   Click Element                       ${Submit_Button}
 
 Validation Packages In Protools
-  Wait Until Page Contains            نشان فوری                                timeout=10s
+  Wait Until Page Contains            این قابلیت، نشان فوری را روی آگهی شما نمایش میدهد                                timeout=10s
   Element Text Should Be              ${InstantTag_Package_Number}             ${instant_tag}

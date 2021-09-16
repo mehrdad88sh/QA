@@ -9,7 +9,7 @@ ${video}                              ۱۰۰ بسته
 *** Test Cases ***
 Buy Consultant Video Package
   Login Protools                      آلونک
-  Login Admin Page
+  Create Shop In Sheypoor             املاک
   Go To Consultants List Page
   Validate Consultant Phone Number
   Go To Consultant Package Page
@@ -47,5 +47,5 @@ Activate Video Package
 
 Validate Video Package In My Packages
   Go To                               ${staging}/pro/real-estate/packages
-  Wait Until Page Contains            موجودی من                               timeout=10s
+  Wait Until Page Contains            ظرفیت آپلود ویدئو                       timeout=10s
   Element Text Should Be              ${Video_Package_Number}                 ${video}

@@ -9,6 +9,8 @@ ${vitrine_48}                         ۵ بسته
 *** Test Cases ***
 Buy Vitrin48 Package
   Login Protools                      آلونک
+  Create Shop In Sheypoor             املاک
+  Back To Protools Page
   Go To My Packages Page
   Select Vitrin48 Package
   Compare Selected Package With its Price
@@ -30,5 +32,5 @@ Compare Selected Package With its Price
   Click Element                       ${Submit_Button}
 
 Validation Packages In Protools
-  Wait Until Page Contains            ویترین ۴۸ ساعته                          timeout=10s
+  Wait Until Page Contains            با ۴۸ ساعت ویترین، آگهی شما یک بار بروزرسانی شده و به مدت ۴۸ ساعت نیز ویترین میشود                         timeout=10s
   Element Text Should Be              ${Vitrin48_Package_Number}               ${vitrine_48}

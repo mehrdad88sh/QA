@@ -9,6 +9,8 @@ ${Refresh}                            ۲۵ بسته
 *** Test Cases ***
 Buy Refresh Package
   Login Protools                      آلونک
+  Create Shop In Sheypoor             املاک
+  Back To Protools Page
   Go To My Packages Page
   Select Refresh Package
   Compare Selected Package With its Price
@@ -30,5 +32,5 @@ Compare Selected Package With its Price
   Click Element                       ${Submit_Button}
 
 Validation Packages In Protools
-  Wait Until Page Contains            بروزرسانی                                timeout=10s
+  Wait Until Page Contains            با بروزرسانی، آگهی شما به بالاترین آگهی در گروه خود منتقل می شود                                timeout=10s
   Element Text Should Be              ${Refresh_Package_Number}                ${Refresh}

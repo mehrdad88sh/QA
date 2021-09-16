@@ -11,6 +11,8 @@ ${vitrin48}                           ۵ بسته
 *** Test Cases ***
 Buy Spacial Package
   Login Protools                      آلونک
+  Create Shop In Sheypoor             املاک
+  Back To Protools Page
   Go To My Packages Page
   Select Spacial Package
   Compare Selected Package With its Price
@@ -32,7 +34,7 @@ Compare Selected Package With its Price
   Click Element                       ${Submit_Button}
 
 Validation Packages In Protools
-  Wait Until Page Contains            بروزرسانی                                timeout=10s
+  Wait Until Page Contains            با بروزرسانی، آگهی شما به بالاترین آگهی در گروه خود منتقل می شود                  timeout=10s
   Element Text Should Be              ${Refresh_Package_Number}                ${refresh}
   Element Text Should Be              ${Vitrin24_Package_Number}               ${vitrin24}
   Element Text Should Be              ${Vitrin48_Package_Number}               ${vitrin48}
