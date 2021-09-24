@@ -82,7 +82,7 @@ class Variables(object):
         'Confirm_Button': 'name:confirm-accept-action',
         'Consultant_Specialty': 'css:[aria-pressed="false"]',
         'Consultant_Specialty_Dropdown': 'css:[aria-pressed="true"]',
-        'Statistic_Button': 'name:list-item-statistics',
+        'Statistics_Button': 'name:list-item-statistics',
         'Start_Date': 'name:select-date-from',
         'End_Date': 'name:select-date-to',
         'Calendar': 'css:div.dayPickerContainer',
