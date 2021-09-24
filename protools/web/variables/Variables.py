@@ -81,5 +81,13 @@ class Variables(object):
         'Colleague_Delete_Button': 'menu-حذف',
         'Confirm_Button': 'name:confirm-accept-action',
         'Consultant_Specialty': 'css:[aria-pressed="false"]',
-        'Consultant_Specialty_Dropdown': 'css:[aria-pressed="true"]'
+        'Consultant_Specialty_Dropdown': 'css:[aria-pressed="true"]',
+        'Statistic_Button': 'name:list-item-statistics',
+        'Start_Date': 'name:select-date-from',
+        'End_Date': 'name:select-date-to',
+        'Calendar': 'css:div.dayPickerContainer',
+        'Days_Of_Current_Calendar': 'css:div.dayWrapper.currentMonth',
+        'Previous_Month_Button': 'css:button.prev',
+        'Contact_Information_Views': 'css:g.recharts-layer.recharts-line-dots',
+        'Days_In_Chart': 'css:g.recharts-layer.recharts-cartesian-axis-tick'
 }
