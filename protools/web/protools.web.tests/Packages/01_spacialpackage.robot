@@ -21,19 +21,21 @@ Buy Spacial Package
   Find Phone Number And Name Of Team Members
   Assign Package To Secretary
   Assign Package To Consultant
+  Remove Package From Secretary
+  Remove Package From Consultant
 
 *** Keywords ***
 Select Spacial Package
   Click Button                        ${PackageـPurchase_Button}
-  Wait Until Page Contains Element    ${Special_Package_Name}                  timeout=10s
+  Wait Until Page Contains Element    ${Special_Package_Name}                   timeout=10s
   Click Element                       ${Special_Package_Name}
   Wait Until Page Contains            پرداخت ۵۰۱,۵۰۰ تومان
 
 Compare Selected Package With its Price
-  ${Special_Price}                    Get WebElements                          ${Special_Package_Price}
-  ${Price_After_Discount}             Get Text                                 ${Special_Price}[1]
-  ${Price_In_Button}                  Get Text                                 ${Submit_Button}
-  Should Be Equal                     پرداخت ${Price_After_Discount} تومان     ${Price_In_Button}
+  ${Special_Price}                    Get WebElements                           ${Special_Package_Price}
+  ${Price_After_Discount}             Get Text                                  ${Special_Price}[1]
+  ${Price_In_Button}                  Get Text                                  ${Submit_Button}
+  Should Be Equal                     پرداخت ${Price_After_Discount} تومان      ${Price_In_Button}
   Click Element                       ${Submit_Button}
 
 Validation Packages In Protools
@@ -66,10 +68,9 @@ Assign Package To Secretary
   Element Text Should Be              ${Refresh_Package_Number}                 ۲۳ بسته
   Element Text Should Be              ${Vitrin24_Package_Number}                ۸ بسته
   Element Text Should Be              ${Vitrin48_Package_Number}                ۳ بسته
-  Sleep    3s
+  Sleep    5s
 
 Assign Package To Consultant
-  Execute JavaScript                  window.scrollTo(0,1000)
   Click Element                       name:${Consultant_Phone}_package
   Wait Until Page Contains            ${Consultant_Name}
   Double Click Element                name:refresh-add
@@ -86,3 +87,41 @@ Assign Package To Consultant
   Element Text Should Be              ${Refresh_Package_Number}                 ۲۱ بسته
   Element Text Should Be              ${Vitrin24_Package_Number}                ۶ بسته
   Element Text Should Be              ${Vitrin48_Package_Number}                ۱ بسته
+  Sleep    5s
+
+Remove Package From Secretary
+  Click Element                       name:${Secretary_Phone}_package
+  Wait Until Page Contains            ${Secretary_Name}
+  Click Element                       name:refresh-remove
+  Wait Until Page Contains            ۱-
+  Click Element                       name:vitrine48-remove
+  Wait Until Page Contains            ۱-
+  Click Element                       name:vitrine24-remove
+  Wait Until Page Contains            ۱-
+  Click Element                       name:approved-action
+  Wait Until Page Contains Element    name:${Secretary_Phone}-refresh_1
+  Element Should Contain              name:${Secretary_Phone}-refresh_1         1
+  Element Should Contain              name:${Secretary_Phone}-vitrin24_1        1
+  Element Should Contain              name:${Secretary_Phone}-vitrin48_1        1
+  Element Text Should Be              ${Refresh_Package_Number}                 ۲۲ بسته
+  Element Text Should Be              ${Vitrin24_Package_Number}                ۷ بسته
+  Element Text Should Be              ${Vitrin48_Package_Number}                ۲ بسته
+  Sleep    5s
+
+Remove Package From Consultant
+  Click Element                       name:${Consultant_Phone}_package
+  Wait Until Page Contains            ${Consultant_Name}
+  Click Element                       name:refresh-remove
+  Wait Until Page Contains            ۱-
+  Click Element                       name:vitrine48-remove
+  Wait Until Page Contains            ۱-
+  Click Element                       name:vitrine24-remove
+  Wait Until Page Contains            ۱-
+  Click Element                       name:approved-action
+  Wait Until Page Contains Element    name:${Consultant_Phone}-refresh_1
+  Element Should Contain              name:${Consultant_Phone}-refresh_1        1
+  Element Should Contain              name:${Consultant_Phone}-vitrin24_1       1
+  Element Should Contain              name:${Consultant_Phone}-vitrin48_1       1
+  Element Text Should Be              ${Refresh_Package_Number}                 ۲۳ بسته
+  Element Text Should Be              ${Vitrin24_Package_Number}                ۸ بسته
+  Element Text Should Be              ${Vitrin48_Package_Number}                ۳ بسته
