@@ -12,6 +12,7 @@ Filter Date And Compare With Chart
     Set Start Date
     Set End Date
     Check Filter And Chart Days
+    Check Leads And Views Checkbox
 
 *** Keywords ***
 Go To Statistics Page
@@ -44,3 +45,14 @@ Check Filter And Chart Days
     Should Be Equal                     ${First_Day_In_Chart}             ${10th_Day_Of_Month_Is_Selected}
     ${Last_Day_In_Chart}                Get Text                          ${Days_In_Chart}[5]
     Should Be Equal                     ${Last_Day_In_Chart}              ${15th_Day_Of_Month_Is_Selected}
+
+Check Leads And Views Checkbox
+    ${Chart_Lines}                      Get WebElements                   ${Chart_Lines}
+    Click By Text                       تعداد بازدید آگهی
+    Element Should Be Visible           ${Chart_Lines}[0]
+    Click By Text                       تعداد بازدید اطلاعات تماس
+    Page Should Not Contain Element     css:g.recharts-layer.recharts-line
+    Click By Text                       تعداد بازدید آگهی
+    Wait Until Page Contains Element    ${Contact_Information_Views}
+    Click By Text                       تعداد بازدید اطلاعات تماس
+    Wait Until Page Contains Element    ${Chart_Lines}[1]
