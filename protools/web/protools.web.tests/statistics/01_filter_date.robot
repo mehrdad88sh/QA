@@ -40,7 +40,7 @@ Set End Date
     Set Test Variable                   ${15th_Day_Of_Month_Is_Selected}  ${15th_Day_Of_Month_Is_Selected}
 
 Check Filter And Chart Days
-    Wait Until Page Contains Element    ${Contact_Information_Views}      timeout=5s
+    Wait Until Page Contains Element    ${Contact_Information_Views_Chart}      timeout=5s
     ${Days_In_Chart}                    Get WebElements                   ${Days_In_Chart}
     ${First_Day_In_Chart}               Get Text                          ${Days_In_Chart}[0]
     Should Be Equal                     ${First_Day_In_Chart}             ${10th_Day_Of_Month_Is_Selected}
@@ -54,11 +54,34 @@ Check Leads And Views Checkbox
     Click By Text                       تعداد بازدید اطلاعات تماس
     Page Should Not Contain Element     css:g.recharts-layer.recharts-line
     Click By Text                       تعداد بازدید آگهی
-    Wait Until Page Contains Element    ${Contact_Information_Views}
+    Wait Until Page Contains Element    ${Contact_Information_Views_Chart}
     Click By Text                       تعداد بازدید اطلاعات تماس
     Wait Until Page Contains Element    ${Chart_Lines}[1]
 
 Check Tooltip In Chart
     ${Chart_Line_Dots}                  Get WebElements                   ${Chart_Line_Dots}
-    Click Element                       ${Chart_Line_Dots}[3]
-    Wait Until Page Contains Element    ${Tooltip_In_Chart}
+    Click By Text                       تعداد بازدید اطلاعات تماس
+    FOR   ${INDEX}   IN RANGE   4
+        Click Element                       ${Chart_Line_Dots}[${INDEX}]
+        Sleep    1s
+        Wait Until Page Contains Element    ${Right_Tooltip_In_Chart}
+    END
+    FOR   ${INDEX}   IN RANGE   4   6
+        Click Element                       ${Chart_Line_Dots}[${INDEX}]
+        Sleep    1s
+        Wait Until Page Contains Element    ${Left_Tooltip_In_Chart}
+    END
+    Click By Text                       تعداد بازدید اطلاعات تماس
+    Wait Until Page Contains Element    ${Contact_Information_Views_Chart}
+    Click By Text                       تعداد بازدید آگهی
+    Wait Until Page Contains Element    ${Contact_Information_Views_Chart}
+    FOR   ${INDEX}   IN RANGE   4
+        Click Element                       ${Chart_Line_Dots}[${INDEX}]
+        Sleep    1s
+        Wait Until Page Contains Element    ${Right_Tooltip_In_Chart}
+    END
+    FOR   ${INDEX}   IN RANGE   4   6
+        Click Element                       ${Chart_Line_Dots}[${INDEX}]
+        Sleep    1s
+        Wait Until Page Contains Element    ${Left_Tooltip_In_Chart}
+    END
