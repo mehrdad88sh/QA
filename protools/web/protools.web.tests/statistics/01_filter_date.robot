@@ -13,6 +13,7 @@ Filter Date And Compare With Chart
     Set End Date
     Check Filter And Chart Days
     Check Leads And Views Checkbox
+    Check Tooltip In Chart
 
 *** Keywords ***
 Go To Statistics Page
@@ -56,3 +57,8 @@ Check Leads And Views Checkbox
     Wait Until Page Contains Element    ${Contact_Information_Views}
     Click By Text                       تعداد بازدید اطلاعات تماس
     Wait Until Page Contains Element    ${Chart_Lines}[1]
+
+Check Tooltip In Chart
+    ${Chart_Line_Dots}                  Get WebElements                   ${Chart_Line_Dots}
+    Click Element                       ${Chart_Line_Dots}[3]
+    Wait Until Page Contains Element    ${Tooltip_In_Chart}
