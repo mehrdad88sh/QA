@@ -87,7 +87,11 @@ class Variables(object):
         'End_Date': 'name:select-date-to',
         'Calendar': 'css:div.dayPickerContainer',
         'Days_Of_Current_Calendar': 'css:div.dayWrapper.currentMonth',
+        'Days_In_Chart': 'css:g.recharts-layer.recharts-cartesian-axis-tick',
         'Previous_Month_Button': 'css:button.prev',
-        'Contact_Information_Views': 'css:g.recharts-layer.recharts-line-dots',
-        'Days_In_Chart': 'css:g.recharts-layer.recharts-cartesian-axis-tick'
+        'Contact_Information_Views_Chart': 'css:g.recharts-layer.recharts-line-dots',
+        'Chart_Lines': 'css:g.recharts-layer.recharts-line',
+        'Chart_Line_Dots': 'css:circle.recharts-dot.recharts-line-dot',
+        'Right_Tooltip_In_Chart': 'css:div.recharts-tooltip-wrapper.recharts-tooltip-wrapper-right.recharts-tooltip-wrapper-top',
+        'Left_Tooltip_In_Chart': 'css:div.recharts-tooltip-wrapper.recharts-tooltip-wrapper-left.recharts-tooltip-wrapper-top'
 }
