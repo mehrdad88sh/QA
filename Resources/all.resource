@@ -1,6 +1,8 @@
 *** Settings ***
 Documentation                        Base resource file for All tests
 Library                              SeleniumLibrary
+Library                              REST                  ${staging}/api/protools
+Library                              JSONLibrary
 Variables                            ../protools/web/variables/Variables.py
 Resource                             ../protools/web/resources/resource.robot
 
@@ -63,6 +65,7 @@ Generate Random Slug
 
 Input Owner Shop Phone
   Input Text                         OwnerPhone                      ${Random_User_Mobile}
+  Set Suite Variable                 ${Random_User_Mobile}           ${Random_User_Mobile}
 
 Generate Random Consultant Phone
   ${Random_Number}                   Generate Random String          7   [NUMBERS]
@@ -159,3 +162,49 @@ Back To Protools Page
 Back To Sheypoor Car Page
   Go To                              ${staging}/pro/cars
   Wait Until Page Contains Element   ${profile_name_ID}              timeout=10s
+
+Register Manager With Alunak Api
+  Post                                /v2/auth/register
+  ...                                 {"cellphone": "${Random_User_Mobile}", "user_type": "real-estate"}
+  Integer                             response status                  200
+  ${response}                         output                           response body
+  ${token}                            Get Value From Json              ${response}              $.token
+  ${token}                            Convert To String                ${token[0]}
+  Set Suite Variable                  ${token}                         ${token}
+
+Get Code From Mock Server With Alunak Api
+  Get                                 ${staging}/mock/getCode?mobile=${Random_User_Mobile}
+  ...                                 headers={"Authorization": "Basic dHJ1bXBldDpuZXdzaXRl"}
+  Integer                             response status                  200
+  ${response}                         output                           response body
+  ${Code}                             Get Value From Json              ${response}              $.code
+  ${Code}                             Convert To String                ${Code[0]}
+  Set Suite Variable                  ${Code}                          ${Code}
+
+Authorization Manager With Alunak Api
+  Post                                /v2/auth/authorize
+  ...                                 {"grant_type": "password", "username": "${token}", "password": "${Code}", "scope": "full"}
+  Integer                             response status                  200
+  ${response}                         output                           response body
+  ${access_token}                     Get Value From Json              ${response}              $.access_token
+  ${access_token}                     Convert To String                ${access_token[0]}
+  Set Suite Variable                  ${access_token}                  ${access_token}
+
+Get List Of Members In Alunak Api
+  Set Headers                         {"X-Ticket": "${access_token}"}
+  Set Headers                         {"source": "protools"}
+  Get                                 /v2/bank/members/list
+  Integer                             response status                  200
+  ${response}                         output                           response body
+  ${Secretary_Phone}                  Get Value From Json              ${response}                $[0].cellphone
+  ${Secretary_Phone}                  Convert To String                ${Secretary_Phone[0]}
+  Set Suite Variable                  ${Secretary_Phone}               ${Secretary_Phone}
+  ${Secretary_Name}                   Get Value From Json              ${response}                $[0].full_name
+  ${Secretary_Name}                   Convert To String                ${Secretary_Name[0]}
+  Set Suite Variable                  ${Secretary_Name}                ${Secretary_Name}
+  ${Consultant_Phone}                 Get Value From Json              ${response}                $[1].cellphone
+  ${Consultant_Phone}                 Convert To String                ${Consultant_Phone[0]}
+  Set Suite Variable                  ${Consultant_Phone}              ${Consultant_Phone}
+  ${Consultant_Name}                  Get Value From Json              ${response}                 $[1].full_name
+  ${Consultant_Name}                  Convert To String                ${Consultant_Name[0]}
+  Set Suite Variable                  ${Consultant_Name}               ${Consultant_Name}
