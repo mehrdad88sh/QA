@@ -80,9 +80,9 @@ Assign Package To Consultant
   Double Click Element                name:vitrine24-add
   Wait Until Page Contains            ۲+
   Click Element                       name:approved-action
-  ${Status}                           Run Keyword And Return Status       Wait Until Page Contains    در ارسال اطلاعات خطایی رخ داده است   timeout=10s
+  ${Status}                           Run Keyword And Return Status             Wait Until Page Contains    در ارسال اطلاعات خطایی رخ داده است   timeout=10s
   Sleep    3s
-  Run Keyword If                      ${Status}                           Click Element                       name:approved-action
+  Run Keyword If                      ${Status}   Click Element                 name:approved-action
   Wait Until Page Contains Element    name:${Consultant_Phone}-refresh_2
   Element Should Contain              name:${Consultant_Phone}-refresh_2        2
   Element Should Contain              name:${Consultant_Phone}-vitrin24_2       2
@@ -105,9 +105,9 @@ Remove Package From Secretary
   Click Element                       name:vitrine24-remove
   Wait Until Page Contains            ۱-
   Click Element                       name:approved-action
-  ${Status}                           Run Keyword And Return Status       Wait Until Page Contains    در ارسال اطلاعات خطایی رخ داده است   timeout=10s
+  ${Status}                           Run Keyword And Return Status             Wait Until Page Contains    در ارسال اطلاعات خطایی رخ داده است   timeout=10s
   Sleep    3s
-  Run Keyword If                      ${Status}                           Click Element                       name:approved-action
+  Run Keyword If                      ${Status}   Click Element                 name:approved-action
   Wait Until Page Contains Element    name:${Secretary_Phone}-refresh_1
   Element Should Contain              name:${Secretary_Phone}-refresh_1         1
   Element Should Contain              name:${Secretary_Phone}-vitrin24_1        1
@@ -129,9 +129,9 @@ Remove Package From Consultant
   Click Element                       name:vitrine24-remove
   Wait Until Page Contains            ۱-
   Click Element                       name:approved-action
-  ${Status}                           Run Keyword And Return Status       Wait Until Page Contains    در ارسال اطلاعات خطایی رخ داده است   timeout=10s
+  ${Status}                           Run Keyword And Return Status             Wait Until Page Contains    در ارسال اطلاعات خطایی رخ داده است   timeout=10s
   Sleep    3s
-  Run Keyword If                      ${Status}                           Click Element                       name:approved-action
+  Run Keyword If                      ${Status}   Click Element                 name:approved-action
   Wait Until Page Contains Element    name:${Consultant_Phone}-refresh_1
   Element Should Contain              name:${Consultant_Phone}-refresh_1        1
   Element Should Contain              name:${Consultant_Phone}-vitrin24_1       1
