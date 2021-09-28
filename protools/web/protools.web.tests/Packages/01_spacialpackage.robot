@@ -65,10 +65,10 @@ Assign Package To Secretary
   Element Should Contain              name:${Secretary_Phone}-refresh_2         2
   Element Should Contain              name:${Secretary_Phone}-vitrin24_2        2
   Element Should Contain              name:${Secretary_Phone}-vitrin48_2        2
-  Element Text Should Be              ${Refresh_Package_Number}                 ۲۳ بسته
-  Element Text Should Be              ${Vitrin24_Package_Number}                ۸ بسته
-  Element Text Should Be              ${Vitrin48_Package_Number}                ۳ بسته
-  Sleep    5s
+  Wait Until Page Contains            ۲۳ بسته
+  Element Should Contain              ${Refresh_Package_Number}                 ۲۳ بسته
+  Element Should Contain              ${Vitrin24_Package_Number}                ۸ بسته
+  Element Should Contain              ${Vitrin48_Package_Number}                ۳ بسته
 
 Assign Package To Consultant
   Click Element                       name:${Consultant_Phone}_package
@@ -80,16 +80,22 @@ Assign Package To Consultant
   Double Click Element                name:vitrine24-add
   Wait Until Page Contains            ۲+
   Click Element                       name:approved-action
+  ${Status}                           Run Keyword And Return Status       Wait Until Page Contains    در ارسال اطلاعات خطایی رخ داده است   timeout=10s
+  Sleep    3s
+  Run Keyword If                      ${Status}                           Click Element                       name:approved-action
   Wait Until Page Contains Element    name:${Consultant_Phone}-refresh_2
   Element Should Contain              name:${Consultant_Phone}-refresh_2        2
   Element Should Contain              name:${Consultant_Phone}-vitrin24_2       2
   Element Should Contain              name:${Consultant_Phone}-vitrin48_2       2
-  Element Text Should Be              ${Refresh_Package_Number}                 ۲۱ بسته
-  Element Text Should Be              ${Vitrin24_Package_Number}                ۶ بسته
-  Element Text Should Be              ${Vitrin48_Package_Number}                ۱ بسته
-  Sleep    5s
+  Execute JavaScript                  window.scrollTo(0,0)
+  Wait Until Page Contains            ۲۱ بسته
+  Element Should Contain              ${Refresh_Package_Number}                 ۲۱ بسته
+  Element Should Contain              ${Vitrin24_Package_Number}                ۶ بسته
+  Element Should Contain              ${Vitrin48_Package_Number}                ۱ بسته
 
 Remove Package From Secretary
+  Reload Page
+  Wait Until Page Contains            با بروزرسانی، آگهی شما به بالاترین آگهی در گروه خود منتقل می شود
   Click Element                       name:${Secretary_Phone}_package
   Wait Until Page Contains            ${Secretary_Name}
   Click Element                       name:refresh-remove
@@ -99,16 +105,21 @@ Remove Package From Secretary
   Click Element                       name:vitrine24-remove
   Wait Until Page Contains            ۱-
   Click Element                       name:approved-action
+  ${Status}                           Run Keyword And Return Status       Wait Until Page Contains    در ارسال اطلاعات خطایی رخ داده است   timeout=10s
+  Sleep    3s
+  Run Keyword If                      ${Status}                           Click Element                       name:approved-action
   Wait Until Page Contains Element    name:${Secretary_Phone}-refresh_1
   Element Should Contain              name:${Secretary_Phone}-refresh_1         1
   Element Should Contain              name:${Secretary_Phone}-vitrin24_1        1
   Element Should Contain              name:${Secretary_Phone}-vitrin48_1        1
-  Element Text Should Be              ${Refresh_Package_Number}                 ۲۲ بسته
-  Element Text Should Be              ${Vitrin24_Package_Number}                ۷ بسته
-  Element Text Should Be              ${Vitrin48_Package_Number}                ۲ بسته
-  Sleep    5s
+  Wait Until Page Contains            ۲۲ بسته
+  Element Should Contain              ${Refresh_Package_Number}                 ۲۲ بسته
+  Element Should Contain              ${Vitrin24_Package_Number}                ۷ بسته
+  Element Should Contain              ${Vitrin48_Package_Number}                ۲ بسته
 
 Remove Package From Consultant
+  Reload Page
+  Wait Until Page Contains            با بروزرسانی، آگهی شما به بالاترین آگهی در گروه خود منتقل می شود
   Click Element                       name:${Consultant_Phone}_package
   Wait Until Page Contains            ${Consultant_Name}
   Click Element                       name:refresh-remove
@@ -118,10 +129,15 @@ Remove Package From Consultant
   Click Element                       name:vitrine24-remove
   Wait Until Page Contains            ۱-
   Click Element                       name:approved-action
+  ${Status}                           Run Keyword And Return Status       Wait Until Page Contains    در ارسال اطلاعات خطایی رخ داده است   timeout=10s
+  Sleep    3s
+  Run Keyword If                      ${Status}                           Click Element                       name:approved-action
   Wait Until Page Contains Element    name:${Consultant_Phone}-refresh_1
   Element Should Contain              name:${Consultant_Phone}-refresh_1        1
   Element Should Contain              name:${Consultant_Phone}-vitrin24_1       1
   Element Should Contain              name:${Consultant_Phone}-vitrin48_1       1
-  Element Text Should Be              ${Refresh_Package_Number}                 ۲۳ بسته
-  Element Text Should Be              ${Vitrin24_Package_Number}                ۸ بسته
-  Element Text Should Be              ${Vitrin48_Package_Number}                ۳ بسته
+  Wait Until Page Contains Element    ${Refresh_Package_Number}
+  Wait Until Page Contains            ۲۳ بسته
+  Element Should Contain              ${Refresh_Package_Number}                 ۲۳ بسته
+  Element Should Contain              ${Vitrin24_Package_Number}                ۸ بسته
+  Element Should Contain              ${Vitrin48_Package_Number}                ۳ بسته
