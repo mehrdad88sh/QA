@@ -25,7 +25,7 @@ Select All City Package
   Wait Until Page Contains           انتخاب کل یک شهر
   Click Element                      ${Select_All_City}
   Click Button                       ${Selection_Button}
-  Wait Until Page Contains           انتخاب محدوده
+  Wait Until Page Contains           تهران
   Select City Range
 
 Select Three Months Subscription

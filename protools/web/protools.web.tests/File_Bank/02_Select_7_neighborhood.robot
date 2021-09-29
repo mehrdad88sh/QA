@@ -25,7 +25,7 @@ Select 7 Neighborhood Package
   Wait Until Page Contains           انتخاب هفت محله از یک شهر
   Click Element                      ${Select_7_Neighborhood}
   Click Button                       ${Selection_Button}
-  Wait Until Page Contains           انتخاب محدوده
+  Wait Until Page Contains           تهران
   Select Neighborhoods
 
 Select Six Months Subscription

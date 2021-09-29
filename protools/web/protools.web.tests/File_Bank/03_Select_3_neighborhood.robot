@@ -25,7 +25,7 @@ Select 3 Neighborhood Package
   Wait Until Page Contains           انتخاب سه محله از یک شهر
   Click Element                      ${Select_3_Neighborhood}
   Click Button                       ${Selection_Button}
-  Wait Until Page Contains           انتخاب محدوده
+  Wait Until Page Contains           تهران
   Select Neighborhoods
 
 Select One Month Subscription
