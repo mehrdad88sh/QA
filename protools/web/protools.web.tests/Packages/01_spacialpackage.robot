@@ -29,7 +29,7 @@ Select Spacial Package
   Click Button                        ${PackageـPurchase_Button}
   Wait Until Page Contains Element    ${Special_Package_Name}                   timeout=10s
   Click Element                       ${Special_Package_Name}
-  Wait Until Page Contains            پرداخت ۵۰۱,۵۰۰ تومان
+  Wait Until Page Contains            پرداخت ۵۰۱,۵۰۰ تومان                      timeout=10s
 
 Compare Selected Package With its Price
   ${Special_Price}                    Get WebElements                           ${Special_Package_Price}
@@ -53,91 +53,91 @@ Find Phone Number And Name Of Team Members
 Assign Package To Secretary
   Execute JavaScript                  window.scrollTo(0,1000)
   Click Element                       name:${Secretary_Phone}_package
-  Wait Until Page Contains            ${Secretary_Name}
+  Wait Until Page Contains            ${Secretary_Name}                         timeout=10s
   Double Click Element                name:refresh-add
-  Wait Until Page Contains            ۲+
+  Wait Until Page Contains            ۲+                                        timeout=10s
   Double Click Element                name:vitrine48-add
-  Wait Until Page Contains            ۲+
+  Wait Until Page Contains            ۲+                                        timeout=10s
   Double Click Element                name:vitrine24-add
-  Wait Until Page Contains            ۲+
+  Wait Until Page Contains            ۲+                                        timeout=10s
   Click Element                       name:approved-action
-  Wait Until Page Contains Element    name:${Secretary_Phone}-refresh_2
+  Wait Until Page Contains Element    name:${Secretary_Phone}-refresh_2         timeout=10s
   Element Should Contain              name:${Secretary_Phone}-refresh_2         2
   Element Should Contain              name:${Secretary_Phone}-vitrin24_2        2
   Element Should Contain              name:${Secretary_Phone}-vitrin48_2        2
-  Wait Until Page Contains            ۲۳ بسته
+  Wait Until Page Contains            ۲۳ بسته                                   timeout=10s
   Element Should Contain              ${Refresh_Package_Number}                 ۲۳ بسته
   Element Should Contain              ${Vitrin24_Package_Number}                ۸ بسته
   Element Should Contain              ${Vitrin48_Package_Number}                ۳ بسته
 
 Assign Package To Consultant
   Click Element                       name:${Consultant_Phone}_package
-  Wait Until Page Contains            ${Consultant_Name}
+  Wait Until Page Contains            ${Consultant_Name}                        timeout=10s
   Double Click Element                name:refresh-add
-  Wait Until Page Contains            ۲+
+  Wait Until Page Contains            ۲+                                        timeout=10s
   Double Click Element                name:vitrine48-add
-  Wait Until Page Contains            ۲+
+  Wait Until Page Contains            ۲+                                        timeout=10s
   Double Click Element                name:vitrine24-add
-  Wait Until Page Contains            ۲+
+  Wait Until Page Contains            ۲+                                        timeout=10s
   Click Element                       name:approved-action
   ${Status}                           Run Keyword And Return Status             Wait Until Page Contains    در ارسال اطلاعات خطایی رخ داده است   timeout=10s
   Sleep    3s
   Run Keyword If                      ${Status}   Click Element                 name:approved-action
-  Wait Until Page Contains Element    name:${Consultant_Phone}-refresh_2
+  Wait Until Page Contains Element    name:${Consultant_Phone}-refresh_2        timeout=10s
   Element Should Contain              name:${Consultant_Phone}-refresh_2        2
   Element Should Contain              name:${Consultant_Phone}-vitrin24_2       2
   Element Should Contain              name:${Consultant_Phone}-vitrin48_2       2
   Execute JavaScript                  window.scrollTo(0,0)
-  Wait Until Page Contains            ۲۱ بسته
+  Wait Until Page Contains            ۲۱ بسته                                   timeout=10s
   Element Should Contain              ${Refresh_Package_Number}                 ۲۱ بسته
   Element Should Contain              ${Vitrin24_Package_Number}                ۶ بسته
   Element Should Contain              ${Vitrin48_Package_Number}                ۱ بسته
 
 Remove Package From Secretary
   Reload Page
-  Wait Until Page Contains            با بروزرسانی، آگهی شما به بالاترین آگهی در گروه خود منتقل می شود
+  Wait Until Page Contains            با بروزرسانی، آگهی شما به بالاترین آگهی در گروه خود منتقل می شود      timeout=10s
   Click Element                       name:${Secretary_Phone}_package
-  Wait Until Page Contains            ${Secretary_Name}
+  Wait Until Page Contains            ${Secretary_Name}                         timeout=10s
   Click Element                       name:refresh-remove
-  Wait Until Page Contains            ۱-
+  Wait Until Page Contains            ۱-                                        timeout=10s
   Click Element                       name:vitrine48-remove
-  Wait Until Page Contains            ۱-
+  Wait Until Page Contains            ۱-                                        timeout=10s
   Click Element                       name:vitrine24-remove
-  Wait Until Page Contains            ۱-
+  Wait Until Page Contains            ۱-                                        timeout=10s
   Click Element                       name:approved-action
   ${Status}                           Run Keyword And Return Status             Wait Until Page Contains    در ارسال اطلاعات خطایی رخ داده است   timeout=10s
   Sleep    3s
   Run Keyword If                      ${Status}   Click Element                 name:approved-action
-  Wait Until Page Contains Element    name:${Secretary_Phone}-refresh_1
+  Wait Until Page Contains Element    name:${Secretary_Phone}-refresh_1         timeout=10s
   Element Should Contain              name:${Secretary_Phone}-refresh_1         1
   Element Should Contain              name:${Secretary_Phone}-vitrin24_1        1
   Element Should Contain              name:${Secretary_Phone}-vitrin48_1        1
-  Wait Until Page Contains            ۲۲ بسته
+  Wait Until Page Contains            ۲۲ بسته                                   timeout=10s
   Element Should Contain              ${Refresh_Package_Number}                 ۲۲ بسته
   Element Should Contain              ${Vitrin24_Package_Number}                ۷ بسته
   Element Should Contain              ${Vitrin48_Package_Number}                ۲ بسته
 
 Remove Package From Consultant
   Reload Page
-  Wait Until Page Contains            با بروزرسانی، آگهی شما به بالاترین آگهی در گروه خود منتقل می شود
-  Click Element                       name:${Consultant_Phone}_package
-  Wait Until Page Contains            ${Consultant_Name}
+  Wait Until Page Contains            با بروزرسانی، آگهی شما به بالاترین آگهی در گروه خود منتقل می شود      timeout=10s
+  Click Element                       name:${Consultant_Phone}_package          
+  Wait Until Page Contains            ${Consultant_Name}                        timeout=10s
   Click Element                       name:refresh-remove
-  Wait Until Page Contains            ۱-
+  Wait Until Page Contains            ۱-                                        timeout=10s
   Click Element                       name:vitrine48-remove
-  Wait Until Page Contains            ۱-
+  Wait Until Page Contains            ۱-                                        timeout=10s
   Click Element                       name:vitrine24-remove
-  Wait Until Page Contains            ۱-
+  Wait Until Page Contains            ۱-                                        timeout=10s
   Click Element                       name:approved-action
   ${Status}                           Run Keyword And Return Status             Wait Until Page Contains    در ارسال اطلاعات خطایی رخ داده است   timeout=10s
   Sleep    3s
   Run Keyword If                      ${Status}   Click Element                 name:approved-action
-  Wait Until Page Contains Element    name:${Consultant_Phone}-refresh_1
+  Wait Until Page Contains Element    name:${Consultant_Phone}-refresh_1        timeout=10s
   Element Should Contain              name:${Consultant_Phone}-refresh_1        1
   Element Should Contain              name:${Consultant_Phone}-vitrin24_1       1
   Element Should Contain              name:${Consultant_Phone}-vitrin48_1       1
-  Wait Until Page Contains Element    ${Refresh_Package_Number}
-  Wait Until Page Contains            ۲۳ بسته
+  Wait Until Page Contains Element    ${Refresh_Package_Number}                 timeout=10s
+  Wait Until Page Contains            ۲۳ بسته                                   timeout=10s
   Element Should Contain              ${Refresh_Package_Number}                 ۲۳ بسته
   Element Should Contain              ${Vitrin24_Package_Number}                ۸ بسته
   Element Should Contain              ${Vitrin48_Package_Number}                ۳ بسته
