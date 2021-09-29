@@ -1,7 +1,7 @@
 *** Settings ***
 Documentation                        Base resource file for All tests
 Library                              SeleniumLibrary
-Library                              REST                  ${staging}/api/protools
+Library                              REST                            https://staging.mielse.com/api/protools
 Library                              JSONLibrary
 Variables                            ../protools/web/variables/Variables.py
 Resource                             ../protools/web/resources/resource.robot
