@@ -27,7 +27,7 @@ Validate Consultant Phone Number
   Element Should Contain              ${Consultant_Status}                    فعال
 
 Go To Consultant Package Page
-  Wait Until Keyword Succeeds         2x    2s     Click By Text              بسته مشاور
+  Wait Until Keyword Succeeds         3x    3s     Click By Text              بسته مشاور
   Wait Until Page Contains            ویدئو                                   timeout=10s
 
 Activate Video Package
@@ -40,12 +40,12 @@ Activate Video Package
   Wait Until Page Contains            ۵۰۰۰۰                                   timeout=10s
   Click Element                       ${Activation_Button}
   Wait Until Page Contains            فعال‌‌سازی این بسته غیرقابل بازگشت خواهد بود. آیا از فعال‌سازی اطمینان دارید؟            timeout=10s
-  Wait Until Keyword Succeeds         2x    2s     Click By Text    بله
-  Wait Until Keyword Succeeds         2x    2s     Element Should Contain     ${Consultant_Package_Status}                  فعال شده
+  Wait Until Keyword Succeeds         3x    3s     Click By Text    بله
+  Wait Until Keyword Succeeds         3x    3s     Element Should Contain     ${Consultant_Package_Status}                  فعال شده
   Click Element                       ${Consultant_Package_Details}
   Wait Until Page Contains            ویدئو 100 عدد                           timeout=10s
 
 Validate Video Package In My Packages
   Go To                               ${staging}/pro/real-estate/packages
-  Wait Until Page Contains            ظرفیت آپلود ویدئو                       timeout=10s
+  Wait Until Page Contains            این بسته به شما امکان آپلود ویدئو در فایل و آگهی را میدهد.                       timeout=10s
   Element Text Should Be              ${Video_Package_Number}                 ${video}
