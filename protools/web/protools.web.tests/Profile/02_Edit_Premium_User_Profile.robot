@@ -7,7 +7,7 @@ Test Teardown                        Close Browser
 Edit Premium User Profile
   Login Protools                     آلونک
   Create Shop In Sheypoor            املاک
-  Back To Protools Page
+  Check Premium Toggle In Admin
   Upgrade User To Premium Profile
   Go To Edit Profile Page
   Complete User Information
@@ -35,11 +35,27 @@ Fill Consultant Specialty
   Double Click Element               name:name
 
 Fill Telegram ID
-  Input Text                         name:telegram         Sheypoor
+  Input Text                         name:telegram                          Sheypoor
 
 Fill Instagram ID
-  Input Text                         name:instagram        Sheypoor
+  Input Text                         name:instagram                         Sheypoor
 
 Fill AboutMe
   Generate Random AboutMe Sentence
-  Input Text                         ${aboutMe_ID}         ${Random_AboutMe_Sentence}
+  Input Text                         ${aboutMe_ID}                          ${Random_AboutMe_Sentence}
+
+Check Premium Toggle In Admin
+  Go To                              ${staging}/trumpet/features/search
+  Wait Until Page Contains           قابلیت های عمومی
+  Click By Text                      بستن / باز کردن همه
+  Execute JavaScript                 window.scrollTo(0,1700)
+  Wait Until Page Contains           امکان آپگرید کردن کاربران به پریمیوم
+  FOR   ${INDEX}    IN RANGE    2
+        ${Status}                          Run Keyword And Return Status
+        ...                                Wait Until Page Contains Element       ${Inactive_Premium_Toggle}          timeout=3s
+        Run Keyword If                     ${Status}
+        ...                                Click Element                          ${Inactive_Premium_Toggle}
+        Wait Until Page Contains Element   ${Active_Premium_Toggle}               timeout=3s
+  Exit For Loop If                         ${Status} == False
+  END
+  Back To Protools Page
