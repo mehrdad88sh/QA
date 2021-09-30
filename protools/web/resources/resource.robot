@@ -160,7 +160,7 @@ Add Image Profile
   Choose File                         ${Add_New_Image}                 ${image_profile_path}
   Wait Until Page Contains            ثبت عکس                          timeout=10s
   Click Element                       ${Sumbit_Image}
-  Wait Until Page Contains            عکس شما با موفقیت ثبت شد         timeout=15s
+  Wait Until Page Contains            عکس شما با موفقیت ثبت شد، پس از بررسی توسط ادمین نمایش داده می‌شود         timeout=20s
 
 Fill Profile Name
   Generate Random username
@@ -214,6 +214,7 @@ Close Level Up Popup Message
   Run Keyword If                      ${Status}                        Click Button                       ${Close_Button}
 
 Upgrade User To Premium Profile
+  Wait Until Page Contains Element    ${Premium_Button}                timeout=10s
   Click Element                       ${Premium_Button}
   Page Should Contain                 ارتقاء پروفایل
   Wait Until Page Contains            ۱۵۰,۰۰۰ تومان                    timeout=10s
