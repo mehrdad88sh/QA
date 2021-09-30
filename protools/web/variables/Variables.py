@@ -93,5 +93,7 @@ class Variables(object):
         'Chart_Lines': 'css:g.recharts-layer.recharts-line',
         'Chart_Line_Dots': 'css:circle.recharts-dot.recharts-line-dot',
         'Right_Tooltip_In_Chart': 'css:div.recharts-tooltip-wrapper.recharts-tooltip-wrapper-right.recharts-tooltip-wrapper-top',
-        'Left_Tooltip_In_Chart': 'css:div.recharts-tooltip-wrapper.recharts-tooltip-wrapper-left.recharts-tooltip-wrapper-top'
+        'Left_Tooltip_In_Chart': 'css:div.recharts-tooltip-wrapper.recharts-tooltip-wrapper-left.recharts-tooltip-wrapper-top',
+        'Active_Premium_Toggle': 'css:a.toggle-state.active.icon-ok[data-id="981"]',
+        'Inactive_Premium_Toggle': 'css:a.toggle-state.inactive.icon-close[data-id="981"]'
 }
