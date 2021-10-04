@@ -23,6 +23,7 @@ Go To Consultants List Page
 Validate Consultant Phone Number
   Input Text                          name:mobile                             ${Random_User_Mobile}
   Click Element                       ${Search_Button}
+  Wait Until Page Contains Element    ${Consultant_Number}
   Element Text Should Be              ${Consultant_Number}                    ${Random_User_Mobile}
   Element Should Contain              ${Consultant_Status}                    فعال
 
