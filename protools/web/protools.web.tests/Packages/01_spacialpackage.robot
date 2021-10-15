@@ -96,6 +96,8 @@ Assign Package To Consultant
 Remove Package From Secretary
   Reload Page
   Wait Until Page Contains            با بروزرسانی، آگهی شما به بالاترین آگهی در گروه خود منتقل می شود      timeout=10s
+  Wait Until Page Contains Element    name:${Secretary_Phone}_package
+  Execute JavaScript                  window.scrollTo(0,1000)
   Click Element                       name:${Secretary_Phone}_package
   Wait Until Page Contains            ${Secretary_Name}                         timeout=10s
   Click Element                       name:refresh-remove
@@ -120,7 +122,9 @@ Remove Package From Secretary
 Remove Package From Consultant
   Reload Page
   Wait Until Page Contains            با بروزرسانی، آگهی شما به بالاترین آگهی در گروه خود منتقل می شود      timeout=10s
-  Click Element                       name:${Consultant_Phone}_package          
+  Wait Until Page Contains Element    name:${Consultant_Phone}_package
+  Execute JavaScript                  window.scrollTo(0,1000)
+  Click Element                       name:${Consultant_Phone}_package
   Wait Until Page Contains            ${Consultant_Name}                        timeout=10s
   Click Element                       name:refresh-remove
   Wait Until Page Contains            ۱-                                        timeout=10s
