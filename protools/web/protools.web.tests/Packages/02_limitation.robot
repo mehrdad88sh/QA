@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation                         خرید بسته ظرفیت تعداد آگهی
+Documentation                         خرید بسته ظرفیت تعداد آگهی و تخصیص آن به اعضای فروشگاه
 Resource                              ../../resources/resource.robot
 Test Teardown                         Close Browser
 

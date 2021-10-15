@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation                         خرید بسته ویترین ۴۸ ساعته
+Documentation                         خرید بسته ویترین ۴۸ ساعته و تخصیص آن به اعضای فروشگاه
 Resource                              ../../resources/resource.robot
 Test Teardown                         Close Browser
 

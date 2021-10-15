@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation                         خرید بسته بروزرسانی
+Documentation                         خرید بسته بروزرسانی و تخصیص آن به اعضای فروشگاه
 Resource                              ../../resources/resource.robot
 Test Teardown                         Close Browser
 

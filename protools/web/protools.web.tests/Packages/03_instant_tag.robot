@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation                         خرید بسته نشان فوری
+Documentation                         خرید بسته نشان فوری و تخصیص آن به اعضای فروشگاه
 Resource                              ../../resources/resource.robot
 Test Teardown                         Close Browser
 
