@@ -209,18 +209,34 @@ Get List Of Members In Alunak Api
   ${Consultant_Name}                 Convert To String               ${Consultant_Name[0]}
   Set Suite Variable                 ${Consultant_Name}              ${Consultant_Name}
 
-Get Listing ID From API   
-  Register Manager With Alunak Api
-  Get Code From Mock Server With Alunak Api
-  Authorization Manager With Alunak Api
+Creat File With Alunak API
+  Set Headers                        {"X-Ticket": "${access_token}"}
+  Set Headers                        {"source": "protools"}
+  Post                               /v2/listings
+  ...                                {"location":"n930","a69120":"445087","a68085":500,"a69312":false,"price":850000000,"category":"44099"}
+  Integer                            response status                 200
+  ${response}                        output                          response body
+  ${human_readable_id}               Get Value From Json             ${response}                $.human_readable_id
+  ${human_readable_id}               Convert To String               ${human_readable_id[0]}
+  Set Suite Variable                 ${human_readable_id}            ${human_readable_id}
+
+Publish File With Alunak API
+  Set Headers                        {"X-Ticket": "${access_token}"}
+  Sleep    3s
+  Post                               /v2/listings/${human_readable_id}/publish
+  ...                                {"name":"فروش زمین مسکونی 500 متر در آجودانیه","description":"فروش زمین مسکونی 500 متر در آجودانیه","telephone":"09007000000","vendors":["sheypoor","alounak"]}
+  Integer                            response status                 200
+  ${response}                        output                          response body
+
+Get Listing ID From API
   Set Headers                        {"X-Ticket": "${access_token}"}
   Set Headers                        {"source": "protools"}
   Get                                /v2/listings?active=true&published=true
   Integer                            response status                 200
   ${response}                        output                          response body
-  ${ID}                              Get Value From Json             ${response}                $.items[0].human_readable_id
-  ${ID}                              Convert To String               ${ID[0]}
-  Set Suite Variable                 ${ID}                           ${ID}
+  ${Listing_ID}                      Get Value From Json             ${response}                $.items[0].human_readable_id
+  ${Listing_ID}                      Convert To String               ${Listing_ID[0]}
+  Set Suite Variable                 ${Listing_ID}                   ${Listing_ID}
 
 Get Listing ID From Listing Details
   ${URL}                             Get Location
