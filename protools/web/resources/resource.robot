@@ -60,6 +60,7 @@ Input Random Mobile
 Get Code From Mock Server
   Execute Javascript                  window.open('${stagingMock}=${Random_User_Mobile}');
   Switch Window                       NEW
+  Wait Until Page Contains Element    css:pre                          timeout=10s   
   ${mycode}                           Get Text                         css:pre
   ${mycode}                           Get Regexp Matches               ${mycode}     \\d{4}
   ${mycode}                           Convert To String                ${mycode[0]}
@@ -225,7 +226,7 @@ Upgrade User To Premium Profile
 
 Fill File Description
   Press Keys                          name:description                 CTRL+a+DELETE
-  ${File_Description}                 Sentence                         nb_words=30
+  ${File_Description}                 Sentence                         nb_words=20
   Set Suite Variable                  ${File_Description}
   Input Text                          css:[name=description]           ${File_Description}
   Element Should Contain              css:[name=description]           ${File_Description}
@@ -246,3 +247,7 @@ Go To File Bank Page
 Go To Team Management Page
   Click Element                       ${Team_Management_Menu}
   Wait Until Page Contains            افزودن همکار جدید
+
+Go To My Requests Page
+  Click Element                       ${My_Requests_Button}
+  Wait Until Page Contains            ثبت درخواست مشتری
