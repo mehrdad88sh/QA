@@ -97,5 +97,15 @@ class Variables(object):
         'Active_Premium_Toggle': 'css:a.toggle-state.active.icon-ok[data-id="981"]',
         'Inactive_Premium_Toggle': 'css:a.toggle-state.inactive.icon-close[data-id="981"]',
         'My_Requests_Button': 'name:list-item-request-management',
-        'User_Comments_Page': 'https://staging.mielse.com/trumpet/user/comment'
+        'User_Comments_Page': 'https://staging.mielse.com/trumpet/user/comment',
+        'Rate_Button': 'css:span.link.icon-rate.flex-icon.blue',
+        'Overall_Stars': 'css:[class=icon-star]',
+        'Sub_Rate_Stars': 'css:span.icon-star.qu-star',
+        'Sub_Rate_Stars_Selected': 'css:span.icon-star.qu-star.selected',
+        'Sumbit_Comment_Field': '//*[@id="popup-rating"]/div/div[2]/div[2]/div[3]/textarea',
+        'Phone_Search_Bar': 'name:TelephonePrimary',
+        'Confirm_Comment_Button': 'css:button.btn.btn-sm.btn-block.btn-success.comment-accept.hide-if-accept',
+        'Review_Comment_State': 'css:strong.label.label-warning',
+        'Accepted_Comment_State': 'css:strong.label.label-success',
+
 }
