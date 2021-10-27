@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation                         ثبت امتیاز به آگهی یک مشاور
+Documentation                         ثبت امتیاز به مشاور
 Resource                              ../../resources/resource.robot
 Test Teardown                         Close Browser
 
