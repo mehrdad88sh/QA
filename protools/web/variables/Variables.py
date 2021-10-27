@@ -7,7 +7,7 @@ class Variables(object):
         return {
         'Alunak': 'name:alounak',
         'SheypoorCar': 'name:sheypoor-cars',
-        'staging': 'https://trumpet:newsite@staging.mielse.com',
+        'staging': 'https://staging.mielse.com',
         'stagingMock': 'https://staging.mielse.com/mock/getCode?mobile',
         'pr': 'https://trumpet:newsite@pr10303.mielse.com',
         'prMock': 'https://pr10303.mielse.com/mock/getCode?mobile',
@@ -95,5 +95,7 @@ class Variables(object):
         'Right_Tooltip_In_Chart': 'css:div.recharts-tooltip-wrapper.recharts-tooltip-wrapper-right.recharts-tooltip-wrapper-top',
         'Left_Tooltip_In_Chart': 'css:div.recharts-tooltip-wrapper.recharts-tooltip-wrapper-left.recharts-tooltip-wrapper-top',
         'Active_Premium_Toggle': 'css:a.toggle-state.active.icon-ok[data-id="981"]',
-        'Inactive_Premium_Toggle': 'css:a.toggle-state.inactive.icon-close[data-id="981"]'
+        'Inactive_Premium_Toggle': 'css:a.toggle-state.inactive.icon-close[data-id="981"]',
+        'My_Requests_Button': 'name:list-item-request-management',
+        'User_Comments_Page': 'https://staging.mielse.com/trumpet/user/comment'
 }
