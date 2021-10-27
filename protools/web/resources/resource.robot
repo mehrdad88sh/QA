@@ -60,7 +60,7 @@ Input Random Mobile
 Get Code From Mock Server
   Execute Javascript                  window.open('${stagingMock}=${Random_User_Mobile}');
   Switch Window                       NEW
-  Wait Until Page Contains Element    css:pre                          timeout=10s   
+  Wait Until Page Contains Element    css:pre                          timeout=10s
   ${mycode}                           Get Text                         css:pre
   ${mycode}                           Get Regexp Matches               ${mycode}     \\d{4}
   ${mycode}                           Convert To String                ${mycode[0]}
