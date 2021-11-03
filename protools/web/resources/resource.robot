@@ -20,7 +20,7 @@ Open Browser On Staging
   Open Browser                        chrome://version                 browser=chrome
   Maximize Browser Window
   Go To                               ${staging}/pro
-  Wait Until Page Contains            با ثبت نام در شیپور از مزایای کسب و کار اینترنتی بهره‌مند شوید       timeout=10s
+  Wait Until Page Contains            با ثبت نام در شیپور از مزایای کسب و کار اینترنتی بهره‌مند شوید               timeout=10s
 
 Login Protools
   [Arguments]                         ${Category_Type}
@@ -28,22 +28,25 @@ Login Protools
   Open Browser On Staging
     IF                                "${Category_Type}" == "آلونک"
     Click Element                     ${Alunak}
-    Wait Until Page Contains          با آلونک کسب و کار خود را متحول کنید                                timeout=10s
+    Wait Until Page Contains          با آلونک کسب و کار خود را متحول کنید                                        timeout=10s
     ELSE IF                           "${Category_Type}" == "شیپورپلاس"
     Click Element                     ${SheypoorCar}
-    Wait Until Page Contains          با شیپور کسب و کار خود را متحول کنید                              timeout=10s
+    Wait Until Page Contains          با شیپور کسب و کار خود را متحول کنید                                        timeout=10s
     END
   Click Element                       name:intro-action
-  Wait Until Page Contains            ورود / ثبت‌نام                                                       timeout=10s
+  Wait Until Page Contains            ورود / ثبت‌نام                                                               timeout=10s
   Check Error Message For Wrong Phone Number
   Input Random Mobile
   Click Element                       name:submit
-  Wait Until Page Contains            تائید شماره موبایل                                                  timeout=10s
+  Wait Until Page Contains            تائید شماره موبایل                                                          timeout=10s
   Get Code From Mock Server
   Input Verification Code
   Close Level Up Popup Message
   Reload Page
-  Wait Until Page Contains            در اینجا فایل خود را ثبت و مدیریت کنید.                             timeout=10s
+  ${status}                           Run Keyword And Return Status
+  ...                                 Wait Until Page Contains         در اینجا فایل خود را ثبت و مدیریت کنید.    timeout=10s
+  Run Keyword Unless                  ${status} == False
+  ...                                 Wait Until Page Contains         فایل موجود می‌باشد                          timeout=10s
 
 Check Error Message For Wrong Phone Number
   ${Wrong_Number}                     Generate Random String           12   [NUMBERS]
