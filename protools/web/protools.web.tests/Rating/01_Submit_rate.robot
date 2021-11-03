@@ -23,7 +23,7 @@ Create File And Publish File In Land And Garden Category
   Publish File With Alunak API
 
 Submit Rate To Consultant Listing With Various Users
-  FOR   ${INDEX}   IN RANGE   2
+  FOR   ${INDEX}   IN RANGE   5
       Login Sheypoor
       Go To Listing In Sheypoor Page
       Submit New Rate In Listing
@@ -60,7 +60,9 @@ Submit New Rate In Listing
 
 Approve Comment
   Input Text                          ${Phone_Search_Bar}           ${Random_User_Mobile}
-  Wait Until Keyword Succeeds         3x  3s   Click Element        ${Search_Button}
+  Click Element                       ${Search_Button}
+  ${status}                           Run Keyword And Return Status   Wait Until Page Contains      Processing...
+  Run Keyword If                      ${status}                     Click Element                 ${Search_Button}
   Wait Until Page Contains Element    ${Review_Comment_State}       timeout=15s
   Element Should Contain              ${Review_Comment_State}       در حال بررسی
   Click Element                       ${Confirm_Comment_Button}
