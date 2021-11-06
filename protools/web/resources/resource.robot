@@ -42,11 +42,16 @@ Login Protools
   Get Code From Mock Server
   Input Verification Code
   Close Level Up Popup Message
-  Reload Page
-  ${status}                           Run Keyword And Return Status
-  ...                                 Wait Until Page Contains         در اینجا فایل خود را ثبت و مدیریت کنید.    timeout=10s
-  Run Keyword Unless                  ${status} == False
-  ...                                 Wait Until Page Contains         فایل موجود می‌باشد                          timeout=10s
+  Listing Status
+
+Listing Status
+  ${Status}                           Run Keyword And Return Status
+  ...                                 Wait Until Page Contains Element          name:file-item-0       timeout=10s
+  IF                                  ${Status} == False
+  Wait Until Page Contains            در اینجا فایل خود را ثبت و مدیریت کنید.   timeout=10s
+  ELSE IF                             ${Status}
+  Wait Until Page Contains            فایل موجود می‌باشد                timeout=10s
+  END
 
 Check Error Message For Wrong Phone Number
   ${Wrong_Number}                     Generate Random String           12   [NUMBERS]
@@ -150,6 +155,10 @@ Go To User Profile Page
   Click Element                       ${profile_name_ID}
   Close Level Up Popup Message
   Page Should Contain                 فعال در ${Company}              timeout=10s
+
+Go To Reviews Tab
+  Click Element                       name:reviews
+  Wait Until Page Contains Element    css:[aria-selected="true"]
 
 Go To Edit Profile Page
   Click Element                       ${edit_profile_ID}
