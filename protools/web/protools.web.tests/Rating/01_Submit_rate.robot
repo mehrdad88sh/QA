@@ -9,8 +9,14 @@ Submit Rate To Consultant Listing
   Create Shop In Sheypoor             املاک
   Create New Listing With API
   Submit Rate To Consultant Listing With Various Users
+  Checking Reviews In User Profile Page
 
 *** Keywords ***
+Checking Reviews In User Profile Page
+  Back To Protools Page
+  Go To User Profile Page
+  Go To Reviews Tab
+
 Create New Listing With API
   Create File And Publish File In Land And Garden Category
   Get Listing ID From API
@@ -39,32 +45,34 @@ Approve Comment In Admin Page
 Submit New Rate In Listing
   Click Element                       ${Rate_Button}
   Wait Until Page Contains            به کیفیت خدمت‌رسانی این آگهی دهنده چه امتیازی می‌دهید؟     timeout=10s
-  ${Overall_Rate}                     Get WebElements                 ${Overall_Stars}
+  ${Overall_Rate}                     Get WebElements                       ${Overall_Stars}
   Click Element                       ${Overall_Rate}[2]
-  Wait Until Page Contains            متوسط                         timeout=10s
-  ${Sub_Rate}                         Get WebElements               ${Sub_Rate_Stars}
-  ${Response_Speed}                   Click Element                 ${Sub_Rate}[1]
+  Wait Until Page Contains            متوسط                                 timeout=10s
+  ${Sub_Rate}                         Get WebElements                       ${Sub_Rate_Stars}
+  ${Response_Speed}                   Click Element                         ${Sub_Rate}[1]
   Sleep    2s
-  ${Dealing_With_Customer}            Click Element                 ${Sub_Rate}[7]
+  ${Dealing_With_Customer}            Click Element                         ${Sub_Rate}[7]
   Sleep    2s
-  ${Accuracy_Of_information}          Click Element                 ${Sub_Rate}[13]
+  ${Accuracy_Of_information}          Click Element                         ${Sub_Rate}[13]
   Sleep    2s
-  ${Sub_Rate_Selected}                Get WebElements               ${Sub_Rate_Stars_Selected}
+  ${Sub_Rate_Selected}                Get WebElements                       ${Sub_Rate_Stars_Selected}
   Wait Until Page Contains Element    ${Sub_Rate_Selected}[1]
   Wait Until Page Contains Element    ${Sub_Rate_Selected}[4]
   Wait Until Page Contains Element    ${Sub_Rate_Selected}[8]
-  ${Submit_Comment}                   Sentence                      nb_words=15
-  Input Text                          ${Sumbit_Comment_Field}       ${Submit_Comment}
+  ${Submit_Comment}                   Sentence                              nb_words=15
+  Set Suite Variable                  ${Submit_Comment}                     ${Submit_Comment}
+  Input Text                          ${Sumbit_Comment_Field}               ${Submit_Comment}
   Click By Text                       ثبت امتیاز
-  Wait Until Page Contains            امتیاز شما به این فروشنده ثبت شد          timeout=10s
+  Wait Until Page Contains            امتیاز شما به این فروشنده ثبت شد      timeout=10s
 
 Approve Comment
-  Input Text                          ${Phone_Search_Bar}           ${Random_User_Mobile}
+  Input Text                          ${Phone_Search_Bar}                   ${Random_User_Mobile}
   Click Element                       ${Search_Button}
-  ${status}                           Run Keyword And Return Status   Wait Until Page Contains      Processing...
-  Run Keyword If                      ${status}                     Click Element                 ${Search_Button}
-  Wait Until Page Contains Element    ${Review_Comment_State}       timeout=15s
-  Element Should Contain              ${Review_Comment_State}       در حال بررسی
+  ${status}                           Run Keyword And Return Status
+  ...                                 Wait Until Page Contains              Processing...
+  Run Keyword If                      ${status}                             Click Element                 ${Search_Button}
+  Wait Until Page Contains Element    ${Review_Comment_State}               timeout=15s
+  Element Should Contain              ${Review_Comment_State}               در حال بررسی
   Click Element                       ${Confirm_Comment_Button}
-  Wait Until Page Contains Element    ${Accepted_Comment_State}     timeout=15s
-  Element Should Contain              ${Accepted_Comment_State}     تایید شده
+  Wait Until Page Contains Element    ${Accepted_Comment_State}             timeout=15s
+  Element Should Contain              ${Accepted_Comment_State}             تایید شده
