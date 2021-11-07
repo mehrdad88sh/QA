@@ -96,7 +96,8 @@ class Variables(object):
         'Left_Tooltip_In_Chart': 'css:div.recharts-tooltip-wrapper.recharts-tooltip-wrapper-left.recharts-tooltip-wrapper-top',
         'Active_Premium_Toggle': 'css:a.toggle-state.active.icon-ok[data-id="981"]',
         'Inactive_Premium_Toggle': 'css:a.toggle-state.inactive.icon-close[data-id="981"]',
-        'My_Requests_Button': 'name:list-item-request-management',
+        'Active_File_Request_Toggle': 'css:a.toggle-state.active.icon-ok[data-id="1118"]',
+        'Inactive_File_Request_Toggle': 'css:a.toggle-state.inactive.icon-close[data-id="1118"]',
         'User_Comments_Page': 'https://staging.mielse.com/trumpet/user/comment',
         'Rate_Button': 'css:span.link.icon-rate.flex-icon.blue',
         'Overall_Stars': 'css:[class=icon-star]',
@@ -107,5 +108,8 @@ class Variables(object):
         'Confirm_Comment_Button': 'css:button.btn.btn-sm.btn-block.btn-success.comment-accept.hide-if-accept',
         'Review_Comment_State': 'css:strong.label.label-warning',
         'Accepted_Comment_State': 'css:strong.label.label-success',
-
+        'My_Requests_Button': 'name:list-item-request-management',
+        'Customer_Request_Submission_Button': 'add-new-request-list-empty-action',
+        'Category_Selection': 'name:category-trigger',
+        'Request_Save_Button': 'css:[name="save-form-action"]'
 }
