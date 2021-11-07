@@ -44,16 +44,10 @@ Create File In Buying And Selling Category
   Submit File
   Open File And Check Images
 
-Select Rent And Deposit Category
-  Click Element                       name:category-trigger
-  Wait Until Page Contains Element    css:[role="document"]     timeout=10s
-  Click Element                       name:43606
-  Textfield Value Should Be           name:category             رهن و اجاره خانه و آپارتمان
-  Wait Until Page Contains Element    select-a68096             timeout=10s
-
 Set Rent And Deposit Attributes
   Select RealEstate Type              ${RealEstateType}[RD]     ${ApartmentID}[RD]    ${Apartment}
-  Year Of Construction
+  Select Year Of Construction
+  Set Building Floor
   Select Parking For Rent And Deposit Category
   Select Warehouse For Rent And Deposit Category
   Select Elevator For Rent And Deposit Category
@@ -79,17 +73,10 @@ Set More Detail
   File Code
   Apply More Detail
 
-Select Buying And Selling Category
-  Select Form Clear Button
-  Click Element                       name:category-trigger
-  Wait Until Page Contains Element    css:[tabindex="-1"]       timeout=10s
-  Click Element                       name:43604
-  Textfield Value Should Be           name:category             خرید و فروش خانه و آپارتمان
-  Wait Until Page Contains Element    select-a68094             timeout=10s
-
 Set Buying And Selling Attributes
   Select RealEstate Type              ${RealEstateType}[BS]   ${VilaID}[BS]   ${Vila}
-  Year Of Construction
+  Select Year Of Construction
+  Set Building Floor
   Select Parking For Buying And Selling Category
   Select Warehouse For Buying And Selling Category
   Select Elevator For Buying And Selling Category
@@ -167,35 +154,6 @@ Select Eastern Position
   Checkbox Should Be Selected         name:checkbox-450092
   Click Button                        name:select-add-action
   Textfield Value Should Be           name:a69257               شرقی
-
-Select RealEstate Type
-  [Arguments]                         ${RealEstateType}        ${ApartmentID}    ${Apartment}
-  Click Element                       ${RealEstateType}
-  Wait Until Page Contains Element    css:[role="document"]    timeout=10s
-  Click Element                       ${ApartmentID}
-  Element Should Contain              ${RealEstateType}        ${Apartment}
-
-Year Of Construction
-  ${Status}                           Run Keyword And Return Status
-  ...                                 Wait Until Page Contains Element
-  ...                                 select-a92367             timeout=10s
-  Run Keyword If
-  ...                                 ${Status}
-  ...                                 Set Year Of Construction For Rent And Deposit Category
-  ...                                 ELSE
-  ...                                 Set Year Of Construction For Buying And Selling Category
-
-Set Year Of Construction For Rent And Deposit Category
-  Click Element                       select-a92367
-  Wait Until Page Contains Element    css:[role="listbox"]      timeout=10s
-  Click Element                       name:455210
-  Element Should Contain              select-a92367             1390
-
-Set Year Of Construction For Buying And Selling Category
-  Click Element                       select-a92368
-  Wait Until Page Contains Element    css:[role="listbox"]      timeout=10s
-  Click Element                       name:455206
-  Element Should Contain              select-a92368             1394
 
 Select Parking For Rent And Deposit Category
   Click Element                       name:switch-a69191
