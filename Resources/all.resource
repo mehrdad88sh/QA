@@ -272,3 +272,33 @@ Go To User Comments
 Go To Listing In Sheypoor Page
   Go To                              ${staging}/${Listing_ID}
   Wait Until Page Contains           مشاور این آگهی                  timeout=10s
+
+Check Premium Toggle In Admin
+  Go To                              ${staging}/trumpet/features/search
+  Wait Until Page Contains           قابلیت های عمومی
+  Click By Text                      بستن / باز کردن همه
+  Execute JavaScript                 window.scrollTo(0,1700)
+  Wait Until Page Contains           امکان آپگرید کردن کاربران به پریمیوم
+  FOR   ${INDEX}    IN RANGE    2
+        ${Status}                          Run Keyword And Return Status
+        ...                                Wait Until Page Contains Element       ${Inactive_Premium_Toggle}          timeout=3s
+        Run Keyword If                     ${Status}
+        ...                                Click Element                          ${Inactive_Premium_Toggle}
+        Wait Until Page Contains Element   ${Active_Premium_Toggle}               timeout=3s
+  Exit For Loop If                         ${Status} == False
+  END
+
+Check File Request Toggle In Admin
+  Go To                              ${staging}/trumpet/features/search
+  Wait Until Page Contains           قابلیت های عمومی
+  Click By Text                      بستن / باز کردن همه
+  Execute JavaScript                 window.scrollTo(0,2400)
+  Wait Until Page Contains           مپنیگ جدید فایل ریکوئست
+  FOR   ${INDEX}    IN RANGE    2
+        ${Status}                          Run Keyword And Return Status
+        ...                                Wait Until Page Contains Element       ${Inactive_File_Request_Toggle}          timeout=3s
+        Run Keyword If                     ${Status}
+        ...                                Click Element                          ${Inactive_File_Request_Toggle}
+        Wait Until Page Contains Element   ${Active_File_Request_Toggle}          timeout=3s
+  Exit For Loop If                         ${Status} == False
+  END
