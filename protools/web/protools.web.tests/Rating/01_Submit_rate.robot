@@ -43,6 +43,7 @@ Approve Comment In Admin Page
   Approve Comment
 
 Submit New Rate In Listing
+  Click Element                       class:underlined
   Click Element                       ${Rate_Button}
   Wait Until Page Contains            به کیفیت خدمت‌رسانی این آگهی دهنده چه امتیازی می‌دهید؟     timeout=10s
   ${Overall_Rate}                     Get WebElements                       ${Overall_Stars}
@@ -68,9 +69,11 @@ Submit New Rate In Listing
 Approve Comment
   Input Text                          ${Phone_Search_Bar}                   ${Random_User_Mobile}
   Click Element                       ${Search_Button}
+  FOR  ${INDEX}  IN RANGE  2
   ${status}                           Run Keyword And Return Status
   ...                                 Wait Until Page Contains              Processing...
   Run Keyword If                      ${status}                             Click Element                 ${Search_Button}
+  END
   Wait Until Page Contains Element    ${Review_Comment_State}               timeout=15s
   Element Should Contain              ${Review_Comment_State}               در حال بررسی
   Click Element                       ${Confirm_Comment_Button}
