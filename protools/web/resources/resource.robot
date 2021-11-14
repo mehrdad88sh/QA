@@ -95,8 +95,8 @@ Set Location
   Wait Until Page Contains Element    name:location-1                  timeout=10s
   Click Element                       ${Karaj_ID}
   Wait Until Page Contains Element    name:location-2                  timeout=10s
-  ${search-input}                     Get WebElements                  ${Search_Input_Location}
-  Input Text                          ${search-input}[2]               گلشهر
+  ${Input_Search}                     Get WebElements                  ${Input_Search}
+  Input Text                          ${Input_Search}[2]               گلشهر
   Click Element                       ${Golshahr_ID}
   Element Should Contain              name:location                    کرج > گلشهر
 
@@ -107,8 +107,8 @@ Set Location In Filters
   Wait Until Page Contains Element    name:location-1                  timeout=10s
   Click Element                       ${Karaj_ID}
   Wait Until Page Contains Element    name:location-2                  timeout=10s
-  ${search-input}                     Get WebElements                  ${Search_Input_Location}
-  Input Text                          ${search-input}[2]               گلشهر
+  ${Input_Search}                     Get WebElements                  ${Input_Search}
+  Input Text                          ${Input_Search}[2]               گلشهر
   Click Element                       ${Golshahr_ID}
   Click Element                       name:choose-selectedItems
 
@@ -141,7 +141,7 @@ Select Form Clear Button
 
 Go To My Packages Page
   Click Element                       ${My_Packages_Button}
-  Wait Until Page Contains            خرید بسته                     timeout=10s
+  Wait Until Page Contains            خرید بسته                        timeout=10s
 
 Upload RealEstate Images
   FOR                                 ${INDEX}   IN RANGE    4
@@ -168,7 +168,7 @@ Go To User Profile Page
   Wait Until Page Contains Element    ${profile_name_ID}
   Click Element                       ${profile_name_ID}
   Close Level Up Popup Message
-  Page Should Contain                 فعال در ${Company}              timeout=10s
+  Page Should Contain                 فعال در ${Company}               timeout=10s
 
 Go To Reviews Tab
   Click Element                       name:reviews
@@ -207,7 +207,7 @@ Go To Location Job
   Page Should Contain                 انتخاب
 
 Select Alborz Province
-  Input Text                          ${Search_Input_Location}          البرز
+  Input Text                          ${Input_Search}         البرز
   Click Element                       ${Alborz_ID}
   Wait Until Page Contains Element                                     ${Karaj_ID}
 
@@ -291,30 +291,30 @@ Go To My Requests Page
 
 Select Rent And Deposit Category
   Click Element                       ${Category_Selection}
-  Wait Until Page Contains Element    css:[role="document"]     timeout=10s
+  Wait Until Page Contains Element    css:[role="document"]            timeout=10s
   Click Element                       name:43606
-  Textfield Value Should Be           name:category             رهن و اجاره خانه و آپارتمان
-  Wait Until Page Contains Element    select-a68096             timeout=10s
+  Textfield Value Should Be           name:category                    رهن و اجاره خانه و آپارتمان
+  Wait Until Page Contains Element    select-a68096                    timeout=10s
 
 Select Buying And Selling Category
   Select Form Clear Button
   Click Element                       ${Category_Selection}
-  Wait Until Page Contains Element    css:[tabindex="-1"]       timeout=10s
+  Wait Until Page Contains Element    css:[tabindex="-1"]              timeout=10s
   Click Element                       name:43604
-  Textfield Value Should Be           name:category             خرید و فروش خانه و آپارتمان
-  Wait Until Page Contains Element    select-a68094             timeout=10s
+  Textfield Value Should Be           name:category                    خرید و فروش خانه و آپارتمان
+  Wait Until Page Contains Element    select-a68094                    timeout=10s
 
 Select RealEstate Type
-  [Arguments]                         ${RealEstateType}        ${ApartmentID}    ${Apartment}
+  [Arguments]                         ${RealEstateType}                ${ApartmentID}    ${Apartment}
   Click Element                       ${RealEstateType}
-  Wait Until Page Contains Element    css:[role="document"]    timeout=10s
+  Wait Until Page Contains Element    css:[role="document"]            timeout=10s
   Click Element                       ${ApartmentID}
-  Element Should Contain              ${RealEstateType}        ${Apartment}
+  Element Should Contain              ${RealEstateType}                ${Apartment}
 
 Select Year Of Construction
   ${Status}                           Run Keyword And Return Status
   ...                                 Wait Until Page Contains Element
-  ...                                 select-a92367             timeout=10s
+  ...                                 select-a92367                    timeout=10s
   Run Keyword If
   ...                                 ${Status}
   ...                                 Set Year Of Construction For Rent And Deposit Category
@@ -323,20 +323,20 @@ Select Year Of Construction
 
 Set Year Of Construction For Rent And Deposit Category
   Click Element                       select-a92367
-  Wait Until Page Contains Element    css:[role="listbox"]      timeout=10s
+  Wait Until Page Contains Element    css:[role="listbox"]             timeout=10s
   Click Element                       name:455210
-  Element Should Contain              select-a92367             1390
+  Element Should Contain              select-a92367                    1390
 
 Set Year Of Construction For Buying And Selling Category
   Click Element                       select-a92368
-  Wait Until Page Contains Element    css:[role="listbox"]      timeout=10s
+  Wait Until Page Contains Element    css:[role="listbox"]             timeout=10s
   Click Element                       name:455206
-  Element Should Contain              select-a92368             1394
+  Element Should Contain              select-a92368                    1394
 
 Set Building Floor
   ${Status}                           Run Keyword And Return Status
   ...                                 Wait Until Page Contains Element
-  ...                                 select-a94551             timeout=10s
+  ...                                 select-a94551                    timeout=10s
   Run Keyword If
   ...                                 ${Status}
   ...                                 Set Building Floor For Rent And Deposit Category
@@ -345,42 +345,110 @@ Set Building Floor
 
 Set Building Floor For Rent And Deposit Category
   Click Element                       select-a94551
-  Wait Until Page Contains Element    css:[role="listbox"]      timeout=10s
+  Wait Until Page Contains Element    css:[role="listbox"]             timeout=10s
   Sleep    1s
   Click By Text                       زیر همکف
-  Element Should Contain              select-a94551             زیر همکف
+  Element Should Contain              select-a94551                    زیر همکف
 
 Set Building Floor For Buying And Selling Category
   Click Element                       select-a94550
-  Wait Until Page Contains Element    css:[role="listbox"]      timeout=10s
+  Wait Until Page Contains Element    css:[role="listbox"]             timeout=10s
   Sleep    1s
   Click By Text                       زیر همکف
-  Element Should Contain              select-a94550             زیر همکف
+  Element Should Contain              select-a94550                    زیر همکف
 
-Open Submit Customer Request
-  Click Element                         ${Customer_Request_Submission_Button}
-  Wait Until Page Contains Element      ${Request_Save_Button}
+Open Submit Customer Request Modal
+  Click Element                       ${Customer_Request_Submission_Button}
+  Wait Until Page Contains Element    ${Request_Save_Button}
 
 Set Requester Name
   Generate Random username
-  Input Text                            name:name                     ${Random_User_Name}
+  Input Text                          name:name                        ${Random_User_Name}
+  Set Suite Variable                  ${Random_User_Name}              ${Random_User_Name}
 
 Set Requester Phone
   Generate Random Phone Number
-  Input Text                            name:telephoneNumber          ${Random_User_Mobile}
+  Input Text                          name:telephoneNumber             ${Random_User_Mobile}
+  Set Suite Variable                  ${Random_User_Mobile}            ${Random_User_Mobile}
 
 Set Minimum and Maximum Area
-  Input Text                            name:mn68085                  100
-  Input Text                            name:mx68085                  300
+  Input Text                          name:mn68085                     100
+  Input Text                          name:mx68085                     300
 
 Set Minimum and Maximum Rent
-  Input Text                            name:mn68090                  250000000
-  Input Text                            name:mx68090                  650000000
+  Input Text                          name:mn68090                     250000000
+  Input Text                          name:mx68090                     650000000
 
 Set Minimum and Maximum Deposit
-  Input Text                            name:mn68092                  4000000
-  Input Text                            name:mx68092                  8000000
+  Input Text                          name:mn68092                     4000000
+  Input Text                          name:mx68092                     8000000
 
 Submit Request
-  Click Element                         ${Request_Save_Button}
-  Wait Until Page Contains              درخواست با موفقیت اضافه شد.
+  Click Element                       ${Request_Save_Button}
+  Wait Until Page Contains            درخواست با موفقیت اضافه شد.
+
+Select Pride Category
+  Select Vehicle Category
+  Select Pride Brand
+
+Select Vehicle Category
+  Wait Until Page Contains Element    ${Category_Selection}            timeout=10s
+  Click Element                       ${Category_Selection}
+  Wait Until Page Contains Element    ${Vehicle_Category}              timeout=10s
+  Click Element                       ${Vehicle_Category}
+  Wait Until Page Contains Element    ${Pride_Category}                timeout=10s
+
+Select Pride Brand
+  ${Input_Search}                     Get WebElements                  ${Input_Search}
+  Input Text                          ${Input_Search}[1]               پراید
+  Click Element                       ${Pride_Category}
+  Textfield Value Should Be           ${Category_Select_Value}         پراید
+  Wait Until Page Contains Element    ${Car_Model_Selection}           timeout=10s
+
+Select Car Model
+  Click Element                       ${Car_Model_Selection}
+  Wait Until Page Contains Element    ${Car_Model_List}                timeout=10s
+  Click Element                       ${Saba_Car_Model}
+  Element Should Contain              ${Car_Model_Selection}           صبا (صندوقدار)
+
+Select Car Payment Type
+  Click Element                       ${Payment_Type_Selection}
+  Wait Until Page Contains Element    ${Payment_Type_List}             timeout=10s
+  Click Element                       ${Cash_Peyment}
+  Element Should Contain              ${Payment_Type_Selection}        نقدی
+
+Set Minimum and Maximum Production Year
+  Input Text                          name:mn68101                     1390
+  Input Text                          name:mx68101                     1400
+
+Set Minimum and Maximum Kilometer
+  Input Text                          name:mn68102                     80000
+  Input Text                          name:mx68102                     140000
+
+Car Paint Type
+  Click Element                       ${Paint_Selection}
+  Wait Until Page Contains Element    ${Paint_List}                    timeout=10s
+  Click Element                       ${Silver_Color}
+  Element Should Contain              ${Paint_Selection}               نقره‌ای
+
+Car Gearbox Type
+  Click Element                       ${Gearbox_Type_Selection}
+  Wait Until Page Contains Element    ${Gearbox_Type_List}             timeout=10s
+  Click Element                       ${Automatic_Gearbox}
+  Element Should Contain              ${Gearbox_Type_Selection}        اتوماتیک
+
+Car Fuel Type
+  Click Element                       ${Fuel_Type_Selection}
+  Wait Until Page Contains Element    ${Fuel_Type_List}                timeout=10s
+  Click Element                       ${Gasoline}
+  Element Should Contain              ${Fuel_Type_Selection}           گازوئیل(دیزل)
+
+Car Body Condition
+  Click Element                       ${Body_Condition_Selection}
+  Wait Until Page Contains Element    ${Body_Condition_List}           timeout=10s
+  Click Element                       ${Two_Spots_Of_Paint}
+  Element Should Contain              ${Body_Condition_Selection}      دو لکه رنگ
+
+Set Minimum and Maximum Price
+  Input Text                          name:mnprice                     750000000
+  Input Text                          name:mxprice                     950000000
