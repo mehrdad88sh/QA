@@ -261,11 +261,21 @@ Fill File Description
 Open File And Check Images
   Click Element                       name:file-item-0
   Wait Until Page Contains            آگهی نشده                        timeout=10s
-  FOR                                 ${INDEX}   IN RANGE    3
-    Click Element                     name:next-slide
+  Sleep    1s
+  Wait Until Page Contains Element    ${Image_In_Listing_Details}      timeout=10s
+  FOR   ${INDEX}   IN RANGE    3
+    Click Element                     ${Next_Slide_Button}
     Sleep    1s
   END
-  Element Should Contain              class:slider-control-bottomcenter     ۴ از ۴
+  Click Element                       ${Image_In_Listing_Details}
+  ${Next_Slide_Button}                Get WebElements                  ${Next_Slide_Button}
+  Wait Until Page Contains Element    ${Next_Slide_Button}[1]          timeout=10s
+  Sleep    1s
+  FOR   ${INDEX}   IN RANGE    3
+    Click Element                     ${Next_Slide_Button}[1]
+    Sleep    1s
+  END
+  Click Element                       ${Close_Slider_Button}
 
 Go To File Bank Page
   Click Element                       ${File_Bank_Button}
@@ -324,11 +334,28 @@ Set Year Of Construction For Buying And Selling Category
   Element Should Contain              select-a92368             1394
 
 Set Building Floor
+  ${Status}                           Run Keyword And Return Status
+  ...                                 Wait Until Page Contains Element
+  ...                                 select-a94551             timeout=10s
+  Run Keyword If
+  ...                                 ${Status}
+  ...                                 Set Building Floor For Rent And Deposit Category
+  ...                                 ELSE
+  ...                                 Set Building Floor For Buying And Selling Category
+
+Set Building Floor For Rent And Deposit Category
   Click Element                       select-a94551
   Wait Until Page Contains Element    css:[role="listbox"]      timeout=10s
+  Sleep    1s
   Click By Text                       زیر همکف
-  Wait Until Page Contains Element    name:455351               timeout=10s
   Element Should Contain              select-a94551             زیر همکف
+
+Set Building Floor For Buying And Selling Category
+  Click Element                       select-a94550
+  Wait Until Page Contains Element    css:[role="listbox"]      timeout=10s
+  Sleep    1s
+  Click By Text                       زیر همکف
+  Element Should Contain              select-a94550             زیر همکف
 
 Open Submit Customer Request
   Click Element                         ${Customer_Request_Submission_Button}
