@@ -111,5 +111,8 @@ class Variables(object):
         'My_Requests_Button': 'name:list-item-request-management',
         'Customer_Request_Submission_Button': 'add-new-request-list-empty-action',
         'Category_Selection': 'name:category-trigger',
-        'Request_Save_Button': 'css:[name="save-form-action"]'
+        'Request_Save_Button': 'css:[name="save-form-action"]',
+        'Image_In_Listing_Details': 'css:div.slider-frame',
+        'Next_Slide_Button': 'name:next-slide',
+        'Close_Slider_Button': 'css:[d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"]'
 }
