@@ -52,25 +52,9 @@ Go To Submit File Page
   Click Element                       name:list-item-new-file
   Wait Until Page Contains            ثبت فایل و آگهی                  timeout=10s
 
-Select Pride Category
-  Select Vehicle Category
-  Select Pride Brand
-
-Select Vehicle Category
-  Wait Until Page Contains Element    name=category-trigger            timeout=10s
-  Click Element                       name=category-trigger
-  Page Should Contain Element         css:[role="document"]
-  Click Element                       name=43627
-  Wait Until Page Contains Element    name=43976                      timeout=10s
-
-Select Pride Brand
-  Click Element                       name=43976
-  Textfield Value Should Be           name=category                    پراید
-  Wait Until Page Contains Element    select-a68143                   timeout=10s
-
 Set Motorcycle Category
-  Wait Until Keyword Succeeds         3x   3s                         Click Element      name:form-clear-action
-  Wait Until Page Contains            از انصراف اطمینان دارید؟        timeout=10s
+  Wait Until Keyword Succeeds         3x   3s                          Click Element      name:form-clear-action
+  Wait Until Page Contains            از انصراف اطمینان دارید؟         timeout=10s
   Click Element                       ${Confirm_Button}
   Page Should Contain Element         css:[tabindex="-1"]                                #دکمه ثبت فایل غیرفعال باشه
   Wait Until Keyword Succeeds         3x    2s                         Click Element     name:category-trigger
@@ -82,11 +66,11 @@ Set Motorcycle Category
   Wait Until Page Contains            حجم موتور
 
 Set Car Attributes
-  Select Saba Model
-  Car Payment Type
+  Select Car Model
+  Select Car Payment Type
   Production Year
-  Car Function
-  Car Color
+  Car Kilometer
+  Car Paint Type
   Car Gearbox Type
   Car Fuel Type
   Car Body Condition
@@ -102,86 +86,50 @@ Set Motorcycle Attributes
   Motorcycle Color
   Price
 
-Select Saba Model
-  Click Element                       select-a68143
-  Page Should Contain Element         css:[role="listbox"]
-  Click Element                       name=440665
-  Element Should Contain              select-a68143                    صبا (صندوقدار)
-
-Car Payment Type
-  Click Element                       select-a69150
-  Page Should Contain Element         css:[role="listbox"]
-  Click Element                       name=445097
-  Element Should Contain              select-a69150                    نقدی
-
 Production Year
   ${Production Year}                  Evaluate  random.randint(1365, 1400)  random
-  ${Status}                           Run Keyword And Return Status  Wait Until Page Contains Element    name=a68101    timeout=10s
-  Run Keyword If                      ${Status}                      Input Text                          name=a68101    ${Production Year}
-  ...  ELSE                           Input Text                     name=a68140                                        ${Production Year}
+  ${Status}                           Run Keyword And Return Status    Wait Until Page Contains Element    name=a68101    timeout=10s
+  Run Keyword If                      ${Status}                        Input Text                          name=a68101    ${Production Year}
+  ...  ELSE                           Input Text                       name=a68140                                        ${Production Year}
 
-Car Function
-  Input Text                          name=a68102                    200000
-
-Car Color
-  Click Element                       select-a69130
-  Page Should Contain Element         css:[role="listbox"]
-  Click Element                       name=445303
-  Element Should Contain              select-a69130                 نقره‌ای
-
-Car Gearbox Type
-  Click Element                       select-a69140
-  Page Should Contain Element         css:[role="listbox"]
-  Click Element                       name=445313
-  Element Should Contain              select-a69140                 اتوماتیک
-
-Car Fuel Type
-  Click Element                       select-a69602
-  Page Should Contain Element         css:[role="listbox"]
-  Click Element                       name=450676
-  Element Should Contain              select-a69602                دوگانه سوز
-
-Car Body Condition
-  Click Element                       select-a69160
-  Page Should Contain Element         css:[role="listbox"]
-  Click Element                       name=445332
-  Element Should Contain              select-a69160                دو لکه رنگ
+Car Kilometer
+  Input Text                          name=a68102                      200000
 
 Engine Capacity
   Click Element                       select-a68105
   Page Should Contain Element         css:[role="listbox"]
   Click Element                       name=440582
-  Element Should Contain              select-a68105               (150cc - 174cc)
+  Element Should Contain              select-a68105                    (150cc - 174cc)
 
 Motorcycle Kilometer
-  Input Text                          name:a68141                 40000
+  Input Text                          name:a68141                      40000
 
 Motorcycle Gearbox Type
   Click Element                       select-a92350
   Page Should Contain Element         css:[role="listbox"]
   Click Element                       name=455033
-  Element Should Contain              select-a92350                نیمه اتوماتیک
+  Element Should Contain              select-a92350                    نیمه اتوماتیک
 
 Motorcycle Tip
   Click Element                       select-a91888
   Page Should Contain Element         css:[role="listbox"]
   Click Element                       name=455000
-  Element Should Contain              select-a91888                سه چرخ
+  Element Should Contain              select-a91888                    سه چرخ
 
 Motorcycle Payment Type
   Click Element                       select-a92360
   Page Should Contain Element         css:[role="listbox"]
   Click Element                       name=455034
-  Element Should Contain              select-a92360                نقدی
+  Element Should Contain              select-a92360                    نقدی
 
 Motorcycle Color
   Click Element                       select-a93000
   Page Should Contain Element         css:[role="listbox"]
   Click Element                       name=455272
-  Element Should Contain              select-a93000                آلبالویی
+  Element Should Contain              select-a93000                    آلبالویی
 
 Price
-  Input Text                          name=price                   50000000
+  Input Text                          name=price                       50000000
 
 Set More Detail Car
   Select More Detail Button
@@ -202,45 +150,45 @@ Set Motorcycle More Detail
 Color Inside Car
   Click Element                       select-a69600
   Page Should Contain Element         css:[role="listbox"]
-  Wait Until Keyword Succeeds         3x  2s    Click Element      name=450663
+  Wait Until Keyword Succeeds         3x  2s    Click Element          name=450663
   Page Should Contain                 سرمه ای
 
 Car License Plate Type
   Click Element                       select-a69601
   Page Should Contain Element         css:[role="listbox"]
   Click Element                       name=450673
-  Element Should Contain              select-a69601                منطقه آزاد
+  Element Should Contain              select-a69601                    منطقه آزاد
 
 In-vehicle Equipment
   Click Element                       name=a69603-trigger
   Page Should Contain                 بلوتوث
-  Select Checkbox                     name:checkbox-450679        #بلوتوث
+  Select Checkbox                     name:checkbox-450679             #بلوتوث
   Checkbox Should Be Selected         name:checkbox-450679
-  Select Checkbox                     name:checkbox-450686        #ماساژور
+  Select Checkbox                     name:checkbox-450686             #ماساژور
   Checkbox Should Be Selected         name:checkbox-450686
-  Select Checkbox                     name=checkbox-450691        #صندلی برقی
+  Select Checkbox                     name=checkbox-450691             #صندلی برقی
   Checkbox Should Be Selected         name:checkbox-450691
   Click Button                        name=select-add-action
 
 Out-of-vehicle Equipment
   Click Element                       name=a69604-trigger
   Page Should Contain                 آینه برقی
-  Select Checkbox                     name:checkbox-450696        #آینه برقی
+  Select Checkbox                     name:checkbox-450696             #آینه برقی
   Checkbox Should Be Selected         name:checkbox-450696
-  Select Checkbox                     name:checkbox-450698        #سانروف
+  Select Checkbox                     name:checkbox-450698             #سانروف
   Checkbox Should Be Selected         name:checkbox-450698
-  Select Checkbox                     name=checkbox-450700        #لاستیک آفرود
+  Select Checkbox                     name=checkbox-450700             #لاستیک آفرود
   Checkbox Should Be Selected         name:checkbox-450700
   Click Button                        name=select-add-action
 
 Car Safety Equipment
   Click Element                       name=a69605-trigger
   Page Should Contain                 دزدگیر
-  Select Checkbox                     name:checkbox-450703        #دزدگیر
+  Select Checkbox                     name:checkbox-450703             #دزدگیر
   Checkbox Should Be Selected         name:checkbox-450703
-  Select Checkbox                     name:checkbox-450705        #ایربگ
+  Select Checkbox                     name:checkbox-450705             #ایربگ
   Checkbox Should Be Selected         name:checkbox-450705
-  Select Checkbox                     name=checkbox-450711        #سنسور پارکینگ
+  Select Checkbox                     name=checkbox-450711             #سنسور پارکینگ
   Checkbox Should Be Selected         name:checkbox-450711
   Click Button                        name=select-add-action
 
@@ -248,16 +196,16 @@ Motorcycle Fuel Type
   Click Element                       select-a69606
   Page Should Contain Element         css:[role="listbox"]
   Click Element                       name=450712
-  Element Should Contain              select-a69606               بنزین
+  Element Should Contain              select-a69606                    بنزین
 
 Motorcycle License Plate Type
   Click Element                       select-a69607
   Page Should Contain Element         css:[role="listbox"]
   Click Element                       name=450714
-  Element Should Contain              select-a69607               ملی
+  Element Should Contain              select-a69607                    ملی
 
 Upload Image
   Execute JavaScript                  window.scrollTo(0,0)
-  ${image_path}                       Normalize Path             ${image_path}
-  Choose File                         name=select-images-action  ${image_path}
-  Wait Until Page Contains Element    name:form-delete-action    timeout=10s
+  ${image_path}                       Normalize Path                   ${image_path}
+  Choose File                         name=select-images-action        ${image_path}
+  Wait Until Page Contains Element    name:form-delete-action          timeout=10s
