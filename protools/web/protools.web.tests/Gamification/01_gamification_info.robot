@@ -44,6 +44,7 @@ ${row_19}                             خرید بسته‌های تگ فوری
 ${score_19}                           20
 ${row_20}                             خرید بسته‌های ظرفیت اضافه ثبت آگهی
 ${score_20}                           20
+${Leveling_Scores}                    سطح‌بندی و امتیازات
 
 *** Test Cases ***
 Check Gamification Information And Scores
@@ -56,7 +57,8 @@ Check Gamification Information And Scores
 
 *** Keywords ***
 Go To Information Popup
-  Click By Text                       سطح‌بندی و امتیازات
+  ${Leveling_Scores}                  Get Webelements      //*[contains(text(),'${Leveling_Scores}')]
+  Click Element                       ${Leveling_Scores}[1]
   Wait Until Page Contains            امتیازها چگونه محاسبه می‌شود؟
 
 Check Scores Of Each Action
