@@ -27,7 +27,7 @@ Select Vitrin24 Package
   Click Button                        ${PackageـPurchase_Button}
   Wait Until Page Contains Element    ${Vitrin24_Package_Name}                  timeout=10s
   Click Element                       ${Vitrin24_Package_Name}
-  Wait Until Page Contains            پرداخت ۱۸۰,۰۰۰ تومان
+  Wait Until Page Contains            پرداخت ۲۵۵,۶۰۰ تومان
 
 Compare Selected Package With its Price
   ${Vitrin24_Price}                   Get WebElements                           ${Vitrin24_Package_Price}

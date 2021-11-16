@@ -27,7 +27,7 @@ Select Instant Tag Package
   Click Button                        ${PackageـPurchase_Button}
   Wait Until Page Contains Element    ${InstantTag_Package_Name}               timeout=10s
   Click Element                       ${InstantTag_Package_Name}
-  Wait Until Page Contains            پرداخت ۱۳۵,۰۰۰ تومان
+  Wait Until Page Contains            پرداخت ۲۷۸,۱۰۰ تومان
 
 Compare Selected Package With its Price
   ${InstantTag_Price}                 Get WebElements                          ${InstantTag_Package_Price}

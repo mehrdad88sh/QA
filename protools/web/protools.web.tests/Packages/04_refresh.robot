@@ -27,7 +27,7 @@ Select Refresh Package
   Click Button                        ${PackageـPurchase_Button}
   Wait Until Page Contains Element    ${Refresh_Package_Name}                  timeout=10s
   Click Element                       ${Refresh_Package_Name}
-  Wait Until Page Contains            پرداخت ۱۸۰,۰۰۰ تومان
+  Wait Until Page Contains            پرداخت ۲۹۰,۲۵۰ تومان
 
 Compare Selected Package With its Price
   ${Refresh_Price}                    Get WebElements                          ${Refresh_Package_Price}

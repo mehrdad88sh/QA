@@ -29,7 +29,7 @@ Select Spacial Package
   Click Button                        ${PackageـPurchase_Button}
   Wait Until Page Contains Element    ${Special_Package_Name}                   timeout=10s
   Click Element                       ${Special_Package_Name}
-  Wait Until Page Contains            پرداخت ۵۰۱,۵۰۰ تومان                      timeout=10s
+  Wait Until Page Contains            پرداخت ۷۴۵,۰۲۵ تومان                      timeout=10s
 
 Compare Selected Package With its Price
   ${Special_Price}                    Get WebElements                           ${Special_Package_Price}

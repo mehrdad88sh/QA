@@ -27,7 +27,7 @@ Select Limitation Package
   Click Button                        ${PackageـPurchase_Button}
   Wait Until Page Contains Element    ${Limitation_Package_Name}               timeout=10s
   Click Element                       ${Limitation_Package_Name}
-  Wait Until Page Contains            پرداخت ۴۵,۰۰۰ تومان
+  Wait Until Page Contains            پرداخت ۱۱۶,۱۰۰ تومان
 
 Compare Selected Package With its Price
   ${Limitation_Price}                 Get WebElements                          ${Limitation_Package_Price}
