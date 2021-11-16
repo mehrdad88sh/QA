@@ -233,7 +233,6 @@ Submit Profile Information
 
 Validate Gamification Scores
   Execute JavaScript                  window.scrollTo(0,500)
-  Click Element                       ${Your_Scores}
   Page Should Contain                 امتیاز برای تعریف نام پروفایل
   Page Should Contain                 امتیاز برای بارگذاری عکس پروفایل
 
