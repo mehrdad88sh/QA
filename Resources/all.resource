@@ -1,7 +1,7 @@
 *** Settings ***
 Documentation                        Base resource file for All tests
 Library                              SeleniumLibrary
-Library                              REST                            https://staging.mielse.com/api/protools
+Library                              REST                            ${staging}/api/protools
 Library                              JSONLibrary
 Variables                            ../protools/web/variables/Variables.py
 Resource                             ../protools/web/resources/resource.robot
@@ -9,7 +9,7 @@ Resource                             ../protools/web/resources/resource.robot
 *** Keywords ***
 Login Admin Page
   Go To                              ${Admin_Page}
-  ${User_Is_Loggedin}                Run Keyword And Return Status   Wait Until Page Contains Element    id:email     timeout=10s
+  ${User_Is_Loggedin}                Run Keyword And Return Status   Wait Until Page Contains Element    id:email     timeout=3s
   Run Keyword If	                   ${User_Is_Loggedin}             Input Login Form
 
 Input Login Form
@@ -173,8 +173,8 @@ Register Manager With Alunak Api
   Set Suite Variable                 ${token}                        ${token}
 
 Get Code From Mock Server With Alunak Api
+  Set Headers                        {"Authorization": "Basic dHJ1bXBldDpuZXdzaXRl"}
   Get                                ${staging}/mock/getCode?mobile=${Random_User_Mobile}
-  ...                                headers={"Authorization": "Basic dHJ1bXBldDpuZXdzaXRl"}
   Integer                            response status                 200
   ${response}                        output                          response body
   ${Code}                            Get Value From Json             ${response}                $.code
