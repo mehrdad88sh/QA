@@ -451,3 +451,10 @@ Car Body Condition
 Set Minimum and Maximum Price
   Input Text                          name:mnprice                     750000000
   Input Text                          name:mxprice                     950000000
+
+Ignore Captcha
+  ${status}                           Run Keyword And Return Status    Wait Until Page Contains Element    ${Captcha_PopUp}    timeout=3s    
+  IF                                  ${status}
+  ${Close_Button_Captcha_PopUp}       Get WebElements                  ${Close_Button_Captcha_PopUp}
+  Click Element                       ${Close_Button_Captcha_PopUp}[6]
+  END
