@@ -224,7 +224,7 @@ Publish File With Alunak API
   Set Headers                        {"X-Ticket": "${access_token}"}
   Sleep    3s
   Post                               /v2/listings/${human_readable_id}/publish
-  ...                                {"name":"فروش زمین مسکونی 500 متر در آجودانیه","description":"فروش زمین مسکونی 500 متر در آجودانیه","telephone":"09007000000","vendors":["sheypoor","alounak"]}
+  ...                                {"name":"فروش زمین مسکونی 500 متر در آجودانیه","description":"فروش زمین مسکونی 500 متر در آجودانیه","telephone":"${Random_User_Mobile}","vendors":["sheypoor","alounak"]}
   Integer                            response status                 200
   ${response}                        output                          response body
 
@@ -271,7 +271,7 @@ Go To User Comments
 
 Go To Listing In Sheypoor Page
   Go To                              ${staging}/${Listing_ID}
-  Wait Until Page Contains           مشاور این آگهی                  timeout=10s
+  Wait Until Page Contains           امتیاز دهید                     timeout=10s
 
 Check Premium Toggle In Admin
   Go To                              ${staging}/trumpet/features/search
