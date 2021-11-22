@@ -168,7 +168,7 @@ Go To User Profile Page
   Wait Until Page Contains Element    ${profile_name_ID}
   Click Element                       ${profile_name_ID}
   Close Level Up Popup Message
-  Page Should Contain                 فعال در ${Company}               timeout=10s
+  Wait Until Page Contains            فعال در ${Company}               timeout=10s
 
 Go To Reviews Tab
   Click Element                       name:reviews
@@ -453,7 +453,7 @@ Set Minimum and Maximum Price
   Input Text                          name:mxprice                     950000000
 
 Ignore Captcha
-  ${status}                           Run Keyword And Return Status    Wait Until Page Contains Element    ${Captcha_PopUp}    timeout=3s    
+  ${status}                           Run Keyword And Return Status    Wait Until Page Contains Element    ${Captcha_PopUp}    timeout=3s
   IF                                  ${status}
   ${Close_Button_Captcha_PopUp}       Get WebElements                  ${Close_Button_Captcha_PopUp}
   Click Element                       ${Close_Button_Captcha_PopUp}[6]
