@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation                         ثبت امتیاز به مشاور
+Documentation                         ثبت نظر و امتیاز به یک مشاور
 Resource                              ../../resources/resource.robot
 Test Teardown                         Close Browser
 
@@ -44,6 +44,8 @@ Approve Comment In Admin Page
 
 Submit New Rate In Listing
   Click Element                       class:underlined
+  Sleep    2s
+  Ignore Captcha
   Click Element                       ${Rate_Button}
   Wait Until Page Contains            به کیفیت خدمت‌رسانی این آگهی دهنده چه امتیازی می‌دهید؟     timeout=10s
   ${Overall_Rate}                     Get WebElements                       ${Overall_Stars}
