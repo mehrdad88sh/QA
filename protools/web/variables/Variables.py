@@ -108,6 +108,8 @@ class Variables(object):
         'Confirm_Comment_Button': 'css:button.btn.btn-sm.btn-block.btn-success.comment-accept.hide-if-accept',
         'Review_Comment_State': 'css:strong.label.label-warning',
         'Accepted_Comment_State': 'css:strong.label.label-success',
+        'Captcha_PopUp': 'css:div#popup-captcha.popup.open',
+        'Close_Button_Captcha_PopUp': 'css:span.link.close.icon-close',
         'My_Requests_Button': 'name:list-item-request-management',
         'Customer_Request_Submission_Button': 'add-new-request-list-empty-action',
         'Category_Selection': 'name:category-trigger',
