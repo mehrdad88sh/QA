@@ -48,11 +48,11 @@ Login Protools
 
 Listing Status
   ${Status}                           Run Keyword And Return Status
-  ...                                 Wait Until Page Contains Element          name:file-item-0       timeout=10s
+  ...                                 Wait Until Page Contains Element          name:file-item-0       timeout=3s
   IF                                  ${Status} == False
-  Wait Until Page Contains            در اینجا فایل خود را ثبت و مدیریت کنید.   timeout=10s
+  Wait Until Page Contains            در اینجا فایل خود را ثبت و مدیریت کنید.   timeout=3s
   ELSE IF                             ${Status}
-  Wait Until Page Contains            فایل موجود می‌باشد                timeout=10s
+  Wait Until Page Contains            فایل موجود می‌باشد                timeout=3s
   END
 
 Check Error Message For Wrong Phone Number
@@ -451,10 +451,3 @@ Car Body Condition
 Set Minimum and Maximum Price
   Input Text                          name:mnprice                     750000000
   Input Text                          name:mxprice                     950000000
-
-Ignore Captcha
-  ${status}                           Run Keyword And Return Status    Wait Until Page Contains Element    ${Captcha_PopUp}    timeout=3s
-  IF                                  ${status}
-  ${Close_Button_Captcha_PopUp}       Get WebElements                  ${Close_Button_Captcha_PopUp}
-  Click Element                       ${Close_Button_Captcha_PopUp}[6]
-  END
