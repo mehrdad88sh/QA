@@ -9,8 +9,6 @@ class Variables(object):
         'SheypoorCar': 'name:sheypoor-cars',
         'staging': 'https://staging.mielse.com',
         'stagingMock': 'https://staging.mielse.com/mock/getCode?mobile',
-        'pr': 'https://trumpet:newsite@pr10303.mielse.com',
-        'prMock': 'https://pr10303.mielse.com/mock/getCode?mobile',
         'Apartment': 'آپارتمان',
         'Vila': 'ویلا',
         'profile_name_ID': 'name:profile-name',
