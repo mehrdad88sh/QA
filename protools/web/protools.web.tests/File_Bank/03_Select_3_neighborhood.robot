@@ -32,15 +32,15 @@ Select One Month Subscription
   Click By Text                      اشتراک یک ماهه
   Page Should Contain                پرداخت ۲۹,۰۰۰ تومان             timeout=10s
   Click By Text                      پرداخت ۲۹,۰۰۰ تومان
-  Wait Until Page Contains           درحال انتقال به درگاه پرداخت     timeout=10s
+  Wait Until Page Contains           درحال انتقال به درگاه پرداخت    timeout=10s
 
 Validation Purchased File Bank Package In Alunak
-  Wait Until Page Contains           فایل یافت شد
+  Wait Until Page Contains           فیلتر بسته‌ها                    timeout=10s
   Click By Text                      فیلتر بسته‌ها
   Wait Until Page Contains           بسته فایلینگ سه محله از یک شهر
   Wait Until Page Contains           ۳۰ روز
   Click Element                      ${Close_Button}
-  Wait Until Page Contains           خرید بسته جدید
+  Wait Until Page Contains           فایل یافت شد                    timeout=10s
 
 Select Neighborhoods
   Click Element                      ${Tehran_Province}
