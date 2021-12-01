@@ -1,9 +1,9 @@
 *** Settings ***
 Documentation                        Base resource file for All tests
 Library                              SeleniumLibrary
+Variables                            ../protools/web/variables/Variables.py
 Library                              REST                            ${staging}/api/protools
 Library                              JSONLibrary
-Variables                            ../protools/web/variables/Variables.py
 Resource                             ../protools/web/resources/resource.robot
 
 *** Keywords ***
@@ -60,7 +60,7 @@ Generate Random Shop Name
   Set Suite Variable                 ${Company}
 
 Generate Random Slug
-  ${Slug}                            Lexify
+  ${Slug}                            Generate Random String          10   [LETTERS]
   Input Text                         Slug                            ${Slug}
 
 Input Owner Shop Phone
@@ -174,12 +174,40 @@ Register Manager With Alunak Api
 
 Get Code From Mock Server With Alunak Api
   Set Headers                        {"Authorization": "Basic dHJ1bXBldDpuZXdzaXRl"}
-  Get                                ${staging}/mock/getCode?mobile=${Random_User_Mobile}
+  Get                                ${stagingMock}=${Random_User_Mobile}
   Integer                            response status                 200
   ${response}                        output                          response body
   ${Code}                            Get Value From Json             ${response}                $.code
   ${Code}                            Convert To String               ${Code[0]}
   Set Suite Variable                 ${Code}                         ${Code}
+
+Checking Captcha With API
+  Get Captcha Token In API
+  Get Captcha Code In API
+  Add Token AND Code In Captcha API
+
+Get Captcha Token In API
+  Get                              ${staging}/api/web/listings/${Listing_ID}/number
+  Integer                          response status                   200
+  ${response}                      output                            response body
+  ${status}                        Get Value From Json               ${response}                $.success
+  ${status}                        Convert To String                 ${status[0]}
+  IF                               ${status} == False
+  ${Captcha_Token}                 Get Value From Json               ${response}                $.data.token
+  ${Captcha_Token}                 Convert To String                 ${Captcha_Token[0]}
+  Set Suite Variable               ${Captcha_Token}                  ${Captcha_Token}
+  END
+
+Get Captcha Code In API
+  Get                                ${staging}/trumpet/mock/captcha-code/${Captcha_Token}
+  Integer                            response status                 200
+  ${response}                        output                          response body
+  ${Captcha_Code}                    Get Value From Json             ${response}                $.data.code
+  ${Captcha_Code}                    Convert To String               ${Captcha_Code[0]}
+  Set Suite Variable                 ${Captcha_Code}                 ${Captcha_Code}
+
+Add Token AND Code In Captcha API
+  post captcha                       ${staging}  ${Captcha_Token}    ${Captcha_Code}
 
 Authorization Manager With Alunak Api
   Post                               /v2/auth/authorize
