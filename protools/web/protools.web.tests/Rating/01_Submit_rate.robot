@@ -43,9 +43,15 @@ Approve Comment In Admin Page
   Approve Comment
 
 Submit New Rate In Listing
-  Click Element                       class:underlined
-  Sleep    2s
-  Ignore Captcha
+  Click Element                       ${Phone_Number_XXX}
+  ${status}                           Run Keyword And Return Status
+  ...                                 Wait Until Page Contains Element      ${Captcha_PopUp}       timeout=3s
+  IF                                  ${status}
+  Click Element                       ${Close_Button_Captcha_PopUp}
+  Checking Captcha With API
+  Click Element                       ${Phone_Number_XXX}
+  Wait Until Page Does Not Contain Element                                  ${Captcha_PopUp}            timeout=3s
+  END
   Click Element                       ${Rate_Button}
   Wait Until Page Contains            به کیفیت خدمت‌رسانی این آگهی دهنده چه امتیازی می‌دهید؟     timeout=10s
   ${Overall_Rate}                     Get WebElements                       ${Overall_Stars}
