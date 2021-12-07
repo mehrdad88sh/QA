@@ -66,7 +66,12 @@ Check Error Message For Wrong Phone Number
 Input Random Mobile
   ${Random_Number}                    Generate Random String           7   [NUMBERS]
   Set Suite Variable                  ${Random_User_Mobile}            0900${Random_Number}
+  Press Keys                          name:cellphone                   CTRL+a+DELETE
   Input Text                          name:cellphone                   ${Random_User_Mobile}
+
+Input Random User Name
+  Generate Random username
+  Input Text                          name:firstName                   ${Random_User_Name}
 
 Get Code From Mock Server
   Execute Javascript                  window.open('${stagingMock}=${Random_User_Mobile}');
@@ -284,6 +289,7 @@ Go To File Bank Page
 Go To Team Management Page
   Click Element                       ${Team_Management_Menu}
   Wait Until Page Contains            افزودن همکار جدید
+  Page Should Contain                 برای اضافه کردن اعضای جدید و تعیین نقش آنها در تیم روی دکمه روبرو کلیک کنید.
 
 Go To My Requests Page
   Click Element                       ${My_Requests_Button}
