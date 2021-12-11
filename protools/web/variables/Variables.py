@@ -73,10 +73,11 @@ class Variables(object):
         'Consultant_Package_Details': 'css:span.icon-info',
         'Team_Management_Menu': 'name:list-item-team-management',
         'Add_New_Colleague': 'name:new-member-action',
-        'Consultant': 'name:expert',
-        'Secretary': 'name:secretary',
+        'Consultant': 'name:radio-consultant',
+        'Secretary': 'name:radio-secretary',
         'Colleague_Menu': 'css:[role="menu"]',
-        'Colleague_Delete_Button': 'menu-حذف',
+        'Colleague_Delete_Button': 'name:menu-kick',
+        'Colleague_Edit_Button': 'name:menu-edit',
         'Confirm_Button': 'name:confirm-accept-action',
         'Consultant_Specialty': 'css:[aria-pressed="false"]',
         'Consultant_Specialty_Dropdown': 'css:[aria-pressed="true"]',
@@ -136,5 +137,6 @@ class Variables(object):
         'Gasoline': 'name:450678',
         'Body_Condition_Selection': 'id:select-a69160',
         'Body_Condition_List': 'css:[role="listbox"]',
-        'Two_Spots_Of_Paint': 'name:445332'
+        'Two_Spots_Of_Paint': 'name:445332',
+        'Adding_Snackbar': 'css:[id="client-snackbar"]'
 }
