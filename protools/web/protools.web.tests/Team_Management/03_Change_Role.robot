@@ -24,6 +24,8 @@ Change Secretary To Consultant Role
   Wait Until Page Contains Element    ${Colleague_Menu}
   Click Element                       ${Colleague_Edit_Button}
   Wait Until Page Contains            ${Random_User_Name}
+  Press Keys                          name:firstName                   CTRL+a+DELETE
+  Input Text                          name:firstName                   ${Random_User_Name} (مشاور)
   Click Element                       ${Consultant}
   Edit Colleague
 
@@ -35,6 +37,8 @@ Change Consultant To Secretary Role
   Wait Until Page Contains Element    ${Colleague_Menu}
   Click Element                       ${Colleague_Edit_Button}
   Wait Until Page Contains            ${Random_User_Name}
+  Press Keys                          name:firstName                   CTRL+a+DELETE
+  Input Text                          name:firstName                   ${Random_User_Name} (منشی)
   Click Element                       ${Secretary}
   Edit Colleague
 
