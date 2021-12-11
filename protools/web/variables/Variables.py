@@ -75,6 +75,7 @@ class Variables(object):
         'Add_New_Colleague': 'name:new-member-action',
         'Consultant': 'name:radio-consultant',
         'Secretary': 'name:radio-secretary',
+        'Colleague_Name': 'name:firstName',
         'Colleague_Menu': 'css:[role="menu"]',
         'Colleague_Delete_Button': 'name:menu-kick',
         'Colleague_Edit_Button': 'name:menu-edit',
