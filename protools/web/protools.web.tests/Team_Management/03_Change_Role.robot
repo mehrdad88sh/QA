@@ -22,9 +22,9 @@ Change Secretary To Consultant Role
   Wait Until Page Contains            افزودن همکار جدید
   Click Element                       name:member-${Random_User_Mobile}
   Wait Until Page Contains Element    ${Colleague_Menu}
-  Click By Text                       ویرایش همکار
+  Click Element                       ${Colleague_Edit_Button}
   Wait Until Page Contains            ${Random_User_Name}
-  Click Element                       name:radio-consultant
+  Click Element                       ${Consultant}
   Edit Colleague
 
 
@@ -33,7 +33,7 @@ Change Consultant To Secretary Role
   Wait Until Page Contains            افزودن همکار جدید
   Click Element                       name:member-${Random_User_Mobile}
   Wait Until Page Contains Element    ${Colleague_Menu}
-  Click By Text                       ویرایش همکار
+  Click Element                       ${Colleague_Edit_Button}
   Wait Until Page Contains            ${Random_User_Name}
   Click Element                       ${Secretary}
   Edit Colleague
