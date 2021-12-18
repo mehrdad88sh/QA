@@ -16,7 +16,7 @@ Get Team Members
     [Arguments]                     ${protools_version}
     Clear Expectations
     Set Headers                     {"X-Ticket": "${access_token}"}
-    Set Headers                     {"source": "protools"}
+    Set Headers                     {"source": "protoolsCars"}
     Set Headers                     {"Authorization": "Basic dHJ1bXBldDpuZXdzaXRl"}
     Get                             /${protools_version}/team
     Integer                         response status        200
