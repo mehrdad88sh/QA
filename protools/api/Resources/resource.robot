@@ -5,6 +5,7 @@ Library                       JSONLibrary
 Library                       String
 Library                       Collections
 Library                       FakerLibrary                    locale=fa_IR
+Resource                      ../../../Resources/all.resource
 
 *** Keywords ***
 Login Protools Api
@@ -68,10 +69,6 @@ Get Code From Mock Server Api
     ${Code}                   Get Value From Json             ${response}              $.code
     ${Code}                   Convert To String               ${Code[0]}
     Set Suite Variable        ${Code}                         ${Code}
-
-Generate Random Phone Number
-    ${Random_User_Mobile}     Generate Random String          7   [NUMBERS]
-    Set Suite Variable        ${Random_User_Mobile}           0900${Random_User_Mobile}
 
 Generate Random AboutMe Sentence
     ${aboutme}                Sentence                        nb_words=30
