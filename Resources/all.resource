@@ -54,6 +54,12 @@ Create Shop In Sheypoor
   Add Social Media
   Apply Shop
 
+Create Shop In Sheypoor (API)
+  Open Browser                       chrome://version                 browser=chrome
+  Maximize Browser Window
+  Create Shop In Sheypoor            املاک
+  Close Browser
+
 Generate Random Shop Name
   ${Company}                         Company
   Input Text                         Title                           ${Company}
@@ -83,6 +89,7 @@ Registration Consultant
     Input Text                       ${ConsultantPhones}[${INDEX}]   ${Random_consultant_Mobile}
     ${ConsultantNameElements}        Get WebElements                 name:ConsultantNames[]
     ${ConsultantNames}               Last Name
+    Set Suite Variable               ${ConsultantNames}              ${ConsultantNames} 
     Input Text                       ${ConsultantNameElements}[${INDEX}]                       ${ConsultantNames}
   END
 
