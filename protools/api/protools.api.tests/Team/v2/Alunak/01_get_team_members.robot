@@ -8,7 +8,7 @@ Resource                            ../../../../../../Resources/all.resource
 Get Team Members In Alunak
     Set Log Level                   TRACE
     Login Protools Api              v2                     real-estate
-    Create Shop In Sheypoor (API)
+    Create Shop In Sheypoor (API)   املاک
     Get Team Members                v2
 
 *** Keywords ***
