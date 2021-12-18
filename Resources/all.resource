@@ -55,9 +55,10 @@ Create Shop In Sheypoor
   Apply Shop
 
 Create Shop In Sheypoor (API)
+  [Arguments]                        ${Category}
   Open Browser                       chrome://version                 browser=chrome
   Maximize Browser Window
-  Create Shop In Sheypoor            املاک
+  Create Shop In Sheypoor            ${Category}
   Close Browser
 
 Generate Random Shop Name
@@ -89,7 +90,7 @@ Registration Consultant
     Input Text                       ${ConsultantPhones}[${INDEX}]   ${Random_consultant_Mobile}
     ${ConsultantNameElements}        Get WebElements                 name:ConsultantNames[]
     ${ConsultantNames}               Last Name
-    Set Suite Variable               ${ConsultantNames}              ${ConsultantNames} 
+    Set Suite Variable               ${ConsultantNames}              ${ConsultantNames}
     Input Text                       ${ConsultantNameElements}[${INDEX}]                       ${ConsultantNames}
   END
 
