@@ -32,7 +32,7 @@ Authenticate By Password
     [Arguments]             ${protools_version}
     Expect Request	        {"body": {"required": ["username", "password"]}}
     Set Headers             {"Authorization": "Basic dHJ1bXBldDpuZXdzaXRl"}
-    Get Code From Mock Server
+    Get Code From Mock Server Api
     Expect Response         ${CURDIR}/../Versions/${protools_version}/schema/authenticate-by-password.json
     Post                    /${protools_version}/auth/authorize     {"grant_type": "password", "username": "${token}", "password": "${Code}", "scope": "full"}
     Integer                 response status        200
