@@ -70,10 +70,6 @@ Get Code From Mock Server Api
     ${Code}                   Convert To String               ${Code[0]}
     Set Suite Variable        ${Code}                         ${Code}
 
-Generate Random AboutMe Sentence
-    ${aboutme}                Sentence                        nb_words=30
-    Set Suite Variable        ${Random_AboutMe_Sentence}      ${aboutme}
-
 Generate Username
     [Arguments]               ${protools_version}
     IF                        "${protools_version}" == "v1"
