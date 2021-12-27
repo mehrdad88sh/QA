@@ -4,7 +4,7 @@ Resource                             ../../resources/resource.robot
 Test Teardown                        Close Browser
 
 *** Test Cases ***
-Buy 7 Neighborhood Package
+# Buy 7 Neighborhood Package
   Login Protools                      آلونک
   Go To File Bank Page
   Purchase File Bank Package

@@ -4,7 +4,7 @@ Resource                             ../../resources/resource.robot
 Test Teardown                        Close Browser
 
 *** Test Cases ***
-Buy All City File Bank Package
+# Buy All City File Bank Package
   Login Protools                      آلونک
   Go To File Bank Page
   Purchase File Bank Package
@@ -40,7 +40,7 @@ Validation Purchased File Bank Package In Alunak
   Wait Until Page Contains           بسته فایلینگ کل یک شهر
   Wait Until Page Contains           ۹۰ روز
   Click Element                      ${Close_Button}
-  Wait Until Page Contains           فایل یافت شد                     timeout=10s                    
+  Wait Until Page Contains           فایل یافت شد                     timeout=10s
 
 Select City Range
   Click Element                      ${Tehran_Province}
