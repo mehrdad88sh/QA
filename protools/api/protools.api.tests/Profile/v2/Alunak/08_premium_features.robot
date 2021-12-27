@@ -6,11 +6,15 @@ Resource                    ../../../../Resources/resource.robot
 *** Test Cases ***
 Show All Of Premium Features
     Set Log Level           TRACE
+    Login Protools Api      v2       real-estate
     Get Premium Features    v2
 
 *** Keywords ***
 Get Premium Features
     [Arguments]             ${protools_version}
+    Clear Expectations
+    Set Headers             {"X-Ticket": "${access_token}"}
+    Set Headers             {"source": "protools"}
     Set Headers             {"Authorization": "Basic dHJ1bXBldDpuZXdzaXRl"}
     Get                     /${protools_version}/profile/premium/features
     Integer                 response status           200
