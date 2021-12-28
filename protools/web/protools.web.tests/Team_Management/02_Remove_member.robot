@@ -40,6 +40,7 @@ Remove Secretary
 
 Add New Colleague
   [Arguments]                         ${Colleague_Type}
+  Wait Until Page Contains            افزودن همکار جدید                     timeout=3s
   Click Button                        ${Add_New_Colleague}
   Wait Until Page Contains            در هر زمان می توانید از طریق صفحه مدیریت تیم، نقش همکار را تغییر دهید.     timeout=3s
   Input Random User Name
@@ -48,6 +49,7 @@ Add New Colleague
   Submit Colleague
 
 Validate New Colleague
+  Wait Until Page Contains            ${Random_User_Name}                 timeout=3s
   Page Should Contain                 ${Random_User_Name}
 
 Select Colleague Role
