@@ -183,18 +183,17 @@ Go To Reviews Tab
 
 Go To Edit Profile Page
   Click Element                       ${edit_profile_ID}
-  Close Level Up Popup Message
   Wait Until Page Contains            اطلاعات شخصی                      timeout=10s
 
 Add Image Profile
   Execute JavaScript                  window.scrollTo(0,0)
-  ${choose_image_action}              Get WebElements                  name:choose-image-action
-  Click Element                       ${choose_image_action}[1]
+  Click Element                       ${Add_Profile_Image}
   Wait Until Page Contains            انتخاب تصویر                     timeout=10s
   Choose File                         ${Add_New_Image}                 ${image_profile_path}
   Wait Until Page Contains            ثبت عکس                          timeout=10s
   Click Element                       ${Sumbit_Image}
-  Wait Until Page Contains            عکس شما با موفقیت ثبت شد، پس از بررسی توسط ادمین نمایش داده می‌شود         timeout=20s
+  Wait Until Page Contains            تصویر بارگذاری شده و درحال بررسی است.                                     timeout=10s
+  Wait Until Page Contains            عکس شما با موفقیت ثبت شد، پس از بررسی توسط ادمین نمایش داده می‌شود         timeout=10s
 
 Fill Profile Name
   Generate Random username
@@ -235,6 +234,7 @@ Submit Selected Locations
 Submit Profile Information
   Execute JavaScript                  window.scrollTo(0,0)
   Click Element                       ${Submit_Button}
+  Wait Until Page Contains            اطلاعات با موفقیت بروز شد.        timeout=10s
   Wait Until Page Contains            عضو شیپور                        timeout=10s
 
 Validate Gamification Scores
@@ -242,8 +242,19 @@ Validate Gamification Scores
   Page Should Contain                 امتیاز برای تعریف نام پروفایل
   Page Should Contain                 امتیاز برای بارگذاری عکس پروفایل
 
+Confirm Profile Image By Admin
+  Go To                               ${Users_Search_Page}
+  Input Text                          ${Contact_Number_Field}          ${Random_User_Mobile}
+  Click Element                       ${Search_Button}
+  Wait Until Page Contains            ${Random_User_Name}              timeout=10s
+  Click By Text                       تایید عکس
+  Sleep    500ms
+  Wait Until Page Contains            آیا مطمئن هستید؟                timeout=10s
+  Click By Text                       بله
+  Wait Until Page Contains            عملیات با موفقیت انجام شد       timeout=10s
+
 Close Level Up Popup Message
-  ${Status}                           Run Keyword And Return Status    Wait Until Page Contains Element   ${Close_Button}   timeout=10s
+  ${Status}                           Run Keyword And Return Status    Wait Until Page Contains Element   ${Close_Button}   timeout=5s
   Run Keyword If                      ${Status}                        Click Button                       ${Close_Button}
 
 Upgrade User To Premium Profile
