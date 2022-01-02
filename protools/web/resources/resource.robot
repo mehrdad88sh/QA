@@ -178,7 +178,7 @@ Go To User Profile Page
 
 Go To Reviews Tab
   Click Element                       name:reviews
-  Wait Until Page Contains Element    css:[aria-selected="true"]       timeout=10s
+  Wait Until Page Contains Element    id:rate-and-review-average       timeout=10s
   Wait Until Page Contains            ${Submit_Comment}                timeout=10s
 
 Go To Edit Profile Page
