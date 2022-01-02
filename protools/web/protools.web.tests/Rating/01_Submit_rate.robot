@@ -8,6 +8,7 @@ Submit Rate To Consultant Listing
   Login Protools                      آلونک
   Create Shop In Sheypoor             املاک
   Create New Listing With API
+  Check Rating Toggles In Admin
   Submit Rate To Consultant Listing With Various Users
   Checking Reviews In User Profile Page
 
@@ -29,7 +30,7 @@ Create File And Publish File In Land And Garden Category
   Publish File With Alunak API
 
 Submit Rate To Consultant Listing With Various Users
-  FOR   ${INDEX}   IN RANGE   5
+  FOR   ${INDEX}   IN RANGE   3
       Login Sheypoor
       Go To Listing In Sheypoor Page
       Submit New Rate In Listing
