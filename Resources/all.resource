@@ -338,3 +338,45 @@ Check File Request Toggle In Admin
         Wait Until Page Contains Element   ${Active_File_Request_Toggle}          timeout=3s
   Exit For Loop If                         ${Status} == False
   END
+
+Check Rating Toggles In Admin
+  Go To                              ${staging}/trumpet/features/search
+  Wait Until Page Contains           تاگل های مربوط به نمایش امتیاز و قابلیت امتیاز دادن
+  Click By Text                      امتیازدهی
+  Execute JavaScript                 window.scrollTo(0,1700)
+  Check "User Rating" Toggle For Alunak
+  Check "User Insert Listing Rating" Toggle For Desktop
+  Check "User Insert Rating" Toggle For Alunak
+
+Check "User Rating" Toggle For Alunak
+  Wait Until Page Contains                 user-rating                            timeout=3s
+  FOR   ${INDEX}    IN RANGE    2
+        ${Status}                          Run Keyword And Return Status
+        ...                                Wait Until Page Contains Element       ${Inactive_User_Rating_Toggle}          timeout=3s
+        Run Keyword If                     ${Status}
+        ...                                Click Element                          ${Inactive_User_Rating_Toggle}
+        Wait Until Page Contains Element   ${Active_User_Rating_Toggle}           timeout=3s
+  Exit For Loop If                         ${Status} == False
+  END
+
+Check "User Insert Listing Rating" Toggle For Desktop
+  Wait Until Page Contains                 user-insert-listing-rating             timeout=3s
+  FOR   ${INDEX}    IN RANGE    2
+        ${Status}                          Run Keyword And Return Status
+        ...                                Wait Until Page Contains Element       ${Inactive_User_Insert_Listing_Rating}          timeout=3s
+        Run Keyword If                     ${Status}
+        ...                                Click Element                          ${Inactive_User_Insert_Listing_Rating}
+        Wait Until Page Contains Element   ${Active_User_Insert_Listing_Rating}   timeout=3s
+  Exit For Loop If                         ${Status} == False
+  END
+
+Check "User Insert Rating" Toggle For Alunak
+  Wait Until Page Contains                 user-insert-rating                     timeout=3s
+  FOR   ${INDEX}    IN RANGE    2
+        ${Status}                          Run Keyword And Return Status
+        ...                                Wait Until Page Contains Element       ${Inactive_User_Insert_Rating}          timeout=3s
+        Run Keyword If                     ${Status}
+        ...                                Click Element                          ${Inactive_User_Insert_Rating}
+        Wait Until Page Contains Element   ${Active_User_Insert_Rating}           timeout=3s
+  Exit For Loop If                         ${Status} == False
+  END
