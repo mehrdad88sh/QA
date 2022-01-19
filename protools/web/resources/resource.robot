@@ -183,17 +183,23 @@ Go To Reviews Tab
 
 Go To Edit Profile Page
   Click Element                       ${edit_profile_ID}
-  Wait Until Page Contains            اطلاعات شخصی                      timeout=10s
+  Wait Until Page Contains            ویرایش پروفایل                   timeout=10s
 
-Add Image Profile
+Add Profile Image
   Execute JavaScript                  window.scrollTo(0,0)
   Click Element                       ${Add_Profile_Image}
   Wait Until Page Contains            انتخاب تصویر                     timeout=10s
   Choose File                         ${Add_New_Image}                 ${image_profile_path}
   Wait Until Page Contains            ثبت عکس                          timeout=10s
   Click Element                       ${Sumbit_Image}
-  Wait Until Page Contains            تصویر بارگذاری شده و درحال بررسی است.                                     timeout=10s
   Wait Until Page Contains            عکس شما با موفقیت ثبت شد، پس از بررسی توسط ادمین نمایش داده می‌شود         timeout=10s
+
+Remove Profile Image
+  Execute JavaScript                  window.scrollTo(0,0)
+  Click Element                       ${Remove_Profile_Image}
+  Wait Until Page Contains            آیا از حذف تصویر مطمئن هستید؟
+  Click Element                       ${Confirm_Button}
+  Wait Until Page Contains            حذف عکس پروفایل با موفقیت انجام شد.       timeout=3s
 
 Fill Profile Name
   Generate Random username
@@ -253,9 +259,20 @@ Confirm Profile Image By Admin
   Click By Text                       بله
   Wait Until Page Contains            عملیات با موفقیت انجام شد       timeout=10s
 
+Reject Profile Image By Admin
+  Go To                               ${Users_Search_Page}
+  Input Text                          ${Contact_Number_Field}          ${Random_User_Mobile}
+  Click Element                       ${Search_Button}
+  Wait Until Page Contains            ${Random_User_Name}              timeout=10s
+  Click By Text                       رد عکس
+  Wait Until Page Contains            دلیل رد عکس
+  Click Element                       ${Reject_Image_Button}
+  Sleep    500ms
+  Wait Until Page Contains            عملیات با موفقیت انجام شد       timeout=10s
+
 Close Level Up Popup Message
   ${Status}                           Run Keyword And Return Status    Wait Until Page Contains Element   ${Close_Button}   timeout=5s
-  Run Keyword If                      ${Status}                        Click Button                       ${Close_Button}
+  Run Keyword If                      ${Status}                        Click Element                      ${Close_Button}
 
 Upgrade User To Premium Profile
   Wait Until Page Contains Element    ${Premium_Button}                timeout=10s
