@@ -12,9 +12,9 @@ Post Listing ‌In Vehicle Category
   Create Shop In Sheypoor             خودرو
   Back To Sheypoor Car Page
   Create File In Car Category
-  Create Listing
+  Convert File To Listing
   Create File In Motorcycle Category
-  Create Listing
+  Convert File To Listing
 
 *** Keywords ***
 Create File In Car Category
@@ -35,18 +35,6 @@ Create File In Motorcycle Category
   Fill File Description
   Set Motorcycle More Detail
   Submit File
-
-Create Listing
-  Click Element                       name=file-item-0
-  Reload Page
-  Wait Until Keyword Succeeds         3x     2s                        Page Should Contain  آگهی نشده
-  Click Button                        name=advertise-action
-  Wait Until Page Contains            توضیحات                          timeout=10s
-  Fill File Description
-  Click Button                        name=apply-action
-  Wait Until Page Contains            آگهی شما با موفقیت ثبت شد        timeout=10s
-  Click Element                       name=listing-management-action
-  Wait Until Page Contains Element    name:listing-item-0              timeout=10s
 
 Go To Submit File Page
   Click Element                       name:list-item-new-file
