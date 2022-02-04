@@ -179,9 +179,6 @@ Select Elevator For Buying And Selling Category
   Click Element                       name:switch-a69194
   Checkbox Should Be Selected         name:a69194
 
-Set Area
-  Input Text                          name:a68085               85
-
 Set Price For Buying And Selling Category
   Input Text                          name:price                ${price}
 
