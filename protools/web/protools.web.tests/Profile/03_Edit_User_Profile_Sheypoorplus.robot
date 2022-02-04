@@ -12,18 +12,13 @@ Edit Free User Profile SheypoorPlus
   Go To Edit Profile Page
   Complete User Information
   Submit Profile Information
-  Validate Gamification Scores
   Confirm Profile Image By Admin
   Back To Sheypoor Car Page
-  Validate Profile Image In Profile Page
+  Go To User Profile Page
+  Validate Gamification Scores
 
 *** Keywords ***
-Validate Profile Image In Profile Page
-  Go To User Profile Page
-  Go To Edit Profile Page
-  Page Should Contain                 تصویر شما تایید شده است.
-
 Complete User Information
-  Add Image Profile
+  Add Profile Image
   Fill Profile Name
   Fill Location Job
