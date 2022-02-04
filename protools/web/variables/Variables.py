@@ -9,6 +9,7 @@ class Variables(object):
         'SheypoorCar': 'name:sheypoor-cars',
         'staging': 'https://staging.mielse.com',
         'stagingMock': 'https://staging.mielse.com/mock/getCode?mobile',
+        'stagingExpireMock': 'https://staging.mielse.com/trumpet/mock/expireListing',
         'Apartment': 'آپارتمان',
         'Vila': 'ویلا',
         'profile_name_ID': 'name:profile-name',
@@ -19,7 +20,8 @@ class Variables(object):
         'Alborz_ID': 'css:[name="5"]',
         'Karaj_ID': 'css:[name="229"]',
         'Golshahr_ID': 'css:[name="n4005"]',
-        'Submit_Button': 'name:form-submit-action-desktop',
+        'Profile_Submit_Button': 'name:form-submit-action-desktop',
+        'Submit_Button': 'name:form-submit-action',
         'Close_Button':  'name:close-action',
         'Complete_Profile_Button': 'name:edit-profile-action',
         'Add_Profile_Image': 'id:choose-avatar-action-desktop',
@@ -85,8 +87,8 @@ class Variables(object):
         'Colleague_Delete_Button': 'name:menu-kick',
         'Colleague_Edit_Button': 'name:menu-edit',
         'Confirm_Button': 'name:confirm-accept-action',
-        'Consultant_Specialty': 'css:[aria-pressed="false"]',
-        'Consultant_Specialty_Dropdown': 'css:[aria-pressed="true"]',
+        'Consultant_Specialty': 'name:fields-trigger',
+        'Consultant_Specialty_Dropdown': 'css:[id=content]',
         'Statistics_Button': 'name:list-item-statistics',
         'Start_Date': 'name:select-date-from',
         'End_Date': 'name:select-date-to',
@@ -150,5 +152,7 @@ class Variables(object):
         'Body_Condition_Selection': 'id:select-a69160',
         'Body_Condition_List': 'css:[role="listbox"]',
         'Two_Spots_Of_Paint': 'name:445332',
-        'Adding_Snackbar': 'css:[id="client-snackbar"]'
+        'Adding_Snackbar': 'css:[id="client-snackbar"]',
+        'Notification_Button': 'name:list-item-announcement',
+        'Show_More_Notification': 'name:more-notifs-link'
 }
