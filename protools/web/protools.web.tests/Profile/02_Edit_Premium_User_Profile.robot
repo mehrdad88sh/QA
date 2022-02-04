@@ -30,7 +30,7 @@ Complete User Information
   Fill Instagram ID
   Fill AboutMe
   Fill Consultant Specialty
-  Add Image Profile
+  Add Profile Image
   Fill Location Job
 
 Fill Consultant Specialty
@@ -40,8 +40,7 @@ Fill Consultant Specialty
       Select Checkbox                css:[value="${INDEX}"]
       Checkbox Should Be Selected    css:[value="${INDEX}"]
   END
-
-  Double Click Element               name:name
+  Click Element                      name:select-add-action
 
 Fill Telegram ID
   Input Text                         name:telegram                          Sheypoor
