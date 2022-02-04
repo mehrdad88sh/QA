@@ -56,6 +56,18 @@ Listing Status
   Wait Until Page Contains            فایل موجود می‌باشد                timeout=3s
   END
 
+Convert File To Listing
+  Click Element                       name=file-item-0
+  Reload Page
+  Wait Until Keyword Succeeds         3x     2s                        Page Should Contain  آگهی نشده
+  Click Button                        name=advertise-action
+  Wait Until Page Contains            توضیحات                          timeout=10s
+  Fill File Description
+  Click Button                        name=apply-action
+  Wait Until Page Contains            آگهی شما با موفقیت ثبت شد        timeout=10s
+  Click Element                       name=listing-management-action
+  Wait Until Page Contains Element    name:listing-item-0              timeout=10s
+
 Check Error Message For Wrong Phone Number
   ${Wrong_Number}                     Generate Random String           12   [NUMBERS]
   Input Text                          name:cellphone                   ${Wrong_Number}
@@ -105,6 +117,9 @@ Set Location
   Input Text                          ${Input_Search}[2]               گلشهر
   Click Element                       ${Golshahr_ID}
   Element Should Contain              name:location                    کرج > گلشهر
+
+Set Area
+  Input Text                          name:a68085                 85
 
 Set Location In Filters
   Click Element                       name:location-trigger
@@ -201,6 +216,37 @@ Remove Profile Image
   Click Element                       ${Confirm_Button}
   Wait Until Page Contains            حذف عکس پروفایل با موفقیت انجام شد.       timeout=3s
 
+Profile Image Validation In Profile Page
+  Go To User Profile Page
+  Go To Edit Profile Page
+  Profile Image Status
+
+Profile Image Status
+  Image In Review Status
+  Image Rejected Status
+  Image Verified Status
+
+Image In Review Status
+  Wait Until Page Contains             تصویر بعد از تایید ادمین نمایش داده میشود.    timeout=3s
+  Add Profile Image
+  Wait Until Page Contains             تصویر بارگذاری شده و درحال بررسی است.         timeout=3s
+
+Image Rejected Status
+  Reject Profile Image By Admin
+  Back To Protools Page
+  Go To User Profile Page
+  Go To Edit Profile Page
+  Wait Until Page Contains             تصویر بارگذاری شده تایید نشد.                 timeout=3s
+
+Image Verified Status
+  Add Profile Image
+  Confirm Profile Image By Admin
+  Back To Protools Page
+  Go To User Profile Page
+  Go To Edit Profile Page
+  Wait Until Page Contains             تصویر شما تایید شده است.                      timeout=3s
+  Go To User Profile Page
+
 Fill Profile Name
   Generate Random username
   Input Text                          name:name                        ${Random_User_Name}
@@ -239,7 +285,7 @@ Submit Selected Locations
 
 Submit Profile Information
   Execute JavaScript                  window.scrollTo(0,0)
-  Click Element                       ${Submit_Button}
+  Click Element                       ${Profile_Submit_Button}
   Wait Until Page Contains            اطلاعات با موفقیت بروز شد.        timeout=10s
   Wait Until Page Contains            عضو شیپور                        timeout=10s
 
@@ -275,6 +321,7 @@ Close Level Up Popup Message
   Run Keyword If                      ${Status}                        Click Element                      ${Close_Button}
 
 Upgrade User To Premium Profile
+  Close Level Up Popup Message
   Wait Until Page Contains Element    ${Premium_Button}                timeout=10s
   Click Element                       ${Premium_Button}
   Page Should Contain                 ارتقاء پروفایل
@@ -289,7 +336,6 @@ Fill File Description
   ${File_Description}                 Sentence                         nb_words=20
   Set Suite Variable                  ${File_Description}
   Input Text                          css:[name=description]           ${File_Description}
-  Element Should Contain              css:[name=description]           ${File_Description}
 
 Open File And Check Images
   Click Element                       name:file-item-0
@@ -337,6 +383,21 @@ Select Buying And Selling Category
   Click Element                       name:43604
   Textfield Value Should Be           name:category                    خرید و فروش خانه و آپارتمان
   Wait Until Page Contains Element    select-a68094                    timeout=10s
+
+Select Land And Garden Category
+  Click Element                       ${Category_Selection}
+  Wait Until Page Contains Element    css:[role="document"]       timeout=10s
+  Click Element                       name:44099
+  Textfield Value Should Be           name:category               زمین و باغ
+  Wait Until Page Contains Element    select-a69120               timeout=10s
+
+Create File In Land And Garden Category
+  Go To Submit File Page
+  Select Land And Garden Category
+  Set Location
+  Set Area
+  Fill File Description
+  Submit File
 
 Select RealEstate Type
   [Arguments]                         ${RealEstateType}                ${ApartmentID}    ${Apartment}
@@ -486,3 +547,18 @@ Car Body Condition
 Set Minimum and Maximum Price
   Input Text                          name:mnprice                     750000000
   Input Text                          name:mxprice                     950000000
+
+Expire The Listing
+  Wait Until Page Contains Element    name=listing-item-0              timeout=5s
+  Click Element                       name=listing-item-0
+  Wait Until Page Contains            پذیرفته شد
+  Get Listing ID From Listing Details
+  Expire Listing With Mock
+  Check Listing Status From Listing Details
+
+Expire Listing With Mock
+  Go to                               ${stagingExpireMock}?listingId=${Listing_ID}&expireAt=30day
+
+Check Listing Status From Listing Details
+  Go To                               ${staging}/pro/real-estate/file/${Listing_ID}
+  Wait Until Page Contains            منقضی شد
