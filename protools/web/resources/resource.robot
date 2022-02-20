@@ -151,7 +151,14 @@ Select More Detail Button
   Click Element                       name:افزودن جزئیات بیشتر
   Wait Until Page Contains Element    css:[role="document"]            timeout=10s
 
+Select Property Facilities Button
+  Click Element                       name:افزودن امکانات ملک
+  Wait Until Page Contains Element    css:[role="document"]            timeout=10s
+
 Apply More Detail
+  Click Button                        name:apply-action
+
+Apply Property Facilities
   Click Button                        name:apply-action
 
 Select Form Clear Button
