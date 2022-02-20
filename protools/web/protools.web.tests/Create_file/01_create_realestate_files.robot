@@ -60,15 +60,15 @@ Set Rent And Deposit Attributes
 
 Set More Detail
   Select More Detail Button
-  Select Geo Location Building
-  Select Geo Location Unit
-  Number Of Parking
+  Villa Type
+  Deed Type
   Number Of Floor
   Number Of Units Per Floor
   Resident Status
-  Deed Type
   Land Area
-  Villa Type
+  Select Geo Location Building
+  Select Geo Location Unit
+  Number Of Parking
   File Code
   Apply More Detail
 
