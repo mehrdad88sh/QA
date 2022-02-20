@@ -69,7 +69,6 @@ Set More Detail
   Deed Type
   Land Area
   Villa Type
-  Other Facilities
   File Code
   Apply More Detail
 
@@ -126,19 +125,6 @@ Villa Type
   Wait Until Page Contains Element    css:[role="listbox"]     timeout=10s
   Click Element                       name:450132
   Element Text Should Be              select-a69292             دوبلکس
-
-Other Facilities
-  Click Element                       name:a69297-trigger
-  Page Should Contain                 بالکن
-  Select Checkbox                     name:checkbox-450141      #حیاط
-  Checkbox Should Be Selected         name:checkbox-450141
-  Select Checkbox                     name:checkbox-450146      #لابی
-  Checkbox Should Be Selected         name:checkbox-450146
-  Select Checkbox                     name:checkbox-450149      #سرایدار
-  Checkbox Should Be Selected         name:checkbox-450149
-  Select Checkbox                     name:checkbox-450145      #مبله
-  Checkbox Should Be Selected         name:checkbox-450145
-  Click Button                        name:select-add-action
 
 File Code
   Input Text                          name:a90105               ${fileCode}
