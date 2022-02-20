@@ -36,10 +36,6 @@ Create File In Motorcycle Category
   Set Motorcycle More Detail
   Submit File
 
-Go To Submit File Page
-  Click Element                       name:list-item-new-file
-  Wait Until Page Contains            ثبت فایل و آگهی                  timeout=10s
-
 Set Motorcycle Category
   Wait Until Keyword Succeeds         3x   3s                          Click Element      name:form-clear-action
   Wait Until Page Contains            از انصراف اطمینان دارید؟         timeout=10s
