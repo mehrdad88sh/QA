@@ -118,6 +118,24 @@ Set Location
   Click Element                       ${Golshahr_ID}
   Element Should Contain              name:location                    کرج > گلشهر
 
+Set Personal Notebook
+  Click Element                       css:[name="دفترچه شخصی"]
+  Wait Until Page Contains            اطلاعات این بخش فقط برای شما نمایش داده می‌شود و پر کردن آن اختیاری است     timeout=10s
+  ${first_name}                       First Name
+  ${last_name}                        Last Name
+  Input Text                          name:a69533             ${first_name} ${last_name}
+  Input Text                          name:a69534             ${Random_User_Mobile}
+  ${address}                          Address
+  Input Text                          name:a69535             ${address}
+  Click Button                        name:apply-action
+  Execute JavaScript                  window.scrollTo(0,0)
+
+Number Of Rooms
+  Click Element                       select-a68133
+  Wait Until Page Contains Element    css:[role="listbox"]      timeout=10s
+  Click Element                       name:439837
+  Element Should Contain              select-a68133             بدون اتاق
+
 Set Area
   Input Text                          name:a68085                 85
 
@@ -400,7 +418,6 @@ Select Rent And Deposit Category
   Wait Until Page Contains Element    select-a68096                    timeout=10s
 
 Select Buying And Selling Category
-  Select Form Clear Button
   Click Element                       ${Category_Selection}
   Wait Until Page Contains Element    css:[tabindex="-1"]              timeout=10s
   Click Element                       name:43604
