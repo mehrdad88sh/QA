@@ -337,6 +337,22 @@ Fill File Description
   Set Suite Variable                  ${File_Description}
   Input Text                          css:[name=description]           ${File_Description}
 
+Fill About Shop
+  Press Keys                          name:about                       CTRL+a+DELETE
+  ${About_Shop}                       Sentence                         nb_words=20
+  Set Suite Variable                  ${About_Shop}
+  Input Text                          css:[name=about]                 ${About_Shop}
+  Click Element                       name:save-action
+  Wait Until Page Contains            ${About_Shop}
+
+Fill Slogan Shop
+  Press Keys                          name:slogan                      CTRL+a+DELETE
+  ${Slogan_Shop}                      Sentence                         nb_words=5
+  Set Suite Variable                  ${Slogan_Shop}
+  Input Text                          css:[name=slogan]                ${Slogan_Shop}
+  Click Element                       name:save-action
+  Wait Until Page Contains            ${Slogan_Shop}
+
 Open File And Check Images
   Click Element                       name:file-item-0
   Wait Until Page Contains            آگهی نشده                        timeout=10s
@@ -562,3 +578,7 @@ Expire Listing With Mock
 Check Listing Status From Listing Details
   Go To                               ${staging}/pro/real-estate/file/${Listing_ID}
   Wait Until Page Contains            منقضی شد
+
+Go To Store Page
+  Click Element                       ${Store_Management_Button}
+  Wait Until Page Contains            درباره فروشگاه                   timeout=5s
