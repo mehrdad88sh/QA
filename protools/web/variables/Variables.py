@@ -154,5 +154,10 @@ class Variables(object):
         'Two_Spots_Of_Paint': 'name:445332',
         'Adding_Snackbar': 'css:[id="client-snackbar"]',
         'Notification_Button': 'name:list-item-announcement',
-        'Show_More_Notification': 'name:more-notifs-link'
+        'Show_More_Notification': 'name:more-notifs-link',
+        'Store_Management_Button': 'name:list-item-store-management',
+        'About_Shop': 'name:edit-about',
+        'Slogan_Shop': 'name:edit-slogan',
+        'Contact_Info': 'name:edit-contact',
+        'Save_Button': 'name:save-action'
 }
