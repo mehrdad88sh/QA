@@ -54,6 +54,7 @@ Set Rent And Deposit Attributes
   Set Area
   Number Of Rooms
   Set More Detail
+  Set Property Facilities
   Price Deposit
   Price Rent
   Ability To Convert Rent And Deposit
@@ -71,6 +72,21 @@ Set More Detail
   Number Of Parking
   File Code
   Apply More Detail
+  Wait Until Page Contains           ۱۰
+
+Set Property Facilities
+  Select Property Facilities Button
+  Building Facade
+  Kitchen
+  Cabinet
+  Floor Covering
+  Heating And Cooling System
+  Amenities And Recreation
+  Sports Facilities
+  Security features
+  Other Facilities
+  Apply Property Facilities
+  Wait Until Page Contains            ۹
 
 Set Buying And Selling Attributes
   Select RealEstate Type              ${RealEstateType}[BS]   ${VilaID}[BS]   ${Vila}
@@ -195,3 +211,82 @@ Set Personal Notebook
   Input Text                          name:a69535             ${address}
   Click Button                        name:apply-action
   Execute JavaScript                  window.scrollTo(0,0)
+
+Building Facade
+  Click Element                       ${Building_Facade}
+  Wait Until Page Contains Element    ${Cement}              timeout=5s
+  Click Element                       ${Cement}
+  Click Element                       name:select-add-action
+  Textfield Should Contain            name:a95000             سیمانی
+
+Kitchen
+  Click Element                       ${Kitchen}
+  Wait Until Page Contains Element    ${Open}                timeout=5s
+  Click Element                       name:457502
+  Click Element                       name:457505
+  Click Element                       name:457507
+  Click Element                       name:select-add-action
+  Textfield Should Contain            name:a95001             گاز رومیزی, نورگیر سقفی, هواکش
+
+Cabinet
+  Click Element                       ${Cabinet}
+  Wait Until Page Contains Element    ${MDF}                 timeout=5s
+  Click Element                       name:457581
+  Click Element                       name:457584
+  Click Element                       name:457587
+  Click Element                       name:select-add-action
+  Textfield Should Contain            name:a95002            فایبرگلاس, فلزی, روکش چوب
+
+Floor Covering
+  Click Element                       ${Floor_Covering}
+  Wait Until Page Contains Element    ${Parquet}             timeout=5s
+  Click Element                       name:457601
+  Click Element                       name:457605
+  Click Element                       name:457608
+  Click Element                       name:select-add-action
+  Textfield Should Contain            name:a95003            موکت, کاشی, لمینت
+
+Heating And Cooling System
+  Click Element                       ${Heating_And_Cooling_System}
+  Wait Until Page Contains Element    ${Package}             timeout=5s
+  Click Element                       name:457702
+  Click Element                       name:457705
+  Click Element                       name:457707
+  Click Element                       name:select-add-action
+  Textfield Should Contain            name:a95004            گرمایش از کف, شومینه, یونیت هیتر
+
+Amenities And Recreation
+  Click Element                       ${Amenities_And_Recreation}
+  Wait Until Page Contains Element    ${Lobby}               timeout=5s
+  Click Element                       name:457802
+  Click Element                       name:457804
+  Click Element                       name:457806
+  Click Element                       name:select-add-action
+  Textfield Should Contain            name:a95005            باربیکیو, حیاط خلوت, فضای سبز
+
+Sports Facilities
+  Click Element                       ${Sports_Facilities}
+  Wait Until Page Contains Element    ${Yoga_Salon}          timeout=5s
+  Click Element                       name:457872
+  Click Element                       name:457875
+  Click Element                       name:457877
+  Click Element                       name:select-add-action
+  Textfield Should Contain            name:a95006            استخر مشاع, سالن بدنسازی, میز پینگ پنگ
+
+Security Features
+  Click Element                       ${Security_Features}
+  Wait Until Page Contains Element    ${Janitor}             timeout=5s
+  Click Element                       name:457901
+  Click Element                       name:457904
+  Click Element                       name:457906
+  Click Element                       name:select-add-action
+  Textfield Should Contain            name:a95007            اعلام حریق, دزد گیر, سرایدار
+
+Other Facilities
+  Click Element                       ${Other_Facilities}
+  Wait Until Page Contains Element    ${Patio}               timeout=5s
+  Click Element                       name:458001
+  Click Element                       name:458004
+  Click Element                       name:458007
+  Click Element                       name:select-add-action
+  Textfield Should Contain            name:a95008            خواب مستر, مبله, نشیمن مجزا
