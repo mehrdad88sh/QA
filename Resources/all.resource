@@ -96,15 +96,18 @@ Registration Consultant
 
 Generate Random Address
   ${Address}                         Address
+  Press Keys                         name:Address                    CTRL+a+DELETE
   Input Text                         name:Address                    ${Address}
 
 Generate Random Email
   ${Email}                           Company Email
+  Press Keys                         name:Email                      CTRL+a+DELETE
   Input Text                         name:Email                      ${Email}
 
 Generate Random Website
   ${Website}                         Url
-  Input Text                         Website                         ${Website}
+  Press Keys                         name:Website                    CTRL+a+DELETE
+  Input Text                         name:Website                    ${Website}
 
 Input Primary Phone
   Input Text                         PrimaryPhone                    ${Random_User_Mobile}
