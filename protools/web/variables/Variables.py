@@ -179,5 +179,9 @@ class Variables(object):
         'Security_Features': 'name:a95007-trigger',
         'Janitor': 'name:457906',
         'Other_Facilities': 'name:a95008-trigger',
-        'Patio': 'name:458003'
+        'Patio': 'name:458003',
+        'Archive_Button': 'name:archive-action',
+        'UnArchive_Button': 'name:re-open-action',
+        'Archive_Tab': 'name:inactive-tab',
+        'Open_File_Tab': 'name:active-tab'
 }
