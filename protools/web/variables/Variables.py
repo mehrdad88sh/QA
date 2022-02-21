@@ -125,6 +125,8 @@ class Variables(object):
         'Close_Button_Captcha_PopUp': 'id:popup-captcha >> css:span.close',
         'Phone_Number_XXX': 'class:underlined',
         'My_Requests_Button': 'name:list-item-request-management',
+        'File_Management_Button': 'name:list-item-file-management',
+        'Listing_Management_Button': 'name:list-item-listing-management',
         'Customer_Request_Submission_Button': 'add-new-request-list-empty-action',
         'Category_Selection': 'name:category-trigger',
         'Request_Save_Button': 'css:[name="save-form-action"]',
