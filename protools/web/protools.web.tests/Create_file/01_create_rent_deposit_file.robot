@@ -62,7 +62,7 @@ Set More Detail
   Number Of Parking
   File Code
   Apply More Detail
-  Wait Until Page Contains           ۱۰
+  Checking Badge Counter On More Detail
 
 Set Property Facilities
   Select Property Facilities Button
@@ -76,7 +76,7 @@ Set Property Facilities
   Security features
   Other Facilities
   Apply Property Facilities
-  Wait Until Page Contains            ۹
+  Checking Badge Counter On Property Facilities
 
 Select Geo Location Building
   Click Element                       name:a69252-trigger
@@ -236,3 +236,9 @@ Other Facilities
   Click Element                       name:458007
   Click Element                       name:select-add-action
   Textfield Should Contain            name:a95008            خواب مستر, مبله, نشیمن مجزا
+
+Checking Badge Counter On Property Facilities
+  Wait Until Page Contains           ۹
+
+Checking Badge Counter On More Detail
+  Wait Until Page Contains           ۱۰
