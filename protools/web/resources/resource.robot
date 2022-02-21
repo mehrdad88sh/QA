@@ -57,6 +57,7 @@ Listing Status
   END
 
 Convert File To Listing
+  Go To File Management Page
   Click Element                       name=file-item-0
   Reload Page
   Wait Until Keyword Succeeds         3x     2s                        Page Should Contain  آگهی نشده
@@ -396,6 +397,16 @@ Open File And Check Images
     Sleep    1s
   END
   Click Element                       ${Close_Slider_Button}
+
+Go To Listing Management Page
+  Click Element                       ${Listing_Management_Button}
+  Wait Until Page Contains            مدیریت آگهی‌ها
+
+Go To File Management Page
+  Click Element                       ${File_Management_Button}
+  Wait Until Page Contains            مدیریت فایل‌ها
+  Wait Until Page Contains Element    css:[name="search-input-html"]   timeout=10s
+  Page Should Contain Element         name:file-item-0
 
 Go To File Bank Page
   Click Element                       ${File_Bank_Button}
