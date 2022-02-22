@@ -1,5 +1,6 @@
 *** Settings ***
 Documentation                        خرید بسته همراه فایل کل یک شهر
+...                                  (این فیچر فعلا در پروتولز غیرفعال شده است)
 Resource                             ../../resources/resource.robot
 Test Teardown                        Close Browser
 

@@ -1,5 +1,6 @@
 *** Settings ***
 Documentation                        خرید بسته همراه فایل سه محله از شهر تهران
+...                                  (این فیچر فعلا در پروتولز غیرفعال شده است)
 Resource                             ../../resources/resource.robot
 Test Teardown                        Close Browser
 
