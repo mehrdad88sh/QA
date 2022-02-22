@@ -4,7 +4,7 @@ Resource                            ../../resources/resource.robot
 Test Teardown                       Close Browser
 
 *** Test Cases ***
-Edit Free User Profile Alounak
+Edit Shop In Alunak
   Login Protools                    آلونک
   Create Shop In Sheypoor           املاک
   Back To Protools Page
