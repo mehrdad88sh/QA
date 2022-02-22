@@ -18,7 +18,7 @@ Unarchive File From File Details Page
   Archive File By Archive Button
   Open Archived File
   Unarchive File
-  Go To File Management Page
+  Go To File Management Page          املاک
 
 Archive File By Archive Button
   Wait Until Page Contains            ۱ فایل موجود می‌باشد                        timeout=10s
