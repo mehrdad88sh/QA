@@ -57,7 +57,8 @@ Listing Status
   END
 
 Convert File To Listing
-  Go To File Management Page
+  [Arguments]                         ${Category_Type}
+  Go To File Management Page          ${Category_Type}
   Click Element                       name=file-item-0
   Reload Page
   Wait Until Keyword Succeeds         3x     2s                        Page Should Contain  آگهی نشده
@@ -403,8 +404,14 @@ Go To Listing Management Page
   Wait Until Page Contains            مدیریت آگهی‌ها
 
 Go To File Management Page
+  [Arguments]                         ${Category_Type}
   Click Element                       ${File_Management_Button}
-  Wait Until Page Contains            مدیریت فایل‌ها
+  IF                                  "${Category_Type}" == "املاک"
+  Wait Until Page Contains            مدیریت فایل‌ها                             timeout=10s
+  ELSE IF                             "${Category_Type}" == "خودرو"
+  Wait Until Page Contains            مدیریت پارکینگ                            timeout=10s
+  END
+
   Wait Until Page Contains Element    css:[name="search-input-html"]   timeout=10s
   Page Should Contain Element         name:file-item-0
 

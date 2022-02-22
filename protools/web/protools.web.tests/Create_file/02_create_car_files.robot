@@ -12,9 +12,9 @@ Post Listing ‌In Vehicle Category
   Create Shop In Sheypoor             خودرو
   Back To Sheypoor Car Page
   Create File In Car Category
-  Convert File To Listing
+  Convert File To Listing             خودرو
   Create File In Motorcycle Category
-  Convert File To Listing
+  Convert File To Listing             خودرو
 
 *** Keywords ***
 Create File In Car Category
