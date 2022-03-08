@@ -49,9 +49,9 @@ Login Protools
 
 Listing Status
   ${Status}                           Run Keyword And Return Status
-  ...                                 Wait Until Page Contains Element          name:file-item-0       timeout=3s
+  ...                                 Wait Until Page Contains Element          name:file-item-0       timeout=10s
   IF                                  ${Status} == False
-  Wait Until Page Contains            در اینجا فایل خود را ثبت و مدیریت کنید.   timeout=3s
+  Wait Until Page Contains            در اینجا فایل خود را ثبت و مدیریت کنید.   timeout=10s
   ELSE IF                             ${Status}
   Wait Until Page Contains            فایل موجود می‌باشد                timeout=3s
   END
@@ -430,7 +430,10 @@ Go To My Requests Page
 
 Select Rent And Deposit Category
   Click Element                       ${Category_Selection}
-  Wait Until Page Contains Element    css:[role="document"]            timeout=10s
+  ${Status}                           Run Keyword And Return Status    Wait Until Page Contains Element    css:[id=content]                 timeout=5s
+  IF                                  ${Status} == False
+  Click Element                       ${Category_Selection}
+  END
   Click Element                       name:43606
   Textfield Value Should Be           name:category                    رهن و اجاره خانه و آپارتمان
   Wait Until Page Contains Element    select-a68096                    timeout=10s
