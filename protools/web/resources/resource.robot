@@ -49,11 +49,11 @@ Login Protools
 
 Listing Status
   ${Status}                           Run Keyword And Return Status
-  ...                                 Wait Until Page Contains Element          name:file-item-0       timeout=10s
+  ...                                 Wait Until Page Contains Element          name:file-item-0       timeout=5s
   IF                                  ${Status} == False
-  Wait Until Page Contains            در اینجا فایل خود را ثبت و مدیریت کنید.   timeout=10s
+  Wait Until Page Contains            در اینجا فایل خود را ثبت و مدیریت کنید.   timeout=5s
   ELSE IF                             ${Status}
-  Wait Until Page Contains            فایل موجود می‌باشد                timeout=3s
+  Wait Until Page Contains            فایل موجود می‌باشد                timeout=5s
   END
 
 Convert File To Listing
@@ -190,6 +190,14 @@ Select Form Clear Button
 Go To My Packages Page
   Click Element                       ${My_Packages_Button}
   Wait Until Page Contains            خرید بسته                        timeout=10s
+
+Go To Package Purchase Page
+  Click Element                       ${Buy_Package_Button}
+  Wait Until Page Contains            انتخاب و خرید بسته به تعداد مورد نیاز شما!                          timeout=10s
+
+Go To Custom Package Purchase Page
+  Click Element                       ${Custom_Package_Button}
+  Wait Until Page Contains            هنوز هیچ موردی انتخاب نکرده اید  timeout=10s
 
 Upload RealEstate Images
   FOR                                 ${INDEX}   IN RANGE    4
