@@ -39,8 +39,8 @@ Select Custom Refresh Package
   Click Element                       ${Refresh_Negative_Button}
   END
   Wait Until Page Contains            ۵ عدد بروزرسانی                           timeout=5s
-  Page Should Contain                 ۵۸,۰۵۰ تومان
-  Page Should Contain                 ۶,۴۵۰ تومان
+  Page Should Contain                 ۵۸,۰۵۰ تومان                              #z>> جمع قیمت کل (بدون مالیات)
+  Page Should Contain                 ۶,۴۵۰ تومان                               #z>>  جمع تخفیف
 
 Select Custom Vitrin24 Package
   FOR   ${INDEX}   IN RANGE    20
@@ -50,8 +50,8 @@ Select Custom Vitrin24 Package
   Click Element                       ${Vitrin24_Negative_Button}
   END
   Wait Until Page Contains            ۵ عدد بروزرسانی، ۱۰ عدد ویترین ۲۴ ساعته   timeout=5s
-  Page Should Contain                 ۳۱۳,۶۵۰ تومان
-  Page Should Contain                 ۳۴,۸۵۰ تومان
+  Page Should Contain                 ۳۱۳,۶۵۰ تومان                             #z>> جمع قیمت کل (بدون مالیات)
+  Page Should Contain                 ۳۴,۸۵۰ تومان                              #z>>  جمع تخفیف
 
 Select Custom Vitrin48 Package
   FOR   ${INDEX}   IN RANGE    30
@@ -61,8 +61,8 @@ Select Custom Vitrin48 Package
   Click Element                       ${Vitrin48_Negative_Button}
   END
   Wait Until Page Contains            ۵ عدد بروزرسانی، ۱۰ عدد ویترین ۲۴ ساعته، ۱۵ عدد ویترین ۴۸ ساعته   timeout=5s
-  Page Should Contain                 ۱,۰۴۲,۶۵۰ تومان
-  Page Should Contain                 ۱۱۵,۸۵۰ تومان
+  Page Should Contain                 ۱,۰۴۲,۶۵۰ تومان                           #z>> جمع قیمت کل (بدون مالیات)
+  Page Should Contain                 ۱۱۵,۸۵۰ تومان                             #z>>  جمع تخفیف
 
 Select Custom Limitation Package
   FOR   ${INDEX}   IN RANGE    40
@@ -72,8 +72,8 @@ Select Custom Limitation Package
   Click Element                       ${Limitation_Negative_Button}
   END
   Wait Until Page Contains            ۵ عدد بروزرسانی، ۱۰ عدد ویترین ۲۴ ساعته، ۱۵ عدد ویترین ۴۸ ساعته، ۲۰ عدد ظرفیت تعداد آگهی                    timeout=5s
-  Page Should Contain                 ۱,۲۷۴,۸۵۰ تومان
-  Page Should Contain                 ۱۴۱,۶۵۰ تومان
+  Page Should Contain                 ۱,۲۷۴,۸۵۰ تومان                           #z>> جمع قیمت کل (بدون مالیات)
+  Page Should Contain                 ۱۴۱,۶۵۰ تومان                             #z>>  جمع تخفیف
 
 Select Custom Instant Tag Package
   FOR   ${INDEX}   IN RANGE    50
@@ -83,8 +83,8 @@ Select Custom Instant Tag Package
   Click Element                       ${InstantTag_Negative_Button}
   END
   Wait Until Page Contains            ۵ عدد بروزرسانی، ۱۰ عدد ویترین ۲۴ ساعته، ۱۵ عدد ویترین ۴۸ ساعته، ۲۰ عدد ظرفیت تعداد آگهی، ۲۵ عدد نشان فوری  timeout=5s
-  Page Should Contain                 ۱,۵۰۶,۶۰۰ تومان
-  Page Should Contain                 ۱۶۷,۴۰۰ تومان
+  Page Should Contain                 ۱,۵۰۶,۶۰۰ تومان                           #z>> جمع قیمت کل (بدون مالیات)
+  Page Should Contain                 ۱۶۷,۴۰۰ تومان                             #z>>  جمع تخفیف
 
 Review PreInvoice Prices
   Page Should Contain                 ۵ عدد بروزرسانی، ۱۰ عدد ویترین ۲۴ ساعته، ۱۵ عدد ویترین ۴۸ ساعته، ۲۰ عدد ظرفیت تعداد آگهی، ۲۵ عدد نشان فوری
