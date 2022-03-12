@@ -5,6 +5,7 @@ Test Teardown                         Close Browser
 
 *** Variables ***
 ${Refresh}                            ۲۵ بسته
+${Final_Price}                        ۳۱۶,۳۷۲
 
 *** Test Cases ***
 Buy Refresh Package
@@ -25,20 +26,19 @@ Buy Refresh Package
 *** Keywords ***
 Select Refresh Package
   Click Button                        ${PackageـPurchase_Button}
-  Wait Until Page Contains Element    ${Refresh_Package_Name}                  timeout=10s
-  Click Element                       ${Refresh_Package_Name}
-  Wait Until Page Contains            پرداخت ۲۹۰,۲۵۰ تومان
+  Wait Until Page Contains            ۲۵ بروزرسانی                              timeout=10s
+  Click Element                       ${Refresh_Package_Purchase_Button}
+  Wait Until Page Contains            پرداخت ۳۱۶,۳۷۲ تومان
 
 Compare Selected Package With its Price
-  ${Refresh_Price}                    Get WebElements                          ${Refresh_Package_Price}
-  ${Price_After_Discount}             Get Text                                 ${Refresh_Price}[1]
-  ${Price_In_Button}                  Get Text                                 ${Submit_Button}
-  Should Be Equal                     پرداخت ${Price_After_Discount} تومان     ${Price_In_Button}
-  Click Element                       ${Submit_Button}
+  Wait Until Page Contains            پیش فاکتور                                timeout=5s
+  ${PreInvoice_Payment_Button}        Get Text                                  ${PreInvoice_Payment_Button}
+  Should Be Equal                     پرداخت ${Final_Price} تومان               ${PreInvoice_Payment_Button}
+  Click By Text                       پرداخت ۳۱۶,۳۷۲ تومان
 
 Validation Packages In Protools
   Wait Until Page Contains            با بروزرسانی، آگهی شما به بالاترین آگهی در گروه خود منتقل می شود                                timeout=10s
-  Element Text Should Be              ${Refresh_Package_Number}                ${Refresh}
+  Element Text Should Be              ${Refresh_Package_Number}                 ${Refresh}
 
 Find Phone Number And Name Of Team Members
   Register Manager With Alunak Api
