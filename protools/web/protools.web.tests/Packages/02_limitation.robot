@@ -5,6 +5,7 @@ Test Teardown                         Close Browser
 
 *** Variables ***
 ${limitation}                         ۱۰ بسته
+${Final_Price}                        ۱۲۶,۵۴۹
 
 *** Test Cases ***
 Buy Limitation Package
@@ -25,16 +26,15 @@ Buy Limitation Package
 *** Keywords ***
 Select Limitation Package
   Click Button                        ${PackageـPurchase_Button}
-  Wait Until Page Contains Element    ${Limitation_Package_Name}               timeout=10s
-  Click Element                       ${Limitation_Package_Name}
-  Wait Until Page Contains            پرداخت ۱۱۶,۱۰۰ تومان
+  Wait Until Page Contains            ۱۰ ظرفیت تعداد آگهی                       timeout=10s
+  Click Element                       ${Limitation_Package_Purchase_Button}
+  Wait Until Page Contains            پرداخت ۱۲۶,۵۴۹ تومان
 
 Compare Selected Package With its Price
-  ${Limitation_Price}                 Get WebElements                          ${Limitation_Package_Price}
-  ${Price_After_Discount}             Get Text                                 ${Limitation_Price}[1]
-  ${Price_In_Button}                  Get Text                                 ${Submit_Button}
-  Should Be Equal                     پرداخت ${Price_After_Discount} تومان     ${Price_In_Button}
-  Click Element                       ${Submit_Button}
+  Wait Until Page Contains            پیش فاکتور                                timeout=5s
+  ${PreInvoice_Payment_Button}        Get Text                                  ${PreInvoice_Payment_Button}
+  Should Be Equal                     پرداخت ${Final_Price} تومان               ${PreInvoice_Payment_Button}
+  Click By Text                       پرداخت ۱۲۶,۵۴۹ تومان
 
 Validation Packages In Protools
   Wait Until Page Contains            این بسته به شما امکان ثبت آگهی بیشتر از سقف تعداد آگهی را میدهد            timeout=10s
