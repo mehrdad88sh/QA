@@ -189,7 +189,7 @@ Select Form Clear Button
 
 Go To My Packages Page
   Click Element                       ${My_Packages_Button}
-  Wait Until Page Contains            خرید بسته                        timeout=10s
+  Wait Until Page Contains            با بروزرسانی، آگهی شما به بالاترین آگهی در گروه خود منتقل می شود                                timeout=10s
 
 Go To Package Purchase Page
   Click Element                       ${Buy_Package_Button}
