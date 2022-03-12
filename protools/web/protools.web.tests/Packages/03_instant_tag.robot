@@ -5,6 +5,7 @@ Test Teardown                         Close Browser
 
 *** Variables ***
 ${instant_tag}                        ۳۰ بسته
+${Final_Price}                        ۳۰۳,۱۲۹
 
 *** Test Cases ***
 Buy Instant Tag Package
@@ -25,20 +26,19 @@ Buy Instant Tag Package
 *** Keywords ***
 Select Instant Tag Package
   Click Button                        ${PackageـPurchase_Button}
-  Wait Until Page Contains Element    ${InstantTag_Package_Name}               timeout=10s
-  Click Element                       ${InstantTag_Package_Name}
-  Wait Until Page Contains            پرداخت ۲۷۸,۱۰۰ تومان
+  Wait Until Page Contains            ۳۰ نشان فوری                              timeout=10s
+  Click Element                       ${InstantTag_Package_Purchase_Button}
+  Wait Until Page Contains            پرداخت ۳۰۳,۱۲۹ تومان
 
 Compare Selected Package With its Price
-  ${InstantTag_Price}                 Get WebElements                          ${InstantTag_Package_Price}
-  ${Price_After_Discount}             Get Text                                 ${InstantTag_Price}[1]
-  ${Price_In_Button}                  Get Text                                 ${Submit_Button}
-  Should Be Equal                     پرداخت ${Price_After_Discount} تومان     ${Price_In_Button}
-  Click Element                       ${Submit_Button}
+  Wait Until Page Contains            پیش فاکتور                                timeout=5s
+  ${PreInvoice_Payment_Button}        Get Text                                  ${PreInvoice_Payment_Button}
+  Should Be Equal                     پرداخت ${Final_Price} تومان               ${PreInvoice_Payment_Button}
+  Click By Text                       پرداخت ۳۰۳,۱۲۹ تومان
 
 Validation Packages In Protools
   Wait Until Page Contains            این قابلیت، نشان فوری را روی آگهی شما نمایش میدهد                                timeout=10s
-  Element Text Should Be              ${InstantTag_Package_Number}             ${instant_tag}
+  Element Text Should Be              ${InstantTag_Package_Number}              ${instant_tag}
 
 Find Phone Number And Name Of Team Members
   Register Manager With Alunak Api
