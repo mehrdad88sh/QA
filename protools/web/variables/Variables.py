@@ -50,7 +50,7 @@ class Variables(object):
         'Refresh_Package_Name': 'name:simple-package-refresh',
         'Refresh_Package_Price': 'name=simple-package-refresh-price',
         'Refresh_Package_Number': 'name:refresh',
-        'Special_Package_Name': 'name:special-package',
+        'Special_Package_Purchase_Button': 'name:package-special-action',
         'Special_Package_Price': 'name=simple-package-special-price',
         'Limitation_Package_Name': 'name:simple-package-limitation',
         'Limitation_Package_Price': 'name=simple-package-limitation-price',
