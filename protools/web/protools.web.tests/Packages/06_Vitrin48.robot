@@ -5,6 +5,7 @@ Test Teardown                         Close Browser
 
 *** Variables ***
 ${vitrine_48}                         ۵ بسته
+${Final_Price}                        ۲۶۴,۸۷۰
 
 *** Test Cases ***
 Buy Vitrin48 Package
@@ -25,16 +26,15 @@ Buy Vitrin48 Package
 *** Keywords ***
 Select Vitrin48 Package
   Click Button                        ${PackageـPurchase_Button}
-  Wait Until Page Contains Element    ${Vitrin48_Package_Name}                  timeout=10s
-  Click Element                       ${Vitrin48_Package_Name}
-  Wait Until Page Contains            پرداخت ۲۴۳,۰۰۰ تومان
+  Wait Until Page Contains            ۵ ویترین ۴۸ ساعته                         timeout=10s
+  Click Element                       ${Vitrin48_Package_Purchase_Button}
+  Wait Until Page Contains            پرداخت ۲۶۴,۸۷۰ تومان
 
 Compare Selected Package With its Price
-  ${Vitrin48_Price}                   Get WebElements                           ${Vitrin48_Package_Price}
-  ${Price_After_Discount}             Get Text                                  ${Vitrin48_Price}[1]
-  ${Price_In_Button}                  Get Text                                  ${Submit_Button}
-  Should Be Equal                     پرداخت ${Price_After_Discount} تومان      ${Price_In_Button}
-  Click Element                       ${Submit_Button}
+  Wait Until Page Contains            پیش فاکتور                                timeout=5s
+  ${PreInvoice_Payment_Button}        Get Text                                  ${PreInvoice_Payment_Button}
+  Should Be Equal                     پرداخت ${Final_Price} تومان               ${PreInvoice_Payment_Button}
+  Click By Text                       پرداخت ۲۶۴,۸۷۰ تومان
 
 Validation Packages In Protools
   Wait Until Page Contains            با ۴۸ ساعت ویترین، آگهی شما یک بار بروزرسانی شده و به مدت ۴۸ ساعت نیز ویترین میشود                         timeout=10s
