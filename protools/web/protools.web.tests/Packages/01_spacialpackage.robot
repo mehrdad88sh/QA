@@ -7,6 +7,7 @@ Test Teardown                         Close Browser
 ${refresh}                            ۲۵ بسته
 ${vitrin24}                           ۱۰ بسته
 ${vitrin48}                           ۵ بسته
+${Final_Price}                        ۸۱۲,۰۷۷
 
 *** Test Cases ***
 Buy Spacial Package
@@ -27,16 +28,15 @@ Buy Spacial Package
 *** Keywords ***
 Select Spacial Package
   Click Button                        ${PackageـPurchase_Button}
-  Wait Until Page Contains Element    ${Special_Package_Name}                   timeout=10s
-  Click Element                       ${Special_Package_Name}
-  Wait Until Page Contains            پرداخت ۷۴۵,۰۲۵ تومان                      timeout=10s
+  Wait Until Page Contains            بسته ویژه                                 timeout=10s
+  Click Element                       ${Special_Package_Purchase_Button}
+  Wait Until Page Contains            پرداخت ۸۱۲,۰۷۷ تومان                      timeout=10s
 
 Compare Selected Package With its Price
-  ${Special_Price}                    Get WebElements                           ${Special_Package_Price}
-  ${Price_After_Discount}             Get Text                                  ${Special_Price}[1]
-  ${Price_In_Button}                  Get Text                                  ${Submit_Button}
-  Should Be Equal                     پرداخت ${Price_After_Discount} تومان      ${Price_In_Button}
-  Click Element                       ${Submit_Button}
+  Wait Until Page Contains            پیش فاکتور                                timeout=5s
+  ${PreInvoice_Payment_Button}        Get Text                                  ${PreInvoice_Payment_Button}
+  Should Be Equal                     پرداخت ${Final_Price} تومان               ${PreInvoice_Payment_Button}
+  Click By Text                       پرداخت ۸۱۲,۰۷۷ تومان
 
 Validation Packages In Protools
   Wait Until Page Contains            با بروزرسانی، آگهی شما به بالاترین آگهی در گروه خود منتقل می شود                  timeout=10s
