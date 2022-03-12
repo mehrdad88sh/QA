@@ -92,7 +92,7 @@ Review PreInvoice Prices
   Wait Until Page Contains            پیش فاکتور                                timeout=5s
   ${PreInvoice_Payment_Button}        Get Text                                  ${PreInvoice_Payment_Button}
   Should Be Equal                     پرداخت ${Final_Price} تومان               ${PreInvoice_Payment_Button}
-  Click Element                       ${PreInvoice_Payment_Button}
+  Click By Text                       پرداخت ۱,۶۴۲,۱۹۳ تومان
 
 Validation Packages In Protools
   Wait Until Page Contains            با بروزرسانی، آگهی شما به بالاترین آگهی در گروه خود منتقل می شود                                             timeout=10s
