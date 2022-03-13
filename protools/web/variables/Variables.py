@@ -7,7 +7,7 @@ class Variables(object):
         return {
         'Alunak': 'name:alounak',
         'SheypoorCar': 'name:sheypoor-cars',
-        'staging': 'https://staging.mielse.com',
+        'staging': 'https://{}.mielse.com',
         'stagingMock': 'https://staging.mielse.com/mock/getCode?mobile',
         'stagingExpireMock': 'https://staging.mielse.com/trumpet/mock/expireListing',
         'Apartment': 'آپارتمان',
