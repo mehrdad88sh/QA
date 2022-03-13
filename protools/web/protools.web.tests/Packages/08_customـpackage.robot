@@ -7,8 +7,8 @@ Test Teardown                         Close Browser
 ${refresh}                            ۵ بسته
 ${vitrin24}                           ۱۰ بسته
 ${vitrin48}                           ۱۵ بسته
-${instant_tag}                        ۲۵ بسته
 ${limitation}                         ۲۰ بسته
+${instant_tag}                        ۲۵ بسته
 ${Final_Price}                        ۱,۶۴۲,۱۹۳
 
 *** Test Cases ***
@@ -25,74 +25,162 @@ Buy Custom Package
 
 *** Keywords ***
 Select Custom Packages
-  Select Custom Refresh Package
-  Select Custom Vitrin24 Package
-  Select Custom Vitrin48 Package
-  Select Custom Limitation Package
-  Select Custom Instant Tag Package
+  Select 5 Refresh Packages
+  Select 10 Vitrin24 Packages
+  Select 15 Vitrin48 Packages
+  Select 20 Limitation Packages
+  Select 25 Instant Tag Packages
 
-Select Custom Refresh Package
-  FOR   ${INDEX}   IN RANGE    10
-  Click Element                       ${Refresh_Positive_Button}
-  END
-  FOR   ${INDEX}   IN RANGE    5
-  Click Element                       ${Refresh_Negative_Button}
-  END
-  Wait Until Page Contains            ۵ عدد بروزرسانی                           timeout=5s
-  Page Should Contain                 ۵۸,۰۵۰ تومان                              #z>> جمع قیمت کل (بدون مالیات)
-  Page Should Contain                 ۶,۴۵۰ تومان                               #z>>  جمع تخفیف
+Select 5 Refresh Packages
+  Increase Refresh Package To 10
+  Decrease Refresh Package To 5
+  Refresh Package Should Be 5
 
-Select Custom Vitrin24 Package
-  FOR   ${INDEX}   IN RANGE    20
-  Click Element                       ${Vitrin24_Positive_Button}
-  END
-  FOR   ${INDEX}   IN RANGE    10
-  Click Element                       ${Vitrin24_Negative_Button}
-  END
-  Wait Until Page Contains            ۵ عدد بروزرسانی، ۱۰ عدد ویترین ۲۴ ساعته   timeout=5s
-  Page Should Contain                 ۳۱۳,۶۵۰ تومان                             #z>> جمع قیمت کل (بدون مالیات)
-  Page Should Contain                 ۳۴,۸۵۰ تومان                              #z>>  جمع تخفیف
+Select 10 Vitrin24 Packages
+  Increase Vitrin24 Package To 20
+  Decrease Vitrin24 Package To 10
+  Vitrin24 Package Should Be 10
 
-Select Custom Vitrin48 Package
-  FOR   ${INDEX}   IN RANGE    30
-  Click Element                       ${Vitrin48_Positive_Button}
-  END
-  FOR   ${INDEX}   IN RANGE    15
-  Click Element                       ${Vitrin48_Negative_Button}
-  END
-  Wait Until Page Contains            ۵ عدد بروزرسانی، ۱۰ عدد ویترین ۲۴ ساعته، ۱۵ عدد ویترین ۴۸ ساعته   timeout=5s
-  Page Should Contain                 ۱,۰۴۲,۶۵۰ تومان                           #z>> جمع قیمت کل (بدون مالیات)
-  Page Should Contain                 ۱۱۵,۸۵۰ تومان                             #z>>  جمع تخفیف
+Select 15 Vitrin48 Packages
+  Increase Vitrin48 Package To 30
+  Decrease Vitrin48 Package To 15
+  Vitrin48 Package Should Be 15
 
-Select Custom Limitation Package
-  FOR   ${INDEX}   IN RANGE    40
-  Click Element                       ${Limitation_Positive_Button}
-  END
-  FOR   ${INDEX}   IN RANGE    20
-  Click Element                       ${Limitation_Negative_Button}
-  END
-  Wait Until Page Contains            ۵ عدد بروزرسانی، ۱۰ عدد ویترین ۲۴ ساعته، ۱۵ عدد ویترین ۴۸ ساعته، ۲۰ عدد ظرفیت تعداد آگهی                    timeout=5s
-  Page Should Contain                 ۱,۲۷۴,۸۵۰ تومان                           #z>> جمع قیمت کل (بدون مالیات)
-  Page Should Contain                 ۱۴۱,۶۵۰ تومان                             #z>>  جمع تخفیف
+Select 20 Limitation Packages
+  Limitation Vitrin48 Package To 40
+  Limitation Vitrin48 Package To 20
+  Limitation Package Should Be 20
 
-Select Custom Instant Tag Package
-  FOR   ${INDEX}   IN RANGE    50
-  Click Element                       ${InstantTag_Positive_Button}
-  END
-  FOR   ${INDEX}   IN RANGE    25
-  Click Element                       ${InstantTag_Negative_Button}
-  END
-  Wait Until Page Contains            ۵ عدد بروزرسانی، ۱۰ عدد ویترین ۲۴ ساعته، ۱۵ عدد ویترین ۴۸ ساعته، ۲۰ عدد ظرفیت تعداد آگهی، ۲۵ عدد نشان فوری  timeout=5s
-  Page Should Contain                 ۱,۵۰۶,۶۰۰ تومان                           #z>> جمع قیمت کل (بدون مالیات)
-  Page Should Contain                 ۱۶۷,۴۰۰ تومان                             #z>>  جمع تخفیف
+Select 25 Instant Tag Packages
+  Limitation Instant Tag Package To 50
+  Limitation Instant Tag Package To 25
+  Instant Tag Package Should Be 25
 
 Review PreInvoice Prices
-  Page Should Contain                 ۵ عدد بروزرسانی، ۱۰ عدد ویترین ۲۴ ساعته، ۱۵ عدد ویترین ۴۸ ساعته، ۲۰ عدد ظرفیت تعداد آگهی، ۲۵ عدد نشان فوری
   Click Element                       ${Continue_Buying_Button}
   Wait Until Page Contains            پیش فاکتور                                timeout=5s
-  ${PreInvoice_Payment_Button}        Get Text                                  ${PreInvoice_Payment_Button}
-  Should Be Equal                     پرداخت ${Final_Price} تومان               ${PreInvoice_Payment_Button}
+  Element Text Should Be              ${PreInvoice_Payment_Button}              پرداخت ${Final_Price} تومان
   Click By Text                       پرداخت ۱,۶۴۲,۱۹۳ تومان
+
+Increase Refresh Package To 10
+  FOR   ${INDEX}   IN RANGE    1      11
+      Click Element                   ${Refresh_Positive_Button}
+      ${Credit_Count}                 Get Text                                  ${Refresh_Credit_Count}
+      ${Credit_Count}                 Convert FA to EN                          ${Credit_Count}
+      ${Credit_Count}                 Convert To Integer                        ${Credit_Count}
+      Should Be Equal                 ${Credit_Count}                           ${INDEX}
+  END
+
+Decrease Refresh Package To 5
+  FOR   ${INDEX}   IN RANGE    1      6
+      Click Element                   ${Refresh_Negative_Button}
+      ${Credit_Count}                 Get Text                                  ${Refresh_Credit_Count}
+      ${Credit_Count}                 Convert FA to EN                          ${Credit_Count}
+      ${Credit_Count}                 Convert To Integer                        ${Credit_Count}
+      ${INDEX}                        Evaluate    (${INDEX} - 10) * (-1)
+      Should Be Equal                 ${Credit_Count}                           ${INDEX}
+  END
+
+Refresh Package Should Be 5
+  Page Should Contain                 ۵ عدد بروزرسانی
+  Element Text Should Be              ${Total_Cost}                             ۵۸,۰۵۰ تومان
+  Element Text Should Be              ${Total_Discount}                         جمع تخفیف ۶,۴۵۰ تومان
+
+Increase Vitrin24 Package To 20
+  FOR   ${INDEX}   IN RANGE    1      21
+      Click Element                   ${Vitrin24_Positive_Button}
+      ${Credit_Count}                 Get Text                                  ${Vitrin24_Credit_Count}
+      ${Credit_Count}                 Convert FA to EN                          ${Credit_Count}
+      ${Credit_Count}                 Convert To Integer                        ${Credit_Count}
+      Should Be Equal                 ${Credit_Count}                           ${INDEX}
+  END
+
+Decrease Vitrin24 Package To 10
+  FOR   ${INDEX}   IN RANGE    1      11
+      Click Element                   ${Vitrin24_Negative_Button}
+      ${Credit_Count}                 Get Text                                  ${Vitrin24_Credit_Count}
+      ${Credit_Count}                 Convert FA to EN                          ${Credit_Count}
+      ${Credit_Count}                 Convert To Integer                        ${Credit_Count}
+      ${INDEX}                        Evaluate    (${INDEX} - 10) * (-1) + 10
+      Should Be Equal                 ${Credit_Count}                           ${INDEX}
+  END
+
+Vitrin24 Package Should Be 10
+  Page Should Contain                 ،  ۱۰ عدد ویترین ۲۴ ساعته
+  Element Text Should Be              ${Total_Cost}                             ۳۱۳,۶۵۰ تومان
+  Element Text Should Be              ${Total_Discount}                         جمع تخفیف ۳۴,۸۵۰ تومان
+
+Increase Vitrin48 Package To 30
+  FOR   ${INDEX}   IN RANGE    1      31
+      Click Element                   ${Vitrin48_Positive_Button}
+      ${Credit_Count}                 Get Text                                  ${Vitrin48_Credit_Count}
+      ${Credit_Count}                 Convert FA to EN                          ${Credit_Count}
+      ${Credit_Count}                 Convert To Integer                        ${Credit_Count}
+      Should Be Equal                 ${Credit_Count}                           ${INDEX}
+  END
+
+Decrease Vitrin48 Package To 15
+  FOR   ${INDEX}   IN RANGE    1      16
+      Click Element                   ${Vitrin48_Negative_Button}
+      ${Credit_Count}                 Get Text                                  ${Vitrin48_Credit_Count}
+      ${Credit_Count}                 Convert FA to EN                          ${Credit_Count}
+      ${Credit_Count}                 Convert To Integer                        ${Credit_Count}
+      ${INDEX}                        Evaluate    (${INDEX} - 10) * (-1) + 20
+      Should Be Equal                 ${Credit_Count}                           ${INDEX}
+  END
+
+Vitrin48 Package Should Be 15
+  Page Should Contain                 ،  ۱۵ عدد ویترین ۴۸ ساعته
+  Element Text Should Be              ${Total_Cost}                             ۱,۰۴۲,۶۵۰ تومان
+  Element Text Should Be              ${Total_Discount}                         جمع تخفیف ۱۱۵,۸۵۰ تومان
+
+Limitation Vitrin48 Package To 40
+  FOR   ${INDEX}   IN RANGE    1      41
+      Click Element                   ${Limitation_Positive_Button}
+      ${Credit_Count}                 Get Text                                  ${Limitation_Credit_Count}
+      ${Credit_Count}                 Convert FA to EN                          ${Credit_Count}
+      ${Credit_Count}                 Convert To Integer                        ${Credit_Count}
+      Should Be Equal                 ${Credit_Count}                           ${INDEX}
+  END
+
+Limitation Vitrin48 Package To 20
+  FOR   ${INDEX}   IN RANGE    1      21
+      Click Element                   ${Limitation_Negative_Button}
+      ${Credit_Count}                 Get Text                                  ${Limitation_Credit_Count}
+      ${Credit_Count}                 Convert FA to EN                          ${Credit_Count}
+      ${Credit_Count}                 Convert To Integer                        ${Credit_Count}
+      ${INDEX}                        Evaluate    (${INDEX} - 10) * (-1) + 30
+      Should Be Equal                 ${Credit_Count}                           ${INDEX}
+  END
+
+Limitation Package Should Be 20
+  Page Should Contain                 ،  ۲۰ عدد ظرفیت تعداد آگهی
+  Element Text Should Be              ${Total_Cost}                             ۱,۲۷۴,۸۵۰ تومان
+  Element Text Should Be              ${Total_Discount}                         جمع تخفیف ۱۴۱,۶۵۰ تومان
+
+Limitation Instant Tag Package To 50
+  FOR   ${INDEX}   IN RANGE    1      51
+      Click Element                   ${InstantTag_Positive_Button}
+      ${Credit_Count}                 Get Text                                  ${InstantTag_Credit_Count}
+      ${Credit_Count}                 Convert FA to EN                          ${Credit_Count}
+      ${Credit_Count}                 Convert To Integer                        ${Credit_Count}
+      Should Be Equal                 ${Credit_Count}                           ${INDEX}
+  END
+
+Limitation Instant Tag Package To 25
+  FOR   ${INDEX}   IN RANGE    1      26
+      Click Element                   ${InstantTag_Negative_Button}
+      ${Credit_Count}                 Get Text                                  ${InstantTag_Credit_Count}
+      ${Credit_Count}                 Convert FA to EN                          ${Credit_Count}
+      ${Credit_Count}                 Convert To Integer                        ${Credit_Count}
+      ${INDEX}                        Evaluate    (${INDEX} - 10) * (-1) + 40
+      Should Be Equal                 ${Credit_Count}                           ${INDEX}
+  END
+
+Instant Tag Package Should Be 25
+  Page Should Contain                 ،  ۲۵ عدد نشان فوری
+  Element Text Should Be              ${Total_Cost}                             ۱,۵۰۶,۶۰۰ تومان
+  Element Text Should Be              ${Total_Discount}                         جمع تخفیف ۱۶۷,۴۰۰ تومان
 
 Validation Packages In Protools
   Wait Until Page Contains            با بروزرسانی، آگهی شما به بالاترین آگهی در گروه خود منتقل می شود                                             timeout=10s
