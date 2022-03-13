@@ -4,6 +4,7 @@ Library                              SeleniumLibrary
 Variables                            ../protools/web/variables/Variables.py
 Library                              REST                            ${staging}/api/protools
 Library                              JSONLibrary
+Library                              sheypoorlib
 Resource                             ../protools/web/resources/resource.robot
 
 *** Keywords ***
@@ -383,3 +384,8 @@ Check "User Insert Rating" Toggle For Alunak
         Wait Until Page Contains Element   ${Active_User_Insert_Rating}           timeout=3s
   Exit For Loop If                         ${Status} == False
   END
+
+Convert FA to EN
+  [Arguments]                              ${FA_Number}
+  ${EN_Number}                             convert number                         ${FA_Number}
+  Return From Keyword                      ${EN_Number}
