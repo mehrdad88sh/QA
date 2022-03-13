@@ -19,7 +19,8 @@ Buy Custom Package
   Go To Package Purchase Page
   Go To Custom Package Purchase Page
   Select Custom Packages
-  Review PreInvoice Prices
+  View Pre-Invioce
+  Review Pre-Invoice Prices
   Successful Payment In Sheypoor      خرید بسته به تعداد دلخواه
   Validation Packages In Protools
 
@@ -56,11 +57,59 @@ Select 25 Instant Tag Packages
   Limitation Instant Tag Package To 25
   Instant Tag Package Should Be 25
 
-Review PreInvoice Prices
+View Pre-Invioce
   Click Element                       ${Continue_Buying_Button}
   Wait Until Page Contains            پیش فاکتور                                timeout=5s
   Element Text Should Be              ${PreInvoice_Payment_Button}              پرداخت ${Final_Price} تومان
+
+Review Pre-Invoice Prices
+  Checking The Count And Price Of Refresh Package
+  Checking The Count And Price Of Vitrin24 Package
+  Checking The Count And Price Of Vitrin48 Package
+  Checking The Count And Price Of Limitation Package
+  Checking The Count And Price Of Instant Tag Package
+  Checking Total Price
+  Checking Vat Price
+  Checking Discount Price
+  Checking Final Price
   Click By Text                       پرداخت ۱,۶۴۲,۱۹۳ تومان
+
+Checking The Count And Price Of Refresh Package
+  Element Text Should Be              ${Refresh_Title_In_PreInvoice}            بروزرسانی
+  Element Text Should Be              ${Refresh_Count_In_PreInvoice}            ۵
+  Element Text Should Be              ${Refresh_Price_In_PriInvoice}            ۵۸,۰۵۰
+
+Checking The Count And Price Of Vitrin24 Package
+  Element Text Should Be              ${Vitrin24_Title_In_PreInvoice}           ویترین ۲۴
+  Element Text Should Be              ${Vitrin24_Count_In_PreInvoice}           ۱۰
+  Element Text Should Be              ${Vitrin24_Price_In_PriInvoice}           ۲۵۵,۶۰۰
+
+Checking The Count And Price Of Vitrin48 Package
+  Element Text Should Be              ${Vitrin48_Title_In_PreInvoice}           ویترین ۴۸
+  Element Text Should Be              ${Vitrin48_Count_In_PreInvoice}           ۱۵
+  Element Text Should Be              ${Vitrin48_Price_In_PriInvoice}           ۷۲۹,۰۰۰
+
+Checking The Count And Price Of Limitation Package
+  Element Text Should Be              ${Limitation_Title_In_PreInvoice}         ظرفیت تعداد آگهی کاربر
+  Element Text Should Be              ${Limitation_Count_In_PreInvoice}         ۲۰
+  Element Text Should Be              ${Limitation_Price_In_PriInvoice}         ۲۳۲,۲۰۰
+
+Checking The Count And Price Of Instant Tag Package
+  Element Text Should Be              ${InstantTag_Title_In_PreInvoice}         نشان فوری
+  Element Text Should Be              ${InstantTag_Count_In_PreInvoice}         ۲۵
+  Element Text Should Be              ${InstantTag_Price_In_PriInvoice}         ۲۳۱,۷۵۰
+
+Checking Total Price
+  Element Text Should Be              ${Total_Price_In_PreInvoice}              ۱,۶۷۴,۰۰۰
+
+Checking Vat Price
+  Element Text Should Be              ${Vat_Price_In_PreInvoice}                ۱۳۵,۵۹۳
+
+Checking Discount Price
+  Element Text Should Be              ${Discount_Price_In_PreInvoice}           -۱۶۷,۴۰۰
+
+Checking Final Price
+  Element Text Should Be              ${Final_Price_In_PreInvoice}              ۱,۶۴۲,۱۹۳
 
 Increase Refresh Package To 10
   FOR   ${INDEX}   IN RANGE    1      11
