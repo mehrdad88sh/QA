@@ -22,7 +22,7 @@ ${images_Realestate_path}             ${CURDIR}/images
 Open Browser On Staging
   Open Browser                        chrome://version                 browser=chrome
   Maximize Browser Window
-  Go To                               ${staging}/pro
+  Go To                               ${staging.format('${trumpet_env}')}/pro
   Wait Until Page Contains            با ثبت نام در شیپور از مزایای کسب و کار اینترنتی بهره‌مند شوید               timeout=10s
 
 Login Protools
