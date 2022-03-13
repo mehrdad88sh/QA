@@ -62,7 +62,7 @@ Authentication In Protools
 
 Get Code From Mock Server Api
     Clear Expectations
-    Get                       ${Test_Enviroment_Mock}=${Random_User_Mobile}
+    Get                       ${Test_Enviroment_Mock.format('${trumpet_env}')}=${Random_User_Mobile}
     ...                       headers={"Authorization": "Basic dHJ1bXBldDpuZXdzaXRl"}
     Integer                   response status                 200
     ${response}               output                          response body
