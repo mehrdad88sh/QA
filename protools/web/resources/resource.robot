@@ -19,16 +19,16 @@ ${image_profile_path}                 ${CURDIR}/images/imageprofile.jpg
 ${images_Realestate_path}             ${CURDIR}/images
 
 *** Keywords ***
-Open Browser On Staging
+Open Browser On Test Enviroment
   Open Browser                        chrome://version                 browser=chrome
   Maximize Browser Window
-  Go To                               ${staging.format('${trumpet_env}')}/pro
+  Go To                               ${Test_Enviroment.format('${trumpet_env}')}/pro
   Wait Until Page Contains            با ثبت نام در شیپور از مزایای کسب و کار اینترنتی بهره‌مند شوید               timeout=10s
 
 Login Protools
   [Arguments]                         ${Category_Type}
   Set Log Level                       trace
-  Open Browser On Staging
+  Open Browser On Test Enviroment
     IF                                "${Category_Type}" == "آلونک"
     Click Element                     ${Alunak}
     Wait Until Page Contains          با آلونک کسب و کار خود را متحول کنید                                        timeout=10s
@@ -88,7 +88,7 @@ Input Random User Name
   Input Text                          name:firstName                   ${Random_User_Name}
 
 Get Code From Mock Server
-  Execute Javascript                  window.open('${stagingMock}=${Random_User_Mobile}');
+  Execute Javascript                  window.open('${Test_Enviroment_Mock.format('${trumpet_env}')}=${Random_User_Mobile}');
   Switch Window                       NEW
   Wait Until Page Contains Element    css:pre                          timeout=10s
   ${mycode}                           Get Text                         css:pre
@@ -330,7 +330,7 @@ Validate Gamification Scores
   Page Should Contain                 امتیاز برای بارگذاری عکس پروفایل
 
 Confirm Profile Image By Admin
-  Go To                               ${Users_Search_Page}
+  Go To                               ${Users_Search_Page.format('${trumpet_env}')}
   Input Text                          ${Contact_Number_Field}          ${Random_User_Mobile}
   Click Element                       ${Search_Button}
   Wait Until Page Contains            ${Random_User_Name}              timeout=10s
@@ -341,7 +341,7 @@ Confirm Profile Image By Admin
   Wait Until Page Contains            عملیات با موفقیت انجام شد       timeout=10s
 
 Reject Profile Image By Admin
-  Go To                               ${Users_Search_Page}
+  Go To                               ${Users_Search_Page.format('${trumpet_env}')}
   Input Text                          ${Contact_Number_Field}          ${Random_User_Mobile}
   Click Element                       ${Search_Button}
   Wait Until Page Contains            ${Random_User_Name}              timeout=10s
@@ -626,10 +626,10 @@ Expire The Listing
   Check Listing Status From Listing Details
 
 Expire Listing With Mock
-  Go to                               ${stagingExpireMock}?listingId=${Listing_ID}&expireAt=30day
+  Go to                               ${Test_Enviroment_Expire_Mock.format('${trumpet_env}')}?listingId=${Listing_ID}&expireAt=30day
 
 Check Listing Status From Listing Details
-  Go To                               ${staging}/pro/real-estate/file/${Listing_ID}
+  Go To                               ${Test_Enviroment.format('${trumpet_env}')}/pro/real-estate/file/${Listing_ID}
   Wait Until Page Contains            منقضی شد
 
 Go To Store Page

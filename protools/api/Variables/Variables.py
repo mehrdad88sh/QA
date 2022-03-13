@@ -5,6 +5,6 @@ class Variables(object):
 
     def get_variables(self):
         return {
-        'staging': 'https://staging.mielse.com',
-        'stagingMock': 'https://staging.mielse.com/mock/getCode?mobile'
+        'Test_Enviroment': 'https://{}.mielse.com',
+        'Test_Enviroment_Mock': 'https://{}.mielse.com/mock/getCode?mobile'
 }

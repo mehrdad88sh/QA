@@ -23,7 +23,7 @@ Buy Consultant Video Package
 
 *** Keywords ***
 Go To Consultants List Page
-  Go To                               ${Consultants_List_Page}
+  Go To                               ${Consultants_List_Page.format('${trumpet_env}')}
 
 Validate Consultant Phone Number
   Input Text                          name:mobile                               ${Random_User_Mobile}
@@ -53,7 +53,7 @@ Activate Video Package
   Wait Until Page Contains            ظرفیت آپلود ویدئو 100 عدد                 timeout=10s
 
 Validate Video Package In My Packages
-  Go To                               ${staging}/pro/real-estate/packages
+  Go To                               ${Test_Enviroment.format('${trumpet_env}')}/pro/real-estate/packages
   Wait Until Page Contains            این بسته به شما امکان آپلود ویدئو در فایل و آگهی را میدهد.                       timeout=10s
   Element Text Should Be              ${Video_Package_Number}                   ${video}
 

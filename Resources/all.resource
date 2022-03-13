@@ -2,14 +2,14 @@
 Documentation                        Base resource file for All tests
 Library                              SeleniumLibrary
 Variables                            ../protools/web/variables/Variables.py
-Library                              REST                            ${staging}/api/protools
+Library                              REST                            ${Test_Enviroment.format('${trumpet_env}')}/api/protools
 Library                              JSONLibrary
 Library                              sheypoorlib
 Resource                             ../protools/web/resources/resource.robot
 
 *** Keywords ***
 Login Admin Page
-  Go To                              ${Admin_Page}
+  Go To                              ${Admin_Page.format('${trumpet_env}')}
   ${User_Is_Loggedin}                Run Keyword And Return Status   Wait Until Page Contains Element    id:email     timeout=3s
   Run Keyword If	                   ${User_Is_Loggedin}             Input Login Form
 
@@ -36,7 +36,7 @@ Generate Random AboutMe Sentence
 Create Shop In Sheypoor
   [Arguments]                        ${Category}
   Login Admin Page
-  Go To                              ${staging}/trumpet/shop/profile/new
+  Go To                              ${Test_Enviroment.format('${trumpet_env}')}/trumpet/shop/profile/new
   Wait Until Page Contains           فروشگاه جدید
   Generate Random Shop Name
   Generate Random Slug
@@ -168,11 +168,11 @@ Replace Arabic Fonts
     Set Test Variable                ${Company}
 
 Back To Protools Page
-  Go To                              ${staging}/pro/real-estate
+  Go To                              ${Test_Enviroment.format('${trumpet_env}')}/pro/real-estate
   Wait Until Page Contains Element   ${profile_name_ID}              timeout=10s
 
 Back To Sheypoor Car Page
-  Go To                              ${staging}/pro/cars
+  Go To                              ${Test_Enviroment.format('${trumpet_env}')}/pro/cars
   Wait Until Page Contains Element   ${profile_name_ID}              timeout=10s
 
 Register Manager With Alunak Api
@@ -186,7 +186,7 @@ Register Manager With Alunak Api
 
 Get Code From Mock Server With Alunak Api
   Set Headers                        {"Authorization": "Basic dHJ1bXBldDpuZXdzaXRl"}
-  Get                                ${stagingMock}=${Random_User_Mobile}
+  Get                                ${Test_Enviroment_Mock.format('${trumpet_env}')}=${Random_User_Mobile}
   Integer                            response status                 200
   ${response}                        output                          response body
   ${Code}                            Get Value From Json             ${response}                $.code
@@ -199,7 +199,7 @@ Checking Captcha With API
   Add Token AND Code In Captcha API
 
 Get Captcha Token In API
-  Get                              ${staging}/api/web/listings/${Listing_ID}/number
+  Get                              ${Test_Enviroment.format('${trumpet_env}')}/api/web/listings/${Listing_ID}/number
   Integer                          response status                   200
   ${response}                      output                            response body
   ${status}                        Get Value From Json               ${response}                $.success
@@ -211,7 +211,7 @@ Get Captcha Token In API
   END
 
 Get Captcha Code In API
-  Get                                ${staging}/trumpet/mock/captcha-code/${Captcha_Token}
+  Get                                ${Test_Enviroment.format('${trumpet_env}')}/trumpet/mock/captcha-code/${Captcha_Token}
   Integer                            response status                 200
   ${response}                        output                          response body
   ${Captcha_Code}                    Get Value From Json             ${response}                $.data.code
@@ -219,7 +219,7 @@ Get Captcha Code In API
   Set Suite Variable                 ${Captcha_Code}                 ${Captcha_Code}
 
 Add Token AND Code In Captcha API
-  post captcha                       ${staging}  ${Captcha_Token}    ${Captcha_Code}
+  post captcha                       ${Test_Enviroment.format('${trumpet_env}')}  ${Captcha_Token}    ${Captcha_Code}
 
 Authorization Manager With Alunak Api
   Post                               /v2/auth/authorize
@@ -285,7 +285,7 @@ Get Listing ID From Listing Details
   Set Suite Variable                 ${Listing_ID}                   ${Listing_ID}
 
 Login Sheypoor
-  Go To                              ${staging}/session
+  Go To                              ${Test_Enviroment.format('${trumpet_env}')}/session
   Generate Random Phone Number
   Input Text                         name:username                   ${Random_User_Mobile}
   Click By Text                      ورود یا ثبت نام در شیپور
@@ -294,7 +294,7 @@ Login Sheypoor
   Wait Until Page Contains           آگهی‌‌های من                      timeout=10s
 
 Logout Sheypoor
-  Go To                              ${staging}/session/logout
+  Go To                              ${Test_Enviroment.format('${trumpet_env}')}/session/logout
 
 Generate Random Phone Number
   ${Random_User_Mobile}              Generate Random String          7   [NUMBERS]
@@ -306,15 +306,15 @@ Input Verification Code In Sheypoor
   Click By Text                      تائید نهایی و ورود به شیپور
 
 Go To User Comments
-  Go To                              ${User_Comments_Page}
+  Go To                              ${User_Comments_Page.format('${trumpet_env}')}
   Wait Until Page Contains           نظر کاربر                       timeout=10s
 
 Go To Listing In Sheypoor Page
-  Go To                              ${staging}/${Listing_ID}
+  Go To                              ${Test_Enviroment.format('${trumpet_env}')}/${Listing_ID}
   Wait Until Page Contains           امتیاز دهید                     timeout=10s
 
 Check Premium Toggle In Admin
-  Go To                              ${staging}/trumpet/features/search
+  Go To                              ${Test_Enviroment.format('${trumpet_env}')}/trumpet/features/search
   Wait Until Page Contains           قابلیت های عمومی
   Click By Text                      بستن / باز کردن همه
   Execute JavaScript                 window.scrollTo(0,1700)
@@ -329,7 +329,7 @@ Check Premium Toggle In Admin
   END
 
 Check File Request Toggle In Admin
-  Go To                              ${staging}/trumpet/features/search
+  Go To                              ${Test_Enviroment.format('${trumpet_env}')}/trumpet/features/search
   Wait Until Page Contains           قابلیت های عمومی
   Click By Text                      بستن / باز کردن همه
   Execute JavaScript                 window.scrollTo(0,2400)
@@ -344,7 +344,7 @@ Check File Request Toggle In Admin
   END
 
 Check Rating Toggles In Admin
-  Go To                              ${staging}/trumpet/features/search
+  Go To                              ${Test_Enviroment.format('${trumpet_env}')}/trumpet/features/search
   Wait Until Page Contains           تاگل های مربوط به نمایش امتیاز و قابلیت امتیاز دادن
   Click By Text                      امتیازدهی
   Execute JavaScript                 window.scrollTo(0,1700)

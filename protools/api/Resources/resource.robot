@@ -1,6 +1,6 @@
 *** Settings ***
 Documentation                 Api resources
-Library                       REST                            ${staging}/api/protools
+Library                       REST                            ${Test_Enviroment.format('${trumpet_env}')}/api/protools
 Library                       JSONLibrary
 Library                       String
 Library                       Collections
@@ -62,7 +62,7 @@ Authentication In Protools
 
 Get Code From Mock Server Api
     Clear Expectations
-    Get                       ${stagingMock}=${Random_User_Mobile}
+    Get                       ${Test_Enviroment_Mock}=${Random_User_Mobile}
     ...                       headers={"Authorization": "Basic dHJ1bXBldDpuZXdzaXRl"}
     Integer                   response status                 200
     ${response}               output                          response body
