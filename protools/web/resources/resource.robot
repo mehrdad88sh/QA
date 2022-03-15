@@ -49,7 +49,7 @@ Login Protools
   Wait Until Page Contains            تائید شماره موبایل                        timeout=10s
   Get Code From Mock Server
   Input Verification Code
-  Close Level Up Popup Message
+  Close Edit Profile Popup Message
   Listing Status
 
 Listing Status
@@ -356,8 +356,20 @@ Reject Profile Image By Admin
   Wait Until Page Contains            عملیات با موفقیت انجام شد       timeout=10s
 
 Close Level Up Popup Message
-  ${Status}                           Run Keyword And Return Status    Wait Until Page Contains Element   ${Close_Button}   timeout=5s
-  Run Keyword If                      ${Status}                        Click Element                      ${Close_Button}
+  FOR   ${INDEX}   IN RANGE   3
+        ${Status}                     Run Keyword And Return Status
+  ...   Wait Until Page Contains Element    ${Close_Button}           timeout=5s
+        Run Keyword If     ${Status}        Click Element             ${Close_Button}
+        Exit For Loop If   ${Status} == False
+  END
+
+Close Edit Profile Popup Message
+  FOR   ${INDEX}   IN RANGE   3
+        ${Status}                     Run Keyword And Return Status
+  ...   Wait Until Page Contains Element    ${Close_Button}           timeout=5s
+        Run Keyword If     ${Status}        Click Element             ${Close_Button}
+        Exit For Loop If   ${Status} == False
+  END
 
 Upgrade User To Premium Profile
   Close Level Up Popup Message
