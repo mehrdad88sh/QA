@@ -9,6 +9,7 @@ class Variables(object):
         'SheypoorCar': 'name:sheypoor-cars',
         'Register_Button': 'name:intro-action',
         'Login_Button': 'name:submit',
+        'Phone_Number_Field': 'name:cellphone',
         'Test_Enviroment': 'https://{}.mielse.com',
         'Test_Enviroment_Mock': 'https://{}.mielse.com/mock/getCode?mobile',
         'Test_Enviroment_Expire_Mock': 'https://{}.mielse.com/trumpet/mock/expireListing',
