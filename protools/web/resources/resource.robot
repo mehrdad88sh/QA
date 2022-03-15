@@ -41,7 +41,7 @@ Login Protools
       Click Element                   ${SheypoorCar}
       Wait Until Page Contains        با شیپور کسب و کار خود را متحول کنید      timeout=10s
   END
-  Click Element                       ${Login_Button}
+  Click Element                       ${Register_Button}
   Wait Until Page Contains            ورود / ثبت‌نام                             timeout=10s
   Check Error Message For Wrong Phone Number
   Input Random Mobile
@@ -76,11 +76,11 @@ Convert File To Listing
   Wait Until Page Contains Element    name:listing-item-0              timeout=10s
 
 Check Error Message For Wrong Phone Number
-  ${Wrong_Number}                     Generate Random String           12   [NUMBERS]
-  Input Text                          name:cellphone                   ${Wrong_Number}
-  Click Element                       name:submit
-  Wait Until Page Contains            لطفا یک شماره تلفن صحیح وارد کنید
-  Press Keys                          name:cellphone                   CTRL+a+DELETE
+  ${Wrong_Phone_Number}               Generate Random String           12   [NUMBERS]
+  Input Text                          ${Phone_Number_Field}            ${Wrong_Phone_Number}
+  Click Element                       ${Login_Button}
+  Page Should Contain                 لطفا یک شماره تلفن صحیح وارد کنید
+  Press Keys                          ${Phone_Number_Field}            CTRL+a+DELETE
 
 Input Random Mobile
   ${Random_Number}                    Generate Random String           7   [NUMBERS]
