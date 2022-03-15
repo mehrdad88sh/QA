@@ -5,14 +5,17 @@ class Variables(object):
 
     def get_variables(self):
         return {
+        'Test_Enviroment': 'https://{}.mielse.com',
+        'Test_Enviroment_Mock': 'https://{}.mielse.com/mock/getCode?mobile',
+        'Test_Enviroment_Expire_Mock': 'https://{}.mielse.com/trumpet/mock/expireListing',
         'Alunak': 'name:alounak',
         'SheypoorCar': 'name:sheypoor-cars',
         'Register_Button': 'name:intro-action',
         'Login_Button': 'name:submit',
         'Phone_Number_Field': 'name:cellphone',
-        'Test_Enviroment': 'https://{}.mielse.com',
-        'Test_Enviroment_Mock': 'https://{}.mielse.com/mock/getCode?mobile',
-        'Test_Enviroment_Expire_Mock': 'https://{}.mielse.com/trumpet/mock/expireListing',
+        'Verification_Code_Element': 'css:pre',
+        'Gray_Sumbit_Button': 'css:[tabindex="-1"][name="submit"]',
+        'Input_Code_Container': 'class:pincode-input-text',
         'Apartment': 'آپارتمان',
         'Vila': 'ویلا',
         'profile_name_ID': 'name:profile-name',
