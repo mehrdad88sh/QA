@@ -79,7 +79,7 @@ Check Error Message For Wrong Phone Number
   ${Wrong_Phone_Number}               Generate Random String           12   [NUMBERS]
   Input Text                          ${Phone_Number_Field}            ${Wrong_Phone_Number}
   Click Element                       ${Login_Button}
-  Page Should Contain                 لطفا یک شماره تلفن صحیح وارد کنید
+  Wait Until Page Contains           لطفا یک شماره تلفن صحیح وارد کنید   timeout=5s
   Press Keys                          ${Phone_Number_Field}            CTRL+a+DELETE
 
 Input Random Mobile
