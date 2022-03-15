@@ -85,8 +85,7 @@ Check Error Message For Wrong Phone Number
 Input Random Mobile
   ${Random_Number}                    Generate Random String           7   [NUMBERS]
   Set Suite Variable                  ${Random_User_Mobile}            0900${Random_Number}
-  Press Keys                          name:cellphone                   CTRL+a+DELETE
-  Input Text                          name:cellphone                   ${Random_User_Mobile}
+  Input Text                          ${Phone_Number_Field}            ${Random_User_Mobile}
 
 Input Random User Name
   Generate Random username
