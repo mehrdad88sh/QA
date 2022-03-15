@@ -4,7 +4,7 @@ Resource                              ../../resources/resource.robot
 Test Teardown                         Close Browser
 
 *** Variables ***
-${vitrine_48}                         ۵ بسته
+${vitrine_48}                         ۵ عدد
 ${Final_Price}                        ۲۶۴,۸۷۰
 
 *** Test Cases ***
@@ -57,8 +57,8 @@ Assign Package To Secretary
   Click Element                       name:approved-action
   Wait Until Page Contains Element    name:${Secretary_Phone}-vitrin48_2        timeout=10s
   Element Should Contain              name:${Secretary_Phone}-vitrin48_2        2
-  Wait Until Page Contains            ۳ بسته                                    timeout=10s
-  Element Should Contain              ${Vitrin48_Package_Number}                ۳ بسته
+  Wait Until Page Contains            ۳ عدد                                     timeout=10s
+  Element Should Contain              ${Vitrin48_Package_Number}                ۳ عدد
 
 Assign Package To Consultant
   Click Element                       name:${Consultant_Phone}_package
@@ -74,8 +74,8 @@ Assign Package To Consultant
   Wait Until Page Contains Element    name:${Consultant_Phone}-vitrin48_2       timeout=10s
   Element Should Contain              name:${Consultant_Phone}-vitrin48_2       2
   Execute JavaScript                  window.scrollTo(0,0)
-  Wait Until Page Contains            ۱ بسته                                    timeout=10s
-  Element Should Contain              ${Vitrin48_Package_Number}                ۱ بسته
+  Wait Until Page Contains            ۱ عدد                                     timeout=10s
+  Element Should Contain              ${Vitrin48_Package_Number}                ۱ عدد
 
 Remove Package From Secretary
   Reload Page
@@ -94,8 +94,8 @@ Remove Package From Secretary
   Run Keyword If                      ${Status}   Click Element                 name:approved-action
   Wait Until Page Contains Element    name:${Secretary_Phone}-vitrin48_1        timeout=10s
   Element Should Contain              name:${Secretary_Phone}-vitrin48_1        1
-  Wait Until Page Contains            ۲ بسته                                    timeout=10s
-  Element Should Contain              ${Vitrin48_Package_Number}                ۲ بسته
+  Wait Until Page Contains            ۲ عدد                                     timeout=10s
+  Element Should Contain              ${Vitrin48_Package_Number}                ۲ عدد
 
 Remove Package From Consultant
   Reload Page
@@ -115,5 +115,5 @@ Remove Package From Consultant
   Wait Until Page Contains Element    name:${Consultant_Phone}-vitrin48_1       timeout=10s
   Element Should Contain              name:${Consultant_Phone}-vitrin48_1       1
   Wait Until Page Contains Element    ${Vitrin48_Package_Number}                timeout=10s
-  Wait Until Page Contains            ۳ بسته                                    timeout=10s
-  Element Should Contain              ${Vitrin48_Package_Number}                ۳ بسته
+  Wait Until Page Contains            ۳ عدد                                     timeout=10s
+  Element Should Contain              ${Vitrin48_Package_Number}                ۳ عدد

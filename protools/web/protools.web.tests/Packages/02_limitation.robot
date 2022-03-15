@@ -4,7 +4,7 @@ Resource                              ../../resources/resource.robot
 Test Teardown                         Close Browser
 
 *** Variables ***
-${limitation}                         ۱۰ بسته
+${limitation}                         ۱۰ عدد
 ${Final_Price}                        ۱۲۶,۵۴۹
 
 *** Test Cases ***
@@ -38,7 +38,7 @@ Compare Selected Package With its Price
 
 Validation Packages In Protools
   Wait Until Page Contains            این بسته به شما امکان ثبت آگهی بیشتر از سقف تعداد آگهی را میدهد            timeout=10s
-  Element Text Should Be              ${Limitation_Package_Number}             ${limitation}
+  Element Text Should Be              ${Limitation_Package_Number}              ${limitation}
 
 Find Phone Number And Name Of Team Members
   Register Manager With Alunak Api
@@ -55,8 +55,8 @@ Assign Package To Secretary
   Click Element                       name:approved-action
   Wait Until Page Contains Element    name:${Secretary_Phone}-limitation_2      timeout=10s
   Element Should Contain              name:${Secretary_Phone}-limitation_2      2
-  Wait Until Page Contains            ۸ بسته                                    timeout=10s
-  Element Should Contain              ${Limitation_Package_Number}              ۸ بسته
+  Wait Until Page Contains            ۸ عدد                                     timeout=10s
+  Element Should Contain              ${Limitation_Package_Number}              ۸ عدد
 
 Assign Package To Consultant
   Click Element                       name:${Consultant_Phone}_package
@@ -70,8 +70,8 @@ Assign Package To Consultant
   Wait Until Page Contains Element    name:${Consultant_Phone}-limitation_2     timeout=10s
   Element Should Contain              name:${Consultant_Phone}-limitation_2     2
   Execute JavaScript                  window.scrollTo(0,0)
-  Wait Until Page Contains            ۶ بسته                                    timeout=10s
-  Element Should Contain              ${Limitation_Package_Number}              ۶ بسته
+  Wait Until Page Contains            ۶ عدد                                     timeout=10s
+  Element Should Contain              ${Limitation_Package_Number}              ۶ عدد
 
 Remove Package From Secretary
   Reload Page
@@ -88,8 +88,8 @@ Remove Package From Secretary
   Run Keyword If                      ${Status}   Click Element                 name:approved-action
   Wait Until Page Contains Element    name:${Secretary_Phone}-limitation_1      timeout=10s
   Element Should Contain              name:${Secretary_Phone}-limitation_1      1
-  Wait Until Page Contains            ۷ بسته                                    timeout=10s
-  Element Should Contain              ${Limitation_Package_Number}              ۷ بسته
+  Wait Until Page Contains            ۷ عدد                                     timeout=10s
+  Element Should Contain              ${Limitation_Package_Number}              ۷ عدد
 
 Remove Package From Consultant
   Reload Page
@@ -107,5 +107,5 @@ Remove Package From Consultant
   Wait Until Page Contains Element    name:${Consultant_Phone}-limitation_1     timeout=10s
   Element Should Contain              name:${Consultant_Phone}-limitation_1     1
   Wait Until Page Contains Element    ${Limitation_Package_Number}              timeout=10s
-  Wait Until Page Contains            ۸ بسته                                    timeout=10s
-  Element Should Contain              ${Limitation_Package_Number}              ۸ بسته
+  Wait Until Page Contains            ۸ عدد                                     timeout=10s
+  Element Should Contain              ${Limitation_Package_Number}              ۸ عدد

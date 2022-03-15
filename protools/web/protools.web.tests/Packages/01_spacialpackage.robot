@@ -4,9 +4,9 @@ Resource                              ../../resources/resource.robot
 Test Teardown                         Close Browser
 
 *** Variables ***
-${refresh}                            ۲۵ بسته
-${vitrin24}                           ۱۰ بسته
-${vitrin48}                           ۵ بسته
+${refresh}                            ۲۵ عدد
+${vitrin24}                           ۱۰ عدد
+${vitrin48}                           ۵ عدد
 ${Final_Price}                        ۸۱۲,۰۷۷
 
 *** Test Cases ***
@@ -65,10 +65,10 @@ Assign Package To Secretary
   Element Should Contain              name:${Secretary_Phone}-refresh_2         2
   Element Should Contain              name:${Secretary_Phone}-vitrin24_2        2
   Element Should Contain              name:${Secretary_Phone}-vitrin48_2        2
-  Wait Until Page Contains            ۲۳ بسته                                   timeout=10s
-  Element Should Contain              ${Refresh_Package_Number}                 ۲۳ بسته
-  Element Should Contain              ${Vitrin24_Package_Number}                ۸ بسته
-  Element Should Contain              ${Vitrin48_Package_Number}                ۳ بسته
+  Wait Until Page Contains            ۲۳ عدد                                    timeout=10s
+  Element Should Contain              ${Refresh_Package_Number}                 ۲۳ عدد
+  Element Should Contain              ${Vitrin24_Package_Number}                ۸ عدد
+  Element Should Contain              ${Vitrin48_Package_Number}                ۳ عدد
 
 Assign Package To Consultant
   Click Element                       name:${Consultant_Phone}_package
@@ -88,10 +88,10 @@ Assign Package To Consultant
   Element Should Contain              name:${Consultant_Phone}-vitrin24_2       2
   Element Should Contain              name:${Consultant_Phone}-vitrin48_2       2
   Execute JavaScript                  window.scrollTo(0,0)
-  Wait Until Page Contains            ۲۱ بسته                                   timeout=10s
-  Element Should Contain              ${Refresh_Package_Number}                 ۲۱ بسته
-  Element Should Contain              ${Vitrin24_Package_Number}                ۶ بسته
-  Element Should Contain              ${Vitrin48_Package_Number}                ۱ بسته
+  Wait Until Page Contains            ۲۱ عدد                                    timeout=10s
+  Element Should Contain              ${Refresh_Package_Number}                 ۲۱ عدد
+  Element Should Contain              ${Vitrin24_Package_Number}                ۶ عدد
+  Element Should Contain              ${Vitrin48_Package_Number}                ۱ عدد
 
 Remove Package From Secretary
   Reload Page
@@ -114,10 +114,10 @@ Remove Package From Secretary
   Element Should Contain              name:${Secretary_Phone}-refresh_1         1
   Element Should Contain              name:${Secretary_Phone}-vitrin24_1        1
   Element Should Contain              name:${Secretary_Phone}-vitrin48_1        1
-  Wait Until Page Contains            ۲۲ بسته                                   timeout=10s
-  Element Should Contain              ${Refresh_Package_Number}                 ۲۲ بسته
-  Element Should Contain              ${Vitrin24_Package_Number}                ۷ بسته
-  Element Should Contain              ${Vitrin48_Package_Number}                ۲ بسته
+  Wait Until Page Contains            ۲۲ عدد                                    timeout=10s
+  Element Should Contain              ${Refresh_Package_Number}                 ۲۲ عدد
+  Element Should Contain              ${Vitrin24_Package_Number}                ۷ عدد
+  Element Should Contain              ${Vitrin48_Package_Number}                ۲ عدد
 
 Remove Package From Consultant
   Reload Page
@@ -141,7 +141,7 @@ Remove Package From Consultant
   Element Should Contain              name:${Consultant_Phone}-vitrin24_1       1
   Element Should Contain              name:${Consultant_Phone}-vitrin48_1       1
   Wait Until Page Contains Element    ${Refresh_Package_Number}                 timeout=10s
-  Wait Until Page Contains            ۲۳ بسته                                   timeout=10s
-  Element Should Contain              ${Refresh_Package_Number}                 ۲۳ بسته
-  Element Should Contain              ${Vitrin24_Package_Number}                ۸ بسته
-  Element Should Contain              ${Vitrin48_Package_Number}                ۳ بسته
+  Wait Until Page Contains            ۲۳ عدد                                    timeout=10s
+  Element Should Contain              ${Refresh_Package_Number}                 ۲۳ عدد
+  Element Should Contain              ${Vitrin24_Package_Number}                ۸ عدد
+  Element Should Contain              ${Vitrin48_Package_Number}                ۳ عدد

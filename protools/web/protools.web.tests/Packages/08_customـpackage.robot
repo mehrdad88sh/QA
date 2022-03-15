@@ -4,11 +4,11 @@ Resource                              ../../resources/resource.robot
 Test Teardown                         Close Browser
 
 *** Variables ***
-${refresh}                            ۵ بسته
-${vitrin24}                           ۱۰ بسته
-${vitrin48}                           ۱۵ بسته
-${limitation}                         ۲۰ بسته
-${instant_tag}                        ۲۵ بسته
+${refresh}                            ۵ عدد
+${vitrin24}                           ۱۰ عدد
+${vitrin48}                           ۱۵ عدد
+${limitation}                         ۲۰ عدد
+${instant_tag}                        ۲۵ عدد
 ${Final_Price}                        ۱,۶۴۲,۱۹۳
 
 *** Test Cases ***

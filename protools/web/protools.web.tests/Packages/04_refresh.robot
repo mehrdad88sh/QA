@@ -4,7 +4,7 @@ Resource                              ../../resources/resource.robot
 Test Teardown                         Close Browser
 
 *** Variables ***
-${Refresh}                            ۲۵ بسته
+${Refresh}                            ۲۵ عدد
 ${Final_Price}                        ۳۱۶,۳۷۲
 
 *** Test Cases ***
@@ -57,8 +57,8 @@ Assign Package To Secretary
   Click Element                       name:approved-action
   Wait Until Page Contains Element    name:${Secretary_Phone}-refresh_2         timeout=10s
   Element Should Contain              name:${Secretary_Phone}-refresh_2         2
-  Wait Until Page Contains            ۲۳ بسته                                   timeout=10s
-  Element Should Contain              ${Refresh_Package_Number}                 ۲۳ بسته
+  Wait Until Page Contains            ۲۳ عدد                                    timeout=10s
+  Element Should Contain              ${Refresh_Package_Number}                 ۲۳ عدد
 
 Assign Package To Consultant
   Click Element                       name:${Consultant_Phone}_package
@@ -74,8 +74,8 @@ Assign Package To Consultant
   Wait Until Page Contains Element    name:${Consultant_Phone}-refresh_2        timeout=10s
   Element Should Contain              name:${Consultant_Phone}-refresh_2        2
   Execute JavaScript                  window.scrollTo(0,0)
-  Wait Until Page Contains            ۲۱ بسته                                   timeout=10s
-  Element Should Contain              ${Refresh_Package_Number}                 ۲۱ بسته
+  Wait Until Page Contains            ۲۱ عدد                                    timeout=10s
+  Element Should Contain              ${Refresh_Package_Number}                 ۲۱ عدد
 
 Remove Package From Secretary
   Reload Page
@@ -94,8 +94,8 @@ Remove Package From Secretary
   Run Keyword If                      ${Status}   Click Element                 name:approved-action
   Wait Until Page Contains Element    name:${Secretary_Phone}-refresh_1         timeout=10s
   Element Should Contain              name:${Secretary_Phone}-refresh_1         1
-  Wait Until Page Contains            ۲۲ بسته                                   timeout=10s
-  Element Should Contain              ${Refresh_Package_Number}                 ۲۲ بسته
+  Wait Until Page Contains            ۲۲ عدد                                    timeout=10s
+  Element Should Contain              ${Refresh_Package_Number}                 ۲۲ عدد
 
 Remove Package From Consultant
   Reload Page
@@ -115,5 +115,5 @@ Remove Package From Consultant
   Wait Until Page Contains Element    name:${Consultant_Phone}-refresh_1        timeout=10s
   Element Should Contain              name:${Consultant_Phone}-refresh_1        1
   Wait Until Page Contains Element    ${Refresh_Package_Number}                 timeout=10s
-  Wait Until Page Contains            ۲۳ بسته                                   timeout=10s
-  Element Should Contain              ${Refresh_Package_Number}                 ۲۳ بسته
+  Wait Until Page Contains            ۲۳ عدد                                    timeout=10s
+  Element Should Contain              ${Refresh_Package_Number}                 ۲۳ عدد

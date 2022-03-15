@@ -4,7 +4,7 @@ Resource                              ../../resources/resource.robot
 Test Teardown                         Close Browser
 
 *** Variables ***
-${instant_tag}                        ۳۰ بسته
+${instant_tag}                        ۳۰ عدد
 ${Final_Price}                        ۳۰۳,۱۲۹
 
 *** Test Cases ***
@@ -55,8 +55,8 @@ Assign Package To Secretary
   Click Element                       name:approved-action
   Wait Until Page Contains Element    name:${Secretary_Phone}-urgent_2          timeout=10s
   Element Should Contain              name:${Secretary_Phone}-urgent_2          2
-  Wait Until Page Contains            ۲۸ بسته                                   timeout=10s
-  Element Should Contain              ${InstantTag_Package_Number}              ۲۸ بسته
+  Wait Until Page Contains            ۲۸ عدد                                    timeout=10s
+  Element Should Contain              ${InstantTag_Package_Number}              ۲۸ عدد
 
 Assign Package To Consultant
   Click Element                       name:${Consultant_Phone}_package
@@ -70,8 +70,8 @@ Assign Package To Consultant
   Wait Until Page Contains Element    name:${Consultant_Phone}-urgent_2         timeout=10s
   Element Should Contain              name:${Consultant_Phone}-urgent_2         2
   Execute JavaScript                  window.scrollTo(0,0)
-  Wait Until Page Contains            ۲۶ بسته                                   timeout=10s
-  Element Should Contain              ${InstantTag_Package_Number}              ۲۶ بسته
+  Wait Until Page Contains            ۲۶ عدد                                    timeout=10s
+  Element Should Contain              ${InstantTag_Package_Number}              ۲۶ عدد
 
 Remove Package From Secretary
   Reload Page
@@ -88,8 +88,8 @@ Remove Package From Secretary
   Run Keyword If                      ${Status}   Click Element                 name:approved-action
   Wait Until Page Contains Element    name:${Secretary_Phone}-urgent_1          timeout=10s
   Element Should Contain              name:${Secretary_Phone}-urgent_1          1
-  Wait Until Page Contains            ۲۷ بسته                                   timeout=10s
-  Element Should Contain              ${InstantTag_Package_Number}              ۲۷ بسته
+  Wait Until Page Contains            ۲۷ عدد                                    timeout=10s
+  Element Should Contain              ${InstantTag_Package_Number}              ۲۷ عدد
 
 Remove Package From Consultant
   Reload Page
@@ -107,5 +107,5 @@ Remove Package From Consultant
   Wait Until Page Contains Element    name:${Consultant_Phone}-urgent_1         timeout=10s
   Element Should Contain              name:${Consultant_Phone}-urgent_1         1
   Wait Until Page Contains Element    ${InstantTag_Package_Number}              timeout=10s
-  Wait Until Page Contains            ۲۸ بسته                                   timeout=10s
-  Element Should Contain              ${InstantTag_Package_Number}              ۲۸ بسته
+  Wait Until Page Contains            ۲۸ عدد                                    timeout=10s
+  Element Should Contain              ${InstantTag_Package_Number}              ۲۸ عدد

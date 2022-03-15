@@ -4,7 +4,7 @@ Resource                              ../../resources/resource.robot
 Test Teardown                         Close Browser
 
 *** Variables ***
-${video}                              ۱۰۰ بسته
+${video}                              ۱۰۰ عدد
 
 *** Test Cases ***
 Buy Consultant Video Package
@@ -74,8 +74,8 @@ Assign Package To Secretary
   Click Element                       name:approved-action
   Wait Until Page Contains Element    name:${Secretary_Phone}-video_2           timeout=10s
   Element Should Contain              name:${Secretary_Phone}-video_2           2
-  Wait Until Page Contains            ۹۸ بسته                                   timeout=10s
-  Element Should Contain              ${Video_Package_Number}                   ۹۸ بسته
+  Wait Until Page Contains            ۹۸ عدد                                    timeout=10s
+  Element Should Contain              ${Video_Package_Number}                   ۹۸ عدد
 
 Assign Package To Consultant
   Click Element                       name:${Consultant_Phone}_package
@@ -91,8 +91,8 @@ Assign Package To Consultant
   Wait Until Page Contains Element    name:${Consultant_Phone}-video_2          timeout=10s
   Element Should Contain              name:${Consultant_Phone}-video_2          2
   Execute JavaScript                  window.scrollTo(0,0)
-  Wait Until Page Contains            ۹۶ بسته                                   timeout=10s
-  Element Should Contain              ${Video_Package_Number}                   ۹۶ بسته
+  Wait Until Page Contains            ۹۶ عدد                                    timeout=10s
+  Element Should Contain              ${Video_Package_Number}                   ۹۶ عدد
 
 Remove Package From Secretary
   Reload Page
@@ -111,8 +111,8 @@ Remove Package From Secretary
   Run Keyword If                      ${Status}   Click Element                 name:approved-action
   Wait Until Page Contains Element    name:${Secretary_Phone}-video_1           timeout=10s
   Element Should Contain              name:${Secretary_Phone}-video_1           1
-  Wait Until Page Contains            ۹۷ بسته                                   timeout=10s
-  Element Should Contain              ${Video_Package_Number}                   ۹۷ بسته
+  Wait Until Page Contains            ۹۷ عدد                                    timeout=10s
+  Element Should Contain              ${Video_Package_Number}                   ۹۷ عدد
 
 Remove Package From Consultant
   Reload Page
@@ -132,5 +132,5 @@ Remove Package From Consultant
   Wait Until Page Contains Element    name:${Consultant_Phone}-video_1          timeout=10s
   Element Should Contain              name:${Consultant_Phone}-video_1          1
   Wait Until Page Contains Element    ${Video_Package_Number}                   timeout=10s
-  Wait Until Page Contains            ۹۸ بسته                                   timeout=10s
-  Element Should Contain              ${Video_Package_Number}                   ۹۸ بسته
+  Wait Until Page Contains            ۹۸ عدد                                    timeout=10s
+  Element Should Contain              ${Video_Package_Number}                   ۹۸ عدد
