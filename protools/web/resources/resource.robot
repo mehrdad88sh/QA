@@ -1,8 +1,8 @@
 *** Settings ***
-Library                               SeleniumLibrary                  timeout=30s
+Library                               SeleniumLibrary                           timeout=30s
 Library                               Collections
 Library                               String
-Library                               FakerLibrary                     locale=fa_IR
+Library                               FakerLibrary                              locale=fa_IR
 Library                               splitwords
 Library                               captcha.py
 Library                               OperatingSystem
@@ -12,36 +12,41 @@ Resource                              ../../../Resources/all.resource
 *** Variables ***
 # RD = Rent & Deposit
 # BS = Buying & Seller
-&{RealEstateType}                     RD=select-a68096                 BS=select-a68094
-&{ApartmentID}                        RD=name:440477                   BS=name:440470
-&{VilaID}                             RD=name:440479                   BS=name:440472
+&{RealEstateType}                     RD=select-a68096                          BS=select-a68094
+&{ApartmentID}                        RD=name:440477                            BS=name:440470
+&{VilaID}                             RD=name:440479                            BS=name:440472
 ${image_profile_path}                 ${CURDIR}/images/imageprofile.jpg
 ${images_Realestate_path}             ${CURDIR}/images
 
 *** Keywords ***
 Open Browser On Test Enviroment
-  Open Browser                        chrome://version                 browser=chrome
+  Set Log Level                       trace
+  Open Browser                        chrome://version                          browser=chrome
   Maximize Browser Window
   Go To                               ${Test_Enviroment.format('${trumpet_env}')}/pro
-  Wait Until Page Contains            با ثبت نام در شیپور از مزایای کسب و کار اینترنتی بهره‌مند شوید               timeout=10s
+  Wait Until Page Contains            با شیپور کسب و کار خود را متحول کنید      timeout=10s
+
+Login Alunak
+  Login Protools                      آلونک
+
+Login SheypoorPlus
+  Login Protools                      شیپورپلاس
 
 Login Protools
   [Arguments]                         ${Category_Type}
-  Set Log Level                       trace
-  Open Browser On Test Enviroment
-    IF                                "${Category_Type}" == "آلونک"
-    Click Element                     ${Alunak}
-    Wait Until Page Contains          با آلونک کسب و کار خود را متحول کنید                                        timeout=10s
-    ELSE IF                           "${Category_Type}" == "شیپورپلاس"
-    Click Element                     ${SheypoorCar}
-    Wait Until Page Contains          با شیپور کسب و کار خود را متحول کنید                                        timeout=10s
-    END
-  Click Element                       name:intro-action
-  Wait Until Page Contains            ورود / ثبت‌نام                                                               timeout=10s
+  IF                                  '${Category_Type}' == 'آلونک'
+      Click Element                   ${Alunak}
+      Wait Until Page Contains        با آلونک کسب و کار خود را متحول کنید      timeout=10s
+  ELSE IF                             '${Category_Type}' == 'شیپورپلاس'
+      Click Element                   ${SheypoorCar}
+      Wait Until Page Contains        با شیپور کسب و کار خود را متحول کنید      timeout=10s
+  END
+  Click Element                       ${Login_Button}
+  Wait Until Page Contains            ورود / ثبت‌نام                             timeout=10s
   Check Error Message For Wrong Phone Number
   Input Random Mobile
-  Click Element                       name:submit
-  Wait Until Page Contains            تائید شماره موبایل                                                          timeout=10s
+  Click Element                       ${Login_Button}
+  Wait Until Page Contains            تائید شماره موبایل                        timeout=10s
   Get Code From Mock Server
   Input Verification Code
   Close Level Up Popup Message
@@ -53,7 +58,7 @@ Listing Status
   IF                                  ${Status} == False
   Wait Until Page Contains            در اینجا فایل خود را ثبت و مدیریت کنید.   timeout=5s
   ELSE IF                             ${Status}
-  Wait Until Page Contains            فایل موجود می‌باشد                timeout=5s
+  Wait Until Page Contains            فایل موجود می‌باشد                         timeout=5s
   END
 
 Convert File To Listing
