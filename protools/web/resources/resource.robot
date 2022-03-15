@@ -94,23 +94,23 @@ Input Random User Name
 Get Code From Mock Server
   Execute Javascript                  window.open('${Test_Enviroment_Mock.format('${trumpet_env}')}=${Random_User_Mobile}');
   Switch Window                       NEW
-  Wait Until Page Contains Element    css:pre                          timeout=10s
-  ${mycode}                           Get Text                         css:pre
-  ${mycode}                           Get Regexp Matches               ${mycode}     \\d{4}
-  ${mycode}                           Convert To String                ${mycode[0]}
-  ${mycode}                           split                            ${mycode}
-  Set Suite Variable                  ${mycode}                        ${mycode}
+  Wait Until Page Contains Element    ${Verification_Code_Element}     timeout=10s
+  ${Verification_Code}                Get Text                         ${Verification_Code_Element}
+  ${Verification_Code}                Get Regexp Matches               ${Verification_Code}     \\d{4}
+  ${Verification_Code}                Convert To String                ${Verification_Code[0]}
+  ${Verification_Code}                split                            ${Verification_Code}
+  Set Suite Variable                  ${Verification_Code}             ${Verification_Code}
   Close Window
   Switch Window                       MAIN
 
 Input Verification Code
-  Wait Until Page Contains Element    css:[tabindex="-1"]              timeout=10s
-  FOR   ${INDEX}   IN RANGE   4
-        @{Pincode}                    get WebElements                  class=pincode-input-text
-        Input Text                    ${Pincode[${INDEX}]}             ${mycode[${INDEX}]}
+  Wait Until Page Contains Element    ${Gray_Sumbit_Button}            timeout=10s
+  FOR   ${INDEX}   IN RANGE   0   4
+        ${Pincode}                    Get WebElements                  ${Input_Code_Container}
+        Input Text                    ${Pincode[${INDEX}]}             ${Verification_Code[${INDEX}]}
   END
-  Wait Until Page Contains Element    css:[tabindex="0"]               timeout=10s
-  Click Element                       //*[@name='submit']/span[text()='تایید']
+  Page Should Not Contain Element     ${Gray_Sumbit_Button}
+  Click By Text                       تایید
 
 Set Location
   Click Element                       name:location-trigger
