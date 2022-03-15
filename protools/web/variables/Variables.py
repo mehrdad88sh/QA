@@ -7,6 +7,8 @@ class Variables(object):
         return {
         'Alunak': 'name:alounak',
         'SheypoorCar': 'name:sheypoor-cars',
+        'Register_Button': 'name:intro-action',
+        'Login_Button': 'name:submit',
         'Test_Enviroment': 'https://{}.mielse.com',
         'Test_Enviroment_Mock': 'https://{}.mielse.com/mock/getCode?mobile',
         'Test_Enviroment_Expire_Mock': 'https://{}.mielse.com/trumpet/mock/expireListing',
