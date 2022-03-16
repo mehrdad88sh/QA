@@ -56,9 +56,9 @@ Listing Status
   ${Status}                           Run Keyword And Return Status
   ...                                 Wait Until Page Contains Element          name:file-item-0       timeout=5s
   IF                                  ${Status} == False
-  Wait Until Page Contains            در اینجا فایل خود را ثبت و مدیریت کنید.   timeout=5s
+      Wait Until Page Contains        در اینجا فایل خود را ثبت و مدیریت کنید.   timeout=5s
   ELSE IF                             ${Status}
-  Wait Until Page Contains            فایل موجود می‌باشد                         timeout=5s
+      Wait Until Page Contains        فایل موجود می‌باشد                         timeout=5s
   END
 
 Convert File To Listing
