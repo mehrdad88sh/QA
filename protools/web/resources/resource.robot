@@ -12,9 +12,6 @@ Resource                              ../../../Resources/all.resource
 *** Variables ***
 # RD = Rent & Deposit
 # BS = Buying & Seller
-&{RealEstateType}                     RD=select-a68096                          BS=select-a68094
-&{ApartmentID}                        RD=name:440477                            BS=name:440470
-&{VilaID}                             RD=name:440479                            BS=name:440472
 ${image_profile_path}                 ${CURDIR}/images/imageprofile.jpg
 ${images_Realestate_path}             ${CURDIR}/images
 
@@ -54,12 +51,18 @@ Login Protools
 
 Listing Status
   ${Status}                           Run Keyword And Return Status
-  ...                                 Wait Until Page Contains Element          name:file-item-0       timeout=5s
+  ...                                 Wait Until Page Contains Element          name:file-item-0       timeout=3s
   IF                                  ${Status} == False
-      Wait Until Page Contains        در اینجا فایل خود را ثبت و مدیریت کنید.   timeout=5s
+      Wait Until Page Contains        در اینجا فایل خود را ثبت و مدیریت کنید.   timeout=3s
   ELSE IF                             ${Status}
-      Wait Until Page Contains        فایل موجود می‌باشد                         timeout=5s
+      Wait Until Page Contains        فایل موجود می‌باشد                         timeout=3s
   END
+
+Convert RealEstate File To Listing
+  Convert File To Listing             املاک
+
+Convert Car File To Listing
+  Convert File To Listing             خودرو
 
 Convert File To Listing
   [Arguments]                         ${Category_Type}
@@ -484,12 +487,25 @@ Create File In Land And Garden Category
   Fill File Description
   Submit File
 
-Select RealEstate Type
-  [Arguments]                         ${RealEstateType}                ${ApartmentID}    ${Apartment}
-  Click Element                       ${RealEstateType}
-  Wait Until Page Contains Element    css:[role="document"]            timeout=10s
-  Click Element                       ${ApartmentID}
-  Element Should Contain              ${RealEstateType}                ${Apartment}
+Select Property Type In Rent and Deposit Category
+  Click Element                       ${Property_Type_Apartment}
+  Wait Until Page Contains Element    ${Property_Type_List}
+  Select Property Type                آپارتمان
+
+Select Property Type In Buying And Selling Category
+  Click Element                       ${Property_Type_Vila}
+  Wait Until Page Contains Element    ${Property_Type_List}
+  Select Property Type                ویلا
+
+Select Property Type
+  [Arguments]                         ${Property_Type}
+  IF       '${Property_Type}' == 'آپارتمان'
+                                      Click Element                    ${Apartment}
+                                      Element Text Should Be           ${Property_Type_Apartment}    آپارتمان
+  ELSE IF  '${Property_Type}' == 'ویلا'
+                                      Click Element                    ${Vila}
+                                      Element Text Should Be           ${Property_Type_Vila}         ویلا
+  END
 
 Select Year Of Construction
   ${Status}                           Run Keyword And Return Status
