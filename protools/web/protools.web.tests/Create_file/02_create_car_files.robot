@@ -1,6 +1,7 @@
 *** Settings ***
 Documentation                         ثبت فایل و اگهی در گروه خودرو و موتورسیکلت
 Resource                              ../../resources/resource.robot
+Test Setup                            Run Keywords     Open Browser On Test Enviroment
 Test Teardown                         Close Browser
 
 *** Variable ***
@@ -8,13 +9,14 @@ ${image_path}                         ${CURDIR}${/}..\/..\/resources\/images\/Si
 
 *** Test Cases ***
 Post Listing ‌In Vehicle Category
-  Login Protools                      شیپورپلاس
-  Create Shop In Sheypoor             خودرو
-  Back To Sheypoor Car Page
+  [Tags]                              Listing                   SheypoorPlus
+  Login SheypoorPlus
+  Create Car Shop
+  Back To SheypoorPlus Page
   Create File In Car Category
-  Convert File To Listing             خودرو
+  Convert Car File To Listing
   Create File In Motorcycle Category
-  Convert File To Listing             خودرو
+  Convert Car File To Listing
 
 *** Keywords ***
 Create File In Car Category
