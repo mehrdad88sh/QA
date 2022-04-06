@@ -1,13 +1,15 @@
 *** Settings ***
 Documentation                         ثبت یادداشت در فایل
 Resource                              ../../resources/resource.robot
+Test Setup                            Run Keywords     Open Browser On Test Enviroment
 Test Teardown                         Close Browser
 
 *** Test Cases ***
 Add Comment On File
-  Login Protools                      آلونک
-  Create Shop In Sheypoor             املاک
-  Back To Protools Page
+  [Tags]                              Listing                   Alunak
+  Login Alunak
+  Create RealEstate Shop
+  Back To Alunak Page
   Create File In Land And Garden Category
   Add Comment On File
 
