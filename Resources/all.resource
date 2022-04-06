@@ -33,6 +33,12 @@ Generate Random AboutMe Sentence
   ${aboutme}                         Sentence                        nb_words=30
   Set Suite Variable                 ${Random_AboutMe_Sentence}      ${aboutme}
 
+Create RealEstate Shop
+  Create Shop In Sheypoor          املاک
+
+Create Car Shop
+  Create Shop In Sheypoor          خودرو
+
 Create Shop In Sheypoor
   [Arguments]                        ${Category}
   Login Admin Page
@@ -167,11 +173,11 @@ Replace Arabic Fonts
     ${Company}                       Replace String                  ${Company}  ك  ک
     Set Test Variable                ${Company}
 
-Back To Protools Page
+Back To Alunak Page
   Go To                              ${Test_Enviroment.format('${trumpet_env}')}/pro/real-estate
   Wait Until Page Contains Element   ${profile_name_ID}              timeout=10s
 
-Back To Sheypoor Car Page
+Back To SheypoorPlus Page
   Go To                              ${Test_Enviroment.format('${trumpet_env}')}/pro/cars
   Wait Until Page Contains Element   ${profile_name_ID}              timeout=10s
 
