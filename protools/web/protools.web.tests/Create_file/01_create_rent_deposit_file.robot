@@ -1,12 +1,13 @@
 *** Settings ***
 Documentation                         ثبت فایل در گروه بندی رهن و اجاره خانه و آپارتمان
 Resource                              ../../../../Resources/all.resource
+Test Setup                            Run Keywords     Open Browser On Test Enviroment
 Test Teardown                         Close Browser
 
 *** Variables ***
 ${area}                               85
-${priceDeposit}                       300000000
-${priceRent}                          2000000
+${Rent}                               2000000
+${Deposit}                            300000000
 ${price}                              850000000
 ${numFloor}                           3
 ${numOfUnitsPerFloor}                 5
@@ -15,15 +16,11 @@ ${fileCode}                           673467
 ${image_path}                         ${CURDIR}${/}..\/..\/resources\/images\/450E47.jpg
 
 *** Test Cases ***
-Create Files In Realestate Category
-  Login Protools                      آلونک
-  Create Shop In Sheypoor             املاک
-  Back To Protools Page
-  Create File In Rent And Deposit Category
-  Convert File To Listing             املاک
-
-*** Keywords ***
-Create File In Rent And Deposit Category
+Create Files In RealEstate Category
+  [Tags]                              Listing                   Alunak
+  Login Alunak
+  Create RealEstate Shop
+  Back To Alunak Page
   Go To Submit File Page
   Upload RealEstate Images
   Select Rent And Deposit Category
@@ -33,9 +30,11 @@ Create File In Rent And Deposit Category
   Set Personal Notebook
   Submit File
   Open File And Check Images
+  Convert RealEstate File To Listing
 
+*** Keywords ***
 Set Rent And Deposit Attributes
-  Select RealEstate Type              ${RealEstateType}[RD]     ${ApartmentID}[RD]    ${Apartment}
+  Select Property Type In Rent and Deposit Category
   Select Year Of Construction
   Set Building Floor
   Select Parking For Rent And Deposit Category
@@ -149,10 +148,10 @@ Select Elevator For Rent And Deposit Category
   Checkbox Should Be Selected         name:a69195
 
 Price Deposit
-  Input Text                          name:a68090              ${priceDeposit}
+  Input Text                          name:a68090              ${Deposit}
 
 Price Rent
-  Input Text                          name:a68092              ${priceRent}
+  Input Text                          name:a68092              ${Rent}
 
 Ability To Convert Rent And Deposit
   Click Element                       name:switch-a68190
