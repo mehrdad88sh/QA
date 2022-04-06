@@ -88,12 +88,22 @@ Open the  ``~/.bashrc`` OR ``~/.zshrc`` file and add the following 2 lines at th
 Install Genymotion
 --------------------
 
-Create Android Device Emulator with `Genymotion`_
+Create and Run android device emulator with `Genymotion`_
 
 See the list of devices ::
 
     adb devices
 
+UIAutomatorViewer
+--------------------
+
+This can be done by the following method
+
+open uiautomatorviewer file in the Android installation folder with the following command::
+
+  Android/Sdk/tools/bin
+  
+  ./uiautomatorviewer
 
 
 .. _How To Install Selenium: https://selenium-python.readthedocs.io/installation.html
