@@ -1,6 +1,7 @@
 *** Settings ***
 Documentation                         ثبت فایل در گروه بندی خرید و فروش خانه و آپارتمان
 Resource                              ../../../../Resources/all.resource
+Test Setup                            Run Keywords     Open Browser On Test Enviroment
 Test Teardown                         Close Browser
 
 *** Variables ***
@@ -16,11 +17,12 @@ ${image_path}                         ${CURDIR}${/}..\/..\/resources\/images\/45
 
 *** Test Cases ***
 Create Files In Realestate Category
-  Login Protools                      آلونک
-  Create Shop In Sheypoor             املاک
-  Back To Protools Page
+  [Tags]                              Listing                   Alunak
+  Login Alunak
+  Create RealEstate Shop
+  Back To Alunak Page
   Create File In Buying And Selling Category
-  Convert File To Listing             املاک
+  Convert RealEstate File To Listing
 
 *** Keywords ***
 Create File In Buying And Selling Category
@@ -34,7 +36,7 @@ Create File In Buying And Selling Category
   Open File And Check Images
 
 Set Buying And Selling Attributes
-  Select RealEstate Type              ${RealEstateType}[BS]   ${VilaID}[BS]   ${Vila}
+  Select Property Type In Buying And Selling Category
   Select Year Of Construction
   Set Building Floor
   Select Parking For Buying And Selling Category
