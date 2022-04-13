@@ -11,7 +11,7 @@ ${APK_VERSION}                        6.1.0
 ${APP_PACKAGE}                        com.sheypoor.mobile.debug
 ${APKNAME}                            ${APP_PACKAGE}
 ${APPIUM}                             http://127.0.0.1:4723/wd/hub
-${deviceName}                         192.168.56.103:5555
+${deviceName}                         192.168.56.105:5555
 ${android_version}                    8.1
 ${avdName}                            Pixel_2_API_28
 ${APP_ANDROID}                        ${CURDIR}/Sheypoor-PlayStoreDebug.apk
