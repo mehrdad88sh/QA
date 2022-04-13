@@ -3,16 +3,16 @@ Library                               AppiumLibrary                timeout=30
 Library                               DateTime
 
 *** Variables ***
+${APPIUM}                             http://127.0.0.1:4723/wd/hub
+${ANDROID_APP}                        ${CURDIR}/Sheypoor-PlayStoreDebug.apk
+${APK_VERSION}                        6.7.0
 ${NO-RESET}                           ${TRUE}
 ${FULL-RESET}                         ${FALSE}
-${APK_VERSION}                        6.1.0
 ${APP_PACKAGE}                        com.sheypoor.mobile.debug
 ${APKNAME}                            ${APP_PACKAGE}
-${APPIUM}                             http://127.0.0.1:4723/wd/hub
 ${deviceName}                         192.168.57.101:5555
 ${android_version}                    8.1
 ${avdName}                            Pixel_2_API_28
-${APP_ANDROID}                        ${CURDIR}/Sheypoor-PlayStoreDebug.apk
 ${SPLASH_ACTIVITY}                    com.sheypoor.mobile.MainActivity
 ${STAGING_BUTTON}                     com.sheypoor.mobile.debug:id/fragmentDebugStaging
 ${HOME_ACTIVITY}                      com.sheypoor.presentation.ui.home.HomeActivity
@@ -20,7 +20,7 @@ ${HOME_ACTIVITY}                      com.sheypoor.presentation.ui.home.HomeActi
 *** Keywords ***
 Install App And open
   Open Application                    ${APPIUM}                        platformName=Android
-    ...   device=${AVDname}           app=${APP_ANDROID}               automationName=UiAutomator2
+    ...   device=${AVDname}           app=${ANDROID_APP}               automationName=UiAutomator2
     ...   version=8.1                 appActivity=${SPLASH_ACTIVITY}   appPackage=${APP_PACKAGE}
     ...   platform=ANDROID            disableAndroidWatchers=${TRUE}   uiautomator2ServerLaunchTimeout=60000
     ...   adbExecTimeout=50000        commandTimeout=20                uiautomator2ServerInstallTimeout=40000
