@@ -3,8 +3,8 @@ Library                               SeleniumLibrary                           
 Library                               Collections
 Library                               String
 Library                               FakerLibrary                              locale=fa_IR
-Library                               splitwords
-Library                               captcha.py
+Library                               ../../../lib/splitwords.py
+Library                               ../../../lib/captcha.py
 Library                               OperatingSystem
 Variables                             ../variables/Variables.py
 Resource                              ../../../Resources/all.resource

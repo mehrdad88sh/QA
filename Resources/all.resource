@@ -4,7 +4,7 @@ Library                              SeleniumLibrary
 Variables                            ../protools/web/variables/Variables.py
 Library                              REST                            ${Test_Enviroment.format('${trumpet_env}')}/api/protools
 Library                              JSONLibrary
-Library                              sheypoorlib
+Library                              ../lib/sheypoorlib.py
 Resource                             ../protools/web/resources/resource.robot
 
 *** Keywords ***
